@@ -1,0 +1,36 @@
+define(['jquery','easel'], function($){
+	
+
+	var Engine = Class.extend({
+
+
+		init: function(canvas){
+			this.canvas = canvas;
+			console.log(this.canvas);
+			this.ctx = this.canvas.getContext('2d');
+			this.stage = new createjs.Stage(this.canvas);
+			console.log(this.stage);			
+		},
+
+		run: function(){
+						var bitmap = new createjs.Bitmap("gfx/big/globi.png")
+
+			this.stage.addChild(bitmap);
+			this.stage.update();
+			createjs.Ticker.setFPS(24);
+			createjs.Ticker.addListener(this);
+		},
+
+		tick: function(){
+			this.stage.update();
+			console.log('tick');
+		},
+
+		update: function(){
+			
+		}
+
+	});
+
+	return Engine;
+});
