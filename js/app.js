@@ -21,5 +21,7 @@ define(['jquery','engine'],function($,Engine){
 		canvas = document.getElementById('canvas');
 		engine = new Engine(canvas);
 		engine.run();
+		engine.addGlobi();
+		
 	}
 });

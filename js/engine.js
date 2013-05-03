@@ -5,18 +5,13 @@ define(['jquery','easel'], function($){
 
 
 		init: function(canvas){
+			
 			this.canvas = canvas;
-			console.log(this.canvas);
 			this.ctx = this.canvas.getContext('2d');
-			this.stage = new createjs.Stage(this.canvas);
-			console.log(this.stage);			
+			this.stage = new createjs.Stage(this.canvas);		
 		},
 
 		run: function(){
-						var bitmap = new createjs.Bitmap("gfx/big/globi.png")
-
-			this.stage.addChild(bitmap);
-			this.stage.update();
 			createjs.Ticker.setFPS(24);
 			createjs.Ticker.addListener(this);
 		},
@@ -26,8 +21,10 @@ define(['jquery','easel'], function($){
 			console.log('tick');
 		},
 
-		update: function(){
-			
+		addGlobi: function(){
+			var bitmap = new createjs.Bitmap("gfx/big/globi.png")
+			this.stage.addChild(bitmap);
+				
 		}
 
 	});
