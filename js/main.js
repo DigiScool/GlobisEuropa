@@ -21,6 +21,53 @@ require.config({
 	baseUrl: "js"
 });
 
-define(['class'], function(){
-	require(['app']);
+
+define(['app','class'], function(App,Engine){
+	
+	var app,engine;
+
+	var init = function(){
+
+		// Check, if document loaded
+		$(document).ready(function(){
+
+			app = new App();
+
+			// Set Button-Bindings
+			
+			$('#button_newGame').click(function(){
+				app.loadSzene('newGame');
+			});
+
+			$('#button_zurueck').click(function(){
+				app.loadSzene('hauptmenue');
+			});
+
+			$('#button_loadLevel').click(function(){
+				alert('load LEvel');
+			});
+
+			console.info('Applikation fertig erstellt. Starte Engine');
+
+			initEngine();
+
+		});
+	};
+
+	var initEngine = function(){
+		require(['engine'], function(Engine){
+
+			var canvas = document.getElementById('canvas');
+			engine = new Engine();
+			engine.setup('#gameContainer',canvas);
+			engine.loadSzene('hauptmenue');
+			app.setEngine(engine);
+
+
+
+		});
+
+	};
+
+	init();
 });

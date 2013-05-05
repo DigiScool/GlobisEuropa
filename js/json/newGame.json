@@ -1,0 +1,6 @@
+{
+	"id" : "neuesSpiel",
+	"headline" : "Neues Spiel",
+	"buttons" : [{ "id"		: "button_zurueck" }]
+				 
+}
