@@ -1,0 +1,15 @@
+{
+	"id" : "hauptmenue",
+	"headline" : "Hauptmenü",
+	"buttons" : [{ "id"		: "button_newGame" },
+				 { "id"		: "button_loadLevel"}],
+	"sprites" : [
+		{
+			"url" : "globi.png",
+			"mode": "infinite",
+			"x": "10",
+			"y": "10"
+		}
+	]
+				 
+}

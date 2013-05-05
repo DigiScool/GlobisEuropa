@@ -15,6 +15,7 @@ body {
 	background-color: #101010;
 }
 
+
 #gameContainer{
 
 	position:absolute;
@@ -34,4 +35,8 @@ body {
 #headBar, #footBar{
 	height:80px; 
 	background-color: #eca91c;
+}
+
+.hide{
+	display: none;
 }
