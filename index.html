@@ -20,10 +20,19 @@
 </head>
 <body>
 	<div id="gameContainer">
+
 		<div id="headBar">
 			<p id="headline"></p>
 		</div>
-		<div id="canvasContainer">
+		<div id="loadingContainer">
+			<div id="processBar">
+				<div id="process">
+
+				</div>
+			</div>
+			<button class="hide" id="startGame">Spiel starten</button>
+		</div>
+		<div id="canvasContainer" class="hide">
 			<canvas id="canvas" width="1024" height="568">
 			</canvas>
 		</div>

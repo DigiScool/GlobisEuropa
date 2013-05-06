@@ -1,20 +1,17 @@
-define(['jquery','szene','easel'], function($,Szene){
+define(['jquery','szene','easel','lib/prototype-1.7.1'], function($,Szene){
 	
-	var Engine = Class.extend({
+	var Engine = Class.create({
 		init: function(){
 			
 			this.canvas = null;
 			this.gameContainer = null;
 			this.renderer = null;
 			this.updater = null;
-			this.szene = null
+			this.szene = null;
 
 			this.audioManager = null;
 
 			this.started = false;
-
-
-
 		},
 
 		setup: function(gameContainer, canvas){
@@ -24,7 +21,7 @@ define(['jquery','szene','easel'], function($,Szene){
 			this.gameContainer = $(gameContainer);
 			this.canvas = canvas;
 			this.renderer = new createjs.Stage(canvas);
-			createjs.Ticker.addEventListener("tick", this.handleTick);
+			
 
 			console.log('Engine-Bindings:');
 			console.log(this.renderer);
@@ -34,33 +31,25 @@ define(['jquery','szene','easel'], function($,Szene){
 
 		loadSzene: function(name){
 			
-			var self = this;
-			this.renderer.removeAllChildren();
+			/* Lade die Elemente einer Szene , als Container
+			*  Bsp. Globi's Torse, Hände, Augen , etc.. seperat, 
+			* aber als Einheit im Container */
+			this.szene = new Szene(this.renderer);
+			this.szene.initSzene();
+		
+			
+			createjs.Ticker.addListener(this.renderer);
+			createjs.Ticker.useRAF = true;
+			// Best Framerate targeted (60 FPS)
+			createjs.Ticker.setFPS(30);
+
+
+		},
+
+		tick: function(){
 			this.renderer.update();
-			this.szene = new Szene(name);
-			this.szene.ready(function(){
-
-				var sprites = self.szene.getSprites();
-				self.animateSprites(sprites);
-
-			});
+			console.log('tick');
 		},
-
-		animateSprites : function(sprites){
-
-			if(sprites){
-				for(var i = 0; i < sprites.length; i++ ){
-					this.renderer.addChild(new createjs.Bitmap('gfx/sprites/'+sprites[i].url));
-					this.renderer.update();
-					console.log(this.renderer);
-				}
-			}
-
-		},
-
-		handleTick : function(){
-			console.log('Frames ticktack');
-		}
 
 	});
 

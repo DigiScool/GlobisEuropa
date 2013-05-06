@@ -10,10 +10,17 @@ require.config({
 	shim: {
         easel: {
             exports: 'createjs'
-        }
+        },
+        prototype: {
+            // Don't actually need to use this object as 
+            // Prototype affects native objects and creates global ones too
+            // but it's the most sensible object to return
+            exports: 'Prototype'
+        },
     },
 
 	paths: {
+		"protoype" : "lib/prototype-1.7.1",
 		"jquery"   : "lib/jquery-2.0.0.min",
 		"class": "lib/class",
 		easel	   : "lib/easeljs-0.6.0.min"
@@ -22,7 +29,7 @@ require.config({
 });
 
 
-define(['app','class'], function(App,Engine){
+define(['app','jquery'], function(App,$){
 	
 	var app,engine;
 
@@ -31,26 +38,23 @@ define(['app','class'], function(App,Engine){
 		// Check, if document loaded
 		$(document).ready(function(){
 
+			/* Eine Anwendung wird erstellt
+			Warte bis die Ajax-Abfrage in der Anwendung fertig ist
+			*/
 			app = new App();
-
-			// Set Button-Bindings
+			app.ready(function(){
+				
+				// Binde die Buttons
+				$('#startGame').click(function(){
+					initEngine();
+					$('#loadingContainer').addClass('hide');
+					$('#canvasContainer').removeClass('hide');
+				});
+				
+			});
 			
-			$('#button_newGame').click(function(){
-				app.loadSzene('newGame');
-			});
-
-			$('#button_zurueck').click(function(){
-				app.loadSzene('hauptmenue');
-			});
-
-			$('#button_loadLevel').click(function(){
-				alert('load LEvel');
-			});
-
-			console.info('Applikation fertig erstellt. Starte Engine');
-
-			initEngine();
-
+			
+			
 		});
 	};
 
@@ -61,7 +65,7 @@ define(['app','class'], function(App,Engine){
 			engine = new Engine();
 			engine.setup('#gameContainer',canvas);
 			engine.loadSzene('hauptmenue');
-			app.setEngine(engine);
+			
 
 
 
