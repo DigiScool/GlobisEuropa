@@ -4,7 +4,7 @@ define(['jquery','easel','lib/prototype-1.7.1'], function($){
 
 	var Szene = Class.create({
 		
-		initialize: function(renderer){
+		initialize: function(){
 			
 
 			this.imageCache = [];
@@ -14,12 +14,11 @@ define(['jquery','easel','lib/prototype-1.7.1'], function($){
 				images: ["gfx/sprites/globi_hauptmenue.png"],
 				frames: {width: 300, height: 300, regX: -350, regY:-300},
 				animations: {
-					bounce:[0,5,"bounce",0]
+					bounce:[0,5,"bounce",2]
 				}
 
 			};
 
-			this.renderer = renderer;
 			this.szeneName = name;
 			
 		},
@@ -42,7 +41,7 @@ define(['jquery','easel','lib/prototype-1.7.1'], function($){
 			container.addChild(bg);
 			container.addChild(animation);
 
-			this.renderer.addChild(container);
+			return container;
 		},
 	});
 

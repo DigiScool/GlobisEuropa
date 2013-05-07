@@ -5,7 +5,6 @@ define(['jquery','szene','easel','lib/prototype-1.7.1'], function($,Szene){
 			
 			this.canvas = null;
 			this.gameContainer = null;
-			this.renderer = null;
 			this.updater = null;
 			this.szene = null;
 
@@ -27,6 +26,11 @@ define(['jquery','szene','easel','lib/prototype-1.7.1'], function($,Szene){
 			console.log(this.renderer);
 			console.log(this.gameContainer);
 
+			// Best Framerate targeted (60 FPS)
+			createjs.Ticker.useRAF = true;
+			createjs.Ticker.setFPS(60);
+			createjs.Ticker.addListener(this.renderer);
+
 		},
 
 		loadSzene: function(name){
@@ -34,21 +38,15 @@ define(['jquery','szene','easel','lib/prototype-1.7.1'], function($,Szene){
 			/* Lade die Elemente einer Szene , als Container
 			*  Bsp. Globi's Torse, Hände, Augen , etc.. seperat, 
 			* aber als Einheit im Container */
-			this.szene = new Szene(this.renderer);
-			this.szene.initSzene();
-		
+			this.szene = new Szene();
+			var container = this.szene.initSzene();
 			
-			createjs.Ticker.addListener(this.renderer);
-			createjs.Ticker.useRAF = true;
-			// Best Framerate targeted (60 FPS)
-			createjs.Ticker.setFPS(30);
-
-
-		},
-
-		tick: function(){
+			this.renderer.addChild(container);
 			this.renderer.update();
-			console.log('tick');
+			
+			
+
+
 		},
 
 	});
