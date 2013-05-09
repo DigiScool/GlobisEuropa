@@ -5,7 +5,7 @@
 */
 
 
-define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
+define(['globi'],function(Globi){
 	
 	var Engine = Class.extend({
 		
@@ -62,7 +62,7 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 
 		addBitmap: function(){
 
-			console.log('Creating Bitmap: ' + name)
+			console.log('Creating Bitmap: ' + arguments[0])
 
 			var image = new createjs.Bitmap(arguments[0]);
 

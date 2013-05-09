@@ -31,8 +31,12 @@ define(['level','jquery'],function(Level,$){
 					"headline": "Westeuropa :  Puzzlespiel 1",
 					"images" : [
 						"gfx/big/Westeuropa.png",
+						"gfx/big/Osteuropa.png",
+						"gfx/big/Nordeuropa.png",
 						"gfx/little/AUS.png","gfx/little/BEL.png","gfx/little/FRA.png",
 						"gfx/little/GER.png","gfx/little/HOL.png","gfx/little/LUX.png",
+						"gfx/little/HOL.png","gfx/little/HUN.png","gfx/little/LIT.png",
+						"gfx/little/SUI.png","gfx/little/ROM.png","gfx/little/UK.png",
 						"gfx/little/Portugal.png","gfx/little/Spanien.png","gfx/little/SUI.png"
 					]	
 				}	
@@ -70,10 +74,11 @@ define(['level','jquery'],function(Level,$){
 			this.id  = id;
 				
 			// DIV-Setup
+			$('loading_icon').addClass('loading');
 			$('#levelLoader').removeClass('hide');
 			$('#headline').html('Lade Level');
-			$('levelLoader_Headline').html(this.data[id].headline);
- 			
+			$('#levelLoader_Headline').html(this.data[id].headline);
+
  			
  			// Canvas bereinigen, Elemente werden erstmal nicht gebraucht
  			this.engine.clearStage();
@@ -138,7 +143,7 @@ define(['level','jquery'],function(Level,$){
  			if($('#menue').hasClass('slideIn')){
  				this.engine.startAnimation('globi_menue_popDown');
  				$('#menue').removeClass('slideIn');
- 				$t('#menue').addClass('slideOut');
+ 				$('#menue').addClass('slideOut');
  				$('#button_newGame').removeClass('hide');
  				$('#button_zurueck').addClass('hide')
  				$('#headline').html('Hauptmen&uuml;');

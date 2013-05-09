@@ -16,7 +16,8 @@ define(['jquery'],function($){
 						"sX" : 0.8,
 						"sY" : 0.8
 					},
-					"puzzle" : ["gfx/little/GER.png"]
+					"puzzle" : ["gfx/little/GER.png"],
+					"buttons" :  ["button_home"]
 				},
 
 				"hm" : {
@@ -37,15 +38,7 @@ define(['jquery'],function($){
 		},
 
 		start: function(id){
-			
-
-			
- 			$('#headline').html(this.data[id].headline);
- 			$('#levelLoader').addClass("fadeOut");
- 			$('#levelLoader').addClass('hide');
-
- 			$('#canvas').css("background-color", "#1b9cf7");
- 			
+					
  			// Ist ein Background definiert ?
  			var bg = this.data[id].bg;
  			if(bg){
@@ -57,7 +50,7 @@ define(['jquery'],function($){
  			if(pzl){
  				for(var i = 0; i<pzl.length; i++){
 
- 					this.engine.addPuzzle(pzl[i]);
+ 					this.engine.addPuzzle(pzl[0]);
  				}
  			}
  			
@@ -82,6 +75,12 @@ define(['jquery'],function($){
  					$(name).removeClass('hide');
  				}
  			}
+
+ 			// Level ist fertig geladen. Entferne den Load-Screen
+ 			$('#headline').html(this.data[id].headline);
+ 			$('loading_icon').removeClass('loading');			
+ 			$('#levelLoader').addClass('hide');
+ 			$('#canvas').css("background-color", "#1b9cf7");
  				
 		},
 	});

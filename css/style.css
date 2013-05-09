@@ -242,9 +242,9 @@ body {
 }
 
 .fadeOut{
-	animation: fadeOut_animation 1s  steps(30) 1;
-	-webkit-animation: fadeOut_animation 1s  steps(30) 1;
-	-moz-animation: fadeOut_animation 1s  steps(30)  1;
+	animation: fadeOut_animation 2s  steps(30) 1;
+	-webkit-animation: fadeOut_animation 2s  steps(30) 1;
+	-moz-animation: fadeOut_animation 2s  steps(30)  1;
 
 	animation-fill-mode: forwards;
 	-webkit-animation-fill-mode: forwards;
@@ -324,20 +324,20 @@ body {
 @keyframes fadeOut_animation{
 	0% {	opacity:1;}
 	50% {   opacity:0.5;}
-	100%{   opacity: 0;display:none;}
+	100%{   opacity: 0; display:none;}
 
 }
 
 @-webkit-keyframes fadeOut_animation{
 	0% {	opacity:1;}
 	50% {   opacity:0.5;}
-	100%{   opacity: 0;display:none;}
+	100%{   opacity: 0; display:none;}
 
 }
 
 	@-moz-keyframes fadeOut_animation{
 	0% {	opacity:1;}
 	50% {   opacity:0.5;}
-	100%{   opacity: 0;display:none;}
+	100%{   opacity: 0; display:none;}
 
 }
