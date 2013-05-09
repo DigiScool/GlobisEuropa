@@ -11,13 +11,8 @@ define(function(){
 		startSzene: function(id){
 			// DIV-Setup
 
- 			this.engine.startAnimation('globi_transition_toLevel');
- 			this.css.get('menue').removeClass('slideIn');
- 			this.css.get('menue').addClass('slideOut');
- 			this.css.get('button_zurueck').addClass('hide');
- 			this.css.get('button_home').removeClass('hide');
- 			this.css.get('headline').html('Level 1');
-
+ 			console.log('Level-Loader gestartet. Lade Level '+id);
+ 			
  			// EVents
 
  			var self = this;

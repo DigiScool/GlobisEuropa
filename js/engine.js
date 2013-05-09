@@ -23,7 +23,7 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 			this.globiContainer = this.globi.getContainer();
 
 
-			// Speicher für die laufenden Animationen
+			// Speicher für die laufende Animationen
 			this.anim = new Array();
 			/////////////////////////
 
@@ -34,11 +34,13 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 		},
 
 		// Callback -Funktion für die Frameloop
-		// Zeigt alle Animationen an, die im Array anim gespeichert sind
+		// Zeigt die Animation an, die im Array anim gespeichert ist
 		tick: function(){
-			if(this.anim.length != 0) { this[this.anim[0]]() };
-			this.stage.update();
-			console.log(this.globiContainer.scaleX);
+			if(this.anim[0]) { 
+				
+				// Rufe Funktion auf und übergib Callback
+				this[this.anim[0][0]](this.anim[0][1]) };
+				this.stage.update();
 		},
 
 		// Säubere die Pinnwand, wenn nichts animiert / angezeigt
@@ -51,16 +53,22 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 		},
 
 		// Fügt eine Animation der anim-Liste hinzu
-		startAnimation: function(animation){
-			this.anim[0] = animation;
-			console.log(this.anim);
+		startAnimation: function(animation,callback){
+			
+			var save = [animation,callback]
+
+			// Es wird immer nur eine Animation zugelassen
+			// Verhindert Bugs und falsche Animationen
+			this.anim[0] = save;
 		},
 
 		// Löscht eine Animation aus der anim-Liste
 		stopAnimation: function(animation){
 
+				// Das erste Element wird entfernt
+				// Stopt die Animation
 				this.anim.shift();
-				console.log(this.anim);
+
 		},
 
 		// Fügt eine Callbackmethode einem Objekt hinzu
@@ -88,6 +96,7 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 			this[objekt].mouseEnabled = true;
 		},
 
+
 		/**************************************/
 		/* Animationen für Globi im Hauptmenü */
 
@@ -100,7 +109,7 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 
 		},
 
-		globi_menue_popUp: function(){
+		globi_menue_popUp: function(callback){
 			
 			this.scaleCount++
 
@@ -108,6 +117,9 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 			if( this.globiContainer.scaleX >= 2.2){
 				this.stopAnimation("globi_menue_popUp");
 
+				if(callback){
+					callback();
+				}
 			} else {
 				this.globiContainer.x += 10;
 				this.globiContainer.y -= 10;
@@ -119,7 +131,7 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 			}
 		},
 
-		globi_menue_popDown: function(){
+		globi_menue_popDown: function(callback){
 			
 	
 
@@ -129,6 +141,10 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 				this.stopAnimation("globi_menue_popDown");
 				this.startAnimation("globi_idle");
 				this.enableEvents("globiContainer");
+				
+				if(callback){
+					callback();
+				}
 
 			} else {
 				this.globiContainer.x -= 10;
@@ -142,13 +158,22 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 
 		},
 
-		globi_transition_toLevel: function(){
+		globi_transition_toLevel: function(callback){
 
+			// Skaliere Globi auf eine bestimmte Größe
 			if( this.globiContainer.scaleX >= 3.5){
 				
+				// Animation stoppen
 				this.stopAnimation("globi_transition_toLevel");
+				
+				// Callback ?
+				if(callback){
+					callback();
+				}
 
 			} else {
+
+				// Vergrößere Globi
 				this.globiContainer.scaleX += 0.2;
 				this.globiContainer.scaleY += 0.2;
 			}

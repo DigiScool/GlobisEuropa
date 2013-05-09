@@ -2,8 +2,8 @@
 /*
 *	Globis Europa
 *   =============
-*   Objektbeschreibung und Methoden für die
-*   Darstellung des Avatares Globi
+*   Objektbeschreibung und Container
+*   für easel
 */
 
 
@@ -15,9 +15,9 @@ var Globi = Class.extend({
 
             this.globi = new  createjs.Container();
 
-            
              // Container
             this.globi = new createjs.Container();
+            
             // Bauch
             var g1 = new createjs.Graphics();
                 g1.setStrokeStyle(10);
@@ -96,10 +96,6 @@ var Globi = Class.extend({
 
             this.posx = this.globi.x;
             this.posy = this.globi.y;
-        },
-
-        idle: function(objekt){
-            return objekt.x += 1;
         },
 
         getContainer: function(){

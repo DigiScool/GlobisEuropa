@@ -33,6 +33,7 @@ define(function(){
 
  			this.css.show('button_newGame');
 
+ 			// Es wird auf Globi geklickt
  			this.engine.setCallback('click',function(){
 
  				self.engine.disableEvents('globiContainer');
@@ -49,10 +50,18 @@ define(function(){
 
  			});
 
+ 			// Es wird auf das Bild im Menü geklickt
  			this.css.setCallback('menue_picture_area','click',function(){
- 				self.stopSzene();
- 				console.log('babum');
+ 				self.css.get('menue').removeClass('slideIn');
+ 				self.css.get('menue').addClass('slideOut');
+ 				self.css.get('button_zurueck').addClass('hide');
+ 				self.css.get('button_home').removeClass('hide');
+ 				self.css.get('headline').html('Lade Level');
+ 				self.engine.startAnimation('globi_transition_toLevel',function(){
+ 					self.stopSzene();
+ 				});
  			})
+
 
  			this.css.setCallback('button_zurueck','click',function(){
 
@@ -88,7 +97,6 @@ define(function(){
 
  		stopSzene: function(){
  			this.app.startSzene('level','1');
- 			console.log('babam');
  		}
 
  	});
