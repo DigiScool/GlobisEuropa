@@ -110,9 +110,6 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 		},
 
 		globi_menue_popUp: function(callback){
-			
-			this.scaleCount++
-
 
 			if( this.globiContainer.scaleX >= 2.2){
 				this.stopAnimation("globi_menue_popUp");
