@@ -6,72 +6,65 @@
 *	Gamesetup & start
 */
 
+
 require.config({
-	shim: {
-        easel: {
-            exports: 'createjs'
+
+	paths: 
+	{
+		'jquery'   : 'lib/jquery-2.0.0.min',
+		'class': 	 'lib/class',
+		'easel'	   : "lib/easeljs-0.6.0.min"
+	},
+
+	shim: 
+	{
+        'easel': 
+        {
+            exports: 'Easel'
         },
-        prototype: {
-            // Don't actually need to use this object as 
-            // Prototype affects native objects and creates global ones too
-            // but it's the most sensible object to return
-            exports: 'Prototype'
-        },
+        
+        'class': 
+        {
+        	exports: 'Class'
+        }
     },
 
-	paths: {
-		"protoype" : "lib/prototype-1.7.1",
-		"jquery"   : "lib/jquery-2.0.0.min",
-		"class": "lib/class",
-		easel	   : "lib/easeljs-0.6.0.min"
-	},
 	baseUrl: "js"
 });
 
 
-define(['app','jquery'], function(App,$){
+define(['lib/class','lib/easeljs-0.6.0.min','jquery'], function(){
 	
-	var app,engine;
+	var app;
+	var canvasEngine;
+	var cssEngine;
+	var canvas;
+	var stage;
 
-	var init = function(){
-
-		// Check, if document loaded
-		$(document).ready(function(){
-
-			/* Eine Anwendung wird erstellt
-			Warte bis die Ajax-Abfrage in der Anwendung fertig ist
-			*/
-			app = new App();
-			app.ready(function(){
-				
-				// Binde die Buttons
-				$('#startGame').click(function(){
-					initEngine();
-					$('#loadingContainer').addClass('hide');
-					$('#canvasContainer').removeClass('hide');
-				});
-				
-			});
+	function initApp(){
+		require(['app','engine','cssEngine'], function(App,Engine,CSS){
+			// New Easel.js - Objekt
+			canvas = document.getElementById('canvas');
 			
 			
+			stage = new createjs.Stage(canvas);
 			
+
+			cssEngine = new CSS();
+			canvasEngine = new Engine(stage);
+			
+			createjs.Ticker.setFPS(60);
+			createjs.Ticker.useRAF = true;
+			createjs.Ticker.addListener(canvasEngine);
+
+			
+
+			// New Application with Engines
+			app = new App(canvasEngine,cssEngine);
+			app.startSzene('hauptmenue');
 		});
 	};
 
-	var initEngine = function(){
-		require(['engine'], function(Engine){
-
-			var canvas = document.getElementById('canvas');
-			engine = new Engine();
-			engine.setup('#gameContainer',canvas);
-			engine.loadSzene('hauptmenue');
-			
-
-
-
-		});
-
-	};
-
-	init();
+	initApp();
+	
 });

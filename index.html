@@ -22,7 +22,7 @@
 	<div id="gameContainer">
 
 		<div id="headBar">
-			<p id="headline"></p>
+			<p id="headline">Hauptmen&uuml;</p>
 		</div>
 		<div id="loadingContainer">
 			<div id="processBar">
@@ -32,16 +32,31 @@
 			</div>
 			<button class="hide" id="startGame">Spiel starten</button>
 		</div>
+
 		<div id="canvasContainer" class="hide">
 			<canvas id="canvas" width="1024" height="568">
 			</canvas>
+			<div id="menue">
+				<div id="menue_text_position">
+					<div id="menue_picture_area" class="frame_image round">
+					</div>
+					<div id="menue_headline">
+						<p class="headline1">Westeuropa</p>
+						<p id="menue_text" class="text_normal"><p><br><br>
+						<input type="checkbox" checked="checked" name="Tutorial" value="Tutorial zeigen">Tutorial spielen</input>
+					</div>
+				</div>
+			</div>
+			<div id="level" >
+			</div>
 		</div>
+		
 		<div id="footBar">
-			<button id="button_newGame" class="hide">Neues Spiel</button>
-			<button id="button_loadLevel" class="hide">Level laden</button>
-			<button id="button_zurueck" class="hide">Zur&uuml;ck</button>
-			<button id="button_sound" class="hide">SL</button>
-			<button id="button_home" class="hide">H</button>
+			<button id="button_newGame" class="hide button round">Neues Spiel</button>
+			<button id="button_loadLevel" class="hide button round">Level laden</button>
+			<button id="button_zurueck" class="hide button round">Zur&uuml;ck</button>
+			<button id="button_sound" class="hide button round">SL</button>
+			<button id="button_home" class="hide button round">Home</button>
 		</div>
 	</div>
 	<script data-main="js/main" src="js/lib/require.js"></script>
