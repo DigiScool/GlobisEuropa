@@ -19,35 +19,45 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
+	
 	<div id="gameContainer">
 
 		<div id="headBar">
 			<p id="headline">Hauptmen&uuml;</p>
 		</div>
-		<div id="loadingContainer">
-			<div id="processBar">
-				<div id="process">
-
-				</div>
-			</div>
-			<button class="hide" id="startGame">Spiel starten</button>
-		</div>
-
-		<div id="canvasContainer" class="hide">
+		
+		<div id="canvasContainer" >
 			<canvas id="canvas" width="1024" height="568">
 			</canvas>
+			<div id="levelLoader" class="hide">
+				<div id="levelLoader_Display">
+					<div id="levelLoader_Headline"></div>
+					<div id="levelLoader_processBar">
+						<div id="levelLoader_process">
+						</div>
+					</div>
+
+				</div>
+				<div id="loading_icon" class="loading">
+							
+				</div>
+			</div>
 			<div id="menue">
 				<div id="menue_text_position">
-					<div id="menue_picture_area" class="frame_image round">
-					</div>
+					<div id="menue_picture_area" class="frame_image round"></div>
 					<div id="menue_headline">
 						<p class="headline1">Westeuropa</p>
-						<p id="menue_text" class="text_normal"><p><br><br>
+						<p id="menue_text" class="text_normal">
+							Lerne die Länder um Deutschland</br> kennen. Finde heraus 
+ 					 welche Staaten <br /r> am atlantischen Ozean liegen, <br 7> oder welches
+ 				 das höchste Gebirge <br /> dieser  Region ist
+						</p><br><br>
 						<input type="checkbox" checked="checked" name="Tutorial" value="Tutorial zeigen">Tutorial spielen</input>
 					</div>
 				</div>
 			</div>
-			<div id="level" >
+			<div id="homeMenue">
+				Start
 			</div>
 		</div>
 		
@@ -59,6 +69,6 @@
 			<button id="button_home" class="hide button round">Home</button>
 		</div>
 	</div>
-	<script data-main="js/main" src="js/lib/require.js"></script>
+	<script data-main="js/startup" src="js/lib/require.js"></script>
 </body>
 </html>

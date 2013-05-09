@@ -76,8 +76,23 @@ var Globi = Class.extend({
             s9.skewX = 10;
             s9.rotation = 15;
 
+            // Mund
+            var mund = new createjs.Graphics();
+            mund.setStrokeStyle(3);
+            mund.beginStroke(createjs.Graphics.getRGB(11,66,104));
+            mund.beginFill(createjs.Graphics.getRGB(255,255,255));
+            mund.mt(-100,20);
+            mund.bt(-50,120,50,120,100,20);
+            mund.lt(-100,20);
 
+            mund.mt(-82,50);
+            mund.lt(-52,55);
 
+            mund.mt(82,50);
+            mund.lt(52,55);
+            var s10 = new createjs.Shape(mund);
+            s10.y = 20;
+      
             // Alle Parts zusammenfügen
 
             this.globi.addChild(s1);
@@ -88,7 +103,8 @@ var Globi = Class.extend({
             this.globi.addChild(s6);
             this.globi.addChild(s7); 
             this.globi.addChild(s8);
-            this.globi.addChild(s9);                   
+            this.globi.addChild(s9);   
+            this.globi.addChild(s10);                 
 
             // Position im Raum
             this.globi.x = 500;

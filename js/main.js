@@ -1,67 +1,47 @@
 
-/*
-*	GlobisEuropa :: main.js
-*	=======================
-*	global configuration
-*	Gamesetup & start
-*/
 
-
-require.config({
-
-	paths: 
-	{
-		'jquery'   : 'lib/jquery-2.0.0.min',
-		'class': 	 'lib/class',
-		'easel'	   : "lib/easeljs-0.6.0.min"
-	},
-
-	shim: 
-	{
-        'easel': 
-        {
-            exports: 'Easel'
-        },
-        
-        'class': 
-        {
-        	exports: 'Class'
-        }
-    },
-
-	baseUrl: "js"
-});
-
-
-define(['lib/class','lib/easeljs-0.6.0.min','jquery'], function(){
+define(['jquery','app'], function($,App){
 	
 	var app;
-	var canvasEngine;
-	var cssEngine;
-	var canvas;
+	var engine;
 	var stage;
 
-	function initApp(){
-		require(['app','engine','cssEngine'], function(App,Engine,CSS){
-			// New Easel.js - Objekt
-			canvas = document.getElementById('canvas');
-			
-			
+	var initApp = function(){
+
+			app = new App();
+
+			$('#menue_picture_area').click(function(){
+				app.startLevel("level11");
+			});
+
+			$('#button_zurueck').click(function(){
+				app.toggleMenue();
+			});
+
+			$('#button_newGame').click(function(){
+				app.toggleMenue();
+			});
+
+			$('button_home').click(function(){
+				app.showGamemenue();
+			});
+
+			console.log('Application erstellt');
+
+			initEngines();
+	};	
+
+	function initEngines(){
+		require(['engine',], function(Engine){
+
+			var canvas = document.getElementById('canvas');
 			stage = new createjs.Stage(canvas);
-			
+			engine = new Engine(stage);
 
-			cssEngine = new CSS();
-			canvasEngine = new Engine(stage);
-			
-			createjs.Ticker.setFPS(60);
-			createjs.Ticker.useRAF = true;
-			createjs.Ticker.addListener(canvasEngine);
 
-			
+			app.setup(engine);
+			app.loadSzene('hauptmenue');
 
-			// New Application with Engines
-			app = new App(canvasEngine,cssEngine);
-			app.startSzene('hauptmenue');
 		});
 	};
 

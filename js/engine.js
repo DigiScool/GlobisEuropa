@@ -12,11 +12,13 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 		init: function(stage){
 			
 			this.stage = stage;
-			this.stage.enableMouseOver();
+			this.stage.enableMouseOver(10);
+			
 
 			// Objekte
 			// Hintergrund
 			this.bg = new createjs.Bitmap('gfx/big/mainmenue_background.png');
+
 
 			// Globi
 			this.globi = new Globi();
@@ -30,6 +32,12 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 
 			// Variablen für die Animationen
 			this.idle_globi = 1;
+
+
+			createjs.Touch.enable(this.stage);
+			createjs.Ticker.setFPS(60);
+			createjs.Ticker.useRAF = true;
+			createjs.Ticker.addListener(this);
 		
 		},
 
@@ -51,6 +59,51 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 			this.stage.clear();
 			this.stage.removeAllChildren();
 		},
+
+		addBitmap: function(){
+
+			console.log('Creating Bitmap: ' + name)
+
+			var image = new createjs.Bitmap(arguments[0]);
+
+			if(arguments[1]) image.x = arguments[1];
+			if(arguments[2]) image.y = arguments[2];
+			if(arguments[3]) image.scaleX = arguments[3];
+			if(arguments[4]) image.scaleY = arguments[4];
+			this.stage.addChild(image);
+			
+		},
+
+		addPuzzle: function(){
+			
+			console.log('Creating Bitmap: ' + arguments[0]);
+			
+			var image = new createjs.Bitmap(arguments[0]);
+
+			if(arguments[1]) image.x = arguments[1];
+			if(arguments[2]) image.y = arguments[2];
+			if(arguments[3]) image.scaleX = arguments[3];
+			if(arguments[4]) image.scaleY = arguments[4];
+
+			this.stage.addChild(image);
+			image.addEventListener("mousedown", this.handleMouseDown);
+		},
+
+		addObject: function(objekt){
+			if(objekt == "globi"){
+				this.stage.addChild(this.globiContainer);
+			}
+		},
+
+		handleMouseDown: function(event) {
+            var o = event.target;
+            o.parent.addChild(o);
+            var offset = {x:o.x-event.stageX, y:o.y-event.stageY};
+            event.addEventListener("mousemove", function(ev) {
+                o.x = ev.stageX+offset.x;
+                o.y = ev.stageY+offset.y;
+            });
+        },
 
 		// Fügt eine Animation der anim-Liste hinzu
 		startAnimation: function(animation,callback){
@@ -77,13 +130,15 @@ define(['globi','lib/easeljs-0.6.0.min'],function(Globi){
 			this.globiContainer.addEventListener(event,callback);
 		},
 
-		// Erstellt die Objekte des Hauptmenüs
-		initHauptmenue: function(){
+		initLevel1: function(){
+			this.bg1 = new createjs.Bitmap('gfx/big/Layout1.png');
+			this.bg1.scaleX = 0.8;
+			this.bg1.scaleY = 0.8;
+			this.bg1.x = -200;
+			this.bg1.y = -200;
+			this.stage.addChild(this.bg1);
 
-			// Lade die Container in die Stage
-			this.stage.addChild(this.bg);
-			this.stage.addChild(this.globiContainer);
-			
+
 		},
 
 		// Verhindert das Auslösen von Ereignissen für ein bestimmes Objekt
