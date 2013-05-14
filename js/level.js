@@ -16,15 +16,6 @@ define(['jquery'],function($){
 							"y" : -330 , 
 							"sX" : 0.8,
 							"sY" : 0.8
-						},
-						{
-							"url" : "gfx/little/button.png",
-							"x" : "0",
-							"y" : "0",
-							"event" : [{
-								"typ" : "mouseover",
-								"name" : "showPuzzleParts"
-							}]
 						}],
 					"puzzle" : ["gfx/little/GER.png"],
 					"buttons" :  ["button_home"]
@@ -51,7 +42,7 @@ define(['jquery'],function($){
 		start: function(id){
 
 			// Clear den Screen
-			
+			this.engine.clearStage();
 
 			console.log('Try to Start:' + id);		
 

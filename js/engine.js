@@ -198,16 +198,7 @@ define(['globi'],function(Globi){
 			this.globiContainer.addEventListener(event,callback);
 		},
 
-		initLevel1: function(){
-			this.bg1 = new createjs.Bitmap('gfx/big/Layout1.png');
-			this.bg1.scaleX = 0.8;
-			this.bg1.scaleY = 0.8;
-			this.bg1.x = -200;
-			this.bg1.y = -200;
-			this.stage.addChild(this.bg1);
-
-
-		},
+		
 
 		// Verhindert das Auslösen von Ereignissen für ein bestimmes Objekt
 		disableEvents: function(objekt){

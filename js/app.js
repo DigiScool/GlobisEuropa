@@ -83,6 +83,7 @@ define(['level','jquery'],function(Level,$){
 					break;
 				case 2:
 					// Hauptmenue
+					$('#headline').html('Hauptmen&uuml;');
 					this.level.start("hm");
 					break;
 			}
@@ -142,7 +143,14 @@ define(['level','jquery'],function(Level,$){
 
 			// Schauen ob alles geladen ist
 			if(this.imagesLoaded == this.data[this.id].images.length){
-				callback();
+				if(callback){
+					callback();
+				} else {
+					$('#headline').html(this.data[this.id].headine);
+ 					$('loading_icon').removeClass('loading');			
+ 					$('#levelLoader').addClass('hide');
+					this.level.start(this.data[this.id].followUp);
+				}
 			}
 		},
 
@@ -174,7 +182,7 @@ define(['level','jquery'],function(Level,$){
  			$('#menue').addClass('slideOut');
  			$('#button_zurueck').addClass('hide');
  			this.engine.startAnimation('globi_transition_toLevel',function(){
-					self.preload(id);
+					self.preload("level11");
  			});
  		},
 
@@ -200,12 +208,21 @@ define(['level','jquery'],function(Level,$){
  		},
 
  		showGamemenue: function(){
- 			this.app.preload('hauptmenue');
- 			this.engine.startAnimation('globi_menue_popDown');;
+
+ 			var self = this;
+
  			$('#button_newGame').removeClass('hide');
  			$('#button_home').addClass('hide')
  			$('#levelLoader').addClass('hide');
  			$('#headline').html('Hauptmen&uuml;');
+ 			this.engine.clearStage();
+ 			this.engine.addObject("globi");
+ 			this.engine.startAnimation('globi_menue_popDown',function(){
+ 				// Callback
+ 				self.setGameState(2);
+ 			});
+ 			
+ 			
  		}
 	});
 
