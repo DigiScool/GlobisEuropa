@@ -22,8 +22,17 @@ define(['jquery','app'], function($,App){
 				app.toggleMenue();
 			});
 
-			$('button_home').click(function(){
+			$('#button_home').click(function(){
 				app.showGamemenue();
+			});
+
+			$('#button_startGame').click(function(){
+				app.setGameState(1);
+			});
+
+			$('#button_cancelIntro').click(function(){
+				console.log('afasa');
+				app.cancelIntro();
 			});
 
 			console.log('Application erstellt');
@@ -40,7 +49,7 @@ define(['jquery','app'], function($,App){
 
 
 			app.setup(engine);
-			app.loadSzene('hauptmenue');
+			app.setGameState(0);
 
 		});
 	};

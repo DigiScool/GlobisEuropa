@@ -8,27 +8,38 @@ define(['jquery'],function($){
 
 			this.data = { 
 				"11" : {
-					"headline" : "",
-					"bg" : {
-						"url" : "gfx/big/Westeuropa.png",
-						"x" : "200",
-						"y" : -330 , 
-						"sX" : 0.8,
-						"sY" : 0.8
-					},
+					"headline" : "Westeuropa Level 1",
+					"images" : [
+						{
+							"url" : "gfx/big/Westeuropa.png",
+							"x" : "200",
+							"y" : -330 , 
+							"sX" : 0.8,
+							"sY" : 0.8
+						},
+						{
+							"url" : "gfx/little/button.png",
+							"x" : "0",
+							"y" : "0",
+							"event" : [{
+								"typ" : "mouseover",
+								"name" : "showPuzzleParts"
+							}]
+						}],
 					"puzzle" : ["gfx/little/GER.png"],
 					"buttons" :  ["button_home"]
 				},
 
 				"hm" : {
 					"headline" : "Hauptmenü",
-					"bg" : {
+					"images" : [
+					{
 						"url" : "gfx/big/mainmenue_background.png",
 						"x"  : "0",
 						"y"  : "0", 
 						"sX" : "1",
 						"sY" : "1",
-					},
+					}],
 					"obj" : ["globi"],
 					"animation" : "globi_idle",
 					"buttons" :  ["button_newGame"]
@@ -38,11 +49,32 @@ define(['jquery'],function($){
 		},
 
 		start: function(id){
-					
- 			// Ist ein Background definiert ?
- 			var bg = this.data[id].bg;
- 			if(bg){
- 				this.engine.addBitmap(bg.url,bg.x,bg.y,bg.sX, bg.sY);
+
+			// Clear den Screen
+			
+
+			console.log('Try to Start:' + id);		
+
+ 			// Sind Bilder definiert ? 
+ 			var img = this.data[id].images;
+ 			if(img){
+ 				for(var i = 0; i<img.length; i++){
+ 					
+ 					// Erzeuge Bild
+ 					var image = this.engine.createBitmap(img[i].url);
+ 					// Größe bestimmen
+ 					image = this.engine.setBitmap(image,img[i].x,img[i].y,img[i].sX,img[i].sY);
+ 					// Sind Events definiert ?
+ 					if(img[i].event){
+ 						for(var j = 0; j < img[i].event.length; j++){
+ 							image.addEventListener(img[i].event[j].typ, img[i].event[j].name);
+ 							console.log(image.hasEventListener("mouseover"));
+ 						}
+ 					}
+ 					this.engine.addBitmap(image);
+ 					
+
+ 				}
  			}
 
  			// Sind Puzzle-Teile definiert ?
@@ -76,11 +108,7 @@ define(['jquery'],function($){
  				}
  			}
 
- 			// Level ist fertig geladen. Entferne den Load-Screen
- 			$('#headline').html(this.data[id].headline);
- 			$('loading_icon').removeClass('loading');			
- 			$('#levelLoader').addClass('hide');
- 			$('#canvas').css("background-color", "#1b9cf7");
+ 			
  				
 		},
 	});

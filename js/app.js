@@ -15,19 +15,27 @@ define(['level','jquery'],function(Level,$){
 			
 			this.engine = null;
 			this.level = null;
+
 			
+				
 
 			// JSON-Data für den Preloader. 
 			// Was soll vor dem Start einer Szene geladen werden
 			this.data = {
-				"hauptmenue" : {
-					"id"   : "hm",
-					"headline": "Hauptmenü",
-					"images" : [ "gfx/big/mainmenue_background.png"],
+				"startup" : {
+					"followUp" : "hm",
+					"headline" : "Initialisiere das Spiel",
+					"images" : [ 
+						"gfx/big/mainmenue_background.png",
+						"gfx/big/Globi_Vektor.png",
+						"gfx/big/story_1.jpg",
+						"gfx/big/story_2.jpg"
+					],
+					"callback": "initEngine"
 				},
 
 				"level11" : {
-					"id" : "11",
+					"followUp" : "11",
 					"headline": "Westeuropa :  Puzzlespiel 1",
 					"images" : [
 						"gfx/big/Westeuropa.png",
@@ -44,53 +52,69 @@ define(['level','jquery'],function(Level,$){
 
 		},
 
+		setGameState: function(state){
+
+			var self = this;
+			
+			switch(state){
+				case 0: 
+					// Die Seite wurde gerade aufgerufen. 
+					// Starte den Preloader
+					this.preload("startup",function(){
+						// CALLBACK
+						// Alle bilder geladen
+						self.showStartScreen();
+
+					});
+					break;
+				case 1:
+					// Intro abspielen
+					console.log("Zeige Intro");
+					$('#startScreen').addClass('hide');
+					$('#button_cancelIntro').removeClass('hide');
+ 					$('#button_startGame').addClass('hide');
+ 					$('#canvas').removeClass('hide');
+					this.engine.showIntro(function(){
+						//callback, wenn fertig
+						self.engine.clearStage();
+						$('#button_cancelIntro').addClass('hide');
+						self.setGameState(2);
+					});
+					break;
+				case 2:
+					// Hauptmenue
+					this.level.start("hm");
+					break;
+			}
+			
+
+		},
+
 		setup: function(engine,css){
 			
 			this.engine = engine;
 			this.level = new Level(this,engine)
 		},
 
-		startSzene: function(name,id){
-
-			switch(name){
-
-				// Direktes Ausführen des Hauptmenüs noch möglich
-				// Später soll das auch über den Loader geschehen, um eine 
-				// Einheitliche Schnittstelle zu haben
-				case 'hauptmenue': 
-					
-					this.szene = new Hauptmenue(this,this.engine, this.css);
-					
-
-					
-					this.szene.startSzene();
-					break;
-			}
-		},
-
 		// Preloader ///////////
-		loadSzene: function(id){
-						
+		preload: function(id,callback){
+				
+			console.log("Preload: "+id);
+
 			this.id  = id;
 				
 			// DIV-Setup
+
 			$('loading_icon').addClass('loading');
 			$('#levelLoader').removeClass('hide');
-			$('#headline').html('Lade Level');
+			$('#headline').html('Lade...');
 			$('#levelLoader_Headline').html(this.data[id].headline);
 
  			
  			// Canvas bereinigen, Elemente werden erstmal nicht gebraucht
  			this.engine.clearStage();
 
- 			this.loadImages();
-		},
-
-		// Läd eine Anzahl von Bildern
-		// Wenn ein Bild fertig geladen ist, ruft es einen Callback auf
-		loadImages: function(){
-
-			this.imagesLoaded = 0;
+ 			this.imagesLoaded = 0;
 			var self = this;
 
 			for(var i = 0; i < this.data[this.id].images.length; i++){
@@ -99,14 +123,14 @@ define(['level','jquery'],function(Level,$){
 				image.src = this.data[this.id].images[i];
 				
 				image.onload = function(){
-					self.loadCallback();
+					self.loadCallback(callback);
 				}
 			}
 		},
 
 		// Zählt die geladenen Bilder. Erstellt den Ladebalken
 		// Wenn alle Bilder geladen -> read()
-		loadCallback: function(){
+		loadCallback: function(callback){
 			
 			//  Counter erhöhen
 			this.imagesLoaded++;
@@ -118,13 +142,28 @@ define(['level','jquery'],function(Level,$){
 
 			// Schauen ob alles geladen ist
 			if(this.imagesLoaded == this.data[this.id].images.length){
-				this.ready();
+				callback();
 			}
 		},
 
- 		ready: function(){
- 			console.log('Try to start Level '+ this.data[this.id].id);
- 			this.level.start(this.data[this.id].id);
+
+ 		//////////////////////////////
+ 		// Button- Binding -Funktionen
+ 		cancelIntro: function(){
+ 			this.engine.cancelIntro();
+ 		},
+
+ 		showStartScreen: function(){
+ 			// Level ist fertig geladen. Entferne den Load-Screen
+ 			$('#headline').html("");
+ 			$('loading_icon').removeClass('loading');			
+ 			$('#levelLoader').addClass('hide');
+ 			$('#startScreen').removeClass('hide');
+ 			$('#button_startGame').removeClass('hide');
+ 			$('#canvas').addClass('hide');
+
+ 			console.log('Zeige Startscreen');
+
  		},
 
  		startLevel: function(id){
@@ -135,7 +174,7 @@ define(['level','jquery'],function(Level,$){
  			$('#menue').addClass('slideOut');
  			$('#button_zurueck').addClass('hide');
  			this.engine.startAnimation('globi_transition_toLevel',function(){
-					self.loadSzene(id);
+					self.preload(id);
  			});
  		},
 
@@ -161,7 +200,7 @@ define(['level','jquery'],function(Level,$){
  		},
 
  		showGamemenue: function(){
- 			this.app.loadSzene('hauptmenue');
+ 			this.app.preload('hauptmenue');
  			this.engine.startAnimation('globi_menue_popDown');;
  			$('#button_newGame').removeClass('hide');
  			$('#button_home').addClass('hide')

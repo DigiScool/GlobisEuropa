@@ -26,7 +26,14 @@ define(['globi'],function(Globi){
 
 
 			// Speicher für die laufende Animationen
-			this.anim = new Array();
+			this.anim = [];
+
+
+			// INTRO
+			this.intro = [];
+			this.introTime = 0;
+			this.introPointer = 0;
+			this.introShow = false;
 			/////////////////////////
 
 
@@ -38,17 +45,45 @@ define(['globi'],function(Globi){
 			createjs.Ticker.setFPS(60);
 			createjs.Ticker.useRAF = true;
 			createjs.Ticker.addListener(this);
+
+			// Erweitere easeljs um benötigte Funktionen
+			
 		
+		},
+
+		initImages: function(){
+			// Bereite alle Bilder vor, die zum BSp einen Listener haben
 		},
 
 		// Callback -Funktion für die Frameloop
 		// Zeigt die Animation an, die im Array anim gespeichert ist
 		tick: function(){
+			
 			if(this.anim[0]) { 
 				
 				// Rufe Funktion auf und übergib Callback
-				this[this.anim[0][0]](this.anim[0][1]) };
-				this.stage.update();
+				this[this.anim[0][0]](this.anim[0][1]) 
+			}
+
+			if(this.introShow == true){
+				
+				
+				if(createjs.Ticker.getTime() - this.introTime > 3000){
+					this.stage.removeAllChildren();
+					var image = this.intro.shift();
+					if(image){
+						this.stage.addChild(image);
+						this.introPointer++;
+						this.introTime = createjs.Ticker.getTime();
+					} else {
+						this.introShow = false;
+						this.intro_ready();
+					}
+
+				}
+			}
+
+			this.stage.update();
 		},
 
 		// Säubere die Pinnwand, wenn nichts animiert / angezeigt
@@ -60,16 +95,49 @@ define(['globi'],function(Globi){
 			this.stage.removeAllChildren();
 		},
 
-		addBitmap: function(){
+		showIntro: function(callback){
+			
+			// Bilder erstellen
+			var image = new createjs.Bitmap("gfx/big/story_1.jpg");
+			image.y = -50;
+			image.scaleX = 0.8;
+			image.scaleY = 0.8;
+			this.intro.push(image);
+			image = new createjs.Bitmap("gfx/big/story_2.jpg");
+			image.y = -50;
+			image.scaleX = 0.8;
+			image.scaleY = 0.8;
+			this.intro.push(image);
 
-			console.log('Creating Bitmap: ' + arguments[0])
+			// Time holen, um rauszufinden, wann nächstes Bild 
+			// gespielt werden soll
+			this.introTime = createjs.Ticker.getTime();
+			this.stage.addChild(this.intro.shift());
+			// Intro aktivieren
+			this.introShow = true;
 
-			var image = new createjs.Bitmap(arguments[0]);
+			// callback aktivieren
+			this.intro_ready = callback;
+		},
+		cancelIntro: function(){
+			this.introShow = false;
+			this.intro_ready();
+		},
 
+
+		createBitmap: function(){
+			return new createjs.Bitmap(arguments[0]);
+		},
+		setBitmap: function(image){
 			if(arguments[1]) image.x = arguments[1];
 			if(arguments[2]) image.y = arguments[2];
 			if(arguments[3]) image.scaleX = arguments[3];
 			if(arguments[4]) image.scaleY = arguments[4];
+			return image;
+		},
+
+		addBitmap: function(image){
+
 			this.stage.addChild(image);
 			
 		},
