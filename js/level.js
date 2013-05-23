@@ -9,31 +9,42 @@ define(['jquery'],function($){
 			this.data = { 
 				"11" : {
 					"headline" : "Westeuropa Level 1",
-					"images" : [
+					"bg" : "gfx/big/Westeuropa.png",
+					"puzzle" : [
 						{
-							"url" : "gfx/big/Westeuropa.png",
-							"x" : "200",
-							"y" : -330 , 
-							"sX" : 0.8,
-							"sY" : 0.8
-						}],
-					"puzzle" : ["gfx/little/GER.png"],
+							"id": "0" , 
+						 	"menue" : "gfx/puzzle_menue/menue_ger.png",
+						 	"part"	 : "gfx/little/GER.png",
+						 	"hit" : {
+						 		"x" : "630",
+						 		"y" : "80",
+						 		"w" : "120",
+						 		"h" : "160"
+						 	},
+						 	"position": {
+						 		"x" : "599",
+						 		"y" : "40"
+						 	},
+						 	"country" : "Deutschland"
+						},
+						{
+							"id": "1" , 
+						 	"menue" : "gfx/puzzle_menue/menue_fra.png",
+						 	"part"	 : "gfx/little/FRA.png",
+						 	"hit" : {
+						 		"x" : "440",
+						 		"y" : "190",
+						 		"w" : "140",
+						 		"h" : "160"
+						 	},
+						 	"position": {
+						 		"x" : "380",
+						 		"y" : "142"
+						 	},
+						 	"country" : "Frankreich"
+						}
+					],
 					"buttons" :  ["button_home"]
-				},
-
-				"hm" : {
-					"headline" : "Hauptmenü",
-					"images" : [
-					{
-						"url" : "gfx/big/mainmenue_background.png",
-						"x"  : "0",
-						"y"  : "0", 
-						"sX" : "1",
-						"sY" : "1",
-					}],
-					"obj" : ["globi"],
-					"animation" : "globi_idle",
-					"buttons" :  ["button_newGame"]
 				}
 			};
 
@@ -41,54 +52,21 @@ define(['jquery'],function($){
 
 		start: function(id){
 
+			var self = this;
+
 			// Clear den Screen
 			this.engine.clearStage();
 
-			console.log('Try to Start:' + id);		
+			// Kleine DebugAusgabe
+			console.log('Try to Start:' + id);	
 
- 			// Sind Bilder definiert ? 
- 			var img = this.data[id].images;
- 			if(img){
- 				for(var i = 0; i<img.length; i++){
- 					
- 					// Erzeuge Bild
- 					var image = this.engine.createBitmap(img[i].url);
- 					// Größe bestimmen
- 					image = this.engine.setBitmap(image,img[i].x,img[i].y,img[i].sX,img[i].sY);
- 					// Sind Events definiert ?
- 					if(img[i].event){
- 						for(var j = 0; j < img[i].event.length; j++){
- 							image.addEventListener(img[i].event[j].typ, img[i].event[j].name);
- 							console.log(image.hasEventListener("mouseover"));
- 						}
- 					}
- 					this.engine.addBitmap(image);
- 					
+			// Ueberschrift anzeigen
+			$('#headline').html(this.data[id].headline);
 
- 				}
- 			}
 
- 			// Sind Puzzle-Teile definiert ?
- 			var pzl = this.data[id].puzzle;
- 			if(pzl){
- 				for(var i = 0; i<pzl.length; i++){
-
- 					this.engine.addPuzzle(pzl[0]);
- 				}
- 			}
- 			
- 			// Werden Objekt-Klassen verwendet ?
- 			var oc = this.data[id].obj;
- 			if(oc){
- 				for(var i = 0; i<oc.length; i++){
-
- 					this.engine.addObject(oc[i]);
- 				}
- 			}
-
- 			// Ist eine Animation definiert ?
- 			var anim = this.data[id].animation;
- 			if(anim) this.engine.startAnimation(anim);
+			// Container vorbereiten
+			this.engine.setLevel(this.data[id].bg,this.data[id].puzzle);
+			this.engine.loadContainer("levelContainer");
 
  			// Buttons ?
  			var bt = this.data[id].buttons;
@@ -102,6 +80,7 @@ define(['jquery'],function($){
  			
  				
 		},
+
 	});
 
 	return Level;

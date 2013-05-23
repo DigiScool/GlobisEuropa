@@ -11,25 +11,22 @@ define(['globi'],function(Globi){
 		
 		init: function(stage){
 			
+			// Initialisierungen
+			var self = this;
 			this.stage = stage;
-			this.stage.enableMouseOver(10);
+			this.stage.enableMouseOver(5);
 			
+			createjs.Touch.enable(this.stage);
+			createjs.Ticker.setFPS(60);
+			createjs.Ticker.useRAF = true;
+			createjs.Ticker.addListener(this);
 
-			// Objekte
-			// Hintergrund
-			this.bg = new createjs.Bitmap('gfx/big/mainmenue_background.png');
-
-
-			// Globi
-			this.globi = new Globi();
-			this.globiContainer = this.globi.getContainer();
-
-
+		
 			// Speicher für die laufende Animationen
 			this.anim = [];
 
 
-			// INTRO
+			// INTRO ////////////////
 			this.intro = [];
 			this.introTime = 0;
 			this.introPointer = 0;
@@ -37,22 +34,61 @@ define(['globi'],function(Globi){
 			/////////////////////////
 
 
+			/////////////////////////
+			// Container ////////////
+			
+			// Container für Hauptmenue
+			this.hmContainer = new createjs.Container();
+			this.hm_bg = null;
+			this.globiObjekt = new Globi();
+			this.globi = this.globiObjekt.getContainer();
+
+			
+			// Container für Level
+			this.levelContainer = new createjs.Container();
+			this.partsContainer = new createjs.Container();
+			this.lvl_bg = null;		
+
+			// Bereite die Menüs für die level vor
+			var g2 = new createjs.Graphics();
+			g2.beginFill(createjs.Graphics.getRGB(245,242,222));
+            g2.rect(0,0,250,600);
+            this.puzzle_partsMenue = new createjs.Shape(g2);
+         
+           	
+            /*this.puzzle_partsMenue.addEventListener("mouseout", function(){
+            	self.hideGraphic(self.puzzleParts);
+            });*/
+
+			var g = new createjs.Graphics();
+			g.beginFill(createjs.Graphics.getRGB(0,0,0));
+            g.rect(0,0,50,600);
+			this.puzzle_menueMouseOver = new createjs.Shape(g).set({alpha:0.8});
+			this.puzzle_menueMouseOver.addEventListener("mouseover", function(){
+				 self.stage.addChild(self.partsContainer);
+			});
+			
+
+
+
+			// Container für Puzzleteile
+			this.puzzleParts = new createjs.Container();
+			
 			// Variablen für die Animationen
 			this.idle_globi = 1;
 
+			// aktuelles Drag & drop Image;
+			this.dndImage;
 
-			createjs.Touch.enable(this.stage);
-			createjs.Ticker.setFPS(60);
-			createjs.Ticker.useRAF = true;
-			createjs.Ticker.addListener(this);
+			// Array für Drag and Drop images;
+			this.dndParts = [];
 
-			// Erweitere easeljs um benötigte Funktionen
+			// Hit-Elements zum checken ob getroffen
+			this.container_hitshapes = new createjs.Container();
+
+			// Array mit Hitinformationen
+			this.hitInformation = [];
 			
-		
-		},
-
-		initImages: function(){
-			// Bereite alle Bilder vor, die zum BSp einen Listener haben
 		},
 
 		// Callback -Funktion für die Frameloop
@@ -73,7 +109,6 @@ define(['globi'],function(Globi){
 					var image = this.intro.shift();
 					if(image){
 						this.stage.addChild(image);
-						this.introPointer++;
 						this.introTime = createjs.Ticker.getTime();
 					} else {
 						this.introShow = false;
@@ -85,6 +120,168 @@ define(['globi'],function(Globi){
 
 			this.stage.update();
 		},
+
+		setHauptmenue: function(bg){
+			
+			this.hm_bg = new createjs.Bitmap(bg);
+			this.hmContainer.addChild(this.hm_bg);
+			this.hmContainer.addChild(this.globi);
+		
+		},
+
+		setLevel: function(bg,puzzle){
+			
+			var self = this;
+
+			
+			
+			// Hintergrund laden
+			this.lvl_bg = new createjs.Bitmap(bg);
+			this.lvl_bg.x = 200;
+			this.lvl_bg.y = -350;
+			this.lvl_bg.scaleX = 0.8;
+			this.lvl_bg.scaleY = 0.8;
+			this.levelContainer.addChild(this.lvl_bg);
+
+			//Hitshapes nicht anzeigen
+			//this.levelContainer.addChild(this.container_hitshapes);
+			
+			// Container für das Seitenmenü laden
+			this.levelContainer.addChild(this.puzzle_menueMouseOver);
+			this.levelContainer.addChild(this.puzzle_partsMenue);
+			this.levelContainer.addChild(this.partsContainer);
+
+			/////////////////////// TESTIMAGE
+			console.log(puzzle);
+
+			///////////////////////////////////// 
+			var image;
+			// Puzzle-Teile Bilder für die Seitenleiste laden
+			// eventhandler hinzufügen
+			if(puzzle){
+				for(var i = 0; i < puzzle.length; i++){
+					
+					// Array für die HitAreas füllen
+					// leeres Objekt
+					var hit = {};
+					hit.id   = puzzle[i].id;
+					hit.country = puzzle[i].country;
+					hit.part = new createjs.Bitmap(puzzle[i].part);
+					hit.x = puzzle[i].position.x;
+					hit.y = puzzle[i].position.y;
+					hit.part.y = puzzle[i].position.y;
+					hit.part.scaleX = 0.8;
+					hit.part.scaleY = 0.8;
+					
+					// HitShape
+					var g = new createjs.Graphics();
+					var h  = puzzle[i].hit;
+					g.beginFill(createjs.Graphics.getRGB(0,0,0));
+            		g.rect(h.x,h.y,h.w,h.h);
+            		hit.shape = new createjs.Shape(g); 
+					
+					hit.menue = new createjs.Bitmap(puzzle[i].menue);
+					hit.menue.y = 200 * i;
+					hit.menue.x = 50;
+					hit.menue.scaleX = 0.8;
+					hit.menue.scaleY = 0.8;
+					
+
+					// Callback für Mousedown
+					hit.menue.addEventListener("mousedown",function(e){
+						
+						for(var j = 0; j < self.hitInformation.length; j++){
+							
+							if(self.hitInformation[j].menue == e.target){
+		
+								var showPart = self.hitInformation[j].part;
+								showPart.x = e.target.x;
+								showPart.y = e.target.y;
+								self.stage.addChild(showPart);
+								e.target = showPart;
+								self.pressHandler(e);
+							}
+						}
+						
+					});
+
+                	this.partsContainer.addChild(hit.menue);
+                	this.container_hitshapes.addChild(hit.shape);
+                	this.hitInformation.push(hit);
+				}
+            }
+            // Debugausgabe
+            console.log('HITINFORMATION:');
+            console.log(this.hitInformation);
+            console.log('HITSHAPES:');
+            console.log(this.container_hitshapes);
+            console.log('DRAG AND DROP PARTS:');
+            console.log(this.partsContainer)
+
+            // Buttons zum navigeren durch das Menue
+            var button_down = new createjs.Bitmap("gfx/little/button.png");
+            button_down.addEventListener("click", function(){
+            	self.partsContainer.y += 100;
+            });
+            var button_up = new createjs.Bitmap("gfx/little/button.png");
+            button_up.y = 500;
+            button_up.addEventListener("click", function(){
+            	self.partsContainer.y -= 100;
+            });
+			//this.levelContainer.addChild(button_up);
+            //this.levelContainer.addChild(button_down);
+			
+			
+			
+			
+		},
+
+		downHandler: function(e,menue){
+			console.log(e);
+			console.log(menue);
+		},
+
+		pressHandler: function(e){
+			var self = this;
+			var offset = {x:e.target.x-e.stageX, y:e.target.y-e.stageY};
+			e.onMouseMove = function(ev){
+
+  				e.target.x = ev.stageX + offset.x;  
+  				e.target.y = ev.stageY + offset.y;
+  			};
+
+  			e.onMouseUp = function(ev){
+  				
+  				var hitShape = self.container_hitshapes.getObjectUnderPoint(ev.stageX,ev.stageY);
+  				// Es wurde Shape getroffen
+  				if(hitShape){
+  					var index = self.container_hitshapes.getChildIndex(hitShape);
+  					self.hitTest(index,hitShape,e);
+  					e.target = null;
+  				}
+  			}
+		},
+
+		hitTest: function(index,shape,e){
+			if(this.hitInformation[index].shape == shape && this.hitInformation[index].part == e.target){
+				this.partsContainer.removeChild(this.hitInformation[index].menue);
+				alert('Richtig: '+this.hitInformation[index].country);
+				// Positionskorrektur
+				e.target.x = this.hitInformation[index].x;
+				e.target.y = this.hitInformation[index].y;
+
+			} else {
+				alert('Falsches Land');
+				this.stage.removeChild(e.target);
+			
+			}
+		},
+
+
+		loadContainer: function(cnt){
+			this.stage.addChild(this[cnt]);
+		},
+
 
 		// Säubere die Pinnwand, wenn nichts animiert / angezeigt
 		// werden muss
@@ -119,30 +316,25 @@ define(['globi'],function(Globi){
 			// callback aktivieren
 			this.intro_ready = callback;
 		},
+
 		cancelIntro: function(){
 			this.introShow = false;
 			this.intro_ready();
 		},
 
-
-		createBitmap: function(){
-			return new createjs.Bitmap(arguments[0]);
-		},
-		setBitmap: function(image){
+		addBitmap: function(){
+			var image = new createjs.Bitmap(arguments[0]);
+		
 			if(arguments[1]) image.x = arguments[1];
 			if(arguments[2]) image.y = arguments[2];
 			if(arguments[3]) image.scaleX = arguments[3];
 			if(arguments[4]) image.scaleY = arguments[4];
-			return image;
-		},
-
-		addBitmap: function(image){
 
 			this.stage.addChild(image);
 			
 		},
 
-		addPuzzle: function(){
+		addPuzzlePart: function(){
 			
 			console.log('Creating Bitmap: ' + arguments[0]);
 			
@@ -153,25 +345,10 @@ define(['globi'],function(Globi){
 			if(arguments[3]) image.scaleX = arguments[3];
 			if(arguments[4]) image.scaleY = arguments[4];
 
-			this.stage.addChild(image);
+			this.puzzleParts.addChild(image);
+
 			image.addEventListener("mousedown", this.handleMouseDown);
 		},
-
-		addObject: function(objekt){
-			if(objekt == "globi"){
-				this.stage.addChild(this.globiContainer);
-			}
-		},
-
-		handleMouseDown: function(event) {
-            var o = event.target;
-            o.parent.addChild(o);
-            var offset = {x:o.x-event.stageX, y:o.y-event.stageY};
-            event.addEventListener("mousemove", function(ev) {
-                o.x = ev.stageX+offset.x;
-                o.y = ev.stageY+offset.y;
-            });
-        },
 
 		// Fügt eine Animation der anim-Liste hinzu
 		startAnimation: function(animation,callback){
@@ -195,29 +372,19 @@ define(['globi'],function(Globi){
 		// Fügt eine Callbackmethode einem Objekt hinzu
 		// Momentan nur "click" auf Globi im Hauptmenü
 		setCallback: function(event,callback){
-			this.globiContainer.addEventListener(event,callback);
+			this.globi.addEventListener(event,callback);
 		},
 
 		
-
-		// Verhindert das Auslösen von Ereignissen für ein bestimmes Objekt
-		disableEvents: function(objekt){
-			this[objekt].mouseEnabled = false;
-		},
-
-		// Berechtigt das Auslösen von Ereignissen für ein bestimmes Objekt
-		enableEvents: function(objekt){
-			this[objekt].mouseEnabled = true;
-		},
 
 
 		/**************************************/
 		/* Animationen für Globi im Hauptmenü */
 
 		globi_idle: function(){
-			this.globiContainer.x += this.idle_globi;
-			this.globiContainer.y += this.idle_globi;
-			if(this.globiContainer.x > 520 || this.globiContainer.x <490) { 
+			this.globi.x += this.idle_globi;
+			this.globi.y += this.idle_globi;
+			if(this.globi.x > 520 || this.globi.x <490) { 
 				this.idle_globi *= -1;
 			}
 
@@ -225,19 +392,19 @@ define(['globi'],function(Globi){
 
 		globi_menue_popUp: function(callback){
 
-			if( this.globiContainer.scaleX >= 2.2){
+			if( this.globi.scaleX >= 2.2){
 				this.stopAnimation("globi_menue_popUp");
 
 				if(callback){
 					callback();
 				}
 			} else {
-				this.globiContainer.x += 10;
-				this.globiContainer.y -= 10;
+				this.globi.x += 10;
+				this.globi.y -= 10;
 
 
-				this.globiContainer.scaleX += 0.2;
-				this.globiContainer.scaleY += 0.2;
+				this.globi.scaleX += 0.2;
+				this.globi.scaleY += 0.2;
 
 			}
 		},
@@ -246,24 +413,24 @@ define(['globi'],function(Globi){
 			
 	
 
-			if( this.globiContainer.scaleX < 1.2){
-				this.globiContainer.x = 500;
-				this.globiContainer.y = 450;
+			if( this.globi.scaleX < 1.2){
+				this.globi.x = 500;
+				this.globi.y = 450;
 				this.stopAnimation("globi_menue_popDown");
 				this.startAnimation("globi_idle");
-				this.enableEvents("globiContainer");
+				this.enableEvents("globi");
 				
 				if(callback){
 					callback();
 				}
 
 			} else {
-				this.globiContainer.x -= 10;
-				this.globiContainer.y += 10;
+				this.globi.x -= 10;
+				this.globi.y += 10;
 
 
-				this.globiContainer.scaleX -= 0.2;
-				this.globiContainer.scaleY -= 0.2;
+				this.globi.scaleX -= 0.2;
+				this.globi.scaleY -= 0.2;
 
 			}
 
@@ -272,7 +439,7 @@ define(['globi'],function(Globi){
 		globi_transition_toLevel: function(callback){
 
 			// Skaliere Globi auf eine bestimmte Größe
-			if( this.globiContainer.scaleX >= 3.5){
+			if( this.globi.scaleX >= 3.5){
 				
 				// Animation stoppen
 				this.stopAnimation("globi_transition_toLevel");
@@ -285,8 +452,8 @@ define(['globi'],function(Globi){
 			} else {
 
 				// Vergrößere Globi
-				this.globiContainer.scaleX += 0.2;
-				this.globiContainer.scaleY += 0.2;
+				this.globi.scaleX += 0.2;
+				this.globi.scaleY += 0.2;
 			}
 
 			

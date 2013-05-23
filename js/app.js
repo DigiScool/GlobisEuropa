@@ -30,8 +30,7 @@ define(['level','jquery'],function(Level,$){
 						"gfx/big/Globi_Vektor.png",
 						"gfx/big/story_1.jpg",
 						"gfx/big/story_2.jpg"
-					],
-					"callback": "initEngine"
+					]
 				},
 
 				"level11" : {
@@ -52,22 +51,30 @@ define(['level','jquery'],function(Level,$){
 
 		},
 
+		setup: function(engine){
+			
+			this.engine = engine;
+			this.level = new Level(this,engine)
+		},
+
 		setGameState: function(state){
 
 			var self = this;
 			
 			switch(state){
-				case 0: 
+				case "startup": 
 					// Die Seite wurde gerade aufgerufen. 
 					// Starte den Preloader
 					this.preload("startup",function(){
-						// CALLBACK
-						// Alle bilder geladen
+					
+						// Alle Bilder geladen
+						// Initialsiere die Container
+						self.engine.setHauptmenue(self.data.startup.images[0]);
 						self.showStartScreen();
-
 					});
 					break;
-				case 1:
+
+				case "intro":
 					// Intro abspielen
 					console.log("Zeige Intro");
 					$('#startScreen').addClass('hide');
@@ -75,27 +82,33 @@ define(['level','jquery'],function(Level,$){
  					$('#button_startGame').addClass('hide');
  					$('#canvas').removeClass('hide');
 					this.engine.showIntro(function(){
+						
 						//callback, wenn fertig
 						self.engine.clearStage();
+						// Container laden
+						self.engine.loadContainer("hmContainer");
+						
 						$('#button_cancelIntro').addClass('hide');
-						self.setGameState(2);
+						self.setGameState("hauptmenue");
+					
 					});
 					break;
-				case 2:
+				
+				case "hauptmenue":
+					
 					// Hauptmenue
 					$('#headline').html('Hauptmen&uuml;');
-					this.level.start("hm");
+					$("#button_newGame").removeClass('hide');
+					
+ 				 	// Animation starten
+ 				 	this.engine.startAnimation("globi_idle");
 					break;
 			}
 			
 
 		},
 
-		setup: function(engine,css){
-			
-			this.engine = engine;
-			this.level = new Level(this,engine)
-		},
+		
 
 		// Preloader ///////////
 		preload: function(id,callback){
@@ -146,6 +159,7 @@ define(['level','jquery'],function(Level,$){
 				if(callback){
 					callback();
 				} else {
+					console.log('babunm');
 					$('#headline').html(this.data[this.id].headine);
  					$('loading_icon').removeClass('loading');			
  					$('#levelLoader').addClass('hide');
@@ -195,7 +209,6 @@ define(['level','jquery'],function(Level,$){
  				$('#button_zurueck').addClass('hide')
  				$('#headline').html('Hauptmen&uuml;');
  			} else {
- 				this.engine.disableEvents('globiContainer');
  				this.engine.stopAnimation('globi_idle');
  				this.engine.startAnimation('globi_menue_popUp');
 
@@ -215,11 +228,12 @@ define(['level','jquery'],function(Level,$){
  			$('#button_home').addClass('hide')
  			$('#levelLoader').addClass('hide');
  			$('#headline').html('Hauptmen&uuml;');
+ 			$('#level_puzzle_menueHoverArea').addClass('hide');
  			this.engine.clearStage();
- 			this.engine.addObject("globi");
+ 			this.engine.loadContainer("hmContainer");
  			this.engine.startAnimation('globi_menue_popDown',function(){
  				// Callback
- 				self.setGameState(2);
+ 				self.setGameState("hauptmenue");
  			});
  			
  			

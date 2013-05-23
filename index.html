@@ -19,15 +19,13 @@
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	
-	<div id="gameContainer">
 
+	<div id="gameContainer">
 		<div id="headBar">
 			<p id="headline"></p>
 		</div>
 
 		<div id="canvasContainer" >
-			
 			<div id="levelLoader" >
 				<div id="levelLoader_Display">
 					<div id="levelLoader_Headline"></div>
@@ -43,7 +41,7 @@
 			<div id="startScreen" class="hide" >
 			</div>
 	
-			<canvas id="canvas" width="1024" height="568">
+			<canvas id="canvas" width="1024" height="568" onmousedown="return false">
 			</canvas>
 			
 			<div id="menue">
@@ -60,7 +58,6 @@
 					</div>
 				</div>
 			</div>
-			
 		</div>
 		<div id="footBar">
 			<button id="button_startGame" class="button round">Spiel starten</button>
@@ -72,6 +69,7 @@
 			<button id="button_home" class="hide button round">Home</button>
 		</div>
 	</div>
+	
 	<script data-main="js/startup" src="js/lib/require.js"></script>
 </body>
 </html>

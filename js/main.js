@@ -27,13 +27,19 @@ define(['jquery','app'], function($,App){
 			});
 
 			$('#button_startGame').click(function(){
-				app.setGameState(1);
+				app.setGameState("intro");
 			});
 
 			$('#button_cancelIntro').click(function(){
 				console.log('afasa');
 				app.cancelIntro();
 			});
+
+			$('#level_puzzle_menueHoverArea').mouseover(function(){
+				$('#level_puzzle_partsMenue').removeClass('hide');
+			});
+
+			
 
 			console.log('Application erstellt');
 
@@ -49,7 +55,7 @@ define(['jquery','app'], function($,App){
 
 
 			app.setup(engine);
-			app.setGameState(0);
+			app.setGameState("startup");
 
 		});
 	};
