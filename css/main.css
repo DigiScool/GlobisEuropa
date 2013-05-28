@@ -1,0 +1,240 @@
+/*
+	GLOBIS EUROPA
+	=============
+	main.css
+	Seitenformatierungen
+
+*/
+
+body,div,p,canvas,input,button {
+	padding: 0px;
+	margin:  0px;
+	font-family: 'Days One', sans-serif;
+}
+
+body {
+	background-color: #101010;
+}
+
+/* HAUPTELEMENTE ***********************/
+
+div#container {
+	position: relative;
+	width:1024px;
+	margin: 30px auto;
+}
+
+div#headBar,#footBar{
+	position: relative;
+	width: 100%;
+	height:60px; 
+	background-color: #F5F2DE;
+	overflow: hidden;
+
+}
+
+
+div#gameContainer{
+	position: relative;
+	width:100%;
+	height:568px;
+	overflow: hidden;
+}
+
+div#bubbles{
+	position: absolute;
+	top:0px;
+	left: 0px;
+
+
+}
+
+div#loader{
+	position: absolute;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+}
+
+div#canvasContainer {
+	position: absolute;
+	top:0px;
+	left:0px;
+	width: 100%;
+	height: 100%;
+	background-color:#1b9cf7;
+}
+
+
+/* BUBBLES *******************/
+
+div#bubble_welcome{
+	text-align: center;
+	left:100px;
+	top:200px;
+	width:400px;
+}
+
+div#bubble_levelloader{
+	text-align: center;
+	left:0px;
+	top:200px;
+	color: #FFFFFF;
+	width:1024px;
+}
+
+div#bubble_game_dialog{
+	width:600px;
+	height:150px;
+	background-color: #F5F2DE;
+	top:300px;
+	left:200px;
+	overflow:hidden;
+	padding:30px;
+
+}
+
+div#bubble_menue_newgame{
+	width:300px;
+	height:578px;
+	/*background-color: #F5F2DE;*/
+	top: 0px;
+	left: -400px;
+}
+
+div#bubble_debug{
+	top:40px;
+	left:40px;
+	width:100px;
+	height:100px;
+}
+
+div#bubble_selectshape{
+	top:40px;
+	left:40px;
+	width:200px;
+	background-color: #F5F2DE;
+	overflow: hidden;
+	padding:10px;
+	text-align: center;
+}
+
+div#bubble_selectshape_intro{
+	top:40px;
+	left:40px;
+	width:200px;
+	background-color: #F5F2DE;
+	overflow: hidden;
+	padding:10px;
+	
+}
+
+
+/* KLASSEN ALLGEMEIN***********************/
+
+.hide {
+	display: none;
+}
+
+.bubble{
+	position: absolute;
+}
+
+.border{
+	border: 4px #FFFFFF solid;
+}
+
+.button{
+
+	background-color: #68ba5b;
+	border: 0px;
+	font-family: 'Days One', sans-serif;
+	font-size: 16px;
+	marging:20px;
+	padding:10px;
+}
+
+.button:hover{
+	background-color: #B22222;
+}
+
+.round {
+	-moz-border-radius:5px; /* Firefox */
+	-webkit-border-radius:5px; /* Safari, Chrome */
+	-khtml-border-radius:5px; /* Konqueror */
+	border-radius:5px; /* CSS3 */
+}
+
+/* LOADER ******************/
+
+#loader.welcome{
+	background-image: url(../gfx/big/Globi_Vektor.png);
+	background-size: 100%;
+	background-position: 100px -100px;
+	background-color: #000000; 
+}
+
+#loader.preload{
+	background-image: none;
+	background-color: #1b9cf7; 
+}
+
+
+/* SCHRIFT ******************/
+
+p.welcome {
+	font-size: 45px;
+	color: #FFFFFF;
+}
+
+p.headline {
+	color: #237BB9;
+	font-size: 22px;
+	margin: 15px;
+}
+
+/* BUTTON ************************/
+
+button#button_hidedialog{
+	position: relative;
+	left:250px;
+	top:20px;
+}
+
+/* ANIMATIONEN **********************/
+
+.slideIn{
+	animation: menueSlidein 0.5s;
+	-webkit-animation: menueSlidein 0.5s;
+	-moz-animation: menueSlidein 0.5s;
+	-webkit-animation-iteration-count: 1;
+
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+}
+
+.slideOut{
+	animation: menueSlideOut 0.5s;
+	-webkit-animation: menueSlideOut 0.5s;
+	-moz-animation: menueSlideiOut 0.5s;
+	-webkit-animation-iteration-count: 1;
+
+	animation-fill-mode: forwards;
+	-webkit-animation-fill-mode: forwards;
+	-moz-animation-fill-mode: forwards;
+}
+
+
+/************************/
+/* CSS _ ANIMATIONEN	*/
+/************************/
+
+@keyframes menueSlidein { 0% { left:-400px; } 100% { left:0px; } }
+@-webkit-keyframes menueSlidein { 0% { left:-400px; } 100% { left:0px; } }
+@-moz-keyframes menueSlidein { 0% { left:-400px; } 100% { left:0px; } }
+
+@keyframes menueSlideOut { 0% { left:0px; } 100% { left: -400px; } }
+@-webkit-keyframes menueSlideOut  { 0% { left:0px; } 100% { left: -400px; } }
+@-moz-keyframes menueSlideOu  { 0% { left:0px; } 100% { left: -400px; } }

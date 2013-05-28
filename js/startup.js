@@ -32,5 +32,8 @@ require.config({
 });
 
 define(['lib/class','lib/easeljs-0.6.0.min'], function(){
+	
+	var DEBUG_MODE = 1;
+
 	require(['main']);
 });

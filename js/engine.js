@@ -5,15 +5,16 @@
 */
 
 
-define(['globi'],function(Globi){
+define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
 	
 	var Engine = Class.extend({
 		
-		init: function(stage){
+		init: function(stage,app){
 			
 			// Initialisierungen
 			var self = this;
 			this.stage = stage;
+			this.app = app;
 			this.stage.enableMouseOver(5);
 			
 			createjs.Touch.enable(this.stage);
@@ -56,20 +57,15 @@ define(['globi'],function(Globi){
             this.puzzle_partsMenue = new createjs.Shape(g2);
          
            	
-            /*this.puzzle_partsMenue.addEventListener("mouseout", function(){
-            	self.hideGraphic(self.puzzleParts);
-            });*/
+           
 
 			var g = new createjs.Graphics();
 			g.beginFill(createjs.Graphics.getRGB(0,0,0));
             g.rect(0,0,50,600);
 			this.puzzle_menueMouseOver = new createjs.Shape(g).set({alpha:0.8});
 			this.puzzle_menueMouseOver.addEventListener("mouseover", function(){
-				 self.stage.addChild(self.partsContainer);
+				self.levelContainer.x = 0;
 			});
-			
-
-
 
 			// Container für Puzzleteile
 			this.puzzleParts = new createjs.Container();
@@ -88,6 +84,8 @@ define(['globi'],function(Globi){
 
 			// Array mit Hitinformationen
 			this.hitInformation = [];
+
+
 			
 		},
 
@@ -117,19 +115,62 @@ define(['globi'],function(Globi){
 
 				}
 			}
-
 			this.stage.update();
 		},
 
 		setHauptmenue: function(bg){
 			
+			var self = this;
+
 			this.hm_bg = new createjs.Bitmap(bg);
 			this.hmContainer.addChild(this.hm_bg);
 			this.hmContainer.addChild(this.globi);
+			this.enableEvents_Hauptmenue();
+			
 		
 		},
 
-		setLevel: function(bg,puzzle){
+		enableEvents_Hauptmenue: function(){
+			
+			var self = this;
+
+			var g = new createjs.Graphics()
+				.setStrokeStyle(10)
+            	.beginStroke(createjs.Graphics.getRGB(141,211,237))
+            	.beginFill(createjs.Graphics.getRGB(27,156,247))
+				.drawCircle(0,0,200);
+
+				this.globi.getChildAt(0).graphics = g;
+
+				this.globiObjekt.we_shape.removeAllEventListeners();
+			this.globi.addEventListener("mouseover",function(){
+				var g = new createjs.Graphics()
+				.setStrokeStyle(10)
+				.beginFill(createjs.Graphics.getRGB(27,156,247))
+				.beginStroke('#ffffff')
+				.drawCircle(0,0,200);
+
+				self.globi.getChildAt(0).graphics = g;
+			});
+
+			this.globi.addEventListener("mouseout",function(){
+				
+				var g = new createjs.Graphics()
+				.setStrokeStyle(10)
+            	.beginStroke(createjs.Graphics.getRGB(141,211,237))
+            	.beginFill(createjs.Graphics.getRGB(27,156,247))
+				.drawCircle(0,0,200);
+
+				self.globi.getChildAt(0).graphics = g;
+			});
+
+			this.globi.addEventListener("click",function(){
+				
+				self.app.toggleMenue();
+				self.enableLandSelection();
+			});
+		},
+		setLevel: function(bg,puzzle,callback){
 			
 			var self = this;
 
@@ -141,21 +182,15 @@ define(['globi'],function(Globi){
 			this.lvl_bg.y = -350;
 			this.lvl_bg.scaleX = 0.8;
 			this.lvl_bg.scaleY = 0.8;
-			this.levelContainer.addChild(this.lvl_bg);
+			this.stage.addChild(this.lvl_bg);
 
 			//Hitshapes nicht anzeigen
 			//this.levelContainer.addChild(this.container_hitshapes);
 			
 			// Container für das Seitenmenü laden
-			this.levelContainer.addChild(this.puzzle_menueMouseOver);
 			this.levelContainer.addChild(this.puzzle_partsMenue);
 			this.levelContainer.addChild(this.partsContainer);
-
-			/////////////////////// TESTIMAGE
-			console.log(puzzle);
-
 			///////////////////////////////////// 
-			var image;
 			// Puzzle-Teile Bilder für die Seitenleiste laden
 			// eventhandler hinzufügen
 			if(puzzle){
@@ -189,11 +224,10 @@ define(['globi'],function(Globi){
 
 					// Callback für Mousedown
 					hit.menue.addEventListener("mousedown",function(e){
-						
+						console.log('click');
 						for(var j = 0; j < self.hitInformation.length; j++){
 							
 							if(self.hitInformation[j].menue == e.target){
-		
 								var showPart = self.hitInformation[j].part;
 								showPart.x = e.target.x;
 								showPart.y = e.target.y;
@@ -230,9 +264,38 @@ define(['globi'],function(Globi){
             });
 			//this.levelContainer.addChild(button_up);
             //this.levelContainer.addChild(button_down);
+
+            callback();
 			
+		},
+
+		enableLandSelection: function(){
+
+			var self = this;
+
+			this.globi.removeAllEventListeners();
+			var shape = this.globiObjekt.we_shape;
+			console.log(shape);
 			
-			
+			shape.addEventListener("mouseover", function(ev){
+				var g = self.globiObjekt.getGraphic('we_smoothy','#B22222','#ffffff');
+				shape.graphics = g;
+				self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
+				self.app.setDOMText("#bubble_selectshape_txt",'Westeuropa');
+				self.app.addBubble("#bubble_selectshape");
+			});
+
+			shape.addEventListener("mouseout", function(){
+				var g = self.globiObjekt.getGraphic('we_smoothy','#ffffff','#ffffff');
+				shape.graphics = g;
+				self.app.removeBubble("#bubble_selectshape");
+			});
+
+			shape.addEventListener("click", function(){
+				self.app.removeBubble("#bubble_selectshape");
+				self.app.startLevel("level11");
+			});
+
 			
 		},
 
@@ -278,10 +341,11 @@ define(['globi'],function(Globi){
 		},
 
 
-		loadContainer: function(cnt){
+		loadContainer: function(cnt,callback){
 			this.stage.addChild(this[cnt]);
+			console.log('Container geladen. Level ready to rock !')
+			if(callback) callback();
 		},
-
 
 		// Säubere die Pinnwand, wenn nichts animiert / angezeigt
 		// werden muss
@@ -290,6 +354,19 @@ define(['globi'],function(Globi){
 			console.log('Säubere die Stage');
 			this.stage.clear();
 			this.stage.removeAllChildren();
+		},
+
+		blurStage: function(trigger){
+			console.log(this.stage);
+			var image = this.stage.getChildAt(0);
+			if(trigger == true){
+				image.filters = [new createjs.BoxBlurFilter(10,10,3)];
+				image.cache(0,350,1100,1300);
+				image.alpha = 0.9;
+			} else {
+				image.filters = [];
+				image.updateCache(0,350,1100,1300);
+			}
 		},
 
 		showIntro: function(callback){
@@ -301,6 +378,17 @@ define(['globi'],function(Globi){
 			image.scaleY = 0.8;
 			this.intro.push(image);
 			image = new createjs.Bitmap("gfx/big/story_2.jpg");
+			image.y = -50;
+			image.scaleX = 0.8;
+			image.scaleY = 0.8;
+			this.intro.push(image);
+			// Bilder erstellen
+			var image = new createjs.Bitmap("gfx/big/story_3.jpg");
+			image.y = -50;
+			image.scaleX = 0.8;
+			image.scaleY = 0.8;
+			this.intro.push(image);
+			image = new createjs.Bitmap("gfx/big/story_4.jpg");
 			image.y = -50;
 			image.scaleX = 0.8;
 			image.scaleY = 0.8;
@@ -322,33 +410,7 @@ define(['globi'],function(Globi){
 			this.intro_ready();
 		},
 
-		addBitmap: function(){
-			var image = new createjs.Bitmap(arguments[0]);
 		
-			if(arguments[1]) image.x = arguments[1];
-			if(arguments[2]) image.y = arguments[2];
-			if(arguments[3]) image.scaleX = arguments[3];
-			if(arguments[4]) image.scaleY = arguments[4];
-
-			this.stage.addChild(image);
-			
-		},
-
-		addPuzzlePart: function(){
-			
-			console.log('Creating Bitmap: ' + arguments[0]);
-			
-			var image = new createjs.Bitmap(arguments[0]);
-
-			if(arguments[1]) image.x = arguments[1];
-			if(arguments[2]) image.y = arguments[2];
-			if(arguments[3]) image.scaleX = arguments[3];
-			if(arguments[4]) image.scaleY = arguments[4];
-
-			this.puzzleParts.addChild(image);
-
-			image.addEventListener("mousedown", this.handleMouseDown);
-		},
 
 		// Fügt eine Animation der anim-Liste hinzu
 		startAnimation: function(animation,callback){
@@ -369,13 +431,12 @@ define(['globi'],function(Globi){
 
 		},
 
-		// Fügt eine Callbackmethode einem Objekt hinzu
-		// Momentan nur "click" auf Globi im Hauptmenü
-		setCallback: function(event,callback){
-			this.globi.addEventListener(event,callback);
+		showSpriteAnimation: function(anim){
+			switch(anim){
+				case 'mund1' :  this.globiObjekt.mundSeq.gotoAndPlay("talkf"); break;
+				case 'mund2' :  this.globiObjekt.mundSeq.gotoAndPlay("idle"); break;
+			}
 		},
-
-		
 
 
 		/**************************************/
@@ -418,7 +479,7 @@ define(['globi'],function(Globi){
 				this.globi.y = 450;
 				this.stopAnimation("globi_menue_popDown");
 				this.startAnimation("globi_idle");
-				this.enableEvents("globi");
+			
 				
 				if(callback){
 					callback();

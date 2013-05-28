@@ -1,5 +1,3 @@
-
-
 define(['jquery','app'], function($,App){
 	
 	var app;
@@ -31,15 +29,18 @@ define(['jquery','app'], function($,App){
 			});
 
 			$('#button_cancelIntro').click(function(){
-				console.log('afasa');
 				app.cancelIntro();
+			});
+
+			$('#button_mute').click(function(){
+				$('#audio').get(0).play();
 			});
 
 			$('#level_puzzle_menueHoverArea').mouseover(function(){
 				$('#level_puzzle_partsMenue').removeClass('hide');
 			});
 
-			
+
 
 			console.log('Application erstellt');
 
@@ -51,10 +52,20 @@ define(['jquery','app'], function($,App){
 
 			var canvas = document.getElementById('canvas');
 			stage = new createjs.Stage(canvas);
-			engine = new Engine(stage);
+			engine = new Engine(stage,app);
 
 
 			app.setup(engine);
+
+			// DEBUGGING
+			$('#test_mundAnimation').click(function(){
+					engine.showSpriteAnimation('mund1');
+			});
+			$('#test_mundAnimation2').click(function(){
+					engine.showSpriteAnimation('mund2');
+			});
+			
+
 			app.setGameState("startup");
 
 		});

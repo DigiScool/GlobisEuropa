@@ -10,6 +10,9 @@ define(['jquery'],function($){
 				"11" : {
 					"headline" : "Westeuropa Level 1",
 					"bg" : "gfx/big/Westeuropa.png",
+					"script": {
+						"start":"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
+					},
 					"puzzle" : [
 						{
 							"id": "0" , 
@@ -44,7 +47,6 @@ define(['jquery'],function($){
 						 	"country" : "Frankreich"
 						}
 					],
-					"buttons" :  ["button_home"]
 				}
 			};
 
@@ -53,34 +55,41 @@ define(['jquery'],function($){
 		start: function(id){
 
 			var self = this;
+			this.level = this.data[id];
 
 			// Clear den Screen
 			this.engine.clearStage();
 
 			// Kleine DebugAusgabe
-			console.log('Try to Start:' + id);	
+			console.log('Try to Start:' + this.level.headlines);	
 
 			// Ueberschrift anzeigen
-			$('#headline').html(this.data[id].headline);
+			$('#headline').html(this.level.headline);
 
-
+			// Buttons vorbereiten
+			$('#button_hidedialog').click(function(){
+				self.startLevel();
+			});
+			$('#button_home').removeClass('hide');
+			
 			// Container vorbereiten
-			this.engine.setLevel(this.data[id].bg,this.data[id].puzzle);
-			this.engine.loadContainer("levelContainer");
-
- 			// Buttons ?
- 			var bt = this.data[id].buttons;
- 			if(bt){
- 				for(var i = 0; i<bt.length; i++){
- 					var name = '#'+bt[i];
- 					$(name).removeClass('hide');
- 				}
- 			}
+			this.engine.setLevel(this.level.bg,this.level.puzzle,function(){
+				console.log("Starte Levelscript");	
+				// Nachdem das Level geladen & angezeigt ist,
+				// starte Script
+				self.engine.blurStage(true);
+				$('#dialog').html(self.level.script.start);
+				$('#bubble_game_dialog').removeClass('hide');
+			});
 
  			
  				
 		},
-
+		startLevel: function(){
+			$('#bubble_game_dialog').addClass('hide');
+			this.engine.blurStage(false);
+			this.engine.loadContainer('levelContainer');
+		}
 	});
 
 	return Level;

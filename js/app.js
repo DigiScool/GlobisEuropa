@@ -29,7 +29,10 @@ define(['level','jquery'],function(Level,$){
 						"gfx/big/mainmenue_background.png",
 						"gfx/big/Globi_Vektor.png",
 						"gfx/big/story_1.jpg",
-						"gfx/big/story_2.jpg"
+						"gfx/big/story_2.jpg",
+						"gfx/big/story_3.jpg",
+						"gfx/big/story_4.jpg",
+						"gfx/sprites/mund_animation.png"
 					]
 				},
 
@@ -77,10 +80,9 @@ define(['level','jquery'],function(Level,$){
 				case "intro":
 					// Intro abspielen
 					console.log("Zeige Intro");
-					$('#startScreen').addClass('hide');
+					$('#loader').addClass('hide');
 					$('#button_cancelIntro').removeClass('hide');
- 					$('#button_startGame').addClass('hide');
- 					$('#canvas').removeClass('hide');
+ 					$('#bubble_welcome').addClass('hide');
 					this.engine.showIntro(function(){
 						
 						//callback, wenn fertig
@@ -98,10 +100,16 @@ define(['level','jquery'],function(Level,$){
 					
 					// Hauptmenue
 					$('#headline').html('Hauptmen&uuml;');
-					$("#button_newGame").removeClass('hide');
+					//$("#button_newGame").removeClass('hide');
+					
+					// DEBUGGING
+					$('#bubble_debug').removeClass('hide');
+					$('#button_mute').removeClass('hide');
 					
  				 	// Animation starten
  				 	this.engine.startAnimation("globi_idle");
+
+
 					break;
 			}
 			
@@ -118,10 +126,11 @@ define(['level','jquery'],function(Level,$){
 			this.id  = id;
 				
 			// DIV-Setup
+			$('#loader').addClass('preload');
+			$('#bubble_levelloader').removeClass('hide');
+			$('#headline').html('Lade...');
 
 			$('loading_icon').addClass('loading');
-			$('#levelLoader').removeClass('hide');
-			$('#headline').html('Lade...');
 			$('#levelLoader_Headline').html(this.data[id].headline);
 
  			
@@ -159,15 +168,30 @@ define(['level','jquery'],function(Level,$){
 				if(callback){
 					callback();
 				} else {
-					console.log('babunm');
 					$('#headline').html(this.data[this.id].headine);
  					$('loading_icon').removeClass('loading');			
- 					$('#levelLoader').addClass('hide');
+ 					$('#loader').addClass('hide');
+ 					$('#bubble_levelloader').addClass('hide');
 					this.level.start(this.data[this.id].followUp);
 				}
 			}
 		},
+		setDOMText: function(element,html){
+			$(element).html(html);
+		},
 
+		positionBubble: function(bubble,x,y){
+			$(bubble).css('top' , y);
+			$(bubble).css('left', x);
+		},
+
+		addBubble: function(bubble){
+			$(bubble).removeClass('hide');
+		},
+
+		removeBubble: function(bubble){
+			$(bubble).addClass('hide');
+		},
 
  		//////////////////////////////
  		// Button- Binding -Funktionen
@@ -179,10 +203,12 @@ define(['level','jquery'],function(Level,$){
  			// Level ist fertig geladen. Entferne den Load-Screen
  			$('#headline').html("");
  			$('loading_icon').removeClass('loading');			
- 			$('#levelLoader').addClass('hide');
- 			$('#startScreen').removeClass('hide');
- 			$('#button_startGame').removeClass('hide');
- 			$('#canvas').addClass('hide');
+ 			// Screens
+ 			$('#loader').removeClass('preload');
+ 			$('#loader').addClass('welcome');
+ 			// Bubbles
+ 			$('#bubble_levelloader').toggleClass('hide');
+ 			$('#bubble_welcome').toggleClass('hide');
 
  			console.log('Zeige Startscreen');
 
@@ -192,39 +218,49 @@ define(['level','jquery'],function(Level,$){
 
  			var self = this;
 
- 			$('#menue').removeClass('slideIn');
- 			$('#menue').addClass('slideOut');
- 			$('#button_zurueck').addClass('hide');
+ 			$('#bubble_menue_newgame').removeClass('slideIn');
+ 			$('#bubble_menue_newgame').addClass('slideOut');
+ 			$('#button_zurueck').addClass('hide')
+ 			$('#bubble_selectshape_intro').addClass('hide');
  			this.engine.startAnimation('globi_transition_toLevel',function(){
 					self.preload("level11");
  			});
  		},
 
  		toggleMenue: function(){
- 			if($('#menue').hasClass('slideIn')){
- 				this.engine.startAnimation('globi_menue_popDown');
- 				$('#menue').removeClass('slideIn');
- 				$('#menue').addClass('slideOut');
- 				$('#button_newGame').removeClass('hide');
- 				$('#button_zurueck').addClass('hide')
- 				$('#headline').html('Hauptmen&uuml;');
- 			} else {
+ 			
+ 			if($('#bubble_selectshape_intro').hasClass('hide')){
  				this.engine.stopAnimation('globi_idle');
  				this.engine.startAnimation('globi_menue_popUp');
-
- 				$('#menue').addClass('slideIn');
- 				$('#menue').removeClass('slideOut');
- 				$('#button_newGame').addClass('hide');
+ 			
+ 				$('#bubble_selectshape_intro').removeClass('hide');
+ 				//$('#bubble_menue_newgame').addClass('slideIn');
+ 				//$('#bubble_menue_newgame').removeClass('slideOut');
+ 				//$('#button_newGame').addClass('hide');
  				$('#button_zurueck').removeClass('hide');
+
  				$('#headline').html('Neues Spiel');
+ 				$('#bubble_debug').addClass('hide');
+ 			} else {
+ 				this.engine.stopAnimation('globi_idle');
+ 				this.engine.startAnimation('globi_menue_popDown');
+
+ 				$('#bubble_selectshape_intro').addClass('hide');
+ 				//$('#bubble_menue_newgame').addClass('slideIn');
+ 				//$('#bubble_menue_newgame').removeClass('slideOut');
+ 				//$('#button_newGame').addClass('hide');
+ 				$('#button_zurueck').addClass('hide');
+ 				this.engine.enableEvents_Hauptmenue();
+ 				$('#headline').html('Hauptmenü');
+ 				$('#bubble_debug').removeClass('hide');
  			}
  		},
 
  		showGamemenue: function(){
 
  			var self = this;
-
- 			$('#button_newGame').removeClass('hide');
+ 			this.engine.enableEvents_Hauptmenue();
+ 			$('#bubble_game_dialog').addClass('hide')
  			$('#button_home').addClass('hide')
  			$('#levelLoader').addClass('hide');
  			$('#headline').html('Hauptmen&uuml;');

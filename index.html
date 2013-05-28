@@ -16,60 +16,81 @@
 <head>
 	<title>Globi's Europa</title>
 	<link href='http://fonts.googleapis.com/css?family=Days+One' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+<audio id="audio">
+  <source src="audio/music/dcwd.mp3" type="audio/mpeg">
+</audio>
 
-	<div id="gameContainer">
+<div id="container">
 		<div id="headBar">
-			<p id="headline"></p>
+			<p id="headline" class="headline"></p>
 		</div>
-
-		<div id="canvasContainer" >
-			<div id="levelLoader" >
-				<div id="levelLoader_Display">
-					<div id="levelLoader_Headline"></div>
-					<div id="levelLoader_processBar">
-						<div id="levelLoader_process">
-						</div>
-					</div>
-
-				</div>
-				<div id="loading_icon"></div>
+		<div id="gameContainer">
+			<div id="canvasContainer">
+				<canvas id="canvas" width="1024" height="568" onmousedown="return false"></canvas>
 			</div>
-
-			<div id="startScreen" class="hide" >
-			</div>
-	
-			<canvas id="canvas" width="1024" height="568" onmousedown="return false">
-			</canvas>
 			
-			<div id="menue">
-				<div id="menue_text_position">
-					<div id="menue_picture_area" class="frame_image round"></div>
-					<div id="menue_headline">
-						<p class="headline1">Westeuropa</p>
-						<p id="menue_text" class="text_normal">
-							Lerne die Länder um Deutschland</br> kennen. Finde heraus 
- 					 		welche Staaten <br /r> am atlantischen Ozean liegen, <br 7> oder welches
- 				 			das höchste Gebirge <br /> dieser  Region ist
-						</p><br><br>
-						<input type="checkbox" checked="checked" name="Tutorial" value="Tutorial zeigen">Tutorial spielen</input>
-					</div>
+			<div id="loader"></div>
+			
+			<div id="bubbles">
+				
+				<div id="bubble_welcome" class="bubble hide">
+					<p class="welcome">Globi's Europa</p>
+					<button id="button_startGame" class="button round">Spiel starten</button>
 				</div>
-			</div>
-		</div>
+
+				<div id="bubble_levelloader" class="bubble hide">
+					<div id="levelLoader_Headline"></div>
+					<div id="levelLoader_processBar"></div>
+					<div id="levelLoader_process"></div>
+					<div id="loading_icon"></div>
+				</div> 
+
+				<div id="bubble_menue_newgame" class="bubble">
+					<button id="menue_picture_area" class="button round">>Starten</button>
+				</div>
+
+				<div id="bubble_game_dialog" class="bubble hide round border">
+					<p id="dialog"></p>
+					<button id="button_hidedialog" class="button round">Okay</button>
+				</div>
+
+				<div id="bubble_debug" class="bubble hide">
+					<button id="test_mundAnimation" class="button round">Test 1</button>
+					<button id="test_mundAnimation2" class="button round">Test 2</button>
+				</div>
+
+				<div id="bubble_selectshape_intro" class="bubble round hide border">
+					<p>
+						Europa ist aber ganz sch&ouml;n gro&szlig;. Damit dir die Aufgabe nicht zu schwierig wird,
+						unterteile ich sie in drei Teile. Du beginnst mit den L&auml;ndern Nord- und Westeuropas,
+						danach versuchst du die Umrisse S&uuml;deuropas richtig zu platzieren. Und zum Abschluss
+						machst du das Gleiche mit den L&auml;ndern aus Osteuropa.
+					</p>
+				</div>
+
+				<div id="bubble_selectshape" class="bubble hide round border">
+					<p id="bubble_selectshape_txt">ddd</p>
+				</div>
+
+			</div> <!-- bubbles -->
+		
+		</div> <!-- gameContainer -->
 		<div id="footBar">
-			<button id="button_startGame" class="button round">Spiel starten</button>
 			<button id="button_cancelIntro" class="hide button round">Intro abbrechen</button>
 			<button id="button_newGame" class="hide button round">Neues Spiel</button>
 			<button id="button_loadLevel" class="hide button round">Level laden</button>
 			<button id="button_zurueck" class="hide button round">Zur&uuml;ck</button>
 			<button id="button_sound" class="hide button round">SL</button>
 			<button id="button_home" class="hide button round">Home</button>
+			<button id="button_mute" class="hide">Sound</button>
 		</div>
-	</div>
-	
-	<script data-main="js/startup" src="js/lib/require.js"></script>
+
+</div><!--container-->
+
+<script data-main="js/startup" src="js/lib/require.js"></script>
+
 </body>
 </html>
