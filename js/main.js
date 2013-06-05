@@ -2,6 +2,7 @@ define(['jquery','app'], function($,App){
 	
 	var app;
 	var engine;
+	var level;
 	var stage;
 
 	var initApp = function(){
@@ -41,21 +42,25 @@ define(['jquery','app'], function($,App){
 			});
 
 
-
 			console.log('Application erstellt');
 
 			initEngines();
 	};	
 
 	function initEngines(){
-		require(['engine',], function(Engine){
+		require(['engine','level'], function(Engine,Level){
 
 			var canvas = document.getElementById('canvas');
+			
 			stage = new createjs.Stage(canvas);
-			engine = new Engine(stage,app);
+			
 
+			engine = new Engine(stage);
+			level = new Level();
 
-			app.setup(engine);
+			app.setup(engine,level);
+			level.setup(app,engine);
+			engine.setup(app,level);
 
 			// DEBUGGING
 			$('#test_mundAnimation').click(function(){

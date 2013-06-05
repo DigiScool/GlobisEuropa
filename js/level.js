@@ -2,66 +2,29 @@ define(['jquery'],function($){
 
 	var Level = Class.extend({
 
-		init: function(app,engine){
-			this.app = app;
-			this.engine = engine;
-
-			this.data = { 
-				"11" : {
-					"headline" : "Westeuropa Level 1",
-					"bg" : "gfx/big/Westeuropa.png",
-					"script": {
-						"start":"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
-					},
-					"puzzle" : [
-						{
-							"id": "0" , 
-						 	"menue" : "gfx/puzzle_menue/menue_ger.png",
-						 	"part"	 : "gfx/little/GER.png",
-						 	"hit" : {
-						 		"x" : "630",
-						 		"y" : "80",
-						 		"w" : "120",
-						 		"h" : "160"
-						 	},
-						 	"position": {
-						 		"x" : "599",
-						 		"y" : "40"
-						 	},
-						 	"country" : "Deutschland"
-						},
-						{
-							"id": "1" , 
-						 	"menue" : "gfx/puzzle_menue/menue_fra.png",
-						 	"part"	 : "gfx/little/FRA.png",
-						 	"hit" : {
-						 		"x" : "440",
-						 		"y" : "190",
-						 		"w" : "140",
-						 		"h" : "160"
-						 	},
-						 	"position": {
-						 		"x" : "380",
-						 		"y" : "142"
-						 	},
-						 	"country" : "Frankreich"
-						}
-					],
-				}
-			};
-
+		init: function(){
+	
 		},
 
-		start: function(id){
+		setup: function(app,engine){
+			this.app = app;
+			this.engine = engine;
+		},
+
+		start: function(data){
 
 			var self = this;
-			this.level = this.data[id];
+
+			this.level = data;
+
+			// count the placed puzzleparts
+			this.pCounter = 0;
 
 			// Clear den Screen
 			this.engine.clearStage();
 
 			// Kleine DebugAusgabe
-			console.log('Try to Start:' + this.level.headlines);	
+			console.log('Try to Start:' + this.level.headline);	
 
 			// Ueberschrift anzeigen
 			$('#headline').html(this.level.headline);
@@ -73,11 +36,12 @@ define(['jquery'],function($){
 			$('#button_home').removeClass('hide');
 			
 			// Container vorbereiten
-			this.engine.setLevel(this.level.bg,this.level.puzzle,function(){
+			this.engine.setLevel(data,data.puzzle,function(){
+				
 				console.log("Starte Levelscript");	
 				// Nachdem das Level geladen & angezeigt ist,
 				// starte Script
-				self.engine.blurStage(true);
+				//self.engine.blurStage(true);
 				$('#dialog').html(self.level.script.start);
 				$('#bubble_game_dialog').removeClass('hide');
 			});
@@ -87,8 +51,40 @@ define(['jquery'],function($){
 		},
 		startLevel: function(){
 			$('#bubble_game_dialog').addClass('hide');
-			this.engine.blurStage(false);
+			//this.engine.blurStage(false);
 			this.engine.loadContainer('levelContainer');
+		},
+
+		showInfo: function(cId){
+			var self = this;
+
+			this.pCounter++;
+
+			console.log('#'+this.pCounter+' richtig plaziert');
+			if(this.pCounter == this.level.count) {
+				$('#button_home').addClass('hide');
+				this.app.setGameState("levelDone",this.id);
+			}
+
+			if(this.id == "11" && this.pCounter == 1){
+				$('#bubble_info_box').children('p').html("Sehr gut! Du hast dein erstes Puzzle-Teil"
+					+ "richtig plaziert. Wenn du mehr über das Land wissen möchtest, klicke auf"
+					+ "die Glühbirne rechts unten in der Ecke");
+
+				$('#bubble_info_icon').removeClass('hide');
+				$('#bubble_info_icon').click(function(){
+				
+					$('#bubble_info_box').removeClass('hide');
+					$('#bubble_info_icon').addClass('hide');
+					$('#bubble_info_icon').unbind();
+				});
+
+				$('#button_hide_infobox').click(function(){
+					
+					$('#bubble_info_box').addClass('hide');
+					$('#bubble_hide_infobox').unbind();
+				});
+			}
 		}
 	});
 

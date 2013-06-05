@@ -5,16 +5,16 @@
 */
 
 
-define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
+define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(Globi){
 	
 	var Engine = Class.extend({
 		
-		init: function(stage,app){
+		init: function(stage){
 			
 			// Initialisierungen
 			var self = this;
+
 			this.stage = stage;
-			this.app = app;
 			this.stage.enableMouseOver(5);
 			
 			createjs.Touch.enable(this.stage);
@@ -46,15 +46,11 @@ define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
 
 			
 			// Container für Level
-			this.levelContainer = new createjs.Container();
+			this.container_level = new createjs.Container();
 			this.partsContainer = new createjs.Container();
 			this.lvl_bg = null;		
 
-			// Bereite die Menüs für die level vor
-			var g2 = new createjs.Graphics();
-			g2.beginFill(createjs.Graphics.getRGB(245,242,222));
-            g2.rect(0,0,250,600);
-            this.puzzle_partsMenue = new createjs.Shape(g2);
+			
          
            	
            
@@ -64,7 +60,7 @@ define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
             g.rect(0,0,50,600);
 			this.puzzle_menueMouseOver = new createjs.Shape(g).set({alpha:0.8});
 			this.puzzle_menueMouseOver.addEventListener("mouseover", function(){
-				self.levelContainer.x = 0;
+				self.container_level.x = 0;
 			});
 
 			// Container für Puzzleteile
@@ -73,20 +69,18 @@ define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
 			// Variablen für die Animationen
 			this.idle_globi = 1;
 
-			// aktuelles Drag & drop Image;
-			this.dndImage;
-
-			// Array für Drag and Drop images;
-			this.dndParts = [];
 
 			// Hit-Elements zum checken ob getroffen
 			this.container_hitshapes = new createjs.Container();
 
-			// Array mit Hitinformationen
-			this.hitInformation = [];
 
 
 			
+		},
+
+		setup: function(app,level){
+			this.level = level;
+			this.app = app;
 		},
 
 		// Callback -Funktion für die Frameloop
@@ -149,196 +143,311 @@ define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
 				.beginFill(createjs.Graphics.getRGB(27,156,247))
 				.beginStroke('#ffffff')
 				.drawCircle(0,0,200);
+				self.app.changeCursor('pointer');
 
 				self.globi.getChildAt(0).graphics = g;
 			});
 
 			this.globi.addEventListener("mouseout",function(){
-				
+				self.app.changeCursor('default');
 				var g = new createjs.Graphics()
 				.setStrokeStyle(10)
             	.beginStroke(createjs.Graphics.getRGB(141,211,237))
             	.beginFill(createjs.Graphics.getRGB(27,156,247))
 				.drawCircle(0,0,200);
 
+
+
 				self.globi.getChildAt(0).graphics = g;
 			});
 
 			this.globi.addEventListener("click",function(){
-				
+				self.app.changeCursor('default');
 				self.app.toggleMenue();
 				self.enableLandSelection();
 			});
 		},
-		setLevel: function(bg,puzzle,callback){
+		setLevel: function(level,puzzle,callback){
 			
 			var self = this;
 
-			
-			
 			// Hintergrund laden
-			this.lvl_bg = new createjs.Bitmap(bg);
-			this.lvl_bg.x = 200;
-			this.lvl_bg.y = -350;
+			this.lvl_bg = new createjs.Bitmap(level.bg);
+			this.lvl_bg.x = level.bgx;
+			this.lvl_bg.y = level.bgy;
 			this.lvl_bg.scaleX = 0.8;
 			this.lvl_bg.scaleY = 0.8;
 			this.stage.addChild(this.lvl_bg);
 
-			//Hitshapes nicht anzeigen
-			//this.levelContainer.addChild(this.container_hitshapes);
+			console.log("BG + HM");
+			console.log(this.lvl_bg);
+			console.log(this.container_level);
+			console.log("********************");
+
+			// Hitshape - Position korrigieren
+			this.container_hitshapes.y += +120;
+
+			// Hitshapes ( anzeige on //off)
+			//this.stage.addChild(this.container_hitshapes);
+
+			// Seitenleiste für die Puzzle-teile
+			var menue_bg = new createjs.Graphics();
+			menue_bg.beginFill(createjs.Graphics.getRGB(245,242,222));
+            menue_bg.rect(0,0,250,600);
+            
+            this.menue_shape = new createjs.Shape(menue_bg);
 			
-			// Container für das Seitenmenü laden
-			this.levelContainer.addChild(this.puzzle_partsMenue);
-			this.levelContainer.addChild(this.partsContainer);
+			// Hintergrund für Seitenmenü laden
+			this.stage.addChild(this.menue_shape);
+
+			
 			///////////////////////////////////// 
 			// Puzzle-Teile Bilder für die Seitenleiste laden
 			// eventhandler hinzufügen
+
+			this.container_puzzleparts = new createjs.Container();
+
 			if(puzzle){
 				for(var i = 0; i < puzzle.length; i++){
 					
-					// Array für die HitAreas füllen
-					// leeres Objekt
-					var hit = {};
-					hit.id   = puzzle[i].id;
-					hit.country = puzzle[i].country;
-					hit.part = new createjs.Bitmap(puzzle[i].part);
-					hit.x = puzzle[i].position.x;
-					hit.y = puzzle[i].position.y;
-					hit.part.y = puzzle[i].position.y;
-					hit.part.scaleX = 0.8;
-					hit.part.scaleY = 0.8;
-					
-					// HitShape
+					// menueentry for the puzzlepart
+					var menueEntry = new createjs.Bitmap(puzzle[i].part);
+					menueEntry.y = 200 * i;
+					menueEntry.x = 50;
+					menueEntry.scaleX = 0.5;
+					menueEntry.scaleY = 0.5;
+
+					// hitshape for the puzzlepart
 					var g = new createjs.Graphics();
-					var h  = puzzle[i].hit;
+					var h  = puzzle[i].hitshape;
 					g.beginFill(createjs.Graphics.getRGB(0,0,0));
             		g.rect(h.x,h.y,h.w,h.h);
-            		hit.shape = new createjs.Shape(g); 
-					
-					hit.menue = new createjs.Bitmap(puzzle[i].menue);
-					hit.menue.y = 200 * i;
-					hit.menue.x = 50;
-					hit.menue.scaleX = 0.8;
-					hit.menue.scaleY = 0.8;
-					
+            		
+            		var hitShape = new createjs.Shape(g); 
+            	
+					// hitshape with the id, to compare
+					menueEntry.puzzlePart = puzzle[i].part;
+					menueEntry.puzzleId = puzzle[i].id;
 
-					// Callback für Mousedown
-					hit.menue.addEventListener("mousedown",function(e){
-						console.log('click');
-						for(var j = 0; j < self.hitInformation.length; j++){
-							
-							if(self.hitInformation[j].menue == e.target){
-								var showPart = self.hitInformation[j].part;
-								showPart.x = e.target.x;
-								showPart.y = e.target.y;
-								self.stage.addChild(showPart);
-								e.target = showPart;
-								self.pressHandler(e);
-							}
-						}
+					hitShape.puzzleId = puzzle[i].id; 
+					hitShape.countryName =  puzzle[i].country;
+					hitShape.menueEntry = menueEntry;
+					hitShape.posCorrection = puzzle[i].position;
+					
+					// Wrapp the Listener for scope
+					(function(target) {
+
+						var dndPart = new createjs.Bitmap(target.puzzlePart);
 						
-					});
+						target.addEventListener("mouseover",function(){
+							self.app.changeCursor('pointer');
+						});
 
-                	this.partsContainer.addChild(hit.menue);
-                	this.container_hitshapes.addChild(hit.shape);
-                	this.hitInformation.push(hit);
+						target.addEventListener("mouseout", function(){
+							self.app.changeCursor('default');
+						});
+
+						target.addEventListener("mousedown",function(evt) {
+
+							var offset = {x:target.x-evt.stageX, y:target.y-evt.stageY};
+
+							dndPart = target.clone();
+							dndPart.x = evt.stageX+offset.x;
+							dndPart.y = evt.stageY+offset.y
+							dndPart.scaleX = 0.8;
+							dndPart.scaleY = 0.8;
+							self.stage.addChild(dndPart);
+				
+
+							evt.onMouseMove = function(ev){
+
+								dndPart.x = ev.stageX+offset.x;
+								dndPart.y = ev.stageY+offset.y;
+							
+							}
+
+							evt.onMouseUp = function(ev){
+								self.app.changeCursor('default');
+  								// Try to find a hitshape under the dndPart
+  								var hitShape = self.container_hitshapes.getObjectUnderPoint(ev.stageX,ev.stageY);
+  				
+  								if(hitShape){ 
+  									
+  									if(hitShape.puzzleId == target.puzzleId){
+										// Positionskorrektur
+										dndPart.x = hitShape.posCorrection.x;
+										dndPart.y = hitShape.posCorrection.y;
+										self.level.showInfo(hitShape.puzzleId);
+										self.sortMenue(target);
+									} else {
+										alert('Falsches Land');
+										self.stage.removeChild(dndPart);
+									}
+  								} else { 
+  									self.stage.removeChild(dndPart);
+  									//TODO:
+  									// SNAPBAK FUNCTION
+  								}
+							}
+						});
+
+						
+
+					})(menueEntry);
+					
+					// load generated parts into container
+					this.container_puzzleparts.addChild(menueEntry);
+            		this.container_hitshapes.addChild(hitShape);
+					
 				}
             }
-            // Debugausgabe
-            console.log('HITINFORMATION:');
-            console.log(this.hitInformation);
+
+            // generierten Puzzlteile anzeigen
+  			this.stage.addChild(this.container_puzzleparts);
+
             console.log('HITSHAPES:');
             console.log(this.container_hitshapes);
             console.log('DRAG AND DROP PARTS:');
-            console.log(this.partsContainer)
+            console.log(this.container_puzzleparts);
 
             // Buttons zum navigeren durch das Menue
             var button_down = new createjs.Bitmap("gfx/little/button.png");
             button_down.addEventListener("click", function(){
-            	self.partsContainer.y += 100;
+            		
+            	var firstChild = self.container_puzzleparts.getChildAt(0);
+            	if( firstChild.y >= 0){
+            		// do nothing
+            	} else {
+            		for(var i = 0; i < self.container_puzzleparts.getNumChildren(); i++){
+            			var child = self.container_puzzleparts.getChildAt(i);
+            			child.y	+= 100;
+            		}
+            	}
             });
+
             var button_up = new createjs.Bitmap("gfx/little/button.png");
             button_up.y = 500;
-            button_up.addEventListener("click", function(){
-            	self.partsContainer.y -= 100;
-            });
-			//this.levelContainer.addChild(button_up);
-            //this.levelContainer.addChild(button_down);
 
-            callback();
+            button_up.addEventListener("click", function(){
+            	for(var i = 0; i < self.container_puzzleparts.getNumChildren(); i++){
+            		var child = self.container_puzzleparts.getChildAt(i);
+            		child.y	-= 100;
+            	}
+            });
+
+            this.stage.addChild(button_up);
+            this.stage.addChild(button_down);
+            
+            if(callback) {
+            	callback()
+            };
 			
+		},
+
+		sortMenue: function(target){
+			var index = this.container_puzzleparts.getChildIndex(target);
+			var pos = target.y;
+			var newPos = 0;
+			this.container_puzzleparts.removeChild(target);
+			for(var i = index ; i < this.container_puzzleparts.getNumChildren(); i++){
+				console.log(pos + newPos*200);
+
+				this.container_puzzleparts.getChildAt(i).y = pos + newPos*200;
+				newPos++;
+			}
+
+			
+
 		},
 
 		enableLandSelection: function(){
 
+			// scope
 			var self = this;
 
+			// activate childevents
 			this.globi.removeAllEventListeners();
-			var shape = this.globiObjekt.we_shape;
-			console.log(shape);
 			
-			shape.addEventListener("mouseover", function(ev){
-				var g = self.globiObjekt.getGraphic('we_smoothy','#B22222','#ffffff');
-				shape.graphics = g;
-				self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
-				self.app.setDOMText("#bubble_selectshape_txt",'Westeuropa');
-				self.app.addBubble("#bubble_selectshape");
-			});
+			
 
-			shape.addEventListener("mouseout", function(){
-				var g = self.globiObjekt.getGraphic('we_smoothy','#ffffff','#ffffff');
-				shape.graphics = g;
-				self.app.removeBubble("#bubble_selectshape");
-			});
+			var mouseover_se = this.globiObjekt.getSouthEurope('#68ba5b','#ffffff');
+			var mouseover_we = this.globiObjekt.getWestEurope('#68ba5b','#ffffff');
+			var mouseover_oe = this.globiObjekt.getOstEurope('#68ba5b','#ffffff');
+			
+			
+			
+			(function(target){
+				target.addEventListener("mouseover", function(ev){
+					self.app.changeCursor('pointer');
+					self.globi.addChild(mouseover_we);
+					self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
+					self.app.setDOMText("#bubble_selectshape_txt",'Westeuropa');
+					self.app.addBubble("#bubble_selectshape");
+				});
 
-			shape.addEventListener("click", function(){
-				self.app.removeBubble("#bubble_selectshape");
-				self.app.startLevel("level11");
-			});
+				target.addEventListener("mouseout", function(){
+					self.globi.removeChild(mouseover_we);
+					self.app.removeBubble("#bubble_selectshape");
+					self.app.changeCursor('default');
+				});
+
+				target.addEventListener("click", function(){
+					self.app.removeBubble("#bubble_selectshape");
+					self.app.startLevel("level_we-1");
+					self.app.changeCursor('default');
+				});
+
+			})(this.globiObjekt.we_container);
+
+
+			(function(target){
+				target.addEventListener("mouseover", function(ev){
+					self.app.changeCursor('pointer');
+					self.globi.addChild(mouseover_se);
+					self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
+					self.app.setDOMText("#bubble_selectshape_txt",'Südeuropa');
+					self.app.addBubble("#bubble_selectshape");
+					
+				
+				});
+
+				target.addEventListener("mouseout", function(ev){
+					self.globi.removeChild(mouseover_se);
+					self.app.removeBubble("#bubble_selectshape");
+					self.app.changeCursor('default');
+				});
+
+				target.addEventListener("click", function(){
+					self.app.removeBubble("#bubble_selectshape");
+					self.app.startLevel("level_se-1");
+					self.app.changeCursor('default');
+				});
+
+			})(this.globiObjekt.se_container);
+
+			(function(target){
+				target.addEventListener("mouseover", function(ev){
+					self.app.changeCursor('pointer');
+					self.globi.addChild(mouseover_oe);
+					self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
+					self.app.setDOMText("#bubble_selectshape_txt",'Osteuropa');
+					self.app.addBubble("#bubble_selectshape");
+					
+				
+				});
+
+				target.addEventListener("mouseout", function(ev){
+					self.globi.removeChild(mouseover_oe);
+					self.app.removeBubble("#bubble_selectshape");
+					self.app.changeCursor('default');
+				});
+
+			})(this.globiObjekt.oe_container);
 
 			
 		},
 
-		downHandler: function(e,menue){
-			console.log(e);
-			console.log(menue);
-		},
 
-		pressHandler: function(e){
-			var self = this;
-			var offset = {x:e.target.x-e.stageX, y:e.target.y-e.stageY};
-			e.onMouseMove = function(ev){
-
-  				e.target.x = ev.stageX + offset.x;  
-  				e.target.y = ev.stageY + offset.y;
-  			};
-
-  			e.onMouseUp = function(ev){
-  				
-  				var hitShape = self.container_hitshapes.getObjectUnderPoint(ev.stageX,ev.stageY);
-  				// Es wurde Shape getroffen
-  				if(hitShape){
-  					var index = self.container_hitshapes.getChildIndex(hitShape);
-  					self.hitTest(index,hitShape,e);
-  					e.target = null;
-  				}
-  			}
-		},
-
-		hitTest: function(index,shape,e){
-			if(this.hitInformation[index].shape == shape && this.hitInformation[index].part == e.target){
-				this.partsContainer.removeChild(this.hitInformation[index].menue);
-				alert('Richtig: '+this.hitInformation[index].country);
-				// Positionskorrektur
-				e.target.x = this.hitInformation[index].x;
-				e.target.y = this.hitInformation[index].y;
-
-			} else {
-				alert('Falsches Land');
-				this.stage.removeChild(e.target);
-			
-			}
-		},
 
 
 		loadContainer: function(cnt,callback){
@@ -346,6 +455,7 @@ define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
 			console.log('Container geladen. Level ready to rock !')
 			if(callback) callback();
 		},
+
 
 		// Säubere die Pinnwand, wenn nichts animiert / angezeigt
 		// werden muss
@@ -359,6 +469,7 @@ define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
 		blurStage: function(trigger){
 			console.log(this.stage);
 			var image = this.stage.getChildAt(0);
+			
 			if(trigger == true){
 				image.filters = [new createjs.BoxBlurFilter(10,10,3)];
 				image.cache(0,350,1100,1300);
@@ -423,10 +534,9 @@ define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
 		},
 
 		// Löscht eine Animation aus der anim-Liste
-		stopAnimation: function(animation){
+		stopAnimation: function(){
 
-				// Das erste Element wird entfernt
-				// Stopt die Animation
+
 				this.anim.shift();
 
 		},
@@ -478,12 +588,11 @@ define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
 				this.globi.x = 500;
 				this.globi.y = 450;
 				this.stopAnimation("globi_menue_popDown");
-				this.startAnimation("globi_idle");
-			
 				
 				if(callback){
 					callback();
 				}
+				
 
 			} else {
 				this.globi.x -= 10;
@@ -494,7 +603,6 @@ define(['globi','lib/filters/BoxBlurFilter'],function(Globi){
 				this.globi.scaleY -= 0.2;
 
 			}
-
 		},
 
 		globi_transition_toLevel: function(callback){

@@ -1,0 +1,151 @@
+{
+	"headline" : "Südeuropa Level 1",
+	"bg" : "gfx/big/suedeuropa/Suedeuropa.png",
+	"bgx" : "150",
+	"bgy" : "-400",
+	"script": {
+		"start":"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
+	},
+	"count" : "4",
+	"images" : [
+		"gfx/little/suedeuropa/ALB.png",
+		"gfx/little/suedeuropa/BOSHER.png",
+		"gfx/little/suedeuropa/BUL.png",
+		"gfx/little/suedeuropa/CRO.png",
+		"gfx/little/suedeuropa/CYP.png",
+		"gfx/little/suedeuropa/GRE.png",
+		"gfx/little/suedeuropa/ITA.png",
+		"gfx/little/suedeuropa/KOS.png",
+		"gfx/little/suedeuropa/MAC.png",
+		"gfx/little/suedeuropa/MON.png",
+		"gfx/little/suedeuropa/Portugal.png",
+		"gfx/little/suedeuropa/SER.png",
+		"gfx/little/suedeuropa/SLOVENIA.png",
+		"gfx/little/suedeuropa/Spanien.png",
+		"gfx/little/suedeuropa/TUR.png",	
+		"gfx/big/suedeuropa/Suedeuropa.png"
+	],
+
+	"puzzle" : [
+		{
+			"id": "0" , 
+			"part": "gfx/little/suedeuropa/ALB.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "1" , 
+			"part": "gfx/little/suedeuropa/BOSHER.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "2" , 
+			"part": "gfx/little/suedeuropa/BUL.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "3" , 
+			"part": "gfx/little/suedeuropa/CRO.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "4" , 
+			"part": "gfx/little/suedeuropa/CYP.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "5" , 
+			"part": "gfx/little/suedeuropa/GRE.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "5" , 
+			"part": "gfx/little/suedeuropa/ITA.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "6" , 
+			"part": "gfx/little/suedeuropa/KOS.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "7" , 
+			"part": "gfx/little/suedeuropa/MAC.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "8" , 
+			"part": "gfx/little/suedeuropa/MON.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "9" , 
+			"part": "gfx/little/suedeuropa/Portugal.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "10" , 
+			"part": "gfx/little/suedeuropa/SER.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "11" , 
+			"part": "gfx/little/suedeuropa/SLOVENIA.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "12" , 
+			"part": "gfx/little/suedeuropa/Spanien.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "13" , 
+			"part": "gfx/little/suedeuropa/TUR.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		}
+	]
+}

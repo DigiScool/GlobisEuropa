@@ -6,7 +6,7 @@
 */
 
 
-define(['level','jquery'],function(Level,$){
+define(['jquery'],function($){
 	
 	var App = Class.extend({
 
@@ -15,52 +15,15 @@ define(['level','jquery'],function(Level,$){
 			
 			this.engine = null;
 			this.level = null;
-
-			
-				
-
-			// JSON-Data für den Preloader. 
-			// Was soll vor dem Start einer Szene geladen werden
-			this.data = {
-				"startup" : {
-					"followUp" : "hm",
-					"headline" : "Initialisiere das Spiel",
-					"images" : [ 
-						"gfx/big/mainmenue_background.png",
-						"gfx/big/Globi_Vektor.png",
-						"gfx/big/story_1.jpg",
-						"gfx/big/story_2.jpg",
-						"gfx/big/story_3.jpg",
-						"gfx/big/story_4.jpg",
-						"gfx/sprites/mund_animation.png"
-					]
-				},
-
-				"level11" : {
-					"followUp" : "11",
-					"headline": "Westeuropa :  Puzzlespiel 1",
-					"images" : [
-						"gfx/big/Westeuropa.png",
-						"gfx/big/Osteuropa.png",
-						"gfx/big/Nordeuropa.png",
-						"gfx/little/AUS.png","gfx/little/BEL.png","gfx/little/FRA.png",
-						"gfx/little/GER.png","gfx/little/HOL.png","gfx/little/LUX.png",
-						"gfx/little/HOL.png","gfx/little/HUN.png","gfx/little/LIT.png",
-						"gfx/little/SUI.png","gfx/little/ROM.png","gfx/little/UK.png",
-						"gfx/little/Portugal.png","gfx/little/Spanien.png","gfx/little/SUI.png"
-					]	
-				}	
-			};
-
 		},
 
-		setup: function(engine){
+		setup: function(engine,level){
 			
 			this.engine = engine;
-			this.level = new Level(this,engine)
+			this.level = level;
 		},
 
-		setGameState: function(state){
+		setGameState: function(state,id){
 
 			var self = this;
 			
@@ -72,7 +35,7 @@ define(['level','jquery'],function(Level,$){
 					
 						// Alle Bilder geladen
 						// Initialsiere die Container
-						self.engine.setHauptmenue(self.data.startup.images[0]);
+						self.engine.setHauptmenue("gfx/big/mainmenue_background.png");
 						self.showStartScreen();
 					});
 					break;
@@ -103,14 +66,40 @@ define(['level','jquery'],function(Level,$){
 					//$("#button_newGame").removeClass('hide');
 					
 					// DEBUGGING
-					$('#bubble_debug').removeClass('hide');
-					$('#button_mute').removeClass('hide');
+	
 					
  				 	// Animation starten
  				 	this.engine.startAnimation("globi_idle");
 
 
 					break;
+
+				case "levelDone":
+
+					this.engine.clearStage();
+					self.engine.loadContainer("hmContainer");
+					$('#bubble_info_icon').addClass('hide');
+ 					
+ 					this.engine.startAnimation('globi_menue_popDown',function(){
+ 						
+
+ 						self.engine.stopAnimation();
+ 						$('#bubble_info_box').children('p').html("Du hast das erste Level geschafft");
+ 						
+ 						$('#button_hide_infobox').click(function(){
+							
+							$('#bubble_info_box').addClass('hide');
+							$('#bubble_hide_infobox').unbind();
+							self.engine.enableEvents_Hauptmenue();
+							self.setGameState("hauptmenue");
+						
+						});
+
+						$('#bubble_info_box').removeClass('hide');
+
+					});
+ 					
+ 					break;
 			}
 			
 
@@ -121,6 +110,7 @@ define(['level','jquery'],function(Level,$){
 		// Preloader ///////////
 		preload: function(id,callback){
 				
+			var self = this;	
 			console.log("Preload: "+id);
 
 			this.id  = id;
@@ -131,24 +121,59 @@ define(['level','jquery'],function(Level,$){
 			$('#headline').html('Lade...');
 
 			$('loading_icon').addClass('loading');
-			$('#levelLoader_Headline').html(this.data[id].headline);
+			$('#levelLoader_Headline').html('Lade...');
 
  			
  			// Canvas bereinigen, Elemente werden erstmal nicht gebraucht
  			this.engine.clearStage();
 
- 			this.imagesLoaded = 0;
-			var self = this;
+ 			// Lade die JSONFile
+ 			var file = 'json/' + id +'.json';
+ 			$.getJSON(file, function(data){
+ 				console.log('JSON-FILE');
+ 				console.log(data);
+ 				loadImages(data);
+ 			});
 
-			for(var i = 0; i < this.data[this.id].images.length; i++){
+ 			// Lade die Images
+ 			var imagesLoaded = 0;
+ 			var imagesSum;
+ 			var data;
+
+ 			var loadImages = function(d){
+
+ 				data = d;
+ 				imagesSum = data.images.length;
+ 				console.log("Zu ladende Teile: " + imagesSum);
+
+ 				for(var i = 0; i < data.images.length; i++){
 				
-				var image = new Image()
-				image.src = this.data[this.id].images[i];
+					var image = new Image()
+					image.src = data.images[i];
 				
-				image.onload = function(){
-					self.loadCallback(callback);
+					image.onload = function(){
+						checkComplete();	
+					}
 				}
-			}
+ 			};
+
+ 			var checkComplete = function(){
+ 				
+ 				imagesLoaded++;
+ 				console.log(imagesLoaded);
+
+ 				if(imagesLoaded == imagesSum){
+					if(callback){
+						console.log('callback');
+						callback();
+					} else {
+ 						$('loading_icon').removeClass('loading');			
+ 						$('#loader').addClass('hide');
+ 						$('#bubble_levelloader').addClass('hide');
+						self.level.start(data);
+					}
+				}
+ 			};
 		},
 
 		// Zählt die geladenen Bilder. Erstellt den Ladebalken
@@ -163,18 +188,7 @@ define(['level','jquery'],function(Level,$){
 			var text = breite+"%";
 			$('#levelLoader_process').width(text);
 
-			// Schauen ob alles geladen ist
-			if(this.imagesLoaded == this.data[this.id].images.length){
-				if(callback){
-					callback();
-				} else {
-					$('#headline').html(this.data[this.id].headine);
- 					$('loading_icon').removeClass('loading');			
- 					$('#loader').addClass('hide');
- 					$('#bubble_levelloader').addClass('hide');
-					this.level.start(this.data[this.id].followUp);
-				}
-			}
+			
 		},
 		setDOMText: function(element,html){
 			$(element).html(html);
@@ -191,6 +205,10 @@ define(['level','jquery'],function(Level,$){
 
 		removeBubble: function(bubble){
 			$(bubble).addClass('hide');
+		},
+
+		changeCursor: function(type){
+			document.body.style.cursor = type;
 		},
 
  		//////////////////////////////
@@ -223,8 +241,14 @@ define(['level','jquery'],function(Level,$){
  			$('#button_zurueck').addClass('hide')
  			$('#bubble_selectshape_intro').addClass('hide');
  			this.engine.startAnimation('globi_transition_toLevel',function(){
-					self.preload("level11");
+					self.preload(id);
  			});
+ 		},
+
+ 		doneLevel: function(){
+
+ 			
+
  		},
 
  		toggleMenue: function(){
@@ -240,7 +264,7 @@ define(['level','jquery'],function(Level,$){
  				$('#button_zurueck').removeClass('hide');
 
  				$('#headline').html('Neues Spiel');
- 				$('#bubble_debug').addClass('hide');
+ 				;
  			} else {
  				this.engine.stopAnimation('globi_idle');
  				this.engine.startAnimation('globi_menue_popDown');
@@ -252,7 +276,7 @@ define(['level','jquery'],function(Level,$){
  				$('#button_zurueck').addClass('hide');
  				this.engine.enableEvents_Hauptmenue();
  				$('#headline').html('Hauptmenü');
- 				$('#bubble_debug').removeClass('hide');
+ 				
  			}
  		},
 

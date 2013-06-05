@@ -1,0 +1,13 @@
+{
+	"followUp" : "hm",
+	"headline" : "Initialisiere das Spiel",
+	"images" : [ 
+		"gfx/big/mainmenue_background.png",
+		"gfx/big/Globi_Vektor.png",
+		"gfx/big/story_1.jpg",
+		"gfx/big/story_2.jpg",
+		"gfx/big/story_3.jpg",
+		"gfx/big/story_4.jpg",
+		"gfx/sprites/mund_animation.png"
+	]
+}

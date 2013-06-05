@@ -1,0 +1,27 @@
+{
+	"headline" : "Osteuropa Level 1",
+	"bg" : "gfx/big/suedeuropa/Suedeuropa.png",
+	"bgx" : "150",
+	"bgy" : "-400",
+	"script": {
+		"start":"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
+	},
+	"count" : "4",
+	"images" : [
+		"gfx/little/suedeuropa/ALB.png",
+		"gfx/little/suedeuropa/BOSHER.png",
+		"gfx/little/suedeuropa/BUL.png",
+		"gfx/little/suedeuropa/CRO.png",
+		"gfx/little/suedeuropa/CYP.png",
+		"gfx/little/suedeuropa/GRE.png",
+		"gfx/little/suedeuropa/ITA.png",
+		"gfx/little/suedeuropa/KOS.png",
+		"gfx/little/suedeuropa/MAC.png",
+		"gfx/little/suedeuropa/MON.png",
+		"gfx/little/suedeuropa/Portugal.png",
+		"gfx/little/suedeuropa/SER.png",
+		"gfx/little/suedeuropa/SLOVENIA.png",
+		"gfx/little/suedeuropa/Spanien.png",
+		"gfx/little/suedeuropa/TUR.png",	
+		"gfx/big/suedeuropa/Suedeuropa.png"
+	],
