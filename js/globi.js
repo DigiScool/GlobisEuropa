@@ -79,6 +79,25 @@ var Globi = Class.extend({
             s9.skewX = 10;
             s9.rotation = 15;
 
+            // Augenbrauencontainer
+            this.brauen_container = new createjs.Container();
+            this.brauen_container.addChild(s8);
+            this.brauen_container.addChild(s9);
+
+            // Hände
+            this.hand_container = new createjs.Container();
+
+            this.handRechts = new createjs.Shape();
+            this.handRechts.graphics.beginFill('#000000').drawCircle(0,0,35);
+
+            this.handLinks = new createjs.Shape()
+            this.handLinks.graphics.beginFill('#000000').drawCircle(0,0,35);
+
+            this.handRechts.x = -220;
+            this.handLinks.x = 220;
+
+            this.hand_container.addChild(this.handRechts);
+            this.hand_container.addChild(this.handLinks);
       
             // Position im Raum
             this.globi.x = 500;
@@ -89,8 +108,6 @@ var Globi = Class.extend({
 
 
            
-          
-
             // Mund aus Sprite
             this.mundSprite = new createjs.SpriteSheet({
                 images: ["gfx/sprites/mund_animation.png"],
@@ -140,6 +157,7 @@ var Globi = Class.extend({
             
             this.mundSeq = new createjs.BitmapAnimation(this.mundSprite);
             this.mundSeq.x = -120;
+            this.mundSeq.y = 30;
             this.mundSeq.scaleX = 0.5;
             this.mundSeq.scaleY = 0.5;
             this.mundSeq.gotoAndPlay("idle");
@@ -155,9 +173,9 @@ var Globi = Class.extend({
             this.globi.addChild(s5);            
             this.globi.addChild(s6);
             this.globi.addChild(s7); 
-            this.globi.addChild(s8);
-            this.globi.addChild(s9);   
-           // this.globi.addChild(this.mundSeq);                 
+            this.globi.addChild(this.brauen_container);
+            this.globi.addChild(this.hand_container);
+            this.globi.addChild(this.mundSeq);                 
            
         },
 

@@ -110,7 +110,7 @@ div#bubble_debug{
 
 div#bubble_selectshape{
 	top:40px;
-	left:40px;
+	left:30px;
 	width:200px;
 	background-color: #F5F2DE;
 	overflow: hidden;
@@ -119,9 +119,10 @@ div#bubble_selectshape{
 }
 
 div#bubble_selectshape_intro{
-	top:40px;
-	left:40px;
-	width:200px;
+	top:10px;
+	left:30px;
+	width:250px;
+	height:520px; /* 568 - 2 * 10px Padding - 8px border*/
 	background-color: #F5F2DE;
 	overflow: hidden;
 	padding:10px;
@@ -166,9 +167,12 @@ div#bubble_info_box{
 	background-color: #68ba5b;
 	border: 0px;
 	font-family: 'Days One', sans-serif;
-	font-size: 16px;
-	marging:20px;
-	padding:10px;
+	font-size: 14px;
+	position: relative;
+	left:30px;
+	top:10px;
+	width: 90px;
+	height: 40px; 
 }
 
 .button:hover{
@@ -207,7 +211,9 @@ p.welcome {
 p.headline {
 	color: #237BB9;
 	font-size: 22px;
-	margin: 15px;
+	position: relative;
+	top:15px;
+	left:30px;
 }
 
 /* BUTTON ************************/
