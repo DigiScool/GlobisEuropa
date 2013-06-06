@@ -183,19 +183,19 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			console.log(this.lvl_bg);
 			console.log(this.container_level);
 			console.log("********************");
-
-			// Hitshape - Position korrigieren
-			this.container_hitshapes.y += +120;
-
-			// Hitshapes ( anzeige on //off)
-			//this.stage.addChild(this.container_hitshapes);
+			
 
 			// Seitenleiste für die Puzzle-teile
 			var menue_bg = new createjs.Graphics();
-			menue_bg.beginFill(createjs.Graphics.getRGB(245,242,222));
-            menue_bg.rect(0,0,250,600);
+			menue_bg
+			.beginFill(createjs.Graphics.getRGB(245,242,222))
+			.setStrokeStyle(4)
+			.beginStroke('#ffffff')
+            .drawRoundRect(0,0,250,544,5);
             
             this.menue_shape = new createjs.Shape(menue_bg);
+            this.menue_shape.x = 30;
+            this.menue_shape.y = 10;
 			
 			// Hintergrund für Seitenmenü laden
 			this.stage.addChild(this.menue_shape);
@@ -221,7 +221,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					var g = new createjs.Graphics();
 					var h  = puzzle[i].hitshape;
 					g.beginFill(createjs.Graphics.getRGB(0,0,0));
-            		g.rect(h.x,h.y,h.w,h.h);
+            		g.drawCircle(h.x,h.y,h.w);
             		
             		var hitShape = new createjs.Shape(g); 
             	
@@ -268,9 +268,10 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 							evt.onMouseUp = function(ev){
 								self.app.changeCursor('default');
+							
   								// Try to find a hitshape under the dndPart
   								var hitShape = self.container_hitshapes.getObjectUnderPoint(ev.stageX,ev.stageY);
-  				
+  								
   								if(hitShape){ 
   									
   									if(hitShape.puzzleId == target.puzzleId){
@@ -284,6 +285,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 										self.stage.removeChild(dndPart);
 									}
   								} else { 
+  									console.log('noshape');
   									self.stage.removeChild(dndPart);
   									//TODO:
   									// SNAPBAK FUNCTION
@@ -304,6 +306,8 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
             // generierten Puzzlteile anzeigen
   			this.stage.addChild(this.container_puzzleparts);
+  			// Hitshapes ( anzeige on //off)
+			//this.stage.addChild(this.container_hitshapes);
 
             console.log('HITSHAPES:');
             console.log(this.container_hitshapes);
@@ -335,6 +339,8 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             	}
             });
 
+            button_up.x = 200;
+            button_down.x=200;
             this.stage.addChild(button_up);
             this.stage.addChild(button_down);
             
@@ -370,9 +376,9 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			
 			
 
-			var mouseover_se = this.globiObjekt.getSouthEurope('#68ba5b','#ffffff');
-			var mouseover_we = this.globiObjekt.getWestEurope('#68ba5b','#ffffff');
-			var mouseover_oe = this.globiObjekt.getOstEurope('#68ba5b','#ffffff');
+			var mouseover_se = this.globiObjekt.getSouthEurope('#ffffff','#68ba5b');
+			var mouseover_we = this.globiObjekt.getWestEurope('#ffffff','#68ba5b');
+			var mouseover_oe = this.globiObjekt.getOstEurope('#ffffff','#68ba5b');
 			
 			
 			
@@ -401,6 +407,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 
 			(function(target){
+				
 				target.addEventListener("mouseover", function(ev){
 					self.app.changeCursor('pointer');
 					self.globi.addChild(mouseover_se);
@@ -553,11 +560,15 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 		/* Animationen für Globi im Hauptmenü */
 
 		globi_idle: function(){
-			this.globi.x += this.idle_globi;
 			this.globi.y += this.idle_globi;
-			if(this.globi.x > 520 || this.globi.x <490) { 
+
+			if( this.globi.y > 420 || this.globi.y < 380 ) { 
 				this.idle_globi *= -1;
 			}
+
+			this.globiObjekt.brauen_container.y-= this.idle_globi * 0.2;
+			this.globiObjekt.hand_container.y += this.idle_globi * 0.4;
+			
 
 		},
 
@@ -565,7 +576,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 			if( this.globi.scaleX >= 2.2){
 				this.stopAnimation("globi_menue_popUp");
-
+				this.globiObjekt.mundSeq.visible = false;
 				if(callback){
 					callback();
 				}
@@ -573,7 +584,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				this.globi.x += 10;
 				this.globi.y -= 10;
 
-
+				
 				this.globi.scaleX += 0.2;
 				this.globi.scaleY += 0.2;
 
@@ -586,9 +597,9 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 			if( this.globi.scaleX < 1.2){
 				this.globi.x = 500;
-				this.globi.y = 450;
+				this.globi.y = 410;
 				this.stopAnimation("globi_menue_popDown");
-				
+				this.globiObjekt.mundSeq.visible = true;
 				if(callback){
 					callback();
 				}
@@ -598,6 +609,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				this.globi.x -= 10;
 				this.globi.y += 10;
 
+			
 
 				this.globi.scaleX -= 0.2;
 				this.globi.scaleY -= 0.2;
