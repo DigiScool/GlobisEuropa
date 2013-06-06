@@ -1,0 +1,97 @@
+{
+	"headline" : "Westeuropa Level 1",
+	"bg" : "gfx/big/westeuropa/Westeuropa_weiss.png",
+	"bgx" : "250",
+	"bgy" : "-200",
+	"script": {
+		"start":"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
+	},
+	"count" : "4",
+	"images" : [
+		"gfx/little/westeuropa/AUS.png",
+		"gfx/little/westeuropa/BEL.png",
+		"gfx/little/westeuropa/FRA.png",
+		"gfx/little/westeuropa/GER.png",
+		"gfx/little/westeuropa/HOL.png",
+		"gfx/little/westeuropa/IRL.png",
+		"gfx/little/westeuropa/LUX.png",
+		"gfx/little/westeuropa/SUI.png",
+		"gfx/little/westeuropa/UK.png",
+		"gfx/big/westeuropa/Westeuropa_weiss.png"
+	],
+
+	"puzzle" : [
+		{
+			"id": "0" , 
+			"part": "gfx/little/westeuropa/GER.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Deutschland",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "1" , 
+			"part"	 : "gfx/little/westeuropa/FRA.png",
+			"hitshape" : {"x" : "490","y" : "190","w" : "140","h" : "160" },
+			"position": {"x" : "430","y" : "142"},
+			"country" : "Frankreich",
+			"description": "Frankreich, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "2",
+			"part"	: "gfx/little/westeuropa/AUS.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Östereich",
+			"description": "Östereich, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "3",
+			"part" : "gfx/little/westeuropa/BEL.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Belgien",
+			"description": "Belgien, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "4",
+			"part" : "gfx/little/westeuropa/HOL.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Holland",
+			"description": "Holland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "5",
+			"part" : "gfx/little/westeuropa/IRL.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Irland",
+			"description": "Irland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "6",
+			"part" : "gfx/little/westeuropa/LUX.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Luxenburg",
+			"description": "Luxenburg, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "7",
+			"part" : "gfx/little/westeuropa/SUI.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Schweiz",
+			"description": "Schweiz, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "3",
+			"part" : "gfx/little/westeuropa/UK.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "England",
+			"description": "England, hier steht dann die beschreibung dazu"
+		}
+	]
+}

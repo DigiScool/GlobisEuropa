@@ -45,8 +45,6 @@ div#bubbles{
 	position: absolute;
 	top:0px;
 	left: 0px;
-
-
 }
 
 div#loader{
@@ -128,6 +126,24 @@ div#bubble_selectshape_intro{
 	overflow: hidden;
 	padding:10px;
 	
+}
+
+div#bubble_info_icon{
+	width: 40px;
+	height: 40px;
+	left:850px;
+	top:480px;
+	background-color: #F5F2DE;
+	padding: 10px;
+}
+
+div#bubble_info_box{
+	width: 400px;
+	height: 200px;
+	left:400px;
+	top:300px;
+	background-color: #F5F2DE;
+	padding: 10px;
 }
 
 

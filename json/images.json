@@ -1,0 +1,30 @@
+{
+	"images" : [ 
+		"gfx/big/mainmenue_background.png",
+		"gfx/big/Globi_Vektor.png",
+		"gfx/big/story_1.jpg",
+		"gfx/big/story_2.jpg",
+		"gfx/big/story_3.jpg",
+		"gfx/big/story_4.jpg",
+		"gfx/sprites/mund_animation.png",
+		"gfx/big/Westeuropa.png",
+		"gfx/big/Osteuropa.png",
+		"gfx/big/Nordeuropa.png",
+		"gfx/little/AUS.png",
+		"gfx/little/BEL.png",
+		"gfx/little/FRA.png",
+		"gfx/little/GER.png",
+		"gfx/little/HOL.png",
+		"gfx/little/LUX.png",
+		"gfx/little/HOL.png",
+		"gfx/little/HUN.png",
+		"gfx/little/LIT.png",
+		"gfx/little/SUI.png",
+		"gfx/little/ROM.png",
+		"gfx/little/UK.png",
+		"gfx/little/POR.png",
+		"gfx/little/SPA.png",
+		"gfx/little/SUI.png"
+	]
+
+}
