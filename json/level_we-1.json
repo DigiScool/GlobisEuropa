@@ -27,7 +27,30 @@
 			"hitshape" : { "x" : "740", "y" : "270", "w" : "70"},
 			"position": { "x" : "649", "y" : "190" },
 			"country" : "Deutschland",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": "<ul>
+						<li>Einwohner: 80,328 Mio.</li>
+						<li>Fläche: 357.121,41 km²</li>
+						<li>Amtssprache: Deutsch</li>
+						<li>Hauptstadt: Berlin</li>
+						<li>Staatsform: parlamentarische Bundesrepublik</li>
+						<li>Staatsoberhaupt: Bundespräsident Joachim Gauck</li>
+						<li>Regierungschef: Bundeskanzlerin Angela Merkel</li>
+						<li>Währung: Euro (1 € = 100 ct)</li>
+						<li>Nationalfeiertag: 3. Oktober (Tag der Deutschen Einheit)</li>
+					  </ul>"
+			"description": <b>Deutschland</b> (Vollform <b>Bundesrepublik Deutschland</b>) ist ein Bundesstaat in Mitteleuropa. Gemäß seiner Verfassung ist 
+			               Deutschland eine föderal organisierte Republik, die aus den 16 deutschen Ländern gebildet wird. Die Bundesrepublik ist ein 
+						   freiheitlich-demokratischer und sozialer Rechtsstaat.<br>
+						   Neun europäische Nachbarstaaten grenzen an Deutschland, naturräumlich zudem im Norden die Gewässer der Nord- und Ostsee und im 
+						   Süden das Bergland der Alpen.Sie liegt in der gemäßigten Klimazone und zählt mit rund 80 Millionen Einwohnern zu den dicht 
+						   besiedelten Flächenländern.<br>
+						   Deutschland ist die größte Volkswirtschaft Europas und viertgrößte der Welt. Im Jahr 2011 war es die drittgrößte Export- und 
+						   Importnation. Deutschland zählt zu den sehr hoch entwickelten Staaten.<br>
+						   Viel Schönes hat Deutschland zu bieten: reizvoll-elegante Großstädte, Kleinstädte wie aus dem Bilderbuch, heidnisch angehauchte 
+						   Erntefeste, jede Menge Kunst und Kultur, sowie die zeitlosen Annehmlichkeiten riesiger Waldgebiete und herrlicher Schlösser sowie 
+						   neben anderen Annehmlichkeiten, guten Wein und gutes Bier. Die Wiedervereinigung 1990 bedeutete den Beginn eines weiteren Kapitels 
+						   der komplizierten deutschen Geschichte. Von der Vergangenheit dieses Landes und ihren Auswirkungen auf die Deutschen wird kein 
+						   Besucher unberührt bleiben."
 		},
 		{
 			"id": "1" , 
