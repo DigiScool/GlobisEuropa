@@ -129,11 +129,19 @@ define(['jquery'],function($){
 
  			// Lade die JSONFile
  			var file = 'json/' + id +'.json';
- 			$.getJSON(file, function(data){
- 				console.log('JSON-FILE');
- 				console.log(data);
- 				loadImages(data);
- 			});
+ 			$.ajax({
+    			url: file,
+    			dataType: 'json',
+    			success: function( data ) {
+      				console.log("SUCCESS");
+      				console.log(data);
+      				loadImages(data);
+   			 	},
+    			error: function( data ) {
+      				console.log("ERROR");
+      				console.log(data);
+    			}
+ 			 });
 
  			// Lade die Images
  			var imagesLoaded = 0;

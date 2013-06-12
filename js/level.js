@@ -85,8 +85,21 @@ define(['jquery'],function($){
 					$('#bubble_hide_infobox').unbind();
 				});
 			}
+		},
+
+		loadInfo: function(country){
+			console.log("COUNTRY-ID. " + country);
+			if(this.level.puzzle[country]){
+				var facts = this.level.puzzle[country].facts.join('');	
+				this.app.setDOMText("#country_info_text",facts);
+				this.app.addBubble("#bubble_country_info");
+			}
+			
+			
 		}
 	});
+
+	
 
 	return Level;
 

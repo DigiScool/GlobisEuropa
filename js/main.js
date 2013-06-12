@@ -9,17 +9,6 @@ define(['jquery','app'], function($,App){
 
 			app = new App();
 
-			$('#menue_picture_area').click(function(){
-				app.startLevel("level11");
-			});
-
-			$('#button_zurueck').click(function(){
-				app.toggleMenue();
-			});
-
-			$('#button_newGame').click(function(){
-				app.toggleMenue();
-			});
 
 			$('#button_home').click(function(){
 				app.showGamemenue();
@@ -39,6 +28,10 @@ define(['jquery','app'], function($,App){
 
 			$('#level_puzzle_menueHoverArea').mouseover(function(){
 				$('#level_puzzle_partsMenue').removeClass('hide');
+			});
+
+			$('#button_hide_countryInfo').click(function(){
+				$('#bubble_country_info').addClass('hide');
 			});
 
 

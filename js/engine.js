@@ -280,6 +280,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 							dndPart.y = evt.stageY+offset.y
 							dndPart.scaleX = 0.8;
 							dndPart.scaleY = 0.8;
+							dndPart.countryId = target.puzzleId;
 							self.stage.addChild(dndPart);
 							self.stage.swapChildren(self.dropring_container,dndPart);
 				
@@ -321,6 +322,8 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 										
 										self.addEvents(dndPart);
 										self.addDropRing('#68ba5b',ev.stageX,ev.stageY);
+										console.log(dndPart.countryId);
+
 
 									} else {
 										self.addDropRing('#B22222',ev.stageX,ev.stageY);
@@ -406,7 +409,8 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			var hoverin_Filter =  new createjs.ColorFilter(0.2,0.4,0.2,1);
 			var hoverout_Filter = new createjs.ColorFilter(0.5,0.9,0.5,1);
 			var img = element.image;
-			
+			var id = element.countryId;
+			console.log(element);
 			element.addEventListener("mouseover",function(){
 		
 				element.filters = [
@@ -428,7 +432,8 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			});
 
 			element.addEventListener("click",function(){
-				alert('* Informationen * noch nicht implementiert');
+				
+				self.level.loadInfo(id);
 			});
 		},
 
