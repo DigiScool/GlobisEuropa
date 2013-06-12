@@ -2,7 +2,7 @@
 	"headline" : "Südeuropa Level 1",
 	"bg" : "gfx/big/suedeuropa/Suedeuropa.png",
 	"bgx" : "150",
-	"bgy" : "-400",
+	"bgy" : "-380",
 	"script": {
 		"start":"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
 	},

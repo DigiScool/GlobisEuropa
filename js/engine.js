@@ -25,6 +25,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 		
 			// Speicher für die laufende Animationen
 			this.anim = [];
+			this.levelanim = [];
 
 
 			// INTRO ////////////////
@@ -74,6 +75,8 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.container_hitshapes = new createjs.Container();
 
 
+			this.dropring_container = new createjs.Container();
+
 
 			
 		},
@@ -92,6 +95,25 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				// Rufe Funktion auf und übergib Callback
 				this[this.anim[0][0]](this.anim[0][1]) 
 			}
+
+			// Neuer Stack für Animationen
+			var animBuffer = [];
+
+			for(var i  = 0 ; i < this.levelanim.length; i++){
+				
+				var anim = this.levelanim.pop();
+				var result = anim();
+				
+				if(result != null){
+					// nimm Animation wieder in den Buffer auf
+					animBuffer.push(anim);
+				}
+			
+			}
+
+			this.levelanim = animBuffer;			
+
+
 
 			if(this.introShow == true){
 				
@@ -170,6 +192,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 		setLevel: function(level,puzzle,callback){
 			
 			var self = this;
+			
 
 			// Hintergrund laden
 			this.lvl_bg = new createjs.Bitmap(level.bg);
@@ -196,6 +219,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             this.menue_shape = new createjs.Shape(menue_bg);
             this.menue_shape.x = 30;
             this.menue_shape.y = 10;
+            this.menue_shape.alpha = 0.5;
 			
 			// Hintergrund für Seitenmenü laden
 			this.stage.addChild(this.menue_shape);
@@ -212,7 +236,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					
 					// menueentry for the puzzlepart
 					var menueEntry = new createjs.Bitmap(puzzle[i].part);
-					menueEntry.y = 200 * i;
+					menueEntry.y = 50 + 200 * i;
 					menueEntry.x = 50;
 					menueEntry.scaleX = 0.5;
 					menueEntry.scaleY = 0.5;
@@ -257,6 +281,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 							dndPart.scaleX = 0.8;
 							dndPart.scaleY = 0.8;
 							self.stage.addChild(dndPart);
+							self.stage.swapChildren(self.dropring_container,dndPart);
 				
 
 							evt.onMouseMove = function(ev){
@@ -275,13 +300,30 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
   								if(hitShape){ 
   									
   									if(hitShape.puzzleId == target.puzzleId){
-										// Positionskorrektur
-										dndPart.x = hitShape.posCorrection.x;
-										dndPart.y = hitShape.posCorrection.y;
+										
+										// Grünfilter
+										greenFilter = new createjs.ColorFilter(0.5,0.9,0.5,1);
+										
+        
+         								// Positionskorrektur
+										dndPart .x = hitShape.posCorrection.x;
+										dndPart .y = hitShape.posCorrection.y;
+										
+										dndPart.filters = [
+											greenFilter
+										];
+
+										var img = dndPart.image;
+										dndPart.cache(0,0,img.width,img.height);
+
 										self.level.showInfo(hitShape.puzzleId);
 										self.sortMenue(target);
+										
+										self.addEvents(dndPart);
+										self.addDropRing('#68ba5b',ev.stageX,ev.stageY);
+
 									} else {
-										alert('Falsches Land');
+										self.addDropRing('#B22222',ev.stageX,ev.stageY);
 										self.stage.removeChild(dndPart);
 									}
   								} else { 
@@ -315,7 +357,11 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             console.log(this.container_puzzleparts);
 
             // Buttons zum navigeren durch das Menue
-            var button_down = new createjs.Bitmap("gfx/little/button.png");
+            var button_down = new createjs.Bitmap("gfx/little/pfeil_hoch.png");
+            button_down.scaleX = 0.25;
+            button_down.scaleY = 0.25;
+            button_down.x = 135;
+            button_down.y = 15;
             button_down.addEventListener("click", function(){
             		
             	var firstChild = self.container_puzzleparts.getChildAt(0);
@@ -329,9 +375,11 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             	}
             });
 
-            var button_up = new createjs.Bitmap("gfx/little/button.png");
+            var button_up = new createjs.Bitmap("gfx/little/pfeil_runter.png");
             button_up.y = 500;
-
+            button_up.scaleX = 0.25;
+            button_up.scaleY = 0.25;
+            button_up.x = 135;
             button_up.addEventListener("click", function(){
             	for(var i = 0; i < self.container_puzzleparts.getNumChildren(); i++){
             		var child = self.container_puzzleparts.getChildAt(i);
@@ -339,15 +387,49 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             	}
             });
 
-            button_up.x = 200;
-            button_down.x=200;
             this.stage.addChild(button_up);
             this.stage.addChild(button_down);
             
+            this.stage.addChild(this.dropring_container);
+
             if(callback) {
             	callback()
             };
 			
+		},
+		
+
+		
+
+		addEvents: function(element){
+			var self = this;
+			var hoverin_Filter =  new createjs.ColorFilter(0.2,0.4,0.2,1);
+			var hoverout_Filter = new createjs.ColorFilter(0.5,0.9,0.5,1);
+			var img = element.image;
+			
+			element.addEventListener("mouseover",function(){
+		
+				element.filters = [
+					hoverin_Filter
+				];
+
+				element.cache(0,0,img.width,img.height);
+				self.app.changeCursor('pointer');
+			});
+
+			element.addEventListener("mouseout",function(){
+		
+				element.filters = [
+					hoverout_Filter
+				];
+
+				element.cache(0,0,img.width,img.height);
+				self.app.changeCursor('default');
+			});
+
+			element.addEventListener("click",function(){
+				alert('* Informationen * noch nicht implementiert');
+			});
 		},
 
 		sortMenue: function(target){
@@ -556,6 +638,53 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 		},
 
 
+		/////////////////////////////
+		// Animationen im Level
+		
+		addDropRing: function(color,x,y){
+			
+			var self  = this;
+			var radius = 40;
+			var alpha = 1;
+			var ringShape = new createjs.Shape();
+			this.stage.addChild(ringShape);
+
+			// Update Funktion
+			var update = function(){
+				
+				radius += 20;
+				if(radius > 150){
+
+					// Ring-"Lebensdauer" überschritten
+					// entfernen
+					self.remove(ringShape);
+					// nicht wieder in den Update-Stackaufnehmen
+					return null;
+				
+				} else {
+				
+					// Neue Graphic zeichnen
+					ringShape.graphics
+					.setStrokeStyle(10)
+					.beginStroke(color);
+					ringShape.graphics.drawCircle(x,y,radius);
+					// alpha setzen
+					ringShape.alpha -= 0.2;
+
+					// funtkion wieder in den updatestack aufnehmen
+					return update;
+					
+				}
+			};
+
+			// update-funktion hinzufügen
+			this.levelanim.push(update);
+		},
+
+		remove: function(element){
+			this.stage.removeChild(element);
+		},
+		
 		/**************************************/
 		/* Animationen für Globi im Hauptmenü */
 

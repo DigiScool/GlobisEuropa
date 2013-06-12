@@ -17,7 +17,9 @@
 		"gfx/little/westeuropa/LUX.png",
 		"gfx/little/westeuropa/SUI.png",
 		"gfx/little/westeuropa/UK.png",
-		"gfx/big/westeuropa/Westeuropa_weiss.png"
+		"gfx/big/westeuropa/Westeuropa_weiss.png",
+		"gfx/little/pfeil_hoch.png",
+		"gfx/little/pfeil_runter.png"
 	],
 
 	"puzzle" : [
