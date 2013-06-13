@@ -18,6 +18,10 @@ define(['jquery','app'], function($,App){
 				app.setGameState("intro");
 			});
 
+			$('#button_zurueck').click(function(){
+				app.toggleMenue();
+			});
+
 			$('#button_cancelIntro').click(function(){
 				app.cancelIntro();
 			});
@@ -32,6 +36,11 @@ define(['jquery','app'], function($,App){
 
 			$('#button_hide_countryInfo').click(function(){
 				$('#bubble_country_info').addClass('hide');
+				$('#bubble_country_details').addClass('hide');
+			});
+
+			$('#button_info_details').click(function(){
+				$('#bubble_country_details').removeClass('hide');
 			});
 
 

@@ -76,26 +76,39 @@ define(['jquery'],function($){
 
 				case "levelDone":
 
+					// entferne alle Elemente auf der Canvas
+					// leere die Ticker
 					this.engine.clearStage();
-					self.engine.loadContainer("hmContainer");
-					$('#bubble_info_icon').addClass('hide');
+
+					// Entferne alle Bubbles
+					$('#bubbles').children().addClass('hide');
+
+					// Entferne selektierbare Kontinente
+					this.engine.disableLandSelection();
+
+					// Lade das Hauptmenue
+					this.engine.loadContainer("hmContainer");
  					
- 					this.engine.startAnimation('globi_menue_popDown',function(){
- 						
+ 					// setze Globi auf Position
+ 					this.engine.globi.y = 300;
+ 					this.engine.globi.x  = 650;
 
- 						self.engine.stopAnimation();
- 						$('#bubble_info_box').children('p').html("Du hast das erste Level geschafft");
+ 					// Bring Globi zurück auf das Levelauswahlmenü
+ 					this.engine.startAnimation('globi_leveldone_popDown',function(){
  						
- 						$('#button_hide_infobox').click(function(){
-							
-							$('#bubble_info_box').addClass('hide');
-							$('#bubble_hide_infobox').unbind();
-							self.engine.enableEvents_Hauptmenue();
-							self.setGameState("hauptmenue");
-						
-						});
+ 						// Zeige den text an
 
-						$('#bubble_info_box').removeClass('hide');
+ 						if( self.level.stage == 1) {
+ 							$('#bubble_selectshape_intro').children('p').html(self.level.level.ende1);	
+ 						}
+ 						
+ 						$('#bubble_selectshape_intro').removeClass('hide');
+ 						
+ 						// ZUrück_Button des Auswahlmenües
+ 						$('#button_zurueck').removeClass('hide');
+
+ 						// Zeige Fortschritt auf Gbovi
+ 						self.engine.showTheProcress();
 
 					});
  					
@@ -274,10 +287,12 @@ define(['jquery'],function($){
  				$('#headline').html('Neues Spiel');
  				;
  			} else {
+ 				$('#bubbles').children().addClass('hide');
  				this.engine.stopAnimation('globi_idle');
  				this.engine.startAnimation('globi_menue_popDown');
-
- 				$('#bubble_selectshape_intro').addClass('hide');
+ 			
+ 				
+ 				
  				//$('#bubble_menue_newgame').addClass('slideIn');
  				//$('#bubble_menue_newgame').removeClass('slideOut');
  				//$('#button_newGame').addClass('hide');
@@ -292,7 +307,7 @@ define(['jquery'],function($){
 
  			var self = this;
  			this.engine.enableEvents_Hauptmenue();
- 			$('#bubble_game_dialog').addClass('hide')
+ 			$('#bubbles').children().addClass('hide');
  			$('#button_home').addClass('hide')
  			$('#levelLoader').addClass('hide');
  			$('#headline').html('Hauptmen&uuml;');

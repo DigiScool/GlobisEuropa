@@ -3,7 +3,18 @@ define(['jquery'],function($){
 	var Level = Class.extend({
 
 		init: function(){
-	
+			
+			// Array zum speichern des Fortschrittes
+			this.procress = new Array(4);
+			this.procress[0] = 0;	// Westeuropa
+			this.procress[1] = 0;	// Osteuropa
+			this.procress[2] = 0;	// Südeuropa
+			this.procress[3] = 0;	// Nordeuropa
+
+			// aktueller Abschnitt
+			this. stage = 1;
+			this.level_played = 0 ;
+
 		},
 
 		setup: function(app,engine){
@@ -42,7 +53,9 @@ define(['jquery'],function($){
 				// Nachdem das Level geladen & angezeigt ist,
 				// starte Script
 				//self.engine.blurStage(true);
-				$('#dialog').html(self.level.script.start);
+				
+				$('#dialog').html(self.level.script[self.level_played]);
+
 				$('#bubble_game_dialog').removeClass('hide');
 			});
 
@@ -62,8 +75,7 @@ define(['jquery'],function($){
 
 			console.log('#'+this.pCounter+' richtig plaziert');
 			if(this.pCounter == this.level.count) {
-				$('#button_home').addClass('hide');
-				this.app.setGameState("levelDone",this.id);
+				self.levelDone();
 			}
 
 			if(this.id == "11" && this.pCounter == 1){
@@ -91,11 +103,24 @@ define(['jquery'],function($){
 			console.log("COUNTRY-ID. " + country);
 			if(this.level.puzzle[country]){
 				var facts = this.level.puzzle[country].facts.join('');	
+				var description = this.level.puzzle[country].description.join(' ');
 				this.app.setDOMText("#country_info_text",facts);
+				this.app.setDOMText("#bubble_country_details",description);
 				this.app.addBubble("#bubble_country_info");
 			}
 			
 			
+		},
+
+		levelDone: function(){
+
+			// das Spiel wurde geschafft. 
+			// entsprechendes Array-Feld wird um 1 erhöht
+			this.procress[this.level.id]++;
+			this.level_played++;
+
+			$('#button_home').addClass('hide');
+			this.app.setGameState("levelDone");
 		}
 	});
 

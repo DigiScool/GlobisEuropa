@@ -130,9 +130,9 @@ div#bubble_selectshape_intro{
 }
 
 div#bubble_info_icon{
-	width: 40px;
+	text-align: right;
 	height: 40px;
-	left:850px;
+	right:-994px;
 	top:480px;
 	background-color: #F5F2DE;
 	padding: 10px;
@@ -160,6 +160,17 @@ div#bubble_country_info{
 div#country_info_text{
 	height: 90%;
 	overflow: hidden;
+	font-size: 12px;
+}
+
+div#bubble_country_details{
+	top:10px;
+	left:30px;
+	width:620px;
+	height:520px; /* 568 - 2 * 10px Padding - 8px border*/
+	background-color: #F5F2DE;
+	overflow: hidden;
+	padding:10px;
 	font-size: 12px;
 }
 

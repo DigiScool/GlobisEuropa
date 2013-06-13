@@ -10,7 +10,6 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 	var Engine = Class.extend({
 		
 		init: function(stage){
-			
 			// Initialisierungen
 			var self = this;
 
@@ -84,6 +83,8 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 		setup: function(app,level){
 			this.level = level;
 			this.app = app;
+
+			this.SHOW_HITSHAPES = false;
 		},
 
 		// Callback -Funktion für die Frameloop
@@ -159,6 +160,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				this.globi.getChildAt(0).graphics = g;
 
 				this.globiObjekt.we_shape.removeAllEventListeners();
+
 			this.globi.addEventListener("mouseover",function(){
 				var g = new createjs.Graphics()
 				.setStrokeStyle(10)
@@ -230,6 +232,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			// eventhandler hinzufügen
 
 			this.container_puzzleparts = new createjs.Container();
+			this.container_hitshapes = new createjs.Container();
 
 			if(puzzle){
 				for(var i = 0; i < puzzle.length; i++){
@@ -313,16 +316,16 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 										dndPart.filters = [
 											greenFilter
 										];
-
 										var img = dndPart.image;
 										dndPart.cache(0,0,img.width,img.height);
+
 
 										self.level.showInfo(hitShape.puzzleId);
 										self.sortMenue(target);
 										
 										self.addEvents(dndPart);
 										self.addDropRing('#68ba5b',ev.stageX,ev.stageY);
-										console.log(dndPart.countryId);
+										self.addCountryNameIcon(hitShape.countryName);
 
 
 									} else {
@@ -352,7 +355,9 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             // generierten Puzzlteile anzeigen
   			this.stage.addChild(this.container_puzzleparts);
   			// Hitshapes ( anzeige on //off)
-			//this.stage.addChild(this.container_hitshapes);
+			if(this.SHOW_HITSHAPES){
+				this.stage.addChild(this.container_hitshapes);
+			}
 
             console.log('HITSHAPES:');
             console.log(this.container_hitshapes);
@@ -400,8 +405,6 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             };
 			
 		},
-		
-
 		
 
 		addEvents: function(element){
@@ -462,83 +465,117 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.globi.removeAllEventListeners();
 			
 			
-
-			var mouseover_se = this.globiObjekt.getSouthEurope('#ffffff','#68ba5b');
-			var mouseover_we = this.globiObjekt.getWestEurope('#ffffff','#68ba5b');
-			var mouseover_oe = this.globiObjekt.getOstEurope('#ffffff','#68ba5b');
+			if( this.level.stage == 1){
+				var mouseover_se = this.globiObjekt.getSouthEurope('#ffffff','#68ba5b');
+				var mouseover_we = this.globiObjekt.getWestEurope('#ffffff','#68ba5b');
+				var mouseover_oe = this.globiObjekt.getOstEurope('#ffffff','#68ba5b');
+				var mouseover_ne = this.globiObjekt.getNorthEurope('#ffffff','#68ba5b');
+			}
 			
 			
-			
-			(function(target){
-				target.addEventListener("mouseover", function(ev){
-					self.app.changeCursor('pointer');
-					self.globi.addChild(mouseover_we);
-					self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
-					self.app.setDOMText("#bubble_selectshape_txt",'Westeuropa');
-					self.app.addBubble("#bubble_selectshape");
-				});
+			// Ist das Level noch spielbar
+			if (this.level.procress[0] < this.level.stage){
+				(function(target){
+					target.addEventListener("mouseover", function(ev){
+						self.app.changeCursor('pointer');
+						self.globi.addChild(mouseover_we);
+						self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
+						self.app.setDOMText("#bubble_selectshape_txt",'Westeuropa');
+						self.app.addBubble("#bubble_selectshape");
+					});
 
-				target.addEventListener("mouseout", function(){
-					self.globi.removeChild(mouseover_we);
-					self.app.removeBubble("#bubble_selectshape");
-					self.app.changeCursor('default');
-				});
+					target.addEventListener("mouseout", function(){
+						self.globi.removeChild(mouseover_we);
+						self.app.removeBubble("#bubble_selectshape");
+						self.app.changeCursor('default');
+					});
 
-				target.addEventListener("click", function(){
-					self.app.removeBubble("#bubble_selectshape");
-					self.app.startLevel("level_we-1");
-					self.app.changeCursor('default');
-				});
+					target.addEventListener("click", function(){
+						self.app.removeBubble("#bubble_selectshape");
+						self.app.startLevel("level_we-1");
+						self.app.changeCursor('default');
+					});
 
-			})(this.globiObjekt.we_container);
+				})(this.globi.getChildAt(3));
+			}
 
-
-			(function(target){
-				
-				target.addEventListener("mouseover", function(ev){
-					self.app.changeCursor('pointer');
-					self.globi.addChild(mouseover_se);
-					self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
-					self.app.setDOMText("#bubble_selectshape_txt",'Südeuropa');
-					self.app.addBubble("#bubble_selectshape");
+			if (this.level.procress[2] < this.level.stage){
+				(function(target){
 					
-				
-				});
-
-				target.addEventListener("mouseout", function(ev){
-					self.globi.removeChild(mouseover_se);
-					self.app.removeBubble("#bubble_selectshape");
-					self.app.changeCursor('default');
-				});
-
-				target.addEventListener("click", function(){
-					self.app.removeBubble("#bubble_selectshape");
-					self.app.startLevel("level_se-1");
-					self.app.changeCursor('default');
-				});
-
-			})(this.globiObjekt.se_container);
-
-			(function(target){
-				target.addEventListener("mouseover", function(ev){
-					self.app.changeCursor('pointer');
-					self.globi.addChild(mouseover_oe);
-					self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
-					self.app.setDOMText("#bubble_selectshape_txt",'Osteuropa');
-					self.app.addBubble("#bubble_selectshape");
+					target.addEventListener("mouseover", function(ev){
+						self.app.changeCursor('pointer');
+						self.globi.addChild(mouseover_se);
+						self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
+						self.app.setDOMText("#bubble_selectshape_txt",'Südeuropa');
+						self.app.addBubble("#bubble_selectshape");
+						
 					
-				
-				});
+					});
 
-				target.addEventListener("mouseout", function(ev){
-					self.globi.removeChild(mouseover_oe);
-					self.app.removeBubble("#bubble_selectshape");
-					self.app.changeCursor('default');
-				});
+					target.addEventListener("mouseout", function(ev){
+						self.globi.removeChild(mouseover_se);
+						self.app.removeBubble("#bubble_selectshape");
+						self.app.changeCursor('default');
+					});
 
-			})(this.globiObjekt.oe_container);
+					target.addEventListener("click", function(){
+						self.app.removeBubble("#bubble_selectshape");
+						self.app.startLevel("level_se-1");
+						self.app.changeCursors('default');
+					});
 
+				})(this.globi.getChildAt(4));
+			}
+
+			if (this.level.procress[1] < this.level.stage){
+				(function(target){
+					target.addEventListener("mouseover", function(ev){
+						self.app.changeCursor('pointer');
+						self.globi.addChild(mouseover_oe);
+						self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
+						self.app.setDOMText("#bubble_selectshape_txt",'Osteuropa');
+						self.app.addBubble("#bubble_selectshape");
+						
+					
+					});
+
+					target.addEventListener("mouseout", function(ev){
+						self.globi.removeChild(mouseover_oe);
+						self.app.removeBubble("#bubble_selectshape");
+						self.app.changeCursor('default');
+					});
+
+				})(this.globi.getChildAt(2));
+			}
+
+			if (this.level.procress[3] < this.level.stage){
+				(function(target){
+					target.addEventListener("mouseover", function(ev){
+						self.app.changeCursor('pointer');
+						self.globi.addChild(mouseover_ne);
+						self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
+						self.app.setDOMText("#bubble_selectshape_txt",'Nordeuropa');
+						self.app.addBubble("#bubble_selectshape");
+						
+					
+					});
+
+					target.addEventListener("mouseout", function(ev){
+						self.globi.removeChild(mouseover_ne);
+						self.app.removeBubble("#bubble_selectshape");
+						self.app.changeCursor('default');
+					});
+
+				})(this.globi.getChildAt(5));
+			}
 			
+		},
+
+		disableLandSelection: function(){
+			this.globiObjekt.we_container.removeAllEventListeners();
+			this.globiObjekt.ne_container.removeAllEventListeners();
+			this.globiObjekt.se_container.removeAllEventListeners();
+			this.globiObjekt.oe_container.removeAllEventListeners();
 		},
 
 
@@ -555,9 +592,14 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 		// werden muss
 		// Performance Verbesserung
 		clearStage: function(){
+
 			console.log('Säubere die Stage');
 			this.stage.clear();
 			this.stage.removeAllChildren();
+
+			// Säubere die Ticker
+			this.anim = [];
+			this.levelanim = [];
 		},
 
 		blurStage: function(trigger){
@@ -635,6 +677,79 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 		},
 
+		showTheProcress: function(){
+			
+			// Auf welcher Stage befinden wir uns ?
+			var stage  = this.level.stage;
+
+			console.log(this.level.procress);
+			console.log(this.level.stage);
+
+			// Verändere die AbschnittsContainer auf Globi
+			if(stage == 1){
+				
+				/* Abschnitt 1
+					gehe die Elemente durch und schaue welche 
+					schon den Abschnitt fertig haben
+				*/
+				if(this.level.procress[0] == stage){
+						var newContainer = this.globiObjekt.getWestEurope('#68ba5b','#68ba5b');
+						// hole den Index des alten Containers
+						var oldIndex = this.globi.getChildIndex(this.globiObjekt.we_container);
+						// removce den alten container
+						this.globi.removeChild(this.globiObjekt.we_container);
+						// füge den neuen Hinzu
+						this.globi.addChild(newContainer);
+						// switche den neuen Container an die alte Stelle
+						this.globi.setChildIndex(newContainer, oldIndex + 1);						
+				}
+
+				if(this.level.procress[1] == stage){
+						
+						var newContainer = this.globiObjekt.getOstEurope('#68ba5b','#68ba5b');
+						// hole den Index des alten Containers
+						var oldIndex = this.globi.getChildIndex(this.globiObjekt.oe_container);
+						// removce den alten container
+						this.globi.removeChild(this.globiObjekt.oe_container);
+						// füge den neuen Hinzu
+						this.globi.addChild(newContainer);
+						// switche den neuen Container an die alte Stelle
+						this.globi.setChildIndex(newContainer, oldIndex + 1);	
+				}
+
+				if(this.level.procress[2] == stage){
+						
+						var newContainer = this.globiObjekt.getSouthEurope('#68ba5b','#68ba5b');
+						// hole den Index des alten Containers
+						var oldIndex = this.globi.getChildIndex(this.globiObjekt.se_container);
+						// removce den alten container
+						this.globi.removeChild(this.globiObjekt.se_container);
+						// füge den neuen Hinzu
+						this.globi.addChild(newContainer);
+						// switche den neuen Container an die alte Stelle
+						this.globi.setChildIndex(newContainer, oldIndex + 1 );	
+				}
+
+				if(this.level.procress[3] == stage){
+						
+						var newContainer = this.globiObjekt.getNorthhEurope('#68ba5b','#68ba5b');
+						// hole den Index des alten Containers
+						var oldIndex = this.globi.getChildIndex(this.globiObjekt.ne_container);
+						// removce den alten container
+						this.globi.removeChild(this.globiObjekt.ne_container);
+						// füge den neuen Hinzu
+						this.globi.addChild(newContainer);
+						// switche den neuen Container an die alte Stelle
+						this.globi.setChildIndex(newContainer, oldIndex + 1);	
+				}
+
+				// Debugausgabe
+				console.log(this.globi);
+				this.enableLandSelection();
+			}
+
+		},
+
 		showSpriteAnimation: function(anim){
 			switch(anim){
 				case 'mund1' :  this.globiObjekt.mundSeq.gotoAndPlay("talkf"); break;
@@ -645,7 +760,37 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 		/////////////////////////////
 		// Animationen im Level
-		
+		addCountryNameIcon: function(name){
+
+			// focus
+			var self = this;
+
+			// Setze den Namen ins Div-Element
+			var text = name + ' entdeckt!';
+			this.app.setDOMText('#bubble_info_icon',text);
+			this.app.addBubble('#bubble_info_icon');
+
+			// aktuelle Zeit
+			var oldTime = new Date();
+
+			var update = function(){
+				
+				// warte eine gewisse Zeit und blende dann aus#
+				var newTime = new Date();
+				if((newTime - oldTime) > 3000){
+					// blende aus nach 3 Sekunden
+					self.app.removeBubble('#bubble_info_icon');
+					return null;
+				} else {
+					// Zeit noch nicht abgelaufen
+					return update;
+				}
+			};
+
+			// in Ticker-Liste aufnehmen
+			this.levelanim.push(update);
+		},
+
 		addDropRing: function(color,x,y){
 			
 			var self  = this;
@@ -716,11 +861,33 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				}
 			} else {
 				this.globi.x += 10;
-				this.globi.y -= 10;
+				this.globi.y -= 6;
 
 				
 				this.globi.scaleX += 0.2;
 				this.globi.scaleY += 0.2;
+
+			}
+		},
+
+		globi_leveldone_popDown: function(callback){
+			
+			if( this.globi.scaleX <= 2.2){
+				this.stopAnimation("globi_leveldone_popDown");
+				this.globiObjekt.mundSeq.visible = false;
+				
+				if(callback){
+					callback();
+				}
+
+			} else {
+				this.globi.x -= 10;
+				this.globi.y += 10;
+
+			
+
+				this.globi.scaleX -= 0.2;
+				this.globi.scaleY -= 0.2;
 
 			}
 		},

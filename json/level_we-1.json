@@ -1,11 +1,15 @@
 {
+	"id":"0",
+	"shape": "we_container",
 	"headline" : "Westeuropa Level 1",
 	"bg" : "gfx/big/westeuropa/Westeuropa_weiss.png",
 	"bgx" : "250",
 	"bgy" : "-200",
-	"script": {
-		"start":"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
-	},
+	"script": [
+		"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt.",
+		"Nun wartet der zweite Teil Europas mit neuen spannenden Ländern auf dich"
+	],
+	"ende1": "Sehr gut gemacht! Westeuopa hat nun schon Länder. Jetzt wird es allerdings ein bisschen schwieriger, denn auch die anderen Teile Europas möchten ihre Länder zurückbekommen.",
 	"count" : "9 ",
 	"images" : [
 		"gfx/little/westeuropa/AUS.png",
@@ -48,17 +52,17 @@
 				"Bundesstaat in Mitteleuropa. Gemäß seiner Verfassung ist",
 			    "Deutschland eine föderal organisierte Republik, die",
 			    "aus den 16 deutschen Ländern gebildet wird. Die Bundesrepublik ist ein",
-				"freiheitlich-demokratischer und sozialer Rechtsstaat.<br>",
+				"freiheitlich-demokratischer und sozialer Rechtsstaat.<br><br>",
 				"Neun europäische Nachbarstaaten grenzen an",
 				"Deutschland, naturräumlich zudem im Norden die",
 				"Gewässer der Nord- und Ostsee und im",
 				"Süden das Bergland der Alpen.Sie liegt in der gemäßigten",
 				"Klimazone und zählt mit rund 80 Millionen Einwohnern zu den dicht",
-				"besiedelten Flächenländern.<br>",
+				"besiedelten Flächenländern.<br><br>",
 				"Deutschland ist die größte Volkswirtschaft Europas",
 				"und viertgrößte der Welt. Im Jahr 2011 war es die drittgrößte Export- und",
 				"Importnation. Deutschland zählt zu den sehr",
-				"hoch entwickelten Staaten.<br>",
+				"hoch entwickelten Staaten.<br><br>",
 				"Viel Schönes hat Deutschland zu bieten: reizvoll-elegante Großstädte,",
 				"Kleinstädte wie aus dem Bilderbuch, heidnisch angehauchte",
 				"Erntefeste, jede Menge Kunst und Kultur, sowie die zeitlosen",
