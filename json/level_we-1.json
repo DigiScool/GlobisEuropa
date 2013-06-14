@@ -25,7 +25,9 @@
 		"gfx/little/pfeil_hoch.png",
 		"gfx/little/pfeil_runter.png",
 		"gfx/sights/BrandenburgerTor.jpg",
-		"gfx/sights/Neuschwanstein.jpg"
+		"gfx/sights/Neuschwanstein.jpg",
+		"gfx/sights/Eiffelturm.jpg",
+		"gfx/sights/MontSaintMichel.jpg"
 	],
 
 	"puzzle" : [
@@ -50,7 +52,6 @@
 				"</ul>"
 			],
 			"description": [
-				
 				"<b>Deutschland</b> (Vollform <b>Bundesrepublik Deutschland</b>) ist ein",
 				"Bundesstaat in Mitteleuropa. Gemäß seiner Verfassung ist",
 			    "Deutschland eine föderal organisierte Republik, die",
@@ -76,7 +77,7 @@
 				"Besucher unberührt bleiben.<br><br>",
 				"<img style='margin-right: 5px;' align='left' width='300px' height='197px' src='./gfx/sights/BrandenburgerTor.jpg' title='Brandenburger Tor' />",
 				"<img align='right' width='300px' height='197px' src='./gfx/sights/Neuschwanstein.jpg' title='Schloss Neuschwanstein' />"
-		]
+			]
 		},
 		{
 			"id": "1" , 
@@ -84,7 +85,35 @@
 			"hitshape" : {"x" : "540","y" : "410","w" : "80","h" : "160" },
 			"position": {"x" : "430","y" : "291"},
 			"country" : "Frankreich",
-			"description": "Frankreich, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Frankreich</h3>",
+				"<ul>",
+				"<li>Einwohner: 64,667 Mio.</li>",
+				"<li>Fläche: 668.763 km²</li>",
+				"<li>Amtssprache: Französisch</li>",
+				"<li>Hauptstadt: Paris</li>",
+				"<li>Staatsform: Republik</li>",
+				"<li>Staatsoberhaupt: Staatspräsident François Hollande</li>",
+				"<li>Regierungschef: Premierminister Jean-Marc Ayrault</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 14. Juli</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Frankreich</b> (amtlich <b>Französische Republik</b>, frz. République française) ist ein demokratischer, zentralistischer",
+				"Einheitsstaat in Westeuropa mit Überseeinseln und -gebieten auf mehreren Kontinenten. Frankreich erstreckt sich vom Mittelmeer bis",
+				"zum Ärmelkanal und der Nordsee sowie vom Rhein bis zum Atlantischen Ozean. Es wird aufgrund seiner Landesform als Sechseck bezeichnet.",
+				"Frankreich ist flächenmäßig das drittgrößte Land in Europa, hinter Russland und der Ukraine.<br><br>",
+				"Der Grundsatz der französischen Verfassung lautet: Regierung des Volkes durch das Volk und für das Volk. Frankreich ist eines der",
+				"höchstentwickelten Länder der Erde. Es hat die fünftgrößte Volkswirtschaft der Welt. Das Land genießt einen hohen Lebensstandard sowie",
+				"Bildungsgrad und besitzt eine der höchsten Lebenserwartungen auf der Erde. Das Gesundheitssystem Frankreichs wurde von der",
+				"Weltgesundheitsorganisation im Jahr 2000 als das beste weltweiteingestuft. Als meistbesuchtes Land der Welt empfängt Frankreich außerdem rund",
+				"79,5 Millionen ausländische Touristen pro Jahr.<br><br>",
+				"Frankreich steht für Kunst und Architektur von Weltruf, für römische Tempel und Renaissanceschlösser, für klassische Sehenswürdigkeiten,",
+				"die jeder kennt – und neue Attraktionen, die bald jeder kennen wird.<br><br>",
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/Eiffelturm.jpg' title='Eiffelturm' />",
+				"<img width='243px' height='207px' src='./gfx/sights/MontSaintMichel.jpg' title='Mont Saint Michel' />"
+			]
 		},
 		{
 			"id": "2",
