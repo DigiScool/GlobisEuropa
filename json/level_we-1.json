@@ -9,7 +9,7 @@
 		"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt.",
 		"Nun wartet der zweite Teil Europas mit neuen spannenden Ländern auf dich"
 	],
-	"ende1": "Sehr gut gemacht! Westeuopa hat nun schon Länder. Jetzt wird es allerdings ein bisschen schwieriger, denn auch die anderen Teile Europas möchten ihre Länder zurückbekommen.",
+	"ende1": "Sehr gut gemacht! Westeuropa hat nun schon Länder. Jetzt wird es allerdings ein bisschen schwieriger, denn auch die anderen Teile Europas möchten ihre Länder zurückbekommen.",
 	"count" : "9 ",
 	"images" : [
 		"gfx/little/westeuropa/AUS.png",
@@ -27,7 +27,9 @@
 		"gfx/sights/BrandenburgerTor.jpg",
 		"gfx/sights/Neuschwanstein.jpg",
 		"gfx/sights/Eiffelturm.jpg",
-		"gfx/sights/MontSaintMichel.jpg"
+		"gfx/sights/MontSaintMichel.jpg",
+		"gfx/sights/SchlossSchoenbrunn.jpg",
+		"gfx/sights/Stephansdom.JPG"
 	],
 
 	"puzzle" : [
@@ -120,8 +122,37 @@
 			"part"	: "gfx/little/westeuropa/AUS.png",
 			"hitshape" : { "x" : "810", "y" : "400", "w" : "45"},
 			"position": { "x" : "713", "y" : "361" },
-			"country" : "Östereich",
-			"description": "Östereich, hier steht dann die beschreibung dazu"
+			"country" : "Österreich",
+			"facts": [
+				"<h3>Österreich</h3>",
+				"<ul>",
+				"<li>Einwohner: 8,488 Mio.</li>",
+				"<li>Fläche: 83.878,99 km²</li>",
+				"<li>Amtssprache: Deutsch</li>",
+				"<li>Hauptstadt: Wien</li>",
+				"<li>Staatsform: parlamentarische Bundesrepublik</li>",
+				"<li>Staatsoberhaupt: Bundespräsident Heinz Fischer</li>",
+				"<li>Regierungschef: Bundeskanzler Werner Faymann</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 26. Oktober (Beschluss des Neutralitätsgesetzes)</li>",
+				"</ul>"
+			],
+			"description": [
+				"Die <b>Republik Österreich</b> ist ein demokratischer Bundesstaat in Mitteleuropa. Durch seine Verfassung aus den Jahren 1920",
+				"und 1929 ist Österreich als parlamentarische Republik eingerichtet. <b>Österreich</b> besteht seit 1922 aus den neun Ländern Burgenland,",
+				"Kärnten, Niederösterreich, Oberösterreich, Salzburg, Steiermark, Tirol, Vorarlberg und Wien, das gleichzeitig Bundeshauptstadt ist.<br><br>",
+				"Als Binnenstaat grenzt Österreich im Norden an Deutschland und Tschechien, im Osten an die Slowakei und Ungarn, im Süden an Slowenien und",
+				"Italien und im Westen an die Schweiz sowie Liechtenstein.",
+				"Die heutige Republik entstand ab 1918, nach dem für Österreich-Ungarn verlorenen Ersten Weltkrieg, als die Siegermächte die Vereinigung",
+				"Deutschösterreichs mit der deutschen Republik verhinderten. Von 1938 bis 1945 war Österreich, von Hitler erzwungen und von österreichischen",
+				"Nationalsozialisten begrüßt, Teil des Deutschen Reiches. Von den Siegern des Zweiten Weltkriegs neuerlich als eigenständiger, aber bis",
+				"1955 besetzter Staat errichtet, erklärte Österreich 1955 seine Neutralität.<br><br>",
+				"Zu Zeiten der Habsburger war Österreich die beherrschende Macht in Mitteleuropa. Heute mag es eine untergeordnete Rolle in Europa spielen,",
+				"als Urlaubsland aber ist es führend - und das nicht nur für Outdoorfreunde. Österreich steht für eine beeindruckende Architektur und eine",
+				"unvergleichliche musikalische Tradition, die auch Anton aus Tirol nicht wirklich erschüttern konnte.<br><br>",
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/SchlossSchoenbrunn.jpg' title='Schloss Schönbrunn' />",
+				"<img width='243px' height='207px' src='./gfx/sights/Stephansdom.JPG' title='Stephansdom' />"
+			]
 		},
 		{
 			"id": "3",
@@ -136,8 +167,8 @@
 			"part" : "gfx/little/westeuropa/HOL.png",
 			"hitshape" : { "x" : "640", "y" : "263", "w" : "20", "h" : "160" },
 			"position": { "x" : "603", "y" : "228" },
-			"country" : "Holland",
-			"description": "Holland, hier steht dann die beschreibung dazu"
+			"country" : "Niederlande",
+			"description": "Niederlande, hier steht dann die beschreibung dazu"
 		},
 		{
 			"id": "5",
@@ -152,8 +183,8 @@
 			"part" : "gfx/little/westeuropa/LUX.png",
 			"hitshape" : { "x" : "650", "y" : "335", "w" : "10", "h" : "160" },
 			"position": { "x" : "642", "y" : "325" },
-			"country" : "Luxenburg",
-			"description": "Luxenburg, hier steht dann die beschreibung dazu"
+			"country" : "Luxemburg",
+			"description": "Luxemburg, hier steht dann die beschreibung dazu"
 		},
 		{
 			"id": "7",
@@ -168,8 +199,8 @@
 			"part" : "gfx/little/westeuropa/UK.png",
 			"hitshape" : { "x" : "510", "y" : "200", "w" : "60", "h" : "160" },
 			"position": { "x" : "429", "y" : "26" },
-			"country" : "England",
-			"description": "England, hier steht dann die beschreibung dazu"
+			"country" : "Großbritannien",
+			"description": "Großbritannien, hier steht dann die beschreibung dazu"
 		}
 	]
 }
