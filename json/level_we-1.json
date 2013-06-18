@@ -29,7 +29,9 @@
 		"gfx/sights/Eiffelturm.jpg",
 		"gfx/sights/MontSaintMichel.jpg",
 		"gfx/sights/SchlossSchoenbrunn.jpg",
-		"gfx/sights/Stephansdom.JPG"
+		"gfx/sights/Stephansdom.JPG",
+		"gfx/sights/Matterhorn.JPG",
+		"gfx/sights/SchlossChillon.jpg"
 	],
 
 	"puzzle" : [
@@ -192,7 +194,37 @@
 			"hitshape" : { "x" : "680", "y" : "420", "w" : "30", "h" : "160" },
 			"position": { "x" : "633", "y" : "395" },
 			"country" : "Schweiz",
-			"description": "Schweiz, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Schweiz</h3>",
+				"<ul>",
+				"<li>Einwohner: 8,014 Mio.</li>",
+				"<li>Fläche: 41.285 km²</li>",
+				"<li>Amtssprache: Deutsch, Französisch, Italienisch, Rätoromanisch</li>",
+				"<li>Hauptstadt: Bern</li>",
+				"<li>Staatsform: föderale Republik</li>",
+				"<li>Staatsoberhaupt: Der Bundesrat bildet das kollektive Staatsoberhaupt</li>",
+				"<li>Regierungschef: nicht existent</li>",
+				"<li>Währung: Euro (1 Schweizer Franken = 100 Rappen)</li>",
+				"<li>Nationalfeiertag: 1. August (Bundesfeiertag)</li>",
+				"</ul>"
+			],
+			"description": [
+				"Die <b>Schweiz</b> (französisch Suisse, italienisch Svizzera, rätoromanisch Svizra, lateinisch Helvetia, amtlich Schweizerische",
+				"Eidgenossenschaft) ist ein demokratischer Staat in Europa. Er grenzt an Deutschland im Norden, an Österreich",
+				"und Liechtenstein im Osten, an Italien im Süden und an Frankreich im Westen. Die Schweiz hat laut Bundesverfassung keine Hauptstadt;",
+				"der Sitz der Bundesbehörden(Regierung und Parlament) ist die Bundesstadt Bern.<br><br>",
+				"Die Schweizerische Eidgenossenschaft ging aus den sogenannten Urkantonen Uri, Schwyz und Unterwalden hervor. Als inoffizielles",
+				"Gründungsdokument gilt der Bundesbrief von 1291, die älteste noch erhaltene Bündnisurkunde. Der heutige Bundesstaat besteht seit 1848.",
+				"Der Name Schweiz stammt vom Urkanton Schwyz.<br><br>", 
+				"Das Land gehört zu den dichter besiedelten Ländern Europas, wobei sich die Bevölkerung im Mittelland im Norden des Landes konzentriert.",
+				"Die grössten Städte sind die Wirtschaftszentren Zürich, Genf, Basel, Lausanne und Bern.<br><br>", 
+				"Zermatt, St. Moritz und andere legendäre Orte beschwören ein romantisches Bild von der Schweiz herauf.",
+				"Es ist die Wiege des Wintertourismus und der Ort, wo die Alpinisten ungeahnte Höhen erklommen. Der Grund:",
+				"Es gibt keinen zweiten Ort, der so viele hohe Berge bietet und gleichzeitig so gut zugänglich ist. Besucher können mit kleinen Zügen durch",
+				"die Landschaft tuckern, sich in Kurorten erholen, mit Schneeschuhen zu ihrem Iglu wandern und mittelalterliche Brücken überqueren.<br><br>",
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/Matterhorn.JPG' title='Matterhorn' />",
+				"<img width='243px' height='207px' src='./gfx/sights/SchlossChillon.jpg' title='Schloss Chillon' />"
+			]
 		},
 		{
 			"id": "8",
