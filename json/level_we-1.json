@@ -31,7 +31,16 @@
 		"gfx/sights/SchlossSchoenbrunn.jpg",
 		"gfx/sights/Stephansdom.JPG",
 		"gfx/sights/Matterhorn.JPG",
-		"gfx/sights/SchlossChillon.jpg"
+		"gfx/sights/SchlossChillon.jpg",
+		"gfx/sights/Rijksmuseum.jpg",
+		"gfx/sights/Nachtwache.jpg",
+		"gfx/sights/Lucilinburhuc.jpg",
+		"gfx/sights/Mudam.jpg",
+		"gfx/sights/BrunaBoinne.jpg",
+		"gfx/sights/Clonmacnoise.jpg",
+		"gfx/sights/Stonehenge.jpg",
+		"gfx/sights/TowerBridge.jpg"
+		
 	],
 
 	"puzzle" : [
@@ -170,7 +179,42 @@
 			"hitshape" : { "x" : "640", "y" : "263", "w" : "20", "h" : "160" },
 			"position": { "x" : "603", "y" : "228" },
 			"country" : "Niederlande",
-			"description": "Niederlande, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Niederlande</h3>",
+				"<ul>",
+				"<li>Einwohner: 16,68 Mio.</li>",
+				"<li>Fläche: 41.548 km²</li>",
+				"<li>Amtssprache: Niederländisch</li>",
+				"<li>Hauptstadt: Amsterdam (Regierungssitz: Den Haag)</li>",
+				"<li>Staatsform: parlamentarische Monarchie</li>",
+				"<li>Staatsoberhaupt: König Willem-Alexander</li>",
+				"<li>Regierungschef: Ministerpräsident Mark Rutte</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: Koningsdag (Geburtstag des Königs bzw. der Königin)</li>",				
+				"</ul>"
+			],
+			"description": [
+				"Die <b>Niederlande</b> (niederländisch Nederland) sind eine parlamentarische Monarchie.",
+				"Das im nördlichen Westeuropa liegende Land wird durch die Nordsee im Norden und",
+				"Westen, Belgien im Süden und Deutschland im Osten begrenzt. Zusammen mit",
+				"Belgien und Luxemburg bilden die Niederlande die Benelux-Staaten. Die Hauptstadt",
+				"der Niederlande ist Amsterdam, der Regierungssitz ist Den Haag.<br><br>",
+				"Die Niederlande haben das Kunststück vollbracht, eine liberale Einstellung mit einer",
+				"der geordnetsten Gesellschaften der Welt zu kombinieren. Sie haben ein",
+				"Gemeinwesen gegründet, das gleichzeitig radikal und vernünftig ist, ohne je albern",
+				"oder bieder zu sein. Auch wenn Fahrräder, Deiche, Windmühlen und Tulpenfelder",
+				"außerhalb der großen Städte völlig normal sind, lassen sich die Holländer keineswegs",
+				"auf ihre Klischees reduzieren.<br><br>",
+				"Für Besucher der Niederlande funktioniert die Verbindung von Clogs und Mikrochips",
+				"ganz hervorragend. Das Land ist ausgesprochen leicht zu bereisen, seine Bewohner",
+				"sind freundlich und sprechen sehr gut Deutsch oder Englisch. Auf der anderen Seite",
+				"sind die Städte noch immer von Kanälen und Festungsmauern umgeben; die endlose",
+				"flache Landschaft, die schon die frühen Künstler des Landes inspirierte, erstreckt sich",
+				"noch immer in alle Richtungen bis zum Horizont und die Deiche drohen noch immer",
+				"gelegentlich nachzugeben.<br><br>",
+				"<img style='margin-right: 5px;' width='340px' height='207px' src='./gfx/sights/Rijksmuseum.jpg' title='Rijksmuseum Amsterdam' />",
+				"<img width='243px' height='207px' src='./gfx/sights/Nachtwache.jpg' title='Nachtwache in Amsterdam' />"
+			]
 		},
 		{
 			"id": "5",
@@ -178,7 +222,37 @@
 			"hitshape" : { "x" : "400", "y" : "200", "w" : "40", "h" : "160" },
 			"position": { "x" : "365", "y" : "151" },
 			"country" : "Irland",
-			"description": "Irland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Irland</h3>",
+				"<ul>",
+				"<li>Einwohner: 4.581.269</li>",
+				"<li>Fläche: 70.182 km²</li>",
+				"<li>Amtssprache: Irisch, Englisch</li>",
+				"<li>Hauptstadt: Dublin</li>",
+				"<li>Staatsform: parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Michael D. Higgins</li>",
+				"<li>Regierungschef: Ministerpräsident (Taoiseach) Enda Kenny</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 17. März (St. Patrick’s Day)</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Irland</b> (amtlicher deutscher Name; irisch Éire, englisch Ireland) ist ein Inselstaat auf der gleichnamigen Insel Irland.",
+				"Er grenzt im Norden an das Vereinigte Königreich (Nordirland) und ist im Osten von der Irischen See und im Westen und Süden",
+				"vom Atlantik umgeben. Ein Großteil der Bevölkerung bekennt sich zum römisch-katholischen Glauben.<br><br>",
+				"Zu den beeindruckendsten historischen",
+				"Sehenswürdigkeiten gehören die atemberaubenden Kultstätten von Brú na Bóinne aus prähistorischer Zeit und die Klosterruinen in",
+				"Glendalough und Clonmacnoise. Der neueren Geschichte widmet man sich in Cobh’s Hungersnotmuseum und auf dem Vinegar Hill im County Wexford.",
+				"Gegenwartsgeschichte zum Anfassen kann man an Bord eines black taxi in West Belfast oder beim Betrachten der knallbunten politischen",
+				"Wandmalereien in Derry erleben.<br><br>",
+				"Ja, es gibt sie wirklich, die wunderschönen Postkartenmotive, z. B. entlang der Halbinseln im Südwesten, im einsam vor sich",
+				"hinbrütenden Connemara oder in der herrlich urtümlichen Wildnis des Countys Donegal.",
+				"Irland wurde stark modernisiert, doch manche Dinge ändern sich nie. Wahrscheinlich ist genau das einer der",
+				"großen Anziehungspunkte dieses Landes. Wenn man zur Skellig Michael übersetzt, tost der Atlantik mit altbekannter Urgewalt, und in",
+				"den Höfen reetgedeckter Pubs hat man schon vor Generationen gemütlich beieinandergesessen.<br><br>", 
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/BrunaBoinne.jpg' title='Brú na Bóinne' />",
+				"<img width='243px' height='207px' src='./gfx/sights/Clonmacnoise.jpg' title='Klosterruinen in Clonmacnoise' />"
+			]
 		},
 		{
 			"id": "6",
@@ -186,7 +260,36 @@
 			"hitshape" : { "x" : "650", "y" : "335", "w" : "10", "h" : "160" },
 			"position": { "x" : "642", "y" : "325" },
 			"country" : "Luxemburg",
-			"description": "Luxemburg, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Luxemburg</h3>",
+				"<ul>",
+				"<li>Einwohner: 537.039</li>",
+				"<li>Fläche: 2.586,4 km²</li>",
+				"<li>Amtssprache: Luxemburgisch, Deutsch, Französisch</li>",
+				"<li>Hauptstadt: Luxemburg</li>",
+				"<li>Staatsform: parlamentarische Monarchie</li>",
+				"<li>Staatsoberhaupt: Großherzog Henri von Nassau-Weilburg (Heinrich I.)</li>",
+				"<li>Regierungschef: Premierminister Jean-Claude Juncker</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 23. Juni</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Luxemburg</b> (amtlich <b>Großherzogtum Luxemburg</b>, luxemburgisch Groussherzogtum Lëtzebuerg, französisch Grand-Duché de Luxembourg)",
+				"ist ein demokratischer Staat in Westeuropa.<br><br>",
+				"Mit einer Fläche von 2586 Quadratkilometern ist Luxemburg einer der kleinsten Flächenstaaten der Erde. Es grenzt im Süden über 73 Kilometer",
+				"an Frankreich, im Westen über 148 Kilometer an Belgien und im Osten über 135 Kilometer an Deutschland. Mit Belgien und den Niederlanden",
+				"bildet es die sogenannten Beneluxstaaten.<br><br>",
+				"Luxemburg ist eine parlamentarische Erbmonarchie und hat unter den ursprünglich neun europäischen Großherzogtümern als einziges",
+				"bis heute Bestand.<br><br>",
+				"Luxemburg ist ein attraktives Land mit einer malerischen Landschaft aus sanft geschwungenen Hügeln und Tälern sowie einer Vielzahl von",
+				"historischen Sehenswürdigkeiten. Zu entdecken gibt es in Luxemburg auch schöne Wälder, Weinbaugebiete und beeindruckende Sandsteinfelsen.",
+				"Die gleichnamige Hauptstadt Luxemburg besteht aus zwei Stadtteilen: der entzückenden Altstadt mit Festungstürmchen und verschlungenen",
+				"Kopfsteinpflasterstraßen, die zum UNESCO-Weltkulturerbe gehört, und das moderne Stadtzentrum des Kirchberg-Plateaus, wo viele",
+				"internationale Finanzdienstleister ihre Bürogebäude haben.<br><br>",
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/Lucilinburhuc.jpg' title='Burg Lucilinburhuc' />",
+				"<img width='243px' height='207px' src='./gfx/sights/Mudam.jpg' title='Musée d’Art Moderne Grand-Duc Jean' />"
+			]
 		},
 		{
 			"id": "7",
@@ -232,7 +335,34 @@
 			"hitshape" : { "x" : "510", "y" : "200", "w" : "60", "h" : "160" },
 			"position": { "x" : "429", "y" : "26" },
 			"country" : "Großbritannien",
-			"description": "Großbritannien, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Großbritannien</h3>",
+				"<ul>",
+				"<li>Einwohner: 63,2 Mio.</li>",
+				"<li>Fläche: 244.820 km²</li>",
+				"<li>Amtssprache: Englisch</li>",
+				"<li>Hauptstadt: London</li>",
+				"<li>Staatsform: parlamentarisch-konstitutionelle Monarchie</li>",
+				"<li>Staatsoberhaupt: Königin Elisabeth II.</li>",
+				"<li>Regierungschef: Premierminister David Cameron</li>",
+				"<li>Währung: Pfund Sterling (1 £ = 100 Pence)</li>",
+				"<li>Nationalfeiertag: Queen's Birthday (Geburtstag der Königin)</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Das Vereinigte Königreich</b> (englisch United Kingdom, kurz UK), Langform <b>Vereinigtes Königreich Großbritannien und Nordirland</b>",
+				"(engl. United Kingdom of Great Britain and Northern Ireland) ist ein auf den Britischen Inseln vor der Nordwestküste Kontinentaleuropas",
+				"gelegener Staat.<br><br>",
+				"Der größte Inselstaat Europas ist eine Union aus England und den ehemals unabhängigen Einzelstaaten Wales und Schottland sowie dem Gebiet",
+				"Nordirland. Über den weiteren Verbleib Schottlands im Vereinigten Königreich soll 2014 eine Volksabstimmung entscheiden. Die Kronbesitztümer",
+				"der Isle of Man und der Kanalinseln sind der britischen Krone unterstellt, sind jedoch als selbständige Länder nicht Bestandteil des",
+				"Vereinigten Königreichs. Als parlamentarische Monarchie unterhält der Staat ferner Beziehungen zu fünfzehn Commonwealth Realms, deren",
+				"Staatsoberhaupt der britische Monarch ist, daneben bestehen noch 14 Überseegebiete.<br><br>",
+				"Mit rund 63,2 Millionen Einwohnern ist es der drittbevölkerungsreichste Staat Europas. Das Vereinigte Königreich besitzt internationalen",
+				"Einfluss dank des weit verbreiteten Gebrauchs der englischen Sprache und des Commonwealth of Nations.<br><br>", 
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/Stonehenge.jpg' title='Stonehenge' />",
+				"<img width='360px' height='207px' src='./gfx/sights/TowerBridge.jpg' title='Tower Bridge' />"
+			]
 		}
 	]
 }
