@@ -39,7 +39,9 @@
 		"gfx/sights/BrunaBoinne.jpg",
 		"gfx/sights/Clonmacnoise.jpg",
 		"gfx/sights/Stonehenge.jpg",
-		"gfx/sights/TowerBridge.jpg"
+		"gfx/sights/TowerBridge.jpg",
+		"gfx/sights/Cinquantenaire.jpg",
+		"gfx/sights/Atomium.jpg"
 		
 	],
 
@@ -171,7 +173,32 @@
 			"hitshape" : { "x" : "620", "y" : "300", "w" : "20", "h" : "160" },
 			"position": { "x" : "584", "y" : "283" },
 			"country" : "Belgien",
-			"description": "Belgien, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Belgien</h3>",
+				"<ul>",
+				"<li>Einwohner: 11.036 Mio.</li>",
+				"<li>Fläche: 30.528 km²</li>",
+				"<li>Amtssprache: Niederländisch, Französisch, Deutsch</li>",
+				"<li>Hauptstadt: Brüssel</li>",
+				"<li>Staatsform: parlamentarische Monarchie</li>",
+				"<li>Staatsoberhaupt: König Albert II.</li>",
+				"<li>Regierungschef: Premierminister Elio Di Rupo</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 21. Juli (Tag der Vereidigung des ersten belgischen Königs, Leopold I.)</li>",
+				"</ul>"
+			],
+			"description": [
+				"Seit der Unabhängigkeit 1830 und Verfassungsgebung 1831 ist <b>Belgien</b> eine parlamentarische Monarchie. Im Norden des Königreiches",
+				"lebt eine mehrheitlich niederländischsprachige flämische Bevölkerung, im wallonischen Süden hingegen wird mehrheitlich Französisch",
+				"gesprochen. Im Osten des Landes sind westmitteldeutsche Mundarten verbreitet. Belgien ist, neben den Niederlanden und Luxemburg,",
+				"einer der drei Benelux-Staaten.<br><br>",
+				"Abgesehen vom Bergland der Ardennen im Südosten ist Belgien weitgehend eben. Die Küste ist 72,3 km lang.",
+				"25 Prozent der Landfläche werden für Landwirtschaft genutzt. Ungefähr 95 Prozent aller Belgier leben in Städten. Etwa 75 Prozent der",
+				"belgischen Staatsbürger sind römisch-katholisch, rund 1 Prozent gehören einer protestantischen Kirche an und 8 Prozent islamischen Gemeinden.",
+				"Der Anteil Nichtreligiöser beträgt etwa 16 Prozent.<br><br>",
+				"<img style='margin-right: 5px;' width='309px' height='207px' src='./gfx/sights/Cinquantenaire.jpg' title='Cinquantenaire Park in Brüssel' />",
+				"<img width='243px' height='207px' src='./gfx/sights/Atomium.jpg' title='Atomium' />"
+			]
 		},
 		{
 			"id": "4",
