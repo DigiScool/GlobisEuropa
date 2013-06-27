@@ -84,7 +84,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.level = level;
 			this.app = app;
 
-			this.SHOW_HITSHAPES = true;
+			this.SHOW_HITSHAPES = false;
 		},
 
 		// Callback -Funktion für die Frameloop
