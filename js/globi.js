@@ -60,6 +60,15 @@ var Globi = Class.extend({
             var s7 = new createjs.Shape(g4);
                 s6.x = -75; s6.y=-210;
                 s7.x = 75;  s7.y=-210;
+
+            // AUGEN-CONTAINER
+            this.container_augen = new createjs.Container();
+            this.container_augen.addChild(s2);
+            this.container_augen.addChild(s3);
+            this.container_augen.addChild(s4);
+            this.container_augen.addChild(s5);
+            this.container_augen.addChild(s6);
+            this.container_augen.addChild(s7);
             
             // Augen Brauen
             var brauen = new createjs.Graphics();
@@ -169,11 +178,7 @@ var Globi = Class.extend({
             this.globi.addChild(this.we_container); // 3
             this.globi.addChild(this.se_container); // 4
             this.globi.addChild(this.ne_container); // 5
-            this.globi.addChild(s3);
-            this.globi.addChild(s4);
-            this.globi.addChild(s5);            
-            this.globi.addChild(s6);
-            this.globi.addChild(s7); 
+            this.globi.addChild(this.container_augen);
             this.globi.addChild(this.brauen_container);
             this.globi.addChild(this.hand_container);
             this.globi.addChild(this.mundSeq);                 

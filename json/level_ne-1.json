@@ -1,0 +1,99 @@
+{
+	"id":"3",
+	"shape": "ne_container",
+	"headline" : "Nordeuropa Level 1",
+	"bg" : "gfx/big/nordeuropa/Nordeuropa.png",
+	"bgx" : "150",
+	"bgy" : "10",
+	"script": [
+		"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt.",
+		"Nun wartet der zweite Teil Europas mit neuen spannenden Ländern auf dich"
+	],
+	"ende1": "Nordeuropa geschafft",
+	"count" : "8",
+	"images" : [
+		"gfx/big/nordeuropa/Nordeuropa.png",
+		"gfx/little/nordeuropa/DAN.png",
+		"gfx/little/nordeuropa/EST.png",
+		"gfx/little/nordeuropa/FIN.png",
+		"gfx/little/nordeuropa/ISL.png",
+		"gfx/little/nordeuropa/LAT.png",
+		"gfx/little/nordeuropa/LIT.png",
+		"gfx/little/nordeuropa/NOR.png",
+		"gfx/little/nordeuropa/SWE.png"
+	],
+	"puzzle" : [
+		{
+			"id": "0" , 
+			"part": "gfx/little/nordeuropa/LAT.png",
+			"hitshape" : { "x" : "890", "y" : "340", "w" : "40"},
+			"position": { "x" : "826", "y" : "301" },
+			"country" : "Lettland",
+			"facts": [],
+			"description": []
+		},
+		{
+			"id": "1" , 
+			"part": "gfx/little/nordeuropa/ISL.png",
+			"hitshape" : { "x" : "330", "y" : "100", "w" : "50"},
+			"position": { "x" : "294", "y" : "72" },
+			"country" : "Island",
+			"facts": [],
+			"description": []
+		},
+		{
+			"id": "2" , 
+			"part": "gfx/little/nordeuropa/FIN.png",
+			"hitshape" : { "x" : "880", "y" : "150", "w" : "80"},
+			"position": { "x" : "774", "y" : "37" },
+			"country" : "Finnland",
+			"facts": [],
+			"description": []
+		},
+		{
+			"id": "3" , 
+			"part": "gfx/little/nordeuropa/EST.png",
+			"hitshape" : { "x" : "890", "y" : "270", "w" : "40"},
+			"position": { "x" : "833", "y" : "258" },
+			"country" : "Estland",
+			"facts": [],
+			"description": []
+		},
+		{
+			"id": "4" , 
+			"part": "gfx/little/nordeuropa/DAN.png",
+			"hitshape" : { "x" : "620", "y" : "360", "w" : "40"},
+			"position": { "x" : "606", "y" : "326" },
+			"country" : "Dänemark",
+			"facts": [],
+			"description": []
+		},
+		{
+			"id": "5" , 
+			"part": "gfx/little/nordeuropa/LIT.png",
+			"hitshape" : { "x" : "880", "y" : "380", "w" : "40"},
+			"position": { "x" : "829", "y" : "345" },
+			"country" : "Litauen",
+			"facts": [],
+			"description": []
+		},
+		{
+			"id": "6" , 
+			"part": "gfx/little/nordeuropa/NOR.png",
+			"hitshape" : { "x" : "680", "y" : "130", "w" : "110"},
+			"position": { "x" : "571", "y" : "17" },
+			"country" : "Litauen",
+			"facts": [],
+			"description": []
+		},
+		{
+			"id": "7" , 
+			"part": "gfx/little/nordeuropa/SWE.png",
+			"hitshape" : { "x" : "730", "y" : "300", "w" : "90"},
+			"position": { "x" : "662", "y" : "58" },
+			"country" : "Sweden",
+			"facts": [],
+			"description": []
+		}
+	]
+}

@@ -84,7 +84,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.level = level;
 			this.app = app;
 
-			this.SHOW_HITSHAPES = false;
+			this.SHOW_HITSHAPES = true;
 		},
 
 		// Callback -Funktion für die Frameloop
@@ -545,6 +545,12 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						self.app.changeCursor('default');
 					});
 
+					target.addEventListener("click", function(){
+						self.app.removeBubble("#bubble_selectshape");
+						self.app.changeCursor('default');
+						self.app.startLevel("level_oe-1");
+					});
+
 				})(this.globi.getChildAt(2));
 			}
 
@@ -564,6 +570,12 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						self.globi.removeChild(mouseover_ne);
 						self.app.removeBubble("#bubble_selectshape");
 						self.app.changeCursor('default');
+					});
+
+					target.addEventListener("click", function(){
+						self.app.removeBubble("#bubble_selectshape");
+						self.app.changeCursor('default');
+						self.app.startLevel("level_ne-1");
 					});
 
 				})(this.globi.getChildAt(5));
@@ -701,7 +713,9 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						// füge den neuen Hinzu
 						this.globi.addChild(newContainer);
 						// switche den neuen Container an die alte Stelle
-						this.globi.setChildIndex(newContainer, oldIndex + 1);						
+						this.globi.setChildIndex(newContainer, oldIndex + 1);
+						// switche die augen wieder nach oben
+						this.globi.setChildIndex(this.globiObjekt.container_augen,0);						
 				}
 
 				if(this.level.procress[1] == stage){
@@ -714,7 +728,9 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						// füge den neuen Hinzu
 						this.globi.addChild(newContainer);
 						// switche den neuen Container an die alte Stelle
-						this.globi.setChildIndex(newContainer, oldIndex + 1);	
+						this.globi.setChildIndex(newContainer, oldIndex + 1);
+							// switche die augen wieder nach oben
+						this.globi.setChildIndex(this.globiObjekt.container_augen,0);	
 				}
 
 				if(this.level.procress[2] == stage){
@@ -732,7 +748,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 				if(this.level.procress[3] == stage){
 						
-						var newContainer = this.globiObjekt.getNorthhEurope('#68ba5b','#68ba5b');
+						var newContainer = this.globiObjekt.getNorthEurope('#68ba5b','#68ba5b');
 						// hole den Index des alten Containers
 						var oldIndex = this.globi.getChildIndex(this.globiObjekt.ne_container);
 						// removce den alten container
@@ -740,7 +756,9 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						// füge den neuen Hinzu
 						this.globi.addChild(newContainer);
 						// switche den neuen Container an die alte Stelle
-						this.globi.setChildIndex(newContainer, oldIndex + 1);	
+						this.globi.setChildIndex(newContainer, oldIndex + 1);
+							// switche die augen wieder nach oben
+						this.globi.setChildIndex(this.globiObjekt.container_augen,0);	
 				}
 
 				// Debugausgabe
