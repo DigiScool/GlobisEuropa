@@ -29,8 +29,34 @@
 			"hitshape" : { "x" : "890", "y" : "340", "w" : "40"},
 			"position": { "x" : "826", "y" : "301" },
 			"country" : "Lettland",
-			"facts": [],
-			"description": []
+			"facts": [
+				"<h3>Lettland</h3>",
+				"<ul>",
+				"<li>Einwohner: 2.027.000</li>",
+				"<li>Fläche: 64.589 km²</li>",
+				"<li>Amtssprache: Lettisch</li>",
+				"<li>Hauptstadt: Riga</li>",
+				"<li>Staatsform: parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Andris Bērziņš</li>",
+				"<li>Regierungschef: Ministerpräsident Valdis Dombrovskis</li>",
+				"<li>Währung: Lats</li>",
+				"<li>Nationalfeiertag: 18. November / 21. August</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Lettland</b> ist ein Staat in Nordeuropa, im Zentrum des Baltikums gelegen. Es grenzt im Süden an Litauen, im Südosten an Weißrussland,",
+				"im Osten an Russland, im Norden an Estland und im Westen an die Ostsee.<br><br>",
+				"Lettland besteht im Wesentlichen aus den vier historischen Regionen Kurland im Westen, im Nordosten, Semgallen als schmaler Streifen zwischen",
+				"Düna und der litauischen Grenze sowie Lettgallen im Südosten. Es ist zum größten Teil ein bewaldetes Moränen-Hügelland mit zahlreichen Seen",
+				"und einer langen, wenig gegliederten Küstenebene. Die längsten Flüsse Lettlands sind die Düna und die Gauja. Der größte See Lettlands ist der",
+				"Lubāns mit 80,7 km², der Dridza-See ist der tiefste See der baltischen Länder (65,1 m Tiefe). Die Hauptstadt Riga ist auch in geographischer",
+				"Hinsicht das Zentrum des dünn besiedelten Landes. Der Rigaische Meerbusen, eine Bucht der Baltischen See, liegt im Nordwesten des Landes.<br><br>",
+				"Die Republik Lettland hat eine Fläche von 64.589 km² und ist damit etwas kleiner als Bayern. Das Land grenzt im Nordosten auf einer Länge von",
+				"343 km an Estland, im Osten auf einer Länge von 276 km an Russland, im Südosten auf einer Länge von 161 km an Weißrussland und im Süden auf",
+				"einer Länge von 588 km an Litauen. Die Küstenlinie entlang der Rigaer Bucht im Norden und der Ostsee im Westen misst etwa 498 km;",
+				"Seegrenzen hat Lettland mit Estland und Litauen. Die durchschnittliche Höhe Lettlands beträgt 87 m. Der höchste Berg ist der 120 km östlich",
+				"von Riga gelegene Gaiziņkalns mit 311 m.<br><br>"
+			]
 		},
 		{
 			"id": "1" , 
@@ -38,8 +64,30 @@
 			"hitshape" : { "x" : "330", "y" : "100", "w" : "50"},
 			"position": { "x" : "294", "y" : "72" },
 			"country" : "Island",
-			"facts": [],
-			"description": []
+			"facts": [
+				"<h3>Island</h3>",
+				"<ul>",
+				"<li>Einwohner: 319.575</li>",
+				"<li>Fläche: 103.125 km²</li>",
+				"<li>Amtssprache: Isländisch</li>",
+				"<li>Hauptstadt: Reykjavík</li>",
+				"<li>Staatsform: parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Ólafur Ragnar Grímsson</li>",
+				"<li>Regierungschef: Premierminister Sigmundur Davíð Gunnlaugsson</li>",
+				"<li>Währung: Isländische Krone</li>",
+				"<li>Nationalfeiertag: 17. Juni</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Island</b> ist mit rund 103.000 km² (Landfläche: 100.250 km², Wasserfläche: 2750 km², mit Fischereizone 758.000 km²) – nach dem Vereinigten",
+				"Königreich – der flächenmäßig zweitgrößte Inselstaat Europas. Die Hauptinsel ist die größte Vulkaninsel der Erde und befindet sich knapp",
+				"südlich des nördlichen Polarkreises.<br><br>",
+				"Der Inselstaat Island befindet sich südöstlich von Grönland. Nordöstlich liegt die Insel Jan Mayen, östlich befindet sich Norwegen,",
+				"südöstlich liegen die Färöer, Großbritannien und Irland. Die Fläche Islands beträgt 103.125 km², davon sind 100.329 km² Landfläche und",
+				"2.796 km² Wasserfläche. Der höchste Punkt der Insel ist der Hvannadalshnúkur mit 2.110 m. Der längste Fluss ist die Þjórsá mit 230 km.",
+				"Die Meerenge zwischen Grönland und Island wird Dänemarkstraße genannt. Nördlich von Island liegt die Grönlandsee, östlich liegt das",
+				"Europäische Nordmeer, beides Nebenmeere des Arktischen Ozeans (auch Nordpolarmeer genannt). Nach Süden liegt der Nordatlantik.<br><br>"
+			]
 		},
 		{
 			"id": "2" , 
@@ -47,8 +95,36 @@
 			"hitshape" : { "x" : "880", "y" : "150", "w" : "80"},
 			"position": { "x" : "774", "y" : "37" },
 			"country" : "Finnland",
-			"facts": [],
-			"description": []
+			"facts": [
+				"<h3>Finnland</h3>",
+				"<ul>",
+				"<li>Einwohner: 5.429.894</li>",
+				"<li>Fläche: 338.432 km²</li>",
+				"<li>Amtssprache: Finnisch, Schwedisch</li>",
+				"<li>Hauptstadt: Helsinki</li>",
+				"<li>Staatsform: parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Sauli Niinistö</li>",
+				"<li>Regierungschef: Ministerpräsident Jyrki Katainen</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 6. Dezember</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Finnland</b>, amtlich Republik Finnland, ist eine parlamentarische Republik in Nordeuropa. Finnland grenzt an Schweden, Norwegen,",
+				"Russland und die Ostsee. Mit 5,4 Millionen Einwohnern gehört Finnland zu den am dünnsten besiedelten Ländern Europas. Ein großer Teil der",
+				"Bevölkerung konzentriert sich dabei auf den Süden des Landes mit der Hauptstadt Helsinki. Die beiden offiziellen Landessprachen sind Finnisch",
+				"und Schwedisch. 92 % der Bevölkerung sind finnisch-, 6 % schwedischsprachig. Die schwedischsprachige Inselgruppe Åland hat einen weitreichenden",
+				"Autonomiestatus.<br><br>",
+				"Das Gebiet Finnlands, das seit Jahrtausenden dünn besiedelt war, trat mit der Eingliederung in das Schwedische Reich ab dem 12. Jahrhundert",
+				"in die historische Zeit ein. Es blieb für viele Jahrhunderte integraler Teil Schwedens, bis es 1809 an Russland abgetreten wurde, unter",
+				"dessen Herrschaft sich Finnland als Nation entwickelte. 1917 erlangte das Land die staatliche Unabhängigkeit.<br><br>",
+				"Finnland ist mit einer Fläche von 338.432 km² etwas kleiner als Deutschland. Zwischen dem 60. und 70. Breitengrad liegend, zählt es zu den",
+				"nördlichsten Ländern der Erde. Ein Drittel Finnlands liegt nördlich des Polarkreises. Die Nord-Süd-Ausdehnung des finnischen Festlandes ",
+				"beträgt 1160 km (von Nuorgam bis Hanko), die längste Ost-West-Distanz 540 km (von Ilomantsi nach Närpes). Bei der Gliederung des",
+				"Landesgebiets wird bereits etwa ab der Höhe des Oulujärvi (deutsch auch Oulusee, nordwestlich der Stadt Kajaani) von „Nordfinnland“",
+				"gesprochen. So kann Oulu, genau in der Mitte des Landes gelegen, als nordfinnische Stadt bezeichnet werden, auch heißt die Landschaft",
+				"um Jyväskylä trotz ihrer südlichen Lage „Mittelfinnland“.<br><br>"
+			]
 		},
 		{
 			"id": "3" , 
@@ -56,8 +132,30 @@
 			"hitshape" : { "x" : "890", "y" : "270", "w" : "40"},
 			"position": { "x" : "833", "y" : "258" },
 			"country" : "Estland",
-			"facts": [],
-			"description": []
+			"facts": [
+				"<h3>Estland</h3>",
+				"<ul>",
+				"<li>Einwohner: 1.339.662</li>",
+				"<li>Fläche: 45.227 km²</li>",
+				"<li>Amtssprache: Estnisch</li>",
+				"<li>Hauptstadt: Tallinn (Reval)</li>",
+				"<li>Staatsform: parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Toomas Hendrik Ilves</li>",
+				"<li>Regierungschef: Premierminister Andrus Ansip</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 24. Februar / 20. August</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Estland</b> ist ein Staat in Nordeuropa und das nördlichste Land des Baltikums. Es grenzt im Süden an Lettland, im Osten an Russland",
+				"sowie im Norden und Westen an die Ostsee. Über den Finnischen Meerbusen hinweg bestehen enge Beziehungen zu Finnland, und historisch gibt",
+				"es durch die Deutsch-Balten viele kulturelle Verbindungen nach Deutschland.<br><br>",
+				"Estland ist seit 1991 unabhängig. Ab 2011 kann man auch in diesem Land mit dem Euro bezahlen.<br><br>",
+				"Estland liegt an der östlichen Küste der Ostsee. Das Land ist flächenmäßig etwas kleiner als Niedersachsen und etwas größer als die Schweiz.",
+				"Die durchschnittliche Höhe liegt nur bei 50 m. Im Süden des Landes befindet sich die höchste Erhebung, der Suur Munamägi (318 Meter). Der",
+				"größte See ist der Peipsi järv (Peipussee). Die größten Inseln sind Saaremaa und Hiiumaa.<br><br>",
+				"Die gesamte Küstenlinie, die durch mehrere Golfe, Meerengen und Einbuchtungen gekennzeichnet ist, ist 3.794 Kilometer lang.<br><br>"
+			]
 		},
 		{
 			"id": "4" , 
@@ -65,8 +163,35 @@
 			"hitshape" : { "x" : "620", "y" : "360", "w" : "40"},
 			"position": { "x" : "606", "y" : "326" },
 			"country" : "Dänemark",
-			"facts": [],
-			"description": []
+			"facts": [
+				"<h3>Dänemark</h3>",
+				"<ul>",
+				"<li>Einwohner: 5.602.628</li>",
+				"<li>Fläche: 43.094 km²</li>",
+				"<li>Amtssprache: Dänisch</li>",
+				"<li>Hauptstadt: Kopenhagen</li>",
+				"<li>Staatsform: Erbmonarchie</li>",
+				"<li>Staatsoberhaupt: Königin Margrethe II.</li>",
+				"<li>Regierungschef: Ministerpräsidentin Helle Thorning-Schmidt</li>",
+				"<li>Währung: 1 Dänische Krone = 100 Øre</li>",
+				"<li>Nationalfeiertag: 5. Juni</li>",
+				"</ul>"
+			],
+			"description": [
+				"Das <b>Königreich Dänemark</b> (dänisch Kongeriget Danmark) ist eine parlamentarische Monarchie und ein souveräner Staat. Zum Staatsgebiet",
+				"gehören Dänemark und die Färöer, die sich beide in Nordeuropa befinden, sowie Grönland, das zu Nordamerika zählt. Das Königreich Dänemark",
+				"ist daher ein interkontinentaler Staat. Das Mutterland, der Teil zwischen der Skandinavischen Halbinsel und Mitteleuropa, umfasst eine",
+				"Fläche von 43.094 km², wovon 23.872 km² auf die Halbinsel Jütland entfallen und der Rest auf Inseln.<br><br>",
+				"Die autonomen Gebiete Grönland und die Färöer führen eigene Flaggen und haben eigene Amtssprachen.<br><br>",
+				"Das Staatsgebiet des Königreichs Dänemark umfasst (ohne Färöer und ohne Grönland) eine Fläche von 43.094 Quadratkilometer, es ist damit",
+				"größer als die Schweiz oder die Niederlande, aber kleiner als Estland. Dänemark misst von Nord nach Süd 368 km und von Ost nach West 452 km.",
+				"Nördlichster Punkt des Landes ist Grenen, der südlichste Punkt liegt bei Gedser im Süden der Insel Falster. Westlichster Punkt ist Blåvandshuk",
+				"in Jütland, gelegen im ehemaligen Ribe Amt, östlichster Punkt liegt bei den Erbseninseln (dänisch Ertholmene), 18 Kilometer nordöstlich von",
+				"Bornholm.<br><br>",
+				"Wegen seiner Inseln und der zerklüfteten Buchten verfügt das flächenmäßig kleine Land über eine enorme Küstenlänge von 7314 km. Dänemarks",
+				"einzige Landgrenze besteht im Süden zu Deutschland (Grenzlänge: 67 km), des Weiteren wird das Land durch die Nordsee, das Skagerrak, das",
+				"Kattegat und die Ostsee begrenzt.<br><br>"
+			]
 		},
 		{
 			"id": "5" , 
@@ -74,26 +199,97 @@
 			"hitshape" : { "x" : "880", "y" : "380", "w" : "40"},
 			"position": { "x" : "829", "y" : "345" },
 			"country" : "Litauen",
-			"facts": [],
-			"description": []
+			"facts": [
+				"<h3>Litauen</h3>",
+				"<ul>",
+				"<li>Einwohner: 2.981.275</li>",
+				"<li>Fläche: 65.300 km²</li>",
+				"<li>Amtssprache: Litauisch</li>",
+				"<li>Hauptstadt: Vilnius (Wilna)</li>",
+				"<li>Staatsform: parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsidentin Dalia Grybauskaitė</li>",
+				"<li>Regierungschef: Premierminister Algirdas Butkevičius</li>",
+				"<li>Währung: Litas</li>",
+				"<li>Nationalfeiertag: 16. Februar / 11. März</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Litauen</b> ist ein Staat in Nordeuropa und der südlichste der drei baltischen Staaten. Es grenzt im Westen an die Ostsee und hat gemeinsame",
+				"Grenzen mit Lettland, Weißrussland, Polen und der russischen Oblast Kaliningrad.<br><br>",
+				"Als eine unabhängige Republik existierte Litauen 1918 bis 1940 sowie nach 1990.<br><br>",
+				"Litauen grenzt im Norden an Lettland, im Osten und Südosten an Weißrussland. Die Grenze zu Polen im Süden ist nur etwa 100 Kilometer lang,",
+				"stellt aber die wichtigste Verbindung nach Mittel- und Westeuropa dar. Nach Südwesten schließt sich als Exklave die russische Oblast",
+				"Kaliningrad an, die Grenze wird teilweise von der Memel gebildet. Im Westen liegt die Ostsee, zu der Litauen über den eisfreien Hafen",
+				"Klaipėda Zugang hat.<br><br>",
+				"Geografen des Institut Géographique National, des nationalen Geografieinstituts Frankreichs, errechneten 1989 den geografischen Mittelpunkt",
+				"Europas und ermittelten eine Stelle im Dorf Purnuškės etwas nördlich von Vilnius.<br><br>"
+			]
 		},
 		{
 			"id": "6" , 
 			"part": "gfx/little/nordeuropa/NOR.png",
 			"hitshape" : { "x" : "680", "y" : "130", "w" : "110"},
 			"position": { "x" : "571", "y" : "17" },
-			"country" : "Litauen",
-			"facts": [],
-			"description": []
+			"country" : "Norwegen",
+			"facts": [
+				"<h3>Norwegen</h3>",
+				"<ul>",
+				"<li>Einwohner: 5.063.709</li>",
+				"<li>Fläche: 385.199 km²</li>",
+				"<li>Amtssprache: Norwegisch</li>",
+				"<li>Hauptstadt: Oslo</li>",
+				"<li>Staatsform: Königreich</li>",
+				"<li>Staatsoberhaupt: König Harald V.</li>",
+				"<li>Regierungschef: Ministerpräsident Jens Stoltenberg</li>",
+				"<li>Währung: 1 Norwegische Krone = 100 Øre</li>",
+				"<li>Nationalfeiertag: 17. Mai</li>",
+				"</ul>"
+			],
+			"description": [
+				"Das <b>Königreich Norwegen</b> ist ein Staat in Nordeuropa. Norwegen liegt auf der Skandinavischen Halbinsel und grenzt im Osten an",
+				"Schweden und im Nordosten an Finnland und Russland. Die Wirtschaftszone Norwegens in der Nordsee grenzt im Süden an die Dänemarks und",
+				"im Westen an die Schottlands. Norwegens Staatsform entspricht einer konstitutionellen Monarchie mit stark parlamentarischen Zügen. Das",
+				"Königreich ist als dezentraler Einheitsstaat organisiert.<br><br>",
+				"Die Geographie Norwegens ist von Gebirgsketten und kargen Hochebenen, den Fjells, geprägt. 26 Gipfel liegen über 2300 Meter. Die höchste",
+				"Erhebung des Festlandes ist der Galdhøpiggen mit 2469 Meter. Er liegt im Gebirgszug Jotunheimen. Die etwa 25.000 Kilometer lange",
+				"Atlantikküste (mit den Küsten aller Inseln über 80.000 Kilometer) besteht aus vielen schmalen und tiefen Buchten, die Meerwasser bis weit",
+				"ins Landesinnere bringen. Ohne diese Fjorde und Buchten ist die Atlantikgrenze 2650 Kilometer lang.<br><br>",
+				"Zum Königreich Norwegen gehören neben dem kontinentalen „Hauptland“ (hovedlandet) auch die im Nordatlantik beziehungsweise im Nordpolarmeer",
+				"gelegene Inselgruppe Svalbard mit Spitzbergen und der Bäreninsel sowie die Insel Jan Mayen. Unter norwegischer Verwaltung steht ferner die",
+				"Bouvetinsel im Südpolarmeer. Sie gilt jedoch nicht als Teil des Königreichs Norwegen, sondern als „Nebenland“ (bilandet).<br><br>"
+			]
 		},
 		{
 			"id": "7" , 
 			"part": "gfx/little/nordeuropa/SWE.png",
 			"hitshape" : { "x" : "730", "y" : "300", "w" : "90"},
 			"position": { "x" : "662", "y" : "58" },
-			"country" : "Sweden",
-			"facts": [],
-			"description": []
+			"country" : "Schweden",
+			"facts": [
+				"<h3>Schweden</h3>",
+				"<ul>",
+				"<li>Einwohner: 9.573.466</li>",
+				"<li>Fläche: 450.295 km²</li>",
+				"<li>Amtssprache: Schwedisch</li>",
+				"<li>Hauptstadt: Stockholm</li>",
+				"<li>Staatsform: Parlamentarische Erbmonarchie</li>",
+				"<li>Staatsoberhaupt: König Carl XVI. Gustaf</li>",
+				"<li>Regierungschef: Ministerpräsident Fredrik Reinfeldt</li>",
+				"<li>Währung: 1 Schwedische Krone = 100 Öre</li>",
+				"<li>Nationalfeiertag: 6. Juni</li>",
+				"</ul>"
+			],
+			"description": [
+				"Das <b>Königreich Schweden</b> ist eine parlamentarische Monarchie in Nordeuropa. Das Staatsgebiet schließt, neben dem östlichen Teil der",
+				"skandinavischen Halbinsel, die Inseln Gotland und Öland mit ein.<br><br>",
+				"Schweden grenzt an das Kattegat, an die Staaten Norwegen und Finnland sowie an die Ostsee. Zu Schweden gehören etwa 221.800 Inseln, Gotland",
+				"(2994 km²) und Öland (1347 km², beide in der Ostsee) sowie Orust (346 km², nördlich von Göteborg) sind die drei größten. Die längste",
+				"Ausdehnung von Norden nach Süden beträgt 1572 km, von Osten nach Westen 499 km. Die Landgrenze zu Norwegen ist 1619 km lang, die zu",
+				"Finnland 586 km.<br><br>",
+				"Während weite Teile des Landes flach bis hügelig sind, steigen entlang der norwegischen Grenze die Gebirgsmassive der Skanden bis auf",
+				"über 2000 m Höhe an. Der höchste Gipfel ist der Kebnekaise mit 2111 m. Über das Land verteilt gibt es 28 Nationalparks. Die flächenmäßig",
+				"größten befinden sich im Nordwesten des Landes.<br><br>"
+			]
 		}
 	]
 }

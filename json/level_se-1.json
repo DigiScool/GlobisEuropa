@@ -35,7 +35,34 @@
 			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
 			"position": { "x" : "649", "y" : "40" },
 			"country" : "Albanien",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Albanien</h3>",
+				"<ul>",
+				"<li>Einwohner: 2.831.741</li>",
+				"<li>Fläche: 28.748 km²</li>",
+				"<li>Amtssprache: Albanisch</li>",
+				"<li>Hauptstadt: Tirana</li>",
+				"<li>Staatsform: parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Staatspräsident Bujar Nishani</li>",
+				"<li>Regierungschef: Premierminister Edi Rama</li>",
+				"<li>Währung: Albanischer Lek</li>",
+				"<li>Nationalfeiertag: 28. November</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Albanien</b>, amtlich <b>Republik Albanien</b> (albanisch Shqipëri/Shqipëria beziehungsweise Republika e Shqipërisë), ist ein Staat in",
+				"Südosteuropa. Er grenzt im Norden an Montenegro und Serbien bzw. an den völkerrechtlich umstrittenen Kosovo, im Osten an Mazedonien",
+				"sowie im Süden an Griechenland. Die natürliche Westgrenze wird durch die Küsten der Adria und des Ionischen Meeres gebildet, wodurch",
+				"das Land zu den Anrainerstaaten des Mittelmeers zählt.<br><br>", 
+				"Albanien hat ethnisch gesehen eine ziemlich einheitliche Bevölkerung. Die Albaner stellen mit 82,58 % der Einwohner die größte",
+				"Volksgruppe dar. Die Griechen sind mit einem Anteil von 0,87 % die größte Minderheit und siedeln vor allem im Süden des Landes. Mit je",
+				"0,3 % sind die Roma und die Aromunen in der Bevölkerung vertreten. Ihre Mitglieder leben über das ganze Land verstreut, sind aber",
+				"mehrheitlich in den größeren Städten und in der südlichen Landeshälfte Albaniens konzentriert.<br><br>", 
+				"Albanien beheimatet eine reiche Artenvielfalt und kämpft gleichzeitig mit einer Reihe von Umweltproblemen. Illegaler Holzeinschlag,",
+				"unkontrollierte Fischerei und Jagd, Überweidung und die Zerstörung von Wald- und Weideland sind nur einige Probleme. In den letzten",
+				"Jahren stieg allerdings auch die Fläche der unter Schutz gestellten Gebiete von 3,6 Prozent der Landesfläche im Jahr 2002 auf aktuell",
+				"9,9 Prozent (2010).<br><br>"
+			]
 		},
 		{
 			"id": "1" , 
@@ -43,7 +70,33 @@
 			"hitshape" : { "x" : "780", "y" : "320", "w" : "30", "h" : "160" },
 			"position": { "x" : "747", "y" : "291" },
 			"country" : "Bosnien und Herzegowina",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Bosnien und Herzegowina</h3>",
+				"<ul>",
+				"<li>Einwohner: 4.621.598</li>",
+				"<li>Fläche: 51.197 km²</li>",
+				"<li>Amtssprache: Bosnisch, Serbisch, Kroatisch</li>",
+				"<li>Hauptstadt: Sarajevo</li>",
+				"<li>Staatsform: Bundesrepublik</li>",
+				"<li>Staatsoberhaupt: Bakir Izetbegović, Nebojša Radmanović, Željko Komšić</li>",
+				"<li>Regierungschef: Ministerpräsident Vjekoslav Bevanda</li>",
+				"<li>Währung: 1 Marka = 100 Feninga</li>",
+				"<li>Nationalfeiertag: 25. November</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Bosnien und Herzegowina</b> ist ein Staat in Südosteuropa. Das Staatsgebiet liegt östlich des Adriatischen Meeres und befindet sich",
+				"nahezu komplett im Dinarischen Gebirge. Hauptstadt und größte Stadt des Landes ist Sarajevo. An Bosnien und Herzegowina grenzen insgesamt",
+				"drei Staaten. Im Osten Serbien, im Südosten Montenegro, sowie im Norden, Westen und Südwesten Kroatien. Des Weiteren grenzt der Staat bei",
+				"Neum für ca. 20 Kilometer an das Mittelmeer.<br><br>",
+				"Der Staat ging aus der Republik Bosnien und Herzegowina hervor, die unmittelbar nach einem Referendum anfangs 1992 gegründet wurde und",
+				"besteht seit dem Abkommen von Dayton (1995) aus zwei Entitäten, der Föderation Bosnien und Herzegowina und der Republika Srpska sowie dem",
+				"Sonderverwaltungsgebiet Distrikt Brčko.<br><br>",
+				"Die Tier- und Pflanzenwelt von Bosnien und Herzegowina ist artenreich und vielfältig. Die Flora und Fauna des Landes profitiert von der",
+				"geringen Bevölkerungsdichte und den unbewohnten Landstrichen. Um die 60 Prozent der Fläche von Bosnien und Herzegowina ist bewaldet,",
+				"besonders das Gebirge ist sehr waldreich. Durch die schwere Zugänglichkeit ist die Natur auch wenig bedroht. So konnte der Lebensraum",
+				"vieler seltener Tiere und Pflanzen erhalten werden. Einige Tierarten gibt es nur in Bosnien und Herzegowina.<br><br>"
+			]
 		},
 		{
 			"id": "2" , 
@@ -51,7 +104,31 @@
 			"hitshape" : { "x" : "970", "y" : "350", "w" : "50", "h" : "160" },
 			"position": { "x" : "905", "y" : "298" },
 			"country" : "Bulgarien",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Bulgarien</h3>",
+				"<ul>",
+				"<li>Einwohner: 7.364.570</li>",
+				"<li>Fläche: 110.994 km²</li>",
+				"<li>Amtssprache: Bulgarisch</li>",
+				"<li>Hauptstadt: Sofia</li>",
+				"<li>Staatsform: Parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Rossen Plewneliew</li>",
+				"<li>Regierungschef: Ministerpräsident Plamen Orescharski</li>",
+				"<li>Währung: Lew (BGN) = 100 Stotinki</li>",
+				"<li>Nationalfeiertag: 3. März</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Bulgarien</b>(amtliche Bezeichnung Republik Bulgarien) ist eine Republik in Südosteuropa mit etwa 7,3 Millionen Einwohnern.<br><br>",
+				"Bulgarien mit seinen spektakulären Bergen, goldenen Sandstränden und lebhaften Städten hat in den letzten Jahren immer mehr urlaubshungrige",
+				"Touristen angezogen und wenig mit dem Land gemeinsam, das es noch vor zehn Jahren war.<br><br>",
+				"In der Tat hat sich Bulgarien durch einen Bauboom in den letzten Jahren enorm verändert und zahlreiche westeuropäische Investoren mit",
+				"relativ preiswerten Grundstückspreisen und wunderschöner Landschaft angelockt. Bulgariens sanierte Ski- und Sommerurlaubsgebiete machen",
+				"seitdem anderen europäischen Destinationen durch ihre moderaten Preise für Unterkunft und Skipässe ordentlich Konkurrenz.<br><br>",
+				"Die Großstädte Bulgariens haben ihre Ostblock-Vergangenheit abgeschüttelt und präsentieren sich dynamisch und attraktiv mit gepflegten",
+				"Boulevards, vielseitigem Einkaufsvergnügen und lebendigem Nachtleben. Andererseits bewahren viele kleine Städte und Dörfer die typisch",
+				"bulgarische Lebensweise und Gastfreundschaft und sind stolz auf ihre traditionsreiche Folklore.<br><br>"
+			]
 		},
 		{
 			"id": "3" , 
@@ -59,7 +136,34 @@
 			"hitshape" : { "x" : "740", "y" : "300", "w" : "30", "h" : "160" },
 			"position": { "x" : "697", "y" : "254" },
 			"country" : "Kroatien",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Kroatien</h3>",
+				"<ul>",
+				"<li>Einwohner: 4.480.043</li>",
+				"<li>Fläche: 56.542 km²</li>",
+				"<li>Amtssprache: Kroatisch</li>",
+				"<li>Hauptstadt: Zagreb</li>",
+				"<li>Staatsform: Parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Ivo Josipović</li>",
+				"<li>Regierungschef: Premierminister Zoran Milanović</li>",
+				"<li>Währung: 1 Kuna (HRK) = 100 Lipa</li>",
+				"<li>Nationalfeiertag: 25. Juni (Tag der Staatswerdung)</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Kroatien</b> (kroatisch Hrvatska), amtlich <b>Republik Kroatien</b>, ist ein Staat in Europa. Das Staatsgebiet liegt östlich des",
+				"Adriatischen Meeres und zum Teil im Südwesten der Pannonischen Tiefebene.<br><br>",
+				"Im Nordwesten bildet Slowenien, im Norden Ungarn, im Nordosten Serbien, im Osten Bosnien und Herzegowina und im Südosten Montenegro",
+				"die Grenze. Das Gebiet der einstigen Republik Ragusa (Dubrovačka Republika), das heute den südlichsten Teil des Staates ausmacht, verfügt",
+				"über keine direkte Landverbindung zum übrigen Staatsgebiet, da der wenige Kilometer breite Meereszugang von Bosnien und Herzegowina",
+				"dazwischen liegt; das Gebiet um Dubrovnik bildet damit die einzige Exklave des Landes.<br><br>",
+				"Mit einer 1.778 km langen Küste, mehr als 1.000 Inseln (von denen 47 bewohnt sind) und einem milden Mittelmeerklima hat sich Kroatien",
+				"zu einem der gefragtesten Reiseziele Europas entwickelt. Aber Kroatien hat nicht nur Wasser und Sonne zu bieten, sondern auch wunderschöne",
+				"historische Städte wie Dubrovnik, Split und Trogir, die zum Weltkulturerbe der UNESCO gehören.<br><br>",
+				"Kroatien ist auch für Abenteuerurlauber stark im Kommen. Die schroffen Bergketten des Nördlichen Velebit Nationalparks sind ideal zum Wandern",
+				"und Klettern und das Cetina-Tal zum Wildwasser-Rafting geeignet. Die Adriaküste bietet beste Voraussetzungen für das Segeln, Tauchen und",
+				"Kajakfahren.<br><br>"	
+			]
 		},
 		{
 			"id": "4" , 
@@ -67,7 +171,33 @@
 			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
 			"position": { "x" : "629", "y" : "42" },
 			"country" : "Zypern",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Zypern</h3>",
+				"<ul>",
+				"<li>Einwohner: 1.193.976</li>",
+				"<li>Fläche: 9.251 km²</li>",
+				"<li>Amtssprache: Griechisch, Türkisch</li>",
+				"<li>Hauptstadt: Nikosia</li>",
+				"<li>Staatsform: Präsidialrepublik</li>",
+				"<li>Staatsoberhaupt und Regierungschef: Präsident Nikos Anastasiadis</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 1. Oktober</li>",
+				"</ul>"
+			],
+			"description": [
+				"Die <b>Republik Zypern</b> ist ein Inselstaat im östlichen Mittelmeer, der im Jahre 1960 vom Vereinigten Königreich die Unabhängigkeit",
+				"erlangte. Zypern ist die drittgrößte Insel des Mittelmeeres; sie gehört geographisch zu Asien, wird politisch und kulturell jedoch Europa",
+				"zugeordnet.<br><br>",
+				"Die ehemalige britische Kronkolonie wurde vom Vereinigten Königreich am 16. August 1960 in die Unabhängigkeit entlassen. Nach einem",
+				"Militärputsch in Griechenland, die eine Angliederung der Insel an Griechenland anstrebte, besetzten die türkischen Streitkräfte unter",
+				"der Berufung als Garantiemacht ab dem 20. Juli 1974 den Norden der Insel. Noch im Jahr 1974 wurde die alte Ordnung mit Präsident Makarios",
+				"wiederhergestellt, die Teilung blieb bestehen und führte am 15. November 1983 zur Ausrufung der – von der internationalen",
+				"Staatengemeinschaft nicht anerkannten – Türkischen Republik Nordzypern.<br><br>",
+				"Zypern ist zwar ein kleines Land, es hat aber einen sehr lebhaften, mediterranen Charakter und zieht Besucher mit seinen bedeutungsschweren",
+				"Legenden über die Liebe, seiner epischen Vergangenheit von mehr als 10.000 Jahren und seiner vielfältigen, äußerst leckeren Küche magisch an.",
+				"Wer den Urlaub etwas langsamer angehen möchte, wird sich in den guten Kaffeehäusern von Nicosia wohl fühlen oder ein paar der faszinierenden",
+				"UNESCO-Weltkulturerbestätten erkunden wollen. Wie auch immer man seine Freizeit verbringen möchte, Zypern macht Appetit auf mehr.<br><br>"
+			]
 		},
 		{
 			"id": "5" , 
@@ -75,7 +205,32 @@
 			"hitshape" : { "x" : "900", "y" : "470", "w" : "60", "h" : "160" },
 			"position": { "x" : "863", "y" : "372" },
 			"country" : "Griechenland",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Griechenland</h3>",
+				"<ul>",
+				"<li>Einwohner: 10.815.197</li>",
+				"<li>Fläche: 131.957 km²</li>",
+				"<li>Amtssprache: Griechisch</li>",
+				"<li>Hauptstadt: Athen</li>",
+				"<li>Staatsform: Parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Staatspräsident Karolos Papoulias</li>",
+				"<li>Regierungschef: Premierminister Andonis Samaras</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 25. März, 28. Oktober</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Griechenland</b> liegt in Südosteuropa und ist ein Mittelmeeranrainerstaat. Das griechische Staatsgebiet grenzt an Albanien,",
+				"Mazedonien, Bulgarien und die Türkei. Der Human Development Index zählt Griechenland zu den sehr hoch entwickelten Staaten.<br><br>",
+				"Griechenland ist eine bunte Mischung aus schicken Nachtclubs, frisch gefangenen Meeresfrüchten, prickelnder mediterraner Leidenschaft",
+				"und legendären griechischen Mythen. Es ist ein faszinierendes und hinreißendes Reiseland, egal, ob man sich am ewig sonnigen Strand",
+				"erholen oder antike Ruinen entdecken möchte.<br><br>",
+				"Griechenlands Städte beherbergen einige der kostbarsten architektonischen Denkmäler der Geschichte – man denke an den Parthenon in Athen –",
+				"und sind Handlungsorte der griechischen Helden- und Göttersagen, die zu den ältesten Legenden der Menschheitsgeschichte zählen. Vor der Küste",
+				"des Festlandes liegen 1.400 griechische Inseln wie das Party-Mecca Mykonos oder das malerische Santorini, die mit ihren paradiesischen",
+				"Landschaften zum Inselhüpfen einladen. Auf Kafalonia und Amorgos findet man echte Ruhe und Erholung, ideale Wandergebiete über Berge und",
+				"Täler auf Kreta, und erstklassige Tauch- und Segelbedingungen so ziemlich überall.<br><br>"				
+			]
 		},
 		{
 			"id": "5" , 
@@ -90,7 +245,7 @@
 			"part": "gfx/little/suedeuropa/Kosovo.png",
 			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
 			"position": { "x" : "649", "y" : "40" },
-			"country" : "Deutschland",
+			"country" : "Kosovo",
 			"description": "Deutschland, hier steht dann die beschreibung dazu"
 		},
 		{
