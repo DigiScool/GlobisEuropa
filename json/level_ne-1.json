@@ -20,7 +20,23 @@
 		"gfx/little/nordeuropa/LAT.png",
 		"gfx/little/nordeuropa/LIT.png",
 		"gfx/little/nordeuropa/NOR.png",
-		"gfx/little/nordeuropa/SWE.png"
+		"gfx/little/nordeuropa/SWE.png",
+		"gfx/sights/nordeuropa/rundale.jpg",
+		"gfx/sights/nordeuropa/geburtskathedrale.jpg",
+		"gfx/sights/nordeuropa/hallgrimskirkja.jpg",
+		"gfx/sights/nordeuropa/aldeyjarfoss.jpg",
+		"gfx/sights/nordeuropa/suomenlinna.jpg",
+		"gfx/sights/nordeuropa/ateneum.jpg",
+		"gfx/sights/nordeuropa/domberg.jpg",
+		"gfx/sights/nordeuropa/rathausTallinn.jpg",
+		"gfx/sights/nordeuropa/kronborg.jpg",
+		"gfx/sights/nordeuropa/meerjungfrau.jpg",
+		"gfx/sights/nordeuropa/katedra.jpg",
+		"gfx/sights/nordeuropa/kreuze.jpg",
+		"gfx/sights/nordeuropa/geirangerfjord.jpg",
+		"gfx/sights/nordeuropa/operOslo.jpg",
+		"gfx/sights/nordeuropa/operStockholm.jpg",	
+		"gfx/sights/nordeuropa/vasa.jpg"	
 	],
 	"puzzle" : [
 		{
@@ -55,7 +71,9 @@
 				"343 km an Estland, im Osten auf einer Länge von 276 km an Russland, im Südosten auf einer Länge von 161 km an Weißrussland und im Süden auf",
 				"einer Länge von 588 km an Litauen. Die Küstenlinie entlang der Rigaer Bucht im Norden und der Ostsee im Westen misst etwa 498 km;",
 				"Seegrenzen hat Lettland mit Estland und Litauen. Die durchschnittliche Höhe Lettlands beträgt 87 m. Der höchste Berg ist der 120 km östlich",
-				"von Riga gelegene Gaiziņkalns mit 311 m.<br><br>"
+				"von Riga gelegene Gaiziņkalns mit 311 m.<br><br>",
+				"<img style='margin-right: 5px;' width='360px' height='207px' src='./gfx/sights/nordeuropa/rundale.jpg' title='Schloss Rundāle' />",
+				"<img width='243px' height='207px' src='./gfx/sights/nordeuropa/geburtskathedrale.jpg' title='Geburtskathedrale (Riga)' />"
 			]
 		},
 		{
@@ -86,7 +104,9 @@
 				"südöstlich liegen die Färöer, Großbritannien und Irland. Die Fläche Islands beträgt 103.125 km², davon sind 100.329 km² Landfläche und",
 				"2.796 km² Wasserfläche. Der höchste Punkt der Insel ist der Hvannadalshnúkur mit 2.110 m. Der längste Fluss ist die Þjórsá mit 230 km.",
 				"Die Meerenge zwischen Grönland und Island wird Dänemarkstraße genannt. Nördlich von Island liegt die Grönlandsee, östlich liegt das",
-				"Europäische Nordmeer, beides Nebenmeere des Arktischen Ozeans (auch Nordpolarmeer genannt). Nach Süden liegt der Nordatlantik.<br><br>"
+				"Europäische Nordmeer, beides Nebenmeere des Arktischen Ozeans (auch Nordpolarmeer genannt). Nach Süden liegt der Nordatlantik.<br><br>",
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/nordeuropa/hallgrimskirkja.jpg' title='Hallgrimskirkja' />",
+				"<img width='310px' height='207px' src='./gfx/sights/nordeuropa/aldeyjarfoss.jpg' title='Aldeyjarfoss' />"
 			]
 		},
 		{
@@ -123,7 +143,9 @@
 				"beträgt 1160 km (von Nuorgam bis Hanko), die längste Ost-West-Distanz 540 km (von Ilomantsi nach Närpes). Bei der Gliederung des",
 				"Landesgebiets wird bereits etwa ab der Höhe des Oulujärvi (deutsch auch Oulusee, nordwestlich der Stadt Kajaani) von „Nordfinnland“",
 				"gesprochen. So kann Oulu, genau in der Mitte des Landes gelegen, als nordfinnische Stadt bezeichnet werden, auch heißt die Landschaft",
-				"um Jyväskylä trotz ihrer südlichen Lage „Mittelfinnland“.<br><br>"
+				"um Jyväskylä trotz ihrer südlichen Lage „Mittelfinnland“.<br><br>",
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/nordeuropa/suomenlinna.jpg' title='Suomenlinna' />",
+				"<img width='360px' height='207px' src='./gfx/sights/nordeuropa/ateneum.jpg' title='Ateneum' />"
 			]
 		},
 		{
@@ -154,7 +176,9 @@
 				"Estland liegt an der östlichen Küste der Ostsee. Das Land ist flächenmäßig etwas kleiner als Niedersachsen und etwas größer als die Schweiz.",
 				"Die durchschnittliche Höhe liegt nur bei 50 m. Im Süden des Landes befindet sich die höchste Erhebung, der Suur Munamägi (318 Meter). Der",
 				"größte See ist der Peipsi järv (Peipussee). Die größten Inseln sind Saaremaa und Hiiumaa.<br><br>",
-				"Die gesamte Küstenlinie, die durch mehrere Golfe, Meerengen und Einbuchtungen gekennzeichnet ist, ist 3.794 Kilometer lang.<br><br>"
+				"Die gesamte Küstenlinie, die durch mehrere Golfe, Meerengen und Einbuchtungen gekennzeichnet ist, ist 3.794 Kilometer lang.<br><br>",
+				"<img style='margin-right: 5px;' width='276px' height='207px' src='./gfx/sights/nordeuropa/domberg.jpg' title='Domberg (Tallinn)' />",
+				"<img width='290px' height='207px' src='./gfx/sights/nordeuropa/rathausTallinn.jpg' title='Tallinner Rathaus' />"
 			]
 		},
 		{
@@ -190,7 +214,9 @@
 				"Bornholm.<br><br>",
 				"Wegen seiner Inseln und der zerklüfteten Buchten verfügt das flächenmäßig kleine Land über eine enorme Küstenlänge von 7314 km. Dänemarks",
 				"einzige Landgrenze besteht im Süden zu Deutschland (Grenzlänge: 67 km), des Weiteren wird das Land durch die Nordsee, das Skagerrak, das",
-				"Kattegat und die Ostsee begrenzt.<br><br>"
+				"Kattegat und die Ostsee begrenzt.<br><br>",
+				"<img style='margin-right: 5px;' width='290px' height='207px' src='./gfx/sights/nordeuropa/meerjungfrau.jpg' title='Kleine Meerjungfrau' />",
+				"<img width='300px' height='207px' src='./gfx/sights/nordeuropa/kronborg.jpg' title='Schloss Kronborg' />"
 			]
 		},
 		{
@@ -222,7 +248,9 @@
 				"Kaliningrad an, die Grenze wird teilweise von der Memel gebildet. Im Westen liegt die Ostsee, zu der Litauen über den eisfreien Hafen",
 				"Klaipėda Zugang hat.<br><br>",
 				"Geografen des Institut Géographique National, des nationalen Geografieinstituts Frankreichs, errechneten 1989 den geografischen Mittelpunkt",
-				"Europas und ermittelten eine Stelle im Dorf Purnuškės etwas nördlich von Vilnius.<br><br>"
+				"Europas und ermittelten eine Stelle im Dorf Purnuškės etwas nördlich von Vilnius.<br><br>",
+				"<img style='margin-right: 5px;' width='268px' height='207px' src='./gfx/sights/nordeuropa/katedra.jpg' title='Kathedrale St. Stanislaus (Vilnius)' />",
+				"<img width='340px' height='207px' src='./gfx/sights/nordeuropa/kreuze.jpg' title='Berg der Kreuze' />"
 			]
 		},
 		{
@@ -256,7 +284,9 @@
 				"ins Landesinnere bringen. Ohne diese Fjorde und Buchten ist die Atlantikgrenze 2650 Kilometer lang.<br><br>",
 				"Zum Königreich Norwegen gehören neben dem kontinentalen „Hauptland“ (hovedlandet) auch die im Nordatlantik beziehungsweise im Nordpolarmeer",
 				"gelegene Inselgruppe Svalbard mit Spitzbergen und der Bäreninsel sowie die Insel Jan Mayen. Unter norwegischer Verwaltung steht ferner die",
-				"Bouvetinsel im Südpolarmeer. Sie gilt jedoch nicht als Teil des Königreichs Norwegen, sondern als „Nebenland“ (bilandet).<br><br>"
+				"Bouvetinsel im Südpolarmeer. Sie gilt jedoch nicht als Teil des Königreichs Norwegen, sondern als „Nebenland“ (bilandet).<br><br>",
+				"<img style='margin-right: 5px;' width='310px' height='207px' src='./gfx/sights/nordeuropa/geirangerfjord.jpg' title='Geirangerfjord' />",
+				"<img width='264px' height='207px' src='./gfx/sights/nordeuropa/operOslo.jpg' title='Opernhaus Oslo' />"
 			]
 		},
 		{
@@ -288,7 +318,9 @@
 				"Finnland 586 km.<br><br>",
 				"Während weite Teile des Landes flach bis hügelig sind, steigen entlang der norwegischen Grenze die Gebirgsmassive der Skanden bis auf",
 				"über 2000 m Höhe an. Der höchste Gipfel ist der Kebnekaise mit 2111 m. Über das Land verteilt gibt es 28 Nationalparks. Die flächenmäßig",
-				"größten befinden sich im Nordwesten des Landes.<br><br>"
+				"größten befinden sich im Nordwesten des Landes.<br><br>",
+				"<img style='margin-right: 5px;' width='340px' height='207px' src='./gfx/sights/nordeuropa/operStockholm.jpg' title='Königliche Oper (Stockholm)' />",
+				"<img width='270px' height='207px' src='./gfx/sights/nordeuropa/vasa.jpg' title='Vasa-Museum' />"
 			]
 		}
 	]
