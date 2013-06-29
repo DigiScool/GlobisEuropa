@@ -173,12 +173,22 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 			// Hintergrund laden
 			// String zusammenbauen
-			var fileName = level.bg+'-';
-			fileName += this.level.procress[0];
-			fileName += this.level.procress[1];
-			fileName += this.level.procress[2];
-			fileName += this.level.procress[3];
-			fileName += ".png";
+
+			var fileName = '';
+			if(this.level.stage == 1){
+				fileName += level.bg+'-';
+				fileName += this.level.procress[0];
+				fileName += this.level.procress[1];
+				fileName += this.level.procress[2];
+				fileName += this.level.procress[3];
+				fileName += ".png";
+			}
+
+			if(this.level.stage == 2){
+				fileName  = level.bg;
+			}
+			
+
 			console.log('LEVELDATEI: '+fileName);
 
 			this.lvl_bg = new createjs.Bitmap(fileName);

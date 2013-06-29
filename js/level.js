@@ -12,7 +12,7 @@ define(['jquery'],function($){
 			this.procress[3] = 0;	// Nordeuropa
 
 			// aktueller Abschnitt
-			this.stage = 1;
+			this.stage = 2;
 
 			// counter für Scripte
 			this.level_played = 0;
