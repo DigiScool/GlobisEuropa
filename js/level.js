@@ -12,15 +12,20 @@ define(['jquery'],function($){
 			this.procress[3] = 0;	// Nordeuropa
 
 			// aktueller Abschnitt
-			this. stage = 1;
-			this.level_played = 0 ;
+			this.stage = 1;
+
+			// counter für Scripte
+			this.level_played = 0;
 
 		},
 
 		setup: function(app,engine){
+			
 			this.app = app;
 			this.engine = engine;
+	
 		},
+
 
 		start: function(data){
 
@@ -118,6 +123,17 @@ define(['jquery'],function($){
 			// entsprechendes Array-Feld wird um 1 erhöht
 			this.procress[this.level.id]++;
 			this.level_played++;
+
+			// Sind alle Abschnitte gespielt wurden ?
+			var count = 0;
+			for(var i = 0; i < this.procress.length; i++){
+				if(this.procress[i] == this.stage) count++;
+			}
+
+			if(count == 4){
+				// Alle Abschnitt haben die aktuelle Sage geschafft
+				this.stage++;
+			}
 
 			$('#button_home').addClass('hide');
 			this.app.setGameState("levelDone");

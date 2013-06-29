@@ -1,6 +1,6 @@
 {
 	"headline" : "Südeuropa Level 1",
-	"bg" : "gfx/big/suedeuropa/Suedeuropa.png",
+	"bg" : "gfx/big/suedeuropa/Suedeuropa",
 	"bgx" : "150",
 	"bgy" : "-380",
 	"script": [
@@ -10,6 +10,14 @@
 	"ende1": "Puh, der Abschnitt war wirklich schwierig. Mal schauen welche unbekannten Länder wir noch entdecken werden.",
 	"count" : "14",
 	"images" : [
+		"gfx/big/suedeuropa/Suedeuropa-0000.png",
+		"gfx/big/suedeuropa/Suedeuropa-0001.png",
+		"gfx/big/suedeuropa/Suedeuropa-0100.png",
+		"gfx/big/suedeuropa/Suedeuropa-0101.png",
+		"gfx/big/suedeuropa/Suedeuropa-1000.png",
+		"gfx/big/suedeuropa/Suedeuropa-1001.png",
+		"gfx/big/suedeuropa/Suedeuropa-1100.png",
+		"gfx/big/suedeuropa/Suedeuropa-1101.png",
 		"gfx/little/suedeuropa/ALB.png",
 		"gfx/little/suedeuropa/BOSHER.png",
 		"gfx/little/suedeuropa/BUL.png",
@@ -24,8 +32,7 @@
 		"gfx/little/suedeuropa/SER.png",
 		"gfx/little/suedeuropa/SLOVENIA.png",
 		"gfx/little/suedeuropa/Spanien.png",
-		"gfx/little/suedeuropa/TUR.png",	
-		"gfx/big/suedeuropa/Suedeuropa.png"
+		"gfx/little/suedeuropa/TUR.png"
 	],
 
 	"puzzle" : [
@@ -268,7 +275,7 @@
 		},
 		{
 			"id": "6" , 
-			"part": "gfx/little/suedeuropa/Kosovo.png",
+			"part": "gfx/little/suedeuropa/KOS.png",
 			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
 			"position": { "x" : "649", "y" : "40" },
 			"country" : "Kosovo",

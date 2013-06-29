@@ -2,7 +2,7 @@
 	"id":"0",
 	"shape": "we_container",
 	"headline" : "Westeuropa Level 1",
-	"bg" : "gfx/big/westeuropa/Westeuropa_weiss.png",
+	"bg" : "gfx/big/westeuropa/Westeuropa",
 	"bgx" : "250",
 	"bgy" : "-200",
 	"script": [
@@ -12,6 +12,14 @@
 	"ende1": "Sehr gut gemacht! Westeuropa hat nun schon Länder. Jetzt wird es allerdings ein bisschen schwieriger, denn auch die anderen Teile Europas möchten ihre Länder zurückbekommen.",
 	"count" : "9 ",
 	"images" : [
+		"gfx/big/westeuropa/Westeuropa-0000.png",
+		"gfx/big/westeuropa/Westeuropa-0001.png",
+		"gfx/big/westeuropa/Westeuropa-0010.png",
+		"gfx/big/westeuropa/Westeuropa-0011.png",
+		"gfx/big/westeuropa/Westeuropa-0100.png",
+		"gfx/big/westeuropa/Westeuropa-0101.png",
+		"gfx/big/westeuropa/Westeuropa-0110.png",
+		"gfx/big/westeuropa/Westeuropa-0111.png",
 		"gfx/little/westeuropa/AUS.png",
 		"gfx/little/westeuropa/BEL.png",
 		"gfx/little/westeuropa/FRA.png",
@@ -21,29 +29,28 @@
 		"gfx/little/westeuropa/LUX.png",
 		"gfx/little/westeuropa/SUI.png",
 		"gfx/little/westeuropa/UK.png",
-		"gfx/big/westeuropa/Westeuropa_weiss.png",
 		"gfx/little/pfeil_hoch.png",
 		"gfx/little/pfeil_runter.png",
-		"gfx/sights/BrandenburgerTor.jpg",
-		"gfx/sights/Neuschwanstein.jpg",
-		"gfx/sights/Eiffelturm.jpg",
-		"gfx/sights/MontSaintMichel.jpg",
-		"gfx/sights/SchlossSchoenbrunn.jpg",
-		"gfx/sights/Stephansdom.jpg",
-		"gfx/sights/Matterhorn.jpg",
-		"gfx/sights/Stephansdom.jpg",
-		"gfx/sights/Matterhorn.jpg",
-		"gfx/sights/SchlossChillon.jpg",
-		"gfx/sights/Rijksmuseum.jpg",
-		"gfx/sights/Nachtwache.jpg",
-		"gfx/sights/Lucilinburhuc.jpg",
-		"gfx/sights/Mudam.jpg",
-		"gfx/sights/BrunaBoinne.jpg",
-		"gfx/sights/Clonmacnoise.jpg",
-		"gfx/sights/Stonehenge.jpg",
-		"gfx/sights/TowerBridge.jpg",
-		"gfx/sights/Cinquantenaire.jpg",
-		"gfx/sights/Atomium.jpg"
+		"gfx/sights/westeuropa/BrandenburgerTor.jpg",
+		"gfx/sights/westeuropa/Neuschwanstein.jpg",
+		"gfx/sights/westeuropa/Eiffelturm.jpg",
+		"gfx/sights/westeuropa/MontSaintMichel.jpg",
+		"gfx/sights/westeuropa/SchlossSchoenbrunn.jpg",
+		"gfx/sights/westeuropa/Stephansdom.jpg",
+		"gfx/sights/westeuropa/Matterhorn.jpg",
+		"gfx/sights/westeuropa/Stephansdom.jpg",
+		"gfx/sights/westeuropa/Matterhorn.jpg",
+		"gfx/sights/westeuropa/SchlossChillon.jpg",
+		"gfx/sights/westeuropa/Rijksmuseum.jpg",
+		"gfx/sights/westeuropa/Nachtwache.jpg",
+		"gfx/sights/westeuropa/Lucilinburhuc.jpg",
+		"gfx/sights/westeuropa/Mudam.jpg",
+		"gfx/sights/westeuropa/BrunaBoinne.jpg",
+		"gfx/sights/westeuropa/Clonmacnoise.jpg",
+		"gfx/sights/westeuropa/Stonehenge.jpg",
+		"gfx/sights/westeuropa/TowerBridge.jpg",
+		"gfx/sights/westeuropa/Cinquantenaire.jpg",
+		"gfx/sights/westeuropa/Atomium.jpg"
 		
 	],
 
@@ -92,8 +99,8 @@
 				"er komplizierten deutschen Geschichte. Von der Vergangenheit",
 				"dieses Landes und ihren Auswirkungen auf die Deutschen wird kein",
 				"Besucher unberührt bleiben.<br><br>",
-				"<img style='margin-right: 5px;' align='left' width='300px' height='197px' src='./gfx/sights/BrandenburgerTor.jpg' title='Brandenburger Tor' />",
-				"<img align='right' width='300px' height='197px' src='./gfx/sights/Neuschwanstein.jpg' title='Schloss Neuschwanstein' />"
+				"<img style='margin-right: 5px;' align='left' width='300px' height='197px' src='./gfx/sights/westeuropa/BrandenburgerTor.jpg' title='Brandenburger Tor' />",
+				"<img align='right' width='300px' height='197px' src='./gfx/sights/westeuropa/Neuschwanstein.jpg' title='Schloss Neuschwanstein' />"
 			]
 		},
 		{
@@ -128,8 +135,8 @@
 				"79,5 Millionen ausländische Touristen pro Jahr.<br><br>",
 				"Frankreich steht für Kunst und Architektur von Weltruf, für römische Tempel und Renaissanceschlösser, für klassische Sehenswürdigkeiten,",
 				"die jeder kennt – und neue Attraktionen, die bald jeder kennen wird.<br><br>",
-				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/Eiffelturm.jpg' title='Eiffelturm' />",
-				"<img width='243px' height='207px' src='./gfx/sights/MontSaintMichel.jpg' title='Mont Saint Michel' />"
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/westeuropa/Eiffelturm.jpg' title='Eiffelturm' />",
+				"<img width='243px' height='207px' src='./gfx/sights/westeuropa/MontSaintMichel.jpg' title='Mont Saint Michel' />"
 			]
 		},
 		{
@@ -165,8 +172,8 @@
 				"Zu Zeiten der Habsburger war Österreich die beherrschende Macht in Mitteleuropa. Heute mag es eine untergeordnete Rolle in Europa spielen,",
 				"als Urlaubsland aber ist es führend - und das nicht nur für Outdoorfreunde. Österreich steht für eine beeindruckende Architektur und eine",
 				"unvergleichliche musikalische Tradition, die auch Anton aus Tirol nicht wirklich erschüttern konnte.<br><br>",
-				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/SchlossSchoenbrunn.jpg' title='Schloss Schönbrunn' />",
-				"<img width='243px' height='207px' src='./gfx/sights/Stephansdom.JPG' title='Stephansdom' />"
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/westeuropa/SchlossSchoenbrunn.jpg' title='Schloss Schönbrunn' />",
+				"<img width='243px' height='207px' src='./gfx/sights/westeuropa/Stephansdom.jpg' title='Stephansdom' />"
 			]
 		},
 		{
@@ -198,8 +205,8 @@
 				"25 Prozent der Landfläche werden für Landwirtschaft genutzt. Ungefähr 95 Prozent aller Belgier leben in Städten. Etwa 75 Prozent der",
 				"belgischen Staatsbürger sind römisch-katholisch, rund 1 Prozent gehören einer protestantischen Kirche an und 8 Prozent islamischen Gemeinden.",
 				"Der Anteil Nichtreligiöser beträgt etwa 16 Prozent.<br><br>",
-				"<img style='margin-right: 5px;' width='309px' height='207px' src='./gfx/sights/Cinquantenaire.jpg' title='Cinquantenaire Park in Brüssel' />",
-				"<img width='243px' height='207px' src='./gfx/sights/Atomium.jpg' title='Atomium' />"
+				"<img style='margin-right: 5px;' width='309px' height='207px' src='./gfx/sights/westeuropa/Cinquantenaire.jpg' title='Cinquantenaire Park in Brüssel' />",
+				"<img width='243px' height='207px' src='./gfx/sights/westeuropa/Atomium.jpg' title='Atomium' />"
 			]
 		},
 		{
@@ -241,8 +248,8 @@
 				"flache Landschaft, die schon die frühen Künstler des Landes inspirierte, erstreckt sich",
 				"noch immer in alle Richtungen bis zum Horizont und die Deiche drohen noch immer",
 				"gelegentlich nachzugeben.<br><br>",
-				"<img style='margin-right: 5px;' width='340px' height='207px' src='./gfx/sights/Rijksmuseum.jpg' title='Rijksmuseum Amsterdam' />",
-				"<img width='243px' height='207px' src='./gfx/sights/Nachtwache.jpg' title='Nachtwache in Amsterdam' />"
+				"<img style='margin-right: 5px;' width='340px' height='207px' src='./gfx/sights/westeuropa/Rijksmuseum.jpg' title='Rijksmuseum Amsterdam' />",
+				"<img width='243px' height='207px' src='./gfx/sights/westeuropa/Nachtwache.jpg' title='Nachtwache in Amsterdam' />"
 			]
 		},
 		{
@@ -279,8 +286,8 @@
 				"Irland wurde stark modernisiert, doch manche Dinge ändern sich nie. Wahrscheinlich ist genau das einer der",
 				"großen Anziehungspunkte dieses Landes. Wenn man zur Skellig Michael übersetzt, tost der Atlantik mit altbekannter Urgewalt, und in",
 				"den Höfen reetgedeckter Pubs hat man schon vor Generationen gemütlich beieinandergesessen.<br><br>", 
-				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/BrunaBoinne.jpg' title='Brú na Bóinne' />",
-				"<img width='243px' height='207px' src='./gfx/sights/Clonmacnoise.jpg' title='Klosterruinen in Clonmacnoise' />"
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/westeuropa/BrunaBoinne.jpg' title='Brú na Bóinne' />",
+				"<img width='243px' height='207px' src='./gfx/sights/westeuropa/Clonmacnoise.jpg' title='Klosterruinen in Clonmacnoise' />"
 			]
 		},
 		{
@@ -316,8 +323,8 @@
 				"Die gleichnamige Hauptstadt Luxemburg besteht aus zwei Stadtteilen: der entzückenden Altstadt mit Festungstürmchen und verschlungenen",
 				"Kopfsteinpflasterstraßen, die zum UNESCO-Weltkulturerbe gehört, und das moderne Stadtzentrum des Kirchberg-Plateaus, wo viele",
 				"internationale Finanzdienstleister ihre Bürogebäude haben.<br><br>",
-				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/Lucilinburhuc.jpg' title='Burg Lucilinburhuc' />",
-				"<img width='243px' height='207px' src='./gfx/sights/Mudam.jpg' title='Musée d’Art Moderne Grand-Duc Jean' />"
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/westeuropa/Lucilinburhuc.jpg' title='Burg Lucilinburhuc' />",
+				"<img width='243px' height='207px' src='./gfx/sights/westeuropa/Mudam.jpg' title='Musée d’Art Moderne Grand-Duc Jean' />"
 			]
 		},
 		{
@@ -354,8 +361,8 @@
 				"Es ist die Wiege des Wintertourismus und der Ort, wo die Alpinisten ungeahnte Höhen erklommen. Der Grund:",
 				"Es gibt keinen zweiten Ort, der so viele hohe Berge bietet und gleichzeitig so gut zugänglich ist. Besucher können mit kleinen Zügen durch",
 				"die Landschaft tuckern, sich in Kurorten erholen, mit Schneeschuhen zu ihrem Iglu wandern und mittelalterliche Brücken überqueren.<br><br>",
-				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/Matterhorn.JPG' title='Matterhorn' />",
-				"<img width='243px' height='207px' src='./gfx/sights/SchlossChillon.jpg' title='Schloss Chillon' />"
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/westeuropa/Matterhorn.JPG' title='Matterhorn' />",
+				"<img width='243px' height='207px' src='./gfx/sights/westeuropa/SchlossChillon.jpg' title='Schloss Chillon' />"
 			]
 		},
 		{
@@ -389,8 +396,8 @@
 				"Staatsoberhaupt der britische Monarch ist, daneben bestehen noch 14 Überseegebiete.<br><br>",
 				"Mit rund 63,2 Millionen Einwohnern ist es der drittbevölkerungsreichste Staat Europas. Das Vereinigte Königreich besitzt internationalen",
 				"Einfluss dank des weit verbreiteten Gebrauchs der englischen Sprache und des Commonwealth of Nations.<br><br>", 
-				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/Stonehenge.jpg' title='Stonehenge' />",
-				"<img width='360px' height='207px' src='./gfx/sights/TowerBridge.jpg' title='Tower Bridge' />"
+				"<img style='margin-right: 5px;' width='243px' height='207px' src='./gfx/sights/westeuropa/Stonehenge.jpg' title='Stonehenge' />",
+				"<img width='360px' height='207px' src='./gfx/sights/westeuropa/TowerBridge.jpg' title='Tower Bridge' />"
 			]
 		}
 	]
