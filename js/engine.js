@@ -10,6 +10,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 	var Engine = Class.extend({
 		
 		init: function(stage){
+			
 			// Initialisierungen
 			var self = this;
 
@@ -26,54 +27,24 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.anim = [];
 			this.levelanim = [];
 
-
 			// INTRO ////////////////
 			this.intro = [];
 			this.introTime = 0;
 			this.introPointer = 0;
 			this.introShow = false;
 			/////////////////////////
-
-
-			/////////////////////////
-			// Container ////////////
-			
+		
 			// Container für Hauptmenue
 			this.hmContainer = new createjs.Container();
 			this.hm_bg = null;
 			this.globiObjekt = new Globi();
 			this.globi = this.globiObjekt.getContainer();
 
-			
-			// Container für Level
-			this.container_level = new createjs.Container();
-			this.partsContainer = new createjs.Container();
-			this.lvl_bg = null;		
-
-			
-         
-           	
-           
-
-			var g = new createjs.Graphics();
-			g.beginFill(createjs.Graphics.getRGB(0,0,0));
-            g.rect(0,0,50,600);
-			this.puzzle_menueMouseOver = new createjs.Shape(g).set({alpha:0.8});
-			this.puzzle_menueMouseOver.addEventListener("mouseover", function(){
-				self.container_level.x = 0;
-			});
-
-			// Container für Puzzleteile
-			this.puzzleParts = new createjs.Container();
-			
+				
 			// Variablen für die Animationen
 			this.idle_globi = 1;
 
-
-			// Hit-Elements zum checken ob getroffen
-			this.container_hitshapes = new createjs.Container();
-
-
+			// container für die Ringanimation im Level
 			this.dropring_container = new createjs.Container();
 
 
@@ -81,6 +52,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 		},
 
 		setup: function(app,level){
+			
 			this.level = level;
 			this.app = app;
 
@@ -151,6 +123,8 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			
 			var self = this;
 
+
+
 			var g = new createjs.Graphics()
 				.setStrokeStyle(10)
             	.beginStroke(createjs.Graphics.getRGB(141,211,237))
@@ -159,7 +133,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 				this.globi.getChildAt(0).graphics = g;
 
-				this.globiObjekt.we_shape.removeAllEventListeners();
+				
 
 			this.globi.addEventListener("mouseover",function(){
 				var g = new createjs.Graphics()
@@ -191,13 +165,23 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				self.enableLandSelection();
 			});
 		},
+
 		setLevel: function(level,puzzle,callback){
 			
 			var self = this;
 			
 
 			// Hintergrund laden
-			this.lvl_bg = new createjs.Bitmap(level.bg);
+			// String zusammenbauen
+			var fileName = level.bg+'-';
+			fileName += this.level.procress[0];
+			fileName += this.level.procress[1];
+			fileName += this.level.procress[2];
+			fileName += this.level.procress[3];
+			fileName += ".png";
+			console.log('LEVELDATEI: '+fileName);
+
+			this.lvl_bg = new createjs.Bitmap(fileName);
 			this.lvl_bg.x = level.bgx;
 			this.lvl_bg.y = level.bgy;
 			this.lvl_bg.scaleX = 0.8;
@@ -206,7 +190,6 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 			console.log("BG + HM");
 			console.log(this.lvl_bg);
-			console.log(this.container_level);
 			console.log("********************");
 			
 
@@ -471,6 +454,13 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				var mouseover_oe = this.globiObjekt.getOstEurope('#ffffff','#68ba5b');
 				var mouseover_ne = this.globiObjekt.getNorthEurope('#ffffff','#68ba5b');
 			}
+
+			if( this.level.stage == 2){
+				var mouseover_se = this.globiObjekt.getSouthEurope('#76d353','#457c3d');
+				var mouseover_we = this.globiObjekt.getWestEurope('#76d353','#457c3d');
+				var mouseover_oe = this.globiObjekt.getOstEurope('#76d353','#457c3d');
+				var mouseover_ne = this.globiObjekt.getNorthEurope('#76d353','#457c3d');
+			}
 			
 			
 			// Ist das Level noch spielbar
@@ -491,9 +481,13 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					});
 
 					target.addEventListener("click", function(){
+
+						// Baue den String zur Json-file
+						var jsonFile = 'level_we-'+self.level.stage;
 						self.app.removeBubble("#bubble_selectshape");
-						self.app.startLevel("level_we-1");
 						self.app.changeCursor('default');
+						self.app.startLevel(jsonFile);
+						
 					});
 
 				})(this.globi.getChildAt(3));
@@ -519,9 +513,12 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					});
 
 					target.addEventListener("click", function(){
+						
+						// Baue den String zur Json-file
+						var jsonFile = 'level_se-'+self.level.stage;
 						self.app.removeBubble("#bubble_selectshape");
-						self.app.startLevel("level_se-1");
-						self.app.changeCursors('default');
+						self.app.changeCursor('default');
+						self.app.startLevel(jsonFile);
 					});
 
 				})(this.globi.getChildAt(4));
@@ -546,9 +543,12 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					});
 
 					target.addEventListener("click", function(){
+						
+						// Baue den String zur Json-file
+						var jsonFile = 'level_oe-'+self.level.stage;
 						self.app.removeBubble("#bubble_selectshape");
 						self.app.changeCursor('default');
-						self.app.startLevel("level_oe-1");
+						self.app.startLevel(jsonFile);
 					});
 
 				})(this.globi.getChildAt(2));
@@ -573,9 +573,12 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					});
 
 					target.addEventListener("click", function(){
+						
+						// Baue den String zur Json-file
+						var jsonFile = 'level_ne-'+self.level.stage;
 						self.app.removeBubble("#bubble_selectshape");
 						self.app.changeCursor('default');
-						self.app.startLevel("level_ne-1");
+						self.app.startLevel(jsonFile);
 					});
 
 				})(this.globi.getChildAt(5));
@@ -698,13 +701,13 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			console.log(this.level.stage);
 
 			// Verändere die AbschnittsContainer auf Globi
-			if(stage == 1){
+			
 				
 				/* Abschnitt 1
 					gehe die Elemente durch und schaue welche 
 					schon den Abschnitt fertig haben
 				*/
-				if(this.level.procress[0] == stage){
+				if(this.level.procress[0] == 1){
 						var newContainer = this.globiObjekt.getWestEurope('#68ba5b','#68ba5b');
 						// hole den Index des alten Containers
 						var oldIndex = this.globi.getChildIndex(this.globiObjekt.we_container);
@@ -718,7 +721,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						this.globi.setChildIndex(this.globiObjekt.container_augen,0);						
 				}
 
-				if(this.level.procress[1] == stage){
+				if(this.level.procress[1] == 1){
 						
 						var newContainer = this.globiObjekt.getOstEurope('#68ba5b','#68ba5b');
 						// hole den Index des alten Containers
@@ -733,7 +736,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						this.globi.setChildIndex(this.globiObjekt.container_augen,0);	
 				}
 
-				if(this.level.procress[2] == stage){
+				if(this.level.procress[2] == 1){
 						
 						var newContainer = this.globiObjekt.getSouthEurope('#68ba5b','#68ba5b');
 						// hole den Index des alten Containers
@@ -746,7 +749,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						this.globi.setChildIndex(newContainer, oldIndex + 1 );	
 				}
 
-				if(this.level.procress[3] == stage){
+				if(this.level.procress[3] == 1){
 						
 						var newContainer = this.globiObjekt.getNorthEurope('#68ba5b','#68ba5b');
 						// hole den Index des alten Containers
@@ -764,7 +767,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				// Debugausgabe
 				console.log(this.globi);
 				this.enableLandSelection();
-			}
+			
 
 		},
 

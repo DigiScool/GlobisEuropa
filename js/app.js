@@ -61,13 +61,14 @@ define(['jquery'],function($){
 				
 				case "hauptmenue":
 					
+					this.engine.showTheProcress();
+					this.engine.enableEvents_Hauptmenue();
 					// Hauptmenue
 					$('#headline').html('Hauptmen&uuml;');
 					//$("#button_newGame").removeClass('hide');
 					
 					// DEBUGGING
 	
-					
  				 	// Animation starten
  				 	this.engine.startAnimation("globi_idle");
 
