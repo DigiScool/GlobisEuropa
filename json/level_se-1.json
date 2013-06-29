@@ -238,7 +238,33 @@
 			"hitshape" : { "x" : "620", "y" : "390", "w" : "120", "h" : "10" },
 			"position": { "x" : "546", "y" : "241" },
 			"country" : "Italien",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Italien</h3>",
+				"<ul>",
+				"<li>Einwohner: 60.626.442</li>",
+				"<li>Fläche: 301.338 km²</li>",
+				"<li>Amtssprache: Italienisch</li>",
+				"<li>Hauptstadt: Rom</li>",
+				"<li>Staatsform: Parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Giorgio Napolitano</li>",
+				"<li>Regierungschef: Ministerpräsident Enrico Letta</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 25. April, 2. Juni</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Italien<b> (amtlich Italienische Republik, ital. Repubblica Italiana, Kurzform Italia) ist eine parlamentarische Republik in Südeuropa.",
+				"Die Hauptstadt ist Rom. Italien, das zum größten Teil auf der vom Mittelmeer umschlossenen Apenninhalbinsel sowie der Po-Ebene und dem",
+				"südlichen Teil der Alpen liegt, grenzt an Frankreich, die Schweiz, Österreich und Slowenien. Die Republik San Marino sowie der Staat der",
+				"Vatikanstadt sind vollständig vom Staatsgebiet umschlossen. Neben den großen Inseln Sizilien und Sardinien sind mehrere Inselgruppen",
+				"vorgelagert.<br><br>",
+				"Italien gehört zu den größten Volkswirtschaften der Erde und zählt laut Human Development Index zu den sehr hoch entwickelten Staaten.<br><br>",
+				"Das Gebiet des heutigen Italiens war in der Antike die Kernregion des Römischen Reiches mit Rom als Hauptstadt. Die heute italienische",
+				"Toskana war das Kernland der Renaissance. Seit dem Risorgimento besteht der moderne italienische Staat.<br><br>",
+				"Italien hat als Reiseland zurecht absoluten Kultstatus, denn es bietet viele Attraktionen für internationale Touristen – eine traumhafte",
+				"Landschaft, unzählige faszinierende Städte, ein fantastisches Kulturerbe, eine Richtung weisende Modeindustrie – aber es ist und bleibt vor",
+				allem italienisch.<br><br>"
+			]
 		},
 		{
 			"id": "6" , 
@@ -246,7 +272,34 @@
 			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
 			"position": { "x" : "649", "y" : "40" },
 			"country" : "Kosovo",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Kosovo</h3>",
+				"<ul>",
+				"<li>Einwohner: 1,8 Mio.</li>",
+				"<li>Fläche: 10.887 km²</li>",
+				"<li>Amtssprache: Albanisch und Serbisch</li>",
+				"<li>Hauptstadt: Priština</li>",
+				"<li>Staatsform: Republik</li>",
+				"<li>Staatsoberhaupt: Präsidentin Atifete Jahjaga</li>",
+				"<li>Regierungschef: Premierminister Hashim Thaçi</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 17. Februar</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Kosovo</b> (auch der Kosovo oder das Kosovo) ist als stabilisiertes De-facto-Regime eine Republik in Südosteuropa auf dem westlichen",
+				"Teil der Balkanhalbinsel. Sie war ehemals Bestandteil der 1992 neu konstituierten föderativen Bundesrepublik Jugoslawien und war seit",
+				"2003 Teilregion der Republik Serbien. Sie hat etwa 1,8 Millionen Einwohner; Hauptstadt ist Priština.<br><br>",
+				"Die jüngere Geschichte ist durch den Kosovokrieg von 1999 und dessen Folgen geprägt. Am 17. Februar 2008 proklamierte das Parlament die",
+				"Unabhängigkeit des Territoriums.<br><br>",
+				"Die serbische Regierung betrachtet das Kosovo formal als seine Autonome Provinz Kosovo und Metochien, räumt jedoch ein, dass eine",
+				"„serbische Souveränität über Kosovo praktisch nicht vorhanden ist“ und die „wahren Grenzen“ Serbiens in der Zukunft noch zu bestimmen",
+				"seien.<br><br>",
+				"Der Kosovo, der sich als Reisedestination noch nicht etabliert hat und sich erst zu einer echten Nation entwickeln muss, ist für",
+				"interessierte Touristen sehr lohnenswert.<br><br>",
+				"Die Bevölkerung des Kosovo besteht zu rund 88 % aus muslimischen Albanern, gefolgt von den Serben, die meist christlich-orthodox sind,",
+				"sowie einer Reihe von kleineren ethnischen Gruppen mit eigener Kultur und Lebensweise.<br><br>"
+			]
 		},
 		{
 			"id": "7" , 
@@ -254,7 +307,35 @@
 			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
 			"position": { "x" : "649", "y" : "40" },
 			"country" : "Mazedonien",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Mazedonien</h3>",
+				"<ul>",
+				"<li>Einwohner: 2.057.284</li>",
+				"<li>Fläche: 25.713 km²</li>",
+				"<li>Amtssprache: Mazedonisch</li>",
+				"<li>Hauptstadt: Skopje</li>",
+				"<li>Staatsform: Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Gjorge Ivanov</li>",
+				"<li>Regierungschef: Ministerpräsident Nikola Gruevski</li>",
+				"<li>Währung: Mazedonischer Denar</li>",
+				"<li>Nationalfeiertag: 2. August, 8. September</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Mazedonien</b>, auch Makedonien, amtlich Republik Mazedonien bzw. Republik Makedonien ist ein Binnenstaat in Südosteuropa. Auf Grund des",
+				"Namensstreits mit dem südlichen Nachbarn Griechenland wird er auch als Ehemalige Jugoslawische Republik Mazedonien bezeichnet. Mazedonien",
+				"bestand ab 1946 als südlichste Teilrepublik des sozialistischen Jugoslawien und rief 1991 seine Unabhängigkeit aus.<br><br>",  
+				"Mazedonien hat eine der schwächsten Volkswirtschaften Europas und befindet sich in einem Transformierungsprozess, sowohl wirtschaftlich",
+				"als auch politisch. Das Land hat mit hohen Arbeitslosenzahlen und einer schwachen Infrastruktur sowie fehlenden Investitionen zu kämpfen.<br><br>",
+				"Mazedonien ist ethnisch gemischt. Neben der größten Volksgruppe, den Mazedoniern, die etwa 64 Prozent der Gesamtbevölkerung stellen, gibt",
+				"es eine große Minderheit an Albanern (25 %). Auch kleine Minderheiten von Türken (3,85 %), Roma (2,66 %), Serben (1,78 %), Bosniaken (0,84 %)",
+				"und Aromunen/Meglenorumänen (0,48 %) und anderen (1,04 %) sind vorhanden. Durch diese Situation gab und gibt es immer wieder ethnisch",
+				"motivierte Konflikte, vor allem zwischen Mazedoniern und Albanern. Nach den bürgerkriegsähnlichen Zuständen 2001 und dem danach",
+				"unterschriebenen Friedensvertrag hat sich die Gesamtlage der Volksminderheiten im Land deutlich verbessert. Mit einer gesellschaftlichen",
+				"Gleichstellung ist jedoch immer noch nicht zu rechnen.<br><br>", 
+				"Einige weltweit bekannte Persönlichkeiten stammten aus Mazedonien. Zu den berühmtesten zählen die albanische Ordensschwester Mutter Teresa,",
+				"die 1979 den Friedensnobelpreis bekam, der mazedonische Handballer Kiril Lazarov und die albanische Sängerin Arjeta Zuta.<br><br>"
+			]
 		},
 		{
 			"id": "8" , 
@@ -262,7 +343,33 @@
 			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
 			"position": { "x" : "649", "y" : "40" },
 			"country" : "Montenegro",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Montenegro</h3>",
+				"<ul>",
+				"<li>Einwohner: 625.266</li>",
+				"<li>Fläche: 13.812 km²</li>",
+				"<li>Amtssprache: Montenegrinisch</li>",
+				"<li>Hauptstadt: Podgorica</li>",
+				"<li>Staatsform: Parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Staatspräsident Filip Vujanović</li>",
+				"<li>Regierungschef: Premierminister Milo Đukanović</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 13. Juli</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Montenegro</b> ist eine Republik an der südöstlichen Adriaküste in Südosteuropa. Sie grenzt an Kroatien, Bosnien und Herzegowina,",
+				"Serbien, Albanien sowie an den Kosovo. Nachdem Montenegro nahezu 90 Jahre zu Jugoslawien gehört hatte, wurde es am 3. Juni 2006 wieder",
+				"unabhängig.<br><br>",
+				"Der Balkanstaat ist mit etwa 625.000 Einwohnern und einer Fläche von 13.812 Quadratkilometern einer der kleineren Staaten Europas –",
+				"flächenmäßig etwas kleiner als Schleswig-Holstein. Die Hauptstadt ist Podgorica. Hauptwirtschaftszweig ist der Tourismus an der",
+				"montenegrinischen Küste.<br><br>",
+				"Der Tourismus spielt in Montenegro eine entscheidende Rolle. 21 % des Bruttoinlandsproduktes werden durch ihn erwirtschaftet.",
+				"Montenegro ist laut World Travel & Tourism Council (WTTC) weltweit seit Jahren unter den drei wachstumsstärksten Reiseländern.<br><br>",
+				"Besucher können sich z.B. an einem der 117 Strände entlang der Adriaküste erholen oder durch die historischen Städte Budva, Kotor und",
+				"Bar spazieren, die Gipfel des Durmitor-Nationalparks besteigen oder beim Wildwasser-Rafting Europas tiefste Schlucht erkunden, im",
+				"letzten unberührten Wald des Kontinents wandern oder im südlichsten Fjord von Europa segeln.<br><br>"
+			]
 		},
 		{
 			"id": "9" , 
@@ -270,7 +377,34 @@
 			"hitshape" : { "x" : "180", "y" : "390", "w" : "60", "h" : "160" },
 			"position": { "x" : "167", "y" : "329" },
 			"country" : "Portugal",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Portugal</h3>",
+				"<ul>",
+				"<li>Einwohner: 10,602 Mio.</li>",
+				"<li>Fläche: 92.212 km²</li>",
+				"<li>Amtssprache: Portugiesisch</li>",
+				"<li>Hauptstadt: Lissabon</li>",
+				"<li>Staatsform: Republik</li>",
+				"<li>Staatsoberhaupt: Staatspräsident Aníbal Cavaco Silva</li>",
+				"<li>Regierungschef: Ministerpräsident Pedro Passos Coelho</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 10. Juni</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Portugal</b> (amtl. República Portuguesa) ist ein europäischer Staat im Westen der Iberischen Halbinsel. Im Westen und Süden wird es",
+				"vom Atlantischen Ozean, im Osten und Norden von Spanien begrenzt. Zum portugiesischen Staatsgebiet gehören die Inseln der Azoren und",
+				"Madeira (mit Porto Santo). Westlich der Hauptstadt Lissabon liegt Cabo da Roca, der westlichste Punkt des europäischen Festlandes.<br><br>",
+				"Portugal wird zwar im Punkto Beliebtheit etwas von seinem östlichen Nachbarn Spanien überschattet, ist aber – vielleicht gerade deshalb –",
+				"ein unverbrauchtes touristisches Kleinod. Traditionelle Dörfer und dynamische Städte sind ebenso typisch für die ehemalige Seefahrernation",
+				"wie die zahlreichen historischen Sehenswürdigkeiten und UNESCO-Weltnatur- und Weltkulturerbestätten.<br><br>",
+				"Die Hauptstadt Lissabon und das weiter nördlich gelegene Porto bezaubern mit malerischen Stadtvierteln, großen Plätzen und altertümlichen",
+				"Straßenbahnen, die noch heute durch die Straßen rattern. Auch kleinere Städte wie Évora, Coimbra, Guimarães and Braga sind mit ihren",
+				"charmanten, gut erhaltenen mittelalterlichen Stadtteilen einen Besuch wert.<br><br>",
+				"Außerhalb der Städte kann man das warme, sonnige Wetter genießen, während man Jahrhunderte alte Weingüter, Bergdörfer mit typischen",
+				"Steinhäusern oder die atemberaubende Südküste erkundet. Die wunderbare Naturkulisse Portugals bietet zudem beste Bedingungen für",
+				"Freizeitaktivitäten wie Wandern, Surfen, Reiten, Hochseeangeln, Kajakfahren, Tauchen, Golfspielen oder Mountainbikefahren.<br><br>"
+			]
 		},
 		{
 			"id": "10" , 
@@ -278,7 +412,35 @@
 			"hitshape" : { "x" : "870", "y" : "300", "w" : "50", "h" : "160" },
 			"position": { "x" : "820", "y" : "259" },
 			"country" : "Serbien",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Serbien</h3>",
+				"<ul>",
+				"<li>Einwohner: 7.120.666</li>",
+				"<li>Fläche: 77.474 km²</li>",
+				"<li>Amtssprache: Serbisch</li>",
+				"<li>Hauptstadt: Belgrad</li>",
+				"<li>Staatsform: Parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Präsident Tomislav Nikolić</li>",
+				"<li>Regierungschef: Ministerpräsident Ivica Dačić</li>",
+				"<li>Währung: Dinar (RSD)</li>",
+				"<li>Nationalfeiertag: 15. Februar </li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Serbien</b> ist ein Binnenstaat in Südosteuropa; die offizielle Bezeichnung lautet Republik Serbien. Serbien liegt im Zentrum der",
+				"Balkanhalbinsel und grenzt im Norden an Ungarn, im Osten an Rumänien und Bulgarien, im Süden an Mazedonien und Albanien bzw. an den Kosovo,",
+				"im Südwesten an Montenegro und im Westen an Bosnien und Herzegowina und Kroatien.<br><br>",
+				"Serbiens jüngere Geschichte ist geprägt durch seine Rolle als größter Teilstaat Jugoslawiens. Es ist nach dem endgültigen Zerfall",
+				"Jugoslawiens auch alleiniger Rechtsnachfolger der 1992 gegründeten Bundesrepublik Jugoslawien", 
+				"(ab 2003 Staatenunion Serbien und Montenegro).<br><br>",
+				"Die Wirtschaftsleistung des Landes war infolge der Jugoslawienkriege stark zurückgegangen, erholte sich aber in den Jahren von 2003",
+				"bis 2008 wieder etwas.<br><br>",
+				"Serbien zählt zu den touristischen Geheimtipps Osteuropas. In der Hauptstadt Belgrad kann man sich zahlreiche Museen und Galerien ansehen,",
+				"die verschiedensten Restaurants und Cafés besuchen und abends in ein Nachtleben eintauchen, das in Südosteuropa seinesgleichen sucht.",
+				"Auch andere Städte außerhalb von Belgrad sind einen Besuch wert. Novi Sad ist eine hübsche, lebendige Stadt mit einem eleganten Zentrum",
+				"und einer malerischen Festung mit Blick über die Donau. Im Norden von Serbien liegt Subotica, eine Stadt mit ungarischem Charakter und",
+				"einer Reihe von Sezessionsgebäuden.<br><br>"
+			]
 		},
 		{
 			"id": "11" , 
@@ -286,7 +448,32 @@
 			"hitshape" : { "x" : "730", "y" : "260", "w" : "35", "h" : "160" },
 			"position": { "x" : "696", "y" : "242" },
 			"country" : "Slowenien",
-			"description": "Deutschland, hier steht dann die beschreibung dazu"
+			"facts": [
+				"<h3>Slowenien</h3>",
+				"<ul>",
+				"<li>Einwohner: 2.057.660</li>",
+				"<li>Fläche: 20.273 km²</li>",
+				"<li>Amtssprache: Slowenisch</li>",
+				"<li>Hauptstadt: Ljubljana</li>",
+				"<li>Staatsform: Parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Staatspräsident Borut Pahor</li>",
+				"<li>Regierungschef: Ministerpräsidentin Alenka Bratušek</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 25. Juni</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Slowenien</b> (slowenisch Slovenija) ist eine Republik in Mitteleuropa, die an Italien, Österreich, Ungarn, Kroatien und die Adria grenzt.",
+				"Hauptstadt Sloweniens ist das zentral gelegene Ljubljana.<br><br>",
+				"Slowenien war früher Teil Jugoslawiens, erinnert aber heute eher an seine alpinen Nachbarn Österreich und Italien als an Osteuropa.",
+				"Bewaldete Berge sind gespickt mit Gletscherseen, und hübsche Häuser im Chalet-Stil bieten einen idyllischen Blick auf grüne Wiesen.",
+				"Das Antlitz Sloweniens ist frisch und natürlich, seine Einwohner sind authentisch und gastfreundlich.<br><br>",
+				"Die wohlhabende, schöne Hauptstadt Ljubljana ist eine Universitätsstadt, deren Studentengemeinde dem architektonischen Kleinod",
+				"einen jugendlichen Charakter verleiht. Durch die Stadt fließt der Fluss Ljubljana, an dessen Ufer zahlreiche Spazierwege, Cafés und",
+				"kleine Geschäfte liegen.<br><br>",
+				"Das malerische, saubere und sichere Slowenien ist eine ideale Reisedestination für Familien und Paare und bietet viele Outdoor-Aktivitäten",
+				"wie Radfahren, Wandern, Gleitschirmfliegen, Wildwasser-Rafting, Höhlenwandern und Bergsteigen.<br><br>"
+			]
 		},
 		{
 			"id": "12" , 

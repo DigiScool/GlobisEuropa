@@ -292,7 +292,7 @@
 		{
 			"id": "7" , 
 			"part": "gfx/little/nordeuropa/SWE.png",
-			"hitshape" : { "x" : "730", "y" : "300", "w" : "90"},
+			"hitshape" : { "x" : "730", "y" : "300", "w" : "105"},
 			"position": { "x" : "662", "y" : "58" },
 			"country" : "Schweden",
 			"facts": [
