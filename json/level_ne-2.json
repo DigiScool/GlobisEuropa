@@ -30,7 +30,7 @@
 			"id": "0", 
 			"part": "gfx/little/nordeuropa/flaggen/DAN.png",
 			"hitshape" : { "x" : "620", "y" : "360", "w" : "40"},
-			"position": { "x" : "606", "y" : "326" },
+			"position": { "x" : "590", "y" : "280" },
 			"country" : "Dänemark"
 			
 		},
@@ -46,7 +46,7 @@
 			"id": "2",
 			"part"	: "gfx/little/nordeuropa/flaggen/Finland.png",
 			"hitshape" : { "x" : "880", "y" : "150", "w" : "80"},
-			"position": { "x" : "774", "y" : "37" },
+			"position": { "x" : "800", "y" : "87" },
 			"country" : "Finland"
 			
 		},
@@ -54,7 +54,7 @@
 			"id": "3",
 			"part" : "gfx/little/nordeuropa/flaggen/ISL.png",
 			"hitshape" : { "x" : "330", "y" : "100", "w" : "50"},
-			"position": { "x" : "294", "y" : "72" },
+			"position": { "x" : "294", "y" : "0" },
 			"country" : "Island"
 			
 		},
@@ -78,7 +78,7 @@
 			"id": "6",
 			"part" : "gfx/little/nordeuropa/flaggen/NOR.png",
 			"hitshape" : { "x" : "680", "y" : "130", "w" : "110"},
-			"position": { "x" : "571", "y" : "17" },
+			"position": { "x" : "571", "y" : "117" },
 			"country" : "Norwegen"
 			
 		},
@@ -86,7 +86,7 @@
 			"id": "7",
 			"part" : "gfx/little/nordeuropa/flaggen/SWE.png",
 			"hitshape" : { "x" : "730", "y" : "300", "w" : "90"},
-			"position": { "x" : "662", "y" : "58" },
+			"position": { "x" : "682", "y" : "100" },
 			"country" : "Schweden"
 			
 		}

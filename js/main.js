@@ -14,12 +14,28 @@ define(['jquery','app'], function($,App){
 				app.showGamemenue();
 			});
 
+			$('#button_quitGame').click(function(){
+				app.quitGame();
+			});
+
+			$('#button_backtoGame').click(function(){
+				app.hideGamemenue();
+			});
+
+			$('#button_discoverGame').click(function(){
+				app.hideGamemenue();
+			});
+
 			$('#button_startGame').click(function(){
 				app.setGameState("intro");
 			});
 
 			$('#button_zurueck').click(function(){
 				app.toggleMenue();
+			});
+
+			$('#button_levelDone').click(function(){
+				app.levelDone();
 			});
 
 			$('#button_cancelIntro').click(function(){
@@ -35,6 +51,7 @@ define(['jquery','app'], function($,App){
 			});
 
 			$('#button_hide_countryInfo').click(function(){
+				$('#bubble_game_menue_bg').addClass('hide');
 				$('#bubble_country_info').addClass('hide');
 				$('#bubble_country_details').addClass('hide');
 			});

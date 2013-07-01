@@ -50,6 +50,10 @@ define(['jquery'],function($){
 				self.startLevel();
 			});
 			$('#button_home').removeClass('hide');
+			$('#button_home').unbind();
+			$('#button_home').click(function(){
+					self.app.showGamemenue();
+			});
 			
 			// Container vorbereiten
 			this.engine.setLevel(data,data.puzzle,function(){
@@ -60,7 +64,7 @@ define(['jquery'],function($){
 				//self.engine.blurStage(true);
 				
 				$('#dialog').html(self.level.script[self.level_played]);
-
+				$('#bubble_game_menue_bg').removeClass('hide');
 				$('#bubble_game_dialog').removeClass('hide');
 			});
 
@@ -68,9 +72,9 @@ define(['jquery'],function($){
  				
 		},
 		startLevel: function(){
+			
+			$('#bubble_game_menue_bg').addClass('hide');
 			$('#bubble_game_dialog').addClass('hide');
-			//this.engine.blurStage(false);
-			this.engine.loadContainer('levelContainer');
 		},
 
 		showInfo: function(cId){
@@ -80,7 +84,15 @@ define(['jquery'],function($){
 
 			console.log('#'+this.pCounter+' richtig plaziert');
 			if(this.pCounter == this.level.count) {
-				self.levelDone();
+				// Zeige das das Spiel beendet wurde
+				$('#bubbles').children().addClass('hide');
+				$('#button_home').addClass('hide');
+				$('#bubble_game_menue_bg').removeClass('hide');
+				$('#bubble_game_done').removeClass('hide');
+				$('#button_home').unbind();
+				$('#button_home').click(function(){
+					self.app.levelDone();
+				});
 			}
 
 			if(this.id == "11" && this.pCounter == 1){
@@ -99,12 +111,14 @@ define(['jquery'],function($){
 				$('#button_hide_infobox').click(function(){
 					
 					$('#bubble_info_box').addClass('hide');
+					$('#bubble_game_menue_bg').addClass('hide');
 					$('#bubble_hide_infobox').unbind();
 				});
 			}
 		},
 
 		loadInfo: function(country){
+			$('#bubble_game_menue_bg').removeClass('hide');
 			console.log("COUNTRY-ID. " + country);
 			if(this.level.puzzle[country]){
 				var facts = this.level.puzzle[country].facts.join('');	

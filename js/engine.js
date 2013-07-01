@@ -26,6 +26,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			// Speicher für die laufende Animationen
 			this.anim = [];
 			this.levelanim = [];
+			this.levelanim_buffer = [];
 
 			// INTRO ////////////////
 			this.intro = [];
@@ -70,7 +71,6 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			}
 
 			// Neuer Stack für Animationen
-			var animBuffer = [];
 
 			for(var i  = 0 ; i < this.levelanim.length; i++){
 				
@@ -79,12 +79,13 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				
 				if(result != null){
 					// nimm Animation wieder in den Buffer auf
-					animBuffer.push(anim);
+					this.levelanim.push(anim);
 				}
 			
 			}
 
-			this.levelanim = animBuffer;			
+
+		
 
 
 
@@ -298,17 +299,21 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
   									
   									if(hitShape.puzzleId == target.puzzleId){
 										
-										// Grünfilter
-										greenFilter = new createjs.ColorFilter(0.5,0.9,0.5,1);
+										
 										
         
          								// Positionskorrektur
 										dndPart .x = hitShape.posCorrection.x;
 										dndPart .y = hitShape.posCorrection.y;
 										
-										dndPart.filters = [
-											greenFilter
-										];
+										// Grünfilter nur bei Level 1
+										if(self.level.stage == 1){
+											greenFilter = new createjs.ColorFilter(0.5,0.9,0.5,1);
+											dndPart.filters = [
+												greenFilter
+											];
+										}
+
 										var img = dndPart.image;
 										dndPart.cache(0,0,img.width,img.height);
 
@@ -317,8 +322,9 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 										self.sortMenue(target);
 										
 										self.addEvents(dndPart);
-										self.addDropRing('#68ba5b',ev.stageX,ev.stageY);
 										self.addCountryNameIcon(hitShape.countryName);
+										self.addDropRing('#68ba5b',ev.stageX,ev.stageY);
+										
 
 
 									} else {
@@ -328,6 +334,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
   								} else { 
   									console.log('noshape');
   									self.stage.removeChild(dndPart);
+  									self.addDropRing('#B22222',ev.stageX,ev.stageY);
   									//TODO:
   									// SNAPBAK FUNCTION
   								}
@@ -409,19 +416,26 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			console.log(element);
 			element.addEventListener("mouseover",function(){
 		
-				element.filters = [
-					hoverin_Filter
-				];
+				if(self.level.stage == 1){
+					element.filters = [
+						hoverin_Filter
+					];
+				}
 
 				element.cache(0,0,img.width,img.height);
 				self.app.changeCursor('pointer');
 			});
 
 			element.addEventListener("mouseout",function(){
-		
-				element.filters = [
-					hoverout_Filter
-				];
+				
+				if(self.level.stage == 1){
+					element.filters = [
+						hoverout_Filter
+					];
+				} else {
+					element.filters = [];
+				}
+				
 
 				element.cache(0,0,img.width,img.height);
 				self.app.changeCursor('default');

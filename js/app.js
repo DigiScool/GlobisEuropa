@@ -305,7 +305,23 @@ define(['jquery'],function($){
  		},
 
  		showGamemenue: function(){
+ 			$('#bubbles').children().addClass('hide');
+ 			$('#button_home').addClass('hide');
+ 			$('#bubble_game_menue_bg').removeClass('hide');
+ 			$('#bubble_game_menue').removeClass('hide');
+ 				
+ 		},
 
+ 		hideGamemenue: function(){
+ 			$('#button_home').removeClass('hide');
+ 			$('#bubbles').children().addClass('hide');
+ 		},
+
+ 		levelDone: function(){
+ 			this.level.levelDone();
+ 		},
+
+ 		quitGame: function(){
  			var self = this;
  			this.engine.enableEvents_Hauptmenue();
  			$('#bubbles').children().addClass('hide');
@@ -319,8 +335,6 @@ define(['jquery'],function($){
  				// Callback
  				self.setGameState("hauptmenue");
  			});
- 			
- 			
  		}
 	});
 
