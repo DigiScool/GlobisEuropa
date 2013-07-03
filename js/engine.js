@@ -57,7 +57,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.level = level;
 			this.app = app;
 
-			this.SHOW_HITSHAPES = true;
+			this.SHOW_HITSHAPES = false;
 		},
 
 		// Callback -Funktion für die Frameloop
@@ -459,7 +459,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			if(this.SHOW_HITSHAPES){
 				this.stage.addChild(this.container_hitshapes);
 			}
-
+			this.stage.addChild(this.container_dndParts);
 			this.stage.addChild(this.menue_shape);
   			this.stage.addChild(this.container_puzzleparts);
   			
@@ -467,7 +467,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
             this.stage.addChild(button_up);
             this.stage.addChild(button_down);
-            this.stage.addChild(this.container_dndParts);
+            
             this.stage.addChild(this.dropring_container);
 
             if(callback) {
