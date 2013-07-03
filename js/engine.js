@@ -57,7 +57,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.level = level;
 			this.app = app;
 
-			this.SHOW_HITSHAPES = false;
+			this.SHOW_HITSHAPES = true;
 		},
 
 		// Callback -Funktion für die Frameloop
@@ -171,10 +171,15 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			
 			var self = this;
 			
+			// Container für das Level
+			this.container_bg = new createjs.Container();
+			this.container_puzzleparts = new createjs.Container();
+			this.container_hitshapes = new createjs.Container();
+			this.container_dndParts = new createjs.Container();
+			
 
 			// Hintergrund laden
 			// String zusammenbauen
-
 			var fileName = '';
 			if(this.level.stage == 1){
 				fileName += level.bg+'-';
@@ -189,21 +194,80 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				fileName  = level.bg;
 			}
 			
+			var lvl_bg = new createjs.Bitmap(fileName);
+			lvl_bg.x = level.bgx;
+			lvl_bg.y = level.bgy;
+			lvl_bg.scaleX = 0.8;
+			lvl_bg.scaleY = 0.8;
 
-			console.log('LEVELDATEI: '+fileName);
-
-			this.lvl_bg = new createjs.Bitmap(fileName);
-			this.lvl_bg.x = level.bgx;
-			this.lvl_bg.y = level.bgy;
-			this.lvl_bg.scaleX = 0.8;
-			this.lvl_bg.scaleY = 0.8;
-			this.stage.addChild(this.lvl_bg);
-
-			console.log("BG + HM");
-			console.log(this.lvl_bg);
-			console.log("********************");
+			this.SHIFT = 0;
+			this.oldBGx = 0;
+			var maxRight  = self.container_bg.x  + parseInt(level.scrollRight);
+			var maxLeft  =  self.container_bg.x  - parseInt(level.scrollRight);
 			
+			if(level.scroll == "true"){
+	
+			document.onkeydown = function(event) {
+				
+				self.oldBGx = self.container_bg.x;
+				var KeyID = event.keyCode;
+				if(KeyID==39||KeyID==68){
+					var shift = 10;
+					// maxmale verschiebung noch nicht erreicht ?
+							if(self.container_bg.x <= maxRight){
+								// neuen x Wert berechnen
+								var newx = self.container_bg.x + shift;
+								if(newx > maxRight){
+									self.container_bg.x = maxRight;
+									self.container_dndParts.x = maxRight;
+								} else {
+									self.container_bg.x = newx;
+									self.container_dndParts.x = newx;
+									
+									var numChild = self.container_hitshapes.getNumChildren();
+									
+									// alle Hitshapes verschieben
+									for(var i = 0; i < numChild; i++){
+									
+										var child = self.container_hitshapes.getChildAt(i);
+										child.x = child.x + 10;
+									}
+								}
+								
+								
+								
+							}	
+				} else if(KeyID==37||KeyID==65){
+					if(self.container_bg.x >= maxLeft){
+						var shift = -10;
+						var newx = self.container_bg.x + shift;
+						if(newx < maxLeft){
+							self.container_bg.x = maxLeft;
+							self.container_dndParts.x = maxLeft;
+						} else {
+							self.container_bg.x = newx;
+							self.container_dndParts.x = newx;
 
+							var numChild = self.container_hitshapes.getNumChildren();
+									
+									// alle Hitshapes verschieben
+									for(var i = 0; i < numChild; i++){
+									
+										var child = self.container_hitshapes.getChildAt(i);
+										child.x = child.x - 10;
+									}
+						}
+					}
+				}
+
+			}
+
+
+			}
+
+
+
+			this.container_bg.addChild(lvl_bg);
 			// Seitenleiste für die Puzzle-teile
 			var menue_bg = new createjs.Graphics();
 			menue_bg
@@ -217,17 +281,14 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             this.menue_shape.y = 10;
             this.menue_shape.alpha = 0.5;
 			
-			// Hintergrund für Seitenmenü laden
-			this.stage.addChild(this.menue_shape);
+
 
 			
 			///////////////////////////////////// 
 			// Puzzle-Teile Bilder für die Seitenleiste laden
 			// eventhandler hinzufügen
 
-			this.container_puzzleparts = new createjs.Container();
-			this.container_hitshapes = new createjs.Container();
-
+			
 			if(puzzle){
 				for(var i = 0; i < puzzle.length; i++){
 					
@@ -270,20 +331,19 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 						target.addEventListener("mousedown",function(evt) {
 
-							var offset = {x:target.x-evt.stageX, y:target.y-evt.stageY};
+							var offset = {x:target.x-evt.stageX - self.container_dndParts.x, y:target.y-evt.stageY};
 
 							dndPart = target.clone();
 							dndPart.x = evt.stageX+offset.x;
-							dndPart.y = evt.stageY+offset.y
+							dndPart.y = evt.stageY+offset.y;
 							dndPart.scaleX = 0.8;
 							dndPart.scaleY = 0.8;
 							dndPart.countryId = target.puzzleId;
-							self.stage.addChild(dndPart);
-							self.stage.swapChildren(self.dropring_container,dndPart);
+							self.container_dndParts.addChild(dndPart);
 				
 
 							evt.onMouseMove = function(ev){
-
+								offset = {x:target.x-evt.stageX - self.container_dndParts.x, y:target.y-evt.stageY};
 								dndPart.x = ev.stageX+offset.x;
 								dndPart.y = ev.stageY+offset.y;
 							
@@ -329,11 +389,11 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 									} else {
 										self.addDropRing('#B22222',ev.stageX,ev.stageY);
-										self.stage.removeChild(dndPart);
+										self.container_dndParts.removeChild(dndPart);
 									}
   								} else { 
   									console.log('noshape');
-  									self.stage.removeChild(dndPart);
+  									self.container_dndParts.removeChild(dndPart);
   									self.addDropRing('#B22222',ev.stageX,ev.stageY);
   									//TODO:
   									// SNAPBAK FUNCTION
@@ -351,13 +411,6 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					
 				}
             }
-
-            // generierten Puzzlteile anzeigen
-  			this.stage.addChild(this.container_puzzleparts);
-  			// Hitshapes ( anzeige on //off)
-			if(this.SHOW_HITSHAPES){
-				this.stage.addChild(this.container_hitshapes);
-			}
 
             console.log('HITSHAPES:');
             console.log(this.container_hitshapes);
@@ -395,9 +448,26 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             	}
             });
 
+              /* Lade die Container auf die Stage, 
+            	dabei Reihenfolge beachten */
+
+           
+
+            this.stage.addChild(this.container_bg);
+
+             // Hitshapes ( anzeige on //off)
+			if(this.SHOW_HITSHAPES){
+				this.stage.addChild(this.container_hitshapes);
+			}
+
+			this.stage.addChild(this.menue_shape);
+  			this.stage.addChild(this.container_puzzleparts);
+  			
+  			
+
             this.stage.addChild(button_up);
             this.stage.addChild(button_down);
-            
+            this.stage.addChild(this.container_dndParts);
             this.stage.addChild(this.dropring_container);
 
             if(callback) {

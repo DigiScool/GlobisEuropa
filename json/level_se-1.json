@@ -3,9 +3,12 @@
 	"bg" : "gfx/big/suedeuropa/Suedeuropa",
 	"bgx" : "150",
 	"bgy" : "-380",
+	"scroll": "true",
+	"scrollLeft"  : "50",
+	"scrollRight" : "150",
 	"script": [
-		"Dieser Abschnitt sieht schwierig aus. Wenn du nicht vertraut mit dem Spiel bist, empfehle ich dir mit Westeuropa zu beginnen!",
-		"Genauso wie du es mit den Ländern Westeuropas gemacht hast, versuchst du es jetzt mit den Ländern aus Südeuropa. Ziehe einfach wieder die Puzzle-Teile an die richtige Stelle auf der Karte."
+		"Bewege die dich mit den Pfeiltasten nach rechts und links auf der Karte, um weit entfernte Länder zu erreichen",
+		"Genauso wie du es mit den Ländern Westeuropas gemacht hast, versuchst du es jetzt mit den Ländern aus Südeuropa. Bewege die dich mit den Pfeiltasten nach rechts und links auf der Karte, um weit entfernte Länder zu erreichen."
 	],
 	"ende1": "Puh, der Abschnitt war wirklich schwierig. Mal schauen welche unbekannten Länder wir noch entdecken werden.",
 	"count" : "14",
@@ -269,8 +272,7 @@
 				"Das Gebiet des heutigen Italiens war in der Antike die Kernregion des Römischen Reiches mit Rom als Hauptstadt. Die heute italienische",
 				"Toskana war das Kernland der Renaissance. Seit dem Risorgimento besteht der moderne italienische Staat.<br><br>",
 				"Italien hat als Reiseland zurecht absoluten Kultstatus, denn es bietet viele Attraktionen für internationale Touristen – eine traumhafte",
-				"Landschaft, unzählige faszinierende Städte, ein fantastisches Kulturerbe, eine Richtung weisende Modeindustrie – aber es ist und bleibt vor",
-				allem italienisch.<br><br>"
+				"Landschaft, unzählige faszinierende Städte, ein fantastisches Kulturerbe, eine Richtung weisende Modeindustrie – aber es ist und bleibt vor, allem italienisch.<br><br>"
 			]
 		},
 		{
