@@ -95,7 +95,7 @@
 		},
 		{
 			"id": "8" , 
-			"part": "gfx/little/osteuropa/MOL.png",
+			"part": "gfx/little/osteuropa/flaggen/MOL.png",
 			"hitshape" : { "x" : "730", "y" : "430", "w" : "60"},
 			"position": { "x" : "729", "y" : "397" },
 			"country" : "Moldavien",

@@ -26,6 +26,11 @@ define(['jquery','app'], function($,App){
 				app.hideGamemenue();
 			});
 
+			$('#button_hide_countryHymne').click(function(){
+				$('#bubble_country_hymne').addClass('hide');
+				$('#bubble_game_menue_bg').addClass('hide');
+			});
+
 			$('#button_startGame').click(function(){
 				app.setGameState("intro");
 			});

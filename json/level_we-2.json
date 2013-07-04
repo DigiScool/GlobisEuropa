@@ -13,8 +13,15 @@
 	"count" : "9 ",
 	"images" : [
 		"gfx/big/westeuropa/WestEuropa_mit_Grenzen.png",
-		"gfx/little/westeuropa/Flag_DE.png",
-		"gfx/little/westeuropa/Flag_FR.png",
+		"gfx/little/westeuropa/flaggen/AUS.png",
+		"gfx/little/westeuropa/flaggen/BEL.png",
+		"gfx/little/westeuropa/flaggen/FRA.png",
+		"gfx/little/westeuropa/flaggen/GER.png",
+		"gfx/little/westeuropa/flaggen/HOL.png",
+		"gfx/little/westeuropa/flaggen/IRL.png",
+		"gfx/little/westeuropa/flaggen/LUX.png",
+		"gfx/little/westeuropa/flaggen/SUI.png",
+		"gfx/little/westeuropa/flaggen/UK.png",
 		"gfx/little/pfeil_hoch.png",
 		"gfx/little/pfeil_runter.png"
 	],
@@ -22,18 +29,73 @@
 	"puzzle" : [
 		{
 			"id": "0" , 
-			"part": "gfx/little/westeuropa/Flag_DE.png",
+			"part": "gfx/little/westeuropa/flaggen/GER.png",
 			"hitshape" : { "x" : "740", "y" : "270", "w" : "70"},
 			"position": { "x" : "649", "y" : "190" },
 			"country" : "Deutschland"
-			
 		},
 		{
 			"id": "1" , 
-			"part"	 : "gfx/little/westeuropa/Flag_FR.png",
+			"part"	 : "gfx/little/westeuropa/flaggen/FRA.png",
 			"hitshape" : {"x" : "540","y" : "410","w" : "80","h" : "160" },
 			"position": {"x" : "430","y" : "291"},
 			"country" : "Frankreich"
+			
+		},
+		{
+			"id": "2",
+			"part"	: "gfx/little/westeuropa/flaggen/AUS.png",
+			"hitshape" : { "x" : "810", "y" : "400", "w" : "45"},
+			"position": { "x" : "713", "y" : "361" },
+			"country" : "Österreich"
+			
+		},
+		{
+			"id": "3",
+			"part" : "gfx/little/westeuropa/flaggen/BEL.png",
+			"hitshape" : { "x" : "620", "y" : "300", "w" : "20", "h" : "160" },
+			"position": { "x" : "584", "y" : "283" },
+			"country" : "Belgien"
+			
+		},
+		{
+			"id": "4",
+			"part" : "gfx/little/westeuropa/flaggen/HOL.png",
+			"hitshape" : { "x" : "640", "y" : "263", "w" : "20", "h" : "160" },
+			"position": { "x" : "603", "y" : "228" },
+			"country" : "Niederlande"
+			
+		},
+		{
+			"id": "5",
+			"part" : "gfx/little/westeuropa/flaggen/IRL.png",
+			"hitshape" : { "x" : "400", "y" : "200", "w" : "40", "h" : "160" },
+			"position": { "x" : "365", "y" : "151" },
+			"country" : "Irland"
+			
+		},
+		{
+			"id": "6",
+			"part" : "gfx/little/westeuropa/flaggen/LUX.png",
+			"hitshape" : { "x" : "650", "y" : "335", "w" : "10", "h" : "160" },
+			"position": { "x" : "642", "y" : "325" },
+			"country" : "Luxemburg"
+			
+		},
+		{
+			"id": "7",
+			"part" : "gfx/little/westeuropa/flaggen/SUI.png",
+			"hitshape" : { "x" : "680", "y" : "420", "w" : "30", "h" : "160" },
+			"position": { "x" : "633", "y" : "395" },
+			"country" : "Schweiz"
+			
+		},
+		{
+			"id": "8",
+			"part" : "gfx/little/westeuropa/flaggen/UK.png",
+			"hitshape" : { "x" : "510", "y" : "200", "w" : "60", "h" : "160" },
+			"position": { "x" : "429", "y" : "26" },
+			"country" : "Großbritannien"
 			
 		}
 	]

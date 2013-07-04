@@ -1,0 +1,148 @@
+{
+	"headline" : "Südeuropa Level 2",
+	"bg" : "gfx/big/suedeuropa/SuedEuropa_mit_Grenzen.png",
+	"bgx" : "150",
+	"bgy" : "-380",
+	"scroll": "true",
+	"scrollLeft"  : "50",
+	"scrollRight" : "150",
+	"script": [
+		"Bewege die dich mit den Pfeiltasten nach rechts und links auf der Karte, um weit entfernte Länder zu erreichen",
+		"Genauso wie du es mit den Ländern Westeuropas gemacht hast, versuchst du es jetzt mit den Ländern aus Südeuropa. Bewege die dich mit den Pfeiltasten nach rechts und links auf der Karte, um weit entfernte Länder zu erreichen."
+	],
+	"ende1": "Puh, der Abschnitt war wirklich schwierig. Mal schauen welche unbekannten Länder wir noch entdecken werden.",
+	"count" : "13",
+	"images" : [
+		"gfx/big/suedeuropa/Suedeuropa-0000.png",
+		"gfx/big/suedeuropa/Suedeuropa-0001.png",
+		"gfx/big/suedeuropa/Suedeuropa-0100.png",
+		"gfx/big/suedeuropa/Suedeuropa-0101.png",
+		"gfx/big/suedeuropa/Suedeuropa-1000.png",
+		"gfx/big/suedeuropa/Suedeuropa-1001.png",
+		"gfx/big/suedeuropa/Suedeuropa-1100.png",
+		"gfx/big/suedeuropa/Suedeuropa-1101.png",
+		"gfx/little/suedeuropa/flaggen/ALB.png",
+		"gfx/little/suedeuropa/flaggen/BOSHER.png",
+		"gfx/little/suedeuropa/flaggen/BUL.png",
+		"gfx/little/suedeuropa/flaggen/CRO.png",
+		"gfx/little/suedeuropa/flaggen/CYP.png",
+		"gfx/little/suedeuropa/flaggen/GRE.png",
+		"gfx/little/suedeuropa/flaggen/ITA.png",
+
+		"gfx/little/suedeuropa/flaggen/MAC.png",
+
+		"gfx/little/suedeuropa/flaggen/Portugal.png",
+		"gfx/little/suedeuropa/flaggen/SER.png",
+		"gfx/little/suedeuropa/flaggen/SLOVENIA.png",
+		"gfx/little/suedeuropa/flaggen/Spanien.png",
+		"gfx/little/suedeuropa/flaggen/TUR.png"
+	],
+
+	"puzzle" : [
+		{
+			"id": "0" , 
+			"part": "gfx/little/suedeuropa/flaggen/ALB.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Albanien"
+			
+		},
+		{
+			"id": "1" , 
+			"part": "gfx/little/suedeuropa/flaggen/BOSHER.png",
+			"hitshape" : { "x" : "780", "y" : "320", "w" : "30", "h" : "160" },
+			"position": { "x" : "747", "y" : "291" },
+			"country" : "Bosnien und Herzegowina"
+		
+		},
+		{
+			"id": "2" , 
+			"part": "gfx/little/suedeuropa/flaggen/BUL.png",
+			"hitshape" : { "x" : "970", "y" : "350", "w" : "50", "h" : "160" },
+			"position": { "x" : "905", "y" : "298" },
+			"country" : "Bulgarien"
+			
+		},
+		{
+			"id": "3" , 
+			"part": "gfx/little/suedeuropa/flaggen/CRO.png",
+			"hitshape" : { "x" : "740", "y" : "300", "w" : "30", "h" : "160" },
+			"position": { "x" : "697", "y" : "254" }
+			
+		},
+		{
+			"id": "4" , 
+			"part": "gfx/little/suedeuropa/flaggen/CYP.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "629", "y" : "42" },
+			"country" : "Zypern"
+			
+		},
+		{
+			"id": "5" , 
+			"part": "gfx/little/suedeuropa/flaggen/GRE.png",
+			"hitshape" : { "x" : "900", "y" : "470", "w" : "60", "h" : "160" },
+			"position": { "x" : "863", "y" : "372" },
+			"country" : "Griechenland"
+			
+		},
+		{
+			"id": "5" , 
+			"part": "gfx/little/suedeuropa/flaggen/ITA.png",
+			"hitshape" : { "x" : "620", "y" : "390", "w" : "120", "h" : "10" },
+			"position": { "x" : "546", "y" : "241" },
+			"country" : "Italien"
+			
+		},
+
+		{
+			"id": "7" , 
+			"part": "gfx/little/suedeuropa/flaggen/MAC.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Mazedonien"
+			
+		},
+
+		{
+			"id": "9" , 
+			"part": "gfx/little/suedeuropa/flaggen/Portugal.png",
+			"hitshape" : { "x" : "180", "y" : "390", "w" : "60", "h" : "160" },
+			"position": { "x" : "167", "y" : "329" },
+			"country" : "Portugal"
+			
+		},
+		{
+			"id": "10" , 
+			"part": "gfx/little/suedeuropa/flaggen/SER.png",
+			"hitshape" : { "x" : "870", "y" : "300", "w" : "50", "h" : "160" },
+			"position": { "x" : "820", "y" : "259" },
+			"country" : "Serbien"
+			
+		},
+		{
+			"id": "11" , 
+			"part": "gfx/little/suedeuropa/flaggen/SLOVENIA.png",
+			"hitshape" : { "x" : "730", "y" : "260", "w" : "35", "h" : "160" },
+			"position": { "x" : "696", "y" : "242" },
+			"country" : "Slowenien"
+			
+		},
+		{
+			"id": "12" , 
+			"part": "gfx/little/suedeuropa/flaggen/Spanien.png",
+			"hitshape" : { "x" : "340", "y" : "430", "w" : "110", "h" : "160" },
+			"position": { "x" : "198", "y" : "287" },
+			"country" : "Spanien",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		},
+		{
+			"id": "13" , 
+			"part": "gfx/little/suedeuropa/flaggen/TUR.png",
+			"hitshape" : { "x" : "680", "y" : "80", "w" : "120", "h" : "160" },
+			"position": { "x" : "649", "y" : "40" },
+			"country" : "Türkei",
+			"description": "Deutschland, hier steht dann die beschreibung dazu"
+		}
+	]
+}

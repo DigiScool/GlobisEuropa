@@ -542,6 +542,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.globi.removeAllEventListeners();
 			
 			
+			
 			if( this.level.stage == 1){
 				var mouseover_se = this.globiObjekt.getSouthEurope('#ffffff','#68ba5b');
 				var mouseover_we = this.globiObjekt.getWestEurope('#ffffff','#68ba5b');
@@ -705,10 +706,12 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			console.log('Säubere die Stage');
 			this.stage.clear();
 			this.stage.removeAllChildren();
+			this.stage.removeAllEventListeners();
 
 			// Säubere die Ticker
 			this.anim = [];
 			this.levelanim = [];
+			this.levelanim_buffer = [];
 		},
 
 		blurStage: function(trigger){
@@ -786,7 +789,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 		},
 
-		showTheProcress: function(){
+		showTheProcress: function(callback){
 			
 			// Auf welcher Stage befinden wir uns ?
 			var stage  = this.level.stage;
@@ -861,6 +864,10 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				// Debugausgabe
 				console.log(this.globi);
 				this.enableLandSelection();
+				if(callback){
+					callback();
+				}
+				
 			
 
 		},

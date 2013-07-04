@@ -157,6 +157,16 @@ div#bubble_country_info{
 	padding:10px;
 }
 
+div#bubble_country_hymne{
+	top:10px;
+	left:720px;
+	width:250px;
+	height:520px; /* 568 - 2 * 10px Padding - 8px border*/
+	background-color: #F5F2DE;
+	overflow: hidden;
+	padding:10px;
+}
+
 div#country_info_text{
 	height: 90%;
 	overflow: hidden;

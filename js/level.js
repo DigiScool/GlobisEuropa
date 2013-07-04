@@ -6,9 +6,9 @@ define(['jquery'],function($){
 			
 			// Array zum speichern des Fortschrittes
 			this.procress = new Array(4);
-			this.procress[0] = 0;	// Westeuropa
-			this.procress[1] = 0;	// Osteuropa
-			this.procress[2] = 0;	// Südeuropa
+			this.procress[0] = 1;	// Westeuropa
+			this.procress[1] = 1;	// Osteuropa
+			this.procress[2] = 1;	// Südeuropa
 			this.procress[3] = 0;	// Nordeuropa
 
 			// aktueller Abschnitt
@@ -118,14 +118,21 @@ define(['jquery'],function($){
 		},
 
 		loadInfo: function(country){
-			$('#bubble_game_menue_bg').removeClass('hide');
+			
 			console.log("COUNTRY-ID. " + country);
 			if(this.level.puzzle[country]){
-				var facts = this.level.puzzle[country].facts.join('');	
-				var description = this.level.puzzle[country].description.join(' ');
-				this.app.setDOMText("#country_info_text",facts);
-				this.app.setDOMText("#bubble_country_details",description);
-				this.app.addBubble("#bubble_country_info");
+				$('#bubble_game_menue_bg').removeClass('hide');
+				if(this.stage == 1) {
+					var facts = this.level.puzzle[country].facts.join('');	
+					var description = this.level.puzzle[country].description.join(' ');
+					this.app.setDOMText("#country_info_text",facts);
+					this.app.setDOMText("#bubble_country_details",description);
+					this.app.addBubble("#bubble_country_info");
+				}
+				if(this.stage == 2){
+
+					this.app.addBubble("#bubble_country_hymne");
+				}
 			}
 			
 			
@@ -138,16 +145,6 @@ define(['jquery'],function($){
 			this.procress[this.level.id]++;
 			this.level_played++;
 
-			// Sind alle Abschnitte gespielt wurden ?
-			var count = 0;
-			for(var i = 0; i < this.procress.length; i++){
-				if(this.procress[i] == this.stage) count++;
-			}
-
-			if(count == 4){
-				// Alle Abschnitt haben die aktuelle Sage geschafft
-				this.stage++;
-			}
 
 			$('#button_home').addClass('hide');
 			this.app.setGameState("levelDone");

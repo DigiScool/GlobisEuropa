@@ -26,6 +26,8 @@ define(['jquery'],function($){
 		setGameState: function(state,id){
 
 			var self = this;
+			console.log('staaaage:');
+			console.log(this.engine.stage);
 			
 			switch(state){
 				case "startup": 
@@ -97,25 +99,47 @@ define(['jquery'],function($){
  					// Bring Globi zurück auf das Levelauswahlmenü
  					this.engine.startAnimation('globi_leveldone_popDown',function(){
  						
- 						// Zeige den text an
-
- 						if( self.level.stage == 1) {
- 							$('#bubble_selectshape_intro').children('p').html(self.level.level.ende1);	
- 						}
  						
- 						$('#bubble_selectshape_intro').removeClass('hide');
- 						
- 						// ZUrück_Button des Auswahlmenües
- 						$('#button_zurueck').removeClass('hide');
-
  						// Zeige Fortschritt auf Gbovi
- 						self.engine.showTheProcress();
+ 						self.engine.showTheProcress(function(){
+ 							var count = 0;
+ 						
+ 							for(var i= 0; i < self.level.procress.length; i++){
+ 								count += self.level.procress[i];
+ 						
+ 							}
+
+ 							if((count%4) == 0){
+ 								self.level.stage++;
+ 								self.engine.startAnimation('globi_menue_popDown',function(){
+ 									$('#bubble_selectshape_intro').children('p').html("Sehr gut ! Du hast den ersten Abschnitt gemeistert. Es gibt noch viele tolle Dinge über die Länder zu entdecken. Wusstest du das jedes Land eine eigene Flagge hat? ");
+ 									$('#bubble_selectshape_intro').removeClass('hide');
+ 						
+ 									// ZUrück_Button des Auswahlmenües
+ 									$('#button_zurueck').removeClass('hide');
+ 								})
+ 							} else {
+ 								if( self.level.stage == 1) {
+ 									$('#bubble_selectshape_intro').children('p').html(self.level.level.ende1);	
+ 								}
+
+ 								$('#bubble_selectshape_intro').removeClass('hide');
+ 						
+ 								// ZUrück_Button des Auswahlmenües
+ 								$('#button_zurueck').removeClass('hide');
+ 							}
+
+
+ 							
+ 						});
+
+
 
 					});
  					
  					break;
 			}
-			
+
 
 		},
 
@@ -274,7 +298,7 @@ define(['jquery'],function($){
  		},
 
  		toggleMenue: function(){
- 			
+ 			var self = this;
  			if($('#bubble_selectshape_intro').hasClass('hide')){
  				this.engine.stopAnimation('globi_idle');
  				this.engine.startAnimation('globi_menue_popUp');
@@ -289,11 +313,11 @@ define(['jquery'],function($){
  				;
  			} else {
  				$('#bubbles').children().addClass('hide');
- 				this.engine.stopAnimation('globi_idle');
- 				this.engine.startAnimation('globi_menue_popDown');
+ 				this.engine.startAnimation('globi_menue_popDown',function(){
+ 					self.engine.startAnimation('globi_idle');
+ 				});
  			
- 				
- 				
+ 					
  				//$('#bubble_menue_newgame').addClass('slideIn');
  				//$('#bubble_menue_newgame').removeClass('slideOut');
  				//$('#button_newGame').addClass('hide');
