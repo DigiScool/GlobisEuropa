@@ -115,7 +115,6 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.hm_bg = new createjs.Bitmap(bg);
 			this.hmContainer.addChild(this.hm_bg);
 			this.hmContainer.addChild(this.globi);
-			this.enableEvents_Hauptmenue();
 			
 		
 		},
@@ -211,7 +210,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				
 				self.oldBGx = self.container_bg.x;
 				var KeyID = event.keyCode;
-				if(KeyID==39||KeyID==68){
+				if(KeyID==37||KeyID==65){
 					var shift = 10;
 					// maxmale verschiebung noch nicht erreicht ?
 							if(self.container_bg.x <= maxRight){
@@ -237,7 +236,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 								
 								
 							}	
-				} else if(KeyID==37||KeyID==65){
+				} else if(KeyID==39||KeyID==68){
 					if(self.container_bg.x >= maxLeft){
 						var shift = -10;
 						var newx = self.container_bg.x + shift;
@@ -263,6 +262,8 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			}
 
 
+			} else {
+				document.onkeydown = null;
 			}
 
 
@@ -707,6 +708,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.stage.clear();
 			this.stage.removeAllChildren();
 			this.stage.removeAllEventListeners();
+			document.removeEventListener();
 
 			// Säubere die Ticker
 			this.anim = [];
@@ -794,9 +796,6 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			// Auf welcher Stage befinden wir uns ?
 			var stage  = this.level.stage;
 
-			console.log(this.level.procress);
-			console.log(this.level.stage);
-
 			// Verändere die AbschnittsContainer auf Globi
 			
 				
@@ -862,8 +861,6 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				}
 
 				// Debugausgabe
-				console.log(this.globi);
-				this.enableLandSelection();
 				if(callback){
 					callback();
 				}
@@ -967,7 +964,6 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				this.idle_globi *= -1;
 			}
 
-			this.globiObjekt.brauen_container.y-= this.idle_globi * 0.2;
 			this.globiObjekt.hand_container.y += this.idle_globi * 0.4;
 			
 

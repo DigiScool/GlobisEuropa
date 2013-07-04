@@ -65,6 +65,10 @@ define(['jquery','app'], function($,App){
 				$('#bubble_country_details').removeClass('hide');
 			});
 
+			$('#button_hideIntroText').click(function(){
+				app.hideInfoText();
+			});
+
 
 			console.log('Application erstellt');
 

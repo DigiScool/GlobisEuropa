@@ -11,7 +11,7 @@
 		"Bewege die dich mit den Pfeiltasten nach rechts und links auf der Karte, um weit entfernte Länder zu erreichen",
 		"Genauso wie du es mit den Ländern Westeuropas gemacht hast, versuchst du es jetzt mit den Ländern aus Südeuropa. Bewege die dich mit den Pfeiltasten nach rechts und links auf der Karte, um weit entfernte Länder zu erreichen."
 	],
-	"ende1": "Puh, der Abschnitt war wirklich schwierig. Mal schauen welche unbekannten Länder wir noch entdecken werden.",
+	"ende1": "Dieser Abschnitt war wirklich schwierig. Mal schauen welche unbekannten Länder wir noch entdecken werden.",
 	"count" : "15",
 	"images" : [
 		"gfx/big/suedeuropa/Suedeuropa-0000.png",
@@ -244,7 +244,7 @@
 			]
 		},
 		{
-			"id": "5" , 
+			"id": "6" , 
 			"part": "gfx/little/suedeuropa/ITA.png",
 			"hitshape" : { "x" : "620", "y" : "390", "w" : "120", "h" : "10" },
 			"position": { "x" : "546", "y" : "241" },
@@ -277,7 +277,7 @@
 			]
 		},
 		{
-			"id": "6" , 
+			"id": "7" , 
 			"part": "gfx/little/suedeuropa/KOS.png",
 			"hitshape" : { "x" : "875", "y" : "360", "w" : "30", "h" : "160" },
 			"position": { "x" : "854", "y" : "346" },
@@ -312,7 +312,7 @@
 			]
 		},
 		{
-			"id": "7" , 
+			"id": "8" , 
 			"part": "gfx/little/suedeuropa/MAC.png",
 			"hitshape" : { "x" : "900", "y" : "400", "w" : "30", "h" : "160" },
 			"position": { "x" : "868", "y" : "371" },
@@ -348,7 +348,7 @@
 			]
 		},
 		{
-			"id": "8" , 
+			"id": "9" , 
 			"part": "gfx/little/suedeuropa/MON.png",
 			"hitshape" : { "x" : "825", "y" : "360", "w" : "20", "h" : "160" },
 			"position": { "x" : "813", "y" : "343" },
@@ -382,7 +382,7 @@
 			]
 		},
 		{
-			"id": "9" , 
+			"id": "10" , 
 			"part": "gfx/little/suedeuropa/Portugal.png",
 			"hitshape" : { "x" : "180", "y" : "390", "w" : "60", "h" : "160" },
 			"position": { "x" : "167", "y" : "329" },
@@ -417,7 +417,7 @@
 			]
 		},
 		{
-			"id": "10" , 
+			"id": "11" , 
 			"part": "gfx/little/suedeuropa/SER.png",
 			"hitshape" : { "x" : "870", "y" : "300", "w" : "50", "h" : "160" },
 			"position": { "x" : "820", "y" : "259" },
@@ -453,7 +453,7 @@
 			]
 		},
 		{
-			"id": "11" , 
+			"id": "12" , 
 			"part": "gfx/little/suedeuropa/SLOVENIA.png",
 			"hitshape" : { "x" : "730", "y" : "260", "w" : "35", "h" : "160" },
 			"position": { "x" : "696", "y" : "242" },
@@ -486,7 +486,7 @@
 			]
 		},
 		{
-			"id": "12" , 
+			"id": "13" , 
 			"part": "gfx/little/suedeuropa/Spanien.png",
 			"hitshape" : { "x" : "340", "y" : "430", "w" : "110", "h" : "160" },
 			"position": { "x" : "198", "y" : "287" },
@@ -495,7 +495,7 @@
 			"description": [ ]
 		},
 		{
-			"id": "13" , 
+			"id": "14" , 
 			"part": "gfx/little/suedeuropa/TUR.png",
 			"hitshape" : { "x" : "1080", "y" : "450", "w" : "110", "h" : "160" },
 			"position": { "x" : "1002", "y" : "272" },

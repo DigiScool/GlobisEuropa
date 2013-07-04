@@ -15,6 +15,7 @@ define(['jquery'],function($){
 			
 			this.engine = null;
 			this.level = null;
+			this.FIRST_ENTRY_HM = true;
 		},
 
 		setup: function(engine,level){
@@ -26,8 +27,6 @@ define(['jquery'],function($){
 		setGameState: function(state,id){
 
 			var self = this;
-			console.log('staaaage:');
-			console.log(this.engine.stage);
 			
 			switch(state){
 				case "startup": 
@@ -63,8 +62,8 @@ define(['jquery'],function($){
 				
 				case "hauptmenue":
 					
-					this.engine.showTheProcress();
-					this.engine.enableEvents_Hauptmenue();
+					
+					
 					// Hauptmenue
 					$('#headline').html('Hauptmen&uuml;');
 					//$("#button_newGame").removeClass('hide');
@@ -74,6 +73,17 @@ define(['jquery'],function($){
  				 	// Animation starten
  				 	this.engine.startAnimation("globi_idle");
 
+ 				 	if(this.FIRST_ENTRY_HM){
+ 				 		
+ 				 		this.engine.showTheProcress();
+ 				 		
+ 				 		// Das Hm ist zum ersten mal aufgerufen. Zeige den Begrüßungsdialog
+  				 		$('#bubble_intro_text').removeClass('hide');
+ 				 		this.FIRST_ENTRY_HM = false;
+
+ 				 	} else {
+ 				 		this.engine.enableEvents_Hauptmenue();
+ 				 	}
 
 					break;
 
@@ -112,7 +122,7 @@ define(['jquery'],function($){
  							if((count%4) == 0){
  								self.level.stage++;
  								self.engine.startAnimation('globi_menue_popDown',function(){
- 									$('#bubble_selectshape_intro').children('p').html("Sehr gut ! Du hast den ersten Abschnitt gemeistert. Es gibt noch viele tolle Dinge über die Länder zu entdecken. Wusstest du das jedes Land eine eigene Flagge hat? ");
+ 									$('#bubble_selectshape_intro').children('p').html("Prima! Die Länder Europas sind wieder alle auf der Karte zu sehen. Ohne deine Hilfe hätte ich das nie geschafft.");
  									$('#bubble_selectshape_intro').removeClass('hide');
  						
  									// ZUrück_Button des Auswahlmenües
@@ -127,13 +137,14 @@ define(['jquery'],function($){
  						
  								// ZUrück_Button des Auswahlmenües
  								$('#button_zurueck').removeClass('hide');
+ 								self.engine.enableLandSelection();
  							}
 
 
  							
  						});
 
-
+						
 
 					});
  					
@@ -347,18 +358,20 @@ define(['jquery'],function($){
 
  		quitGame: function(){
  			var self = this;
- 			this.engine.enableEvents_Hauptmenue();
+
  			$('#bubbles').children().addClass('hide');
- 			$('#button_home').addClass('hide')
- 			$('#levelLoader').addClass('hide');
- 			$('#headline').html('Hauptmen&uuml;');
- 			$('#level_puzzle_menueHoverArea').addClass('hide');
+ 			$('#footBar').children().addClass('hide');
  			this.engine.clearStage();
  			this.engine.loadContainer("hmContainer");
  			this.engine.startAnimation('globi_menue_popDown',function(){
  				// Callback
  				self.setGameState("hauptmenue");
  			});
+ 		},
+
+ 		hideInfoText: function(){
+ 			$('#bubble_intro_text').addClass('hide');
+ 			this.engine.enableEvents_Hauptmenue();
  		}
 	});
 

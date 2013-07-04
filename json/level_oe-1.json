@@ -4,8 +4,12 @@
 	"bg" : "gfx/big/osteuropa/Osteuropa",
 	"bgx" : "-100",
 	"bgy" : "-150",
-	"script": {
-		"start":"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
+	"scroll": "true",
+	"scrollLeft"  : "100",
+	"scrollRight" : "150",
+	"script": [
+		"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
+		]
 	},
 	"count" : "9",
 	"images" : [

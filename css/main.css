@@ -129,6 +129,17 @@ div#bubble_selectshape_intro{
 	
 }
 
+div#bubble_intro_text{
+	top:10px;
+	left:30px;
+	width:250px;
+	height:340px; /* 568 - 2 * 10px Padding - 8px border*/
+	background-color: #F5F2DE;
+	overflow: hidden;
+	padding:10px;
+	
+}
+
 div#bubble_info_icon{
 	text-align: right;
 	height: 40px;
@@ -292,6 +303,10 @@ button#button_hidedialog{
 	position: relative;
 	left:250px;
 	top:20px;
+}
+
+button#button_hideIntroText{
+	margin-left: 50px;
 }
 
 /* ANIMATIONEN **********************/
