@@ -8,7 +8,7 @@
 	"scrollLeft"  : "150",
 	"scrollRight" : "250",
 	"script": [
-		"Bewege die dich mit den Pfeiltasten nach rechts und links auf der Karte, um weit entfernte Länder zu erreichen",
+		"Bewege die dich mit den Pfeiltasten nach rechts und links auf der Karte, um weit entfernte Länder zu erreichen.",
 		"Genauso wie du es mit den Ländern Westeuropas gemacht hast, versuchst du es jetzt mit den Ländern aus Südeuropa. Bewege die dich mit den Pfeiltasten nach rechts und links auf der Karte, um weit entfernte Länder zu erreichen."
 	],
 	"ende1": "Dieser Abschnitt war wirklich schwierig. Mal schauen welche unbekannten Länder wir noch entdecken werden.",
@@ -36,7 +36,31 @@
 		"gfx/little/suedeuropa/SER.png",
 		"gfx/little/suedeuropa/SLOVENIA.png",
 		"gfx/little/suedeuropa/Spanien.png",
-		"gfx/little/suedeuropa/TUR.png"
+		"gfx/little/suedeuropa/TUR.png",
+		"gfx/sights/suedeuropa/skutarisee.jpg",
+		"gfx/sights/suedeuropa/rozafa.jpg",
+		"gfx/sights/suedeuropa/stariMost.jpg",
+		"gfx/sights/suedeuropa/bosnianPyramid.jpg",
+		"gfx/sights/suedeuropa/buzludzha.jpg",
+		"gfx/sights/suedeuropa/rila.jpg",
+		"gfx/sights/suedeuropa/pula.jpg",
+		"gfx/sights/suedeuropa/diokletianpalast.jpg",
+		"gfx/sights/suedeuropa/parthenon.jpg",
+		"gfx/sights/suedeuropa/samaria.jpg",
+		"gfx/sights/suedeuropa/petersdom.jpg",
+		"gfx/sights/suedeuropa/kolosseum.jpg",
+		"gfx/sights/suedeuropa/gracanica.jpg",
+		"gfx/sights/suedeuropa/novoBrdo.jpg",
+		"gfx/sights/suedeuropa/steinbruecke.jpg",
+		"gfx/sights/suedeuropa/nerezi.jpg",
+		"gfx/sights/suedeuropa/kolossi.jpg",
+		"gfx/sights/suedeuropa/kyrenia.jpg",
+		"gfx/sights/suedeuropa/gospa.jpg",
+		"gfx/sights/suedeuropa/berane.jpg",
+		"gfx/sights/suedeuropa/bridge.jpg",
+		"gfx/sights/suedeuropa/palacio.jpg",
+		"gfx/sights/suedeuropa/kathedrale.jpg",
+		"gfx/sights/suedeuropa/festung.jpg"
 	],
 
 	"puzzle" : [
@@ -72,7 +96,9 @@
 				"Albanien beheimatet eine reiche Artenvielfalt und kämpft gleichzeitig mit einer Reihe von Umweltproblemen. Illegaler Holzeinschlag,",
 				"unkontrollierte Fischerei und Jagd, Überweidung und die Zerstörung von Wald- und Weideland sind nur einige Probleme. In den letzten",
 				"Jahren stieg allerdings auch die Fläche der unter Schutz gestellten Gebiete von 3,6 Prozent der Landesfläche im Jahr 2002 auf aktuell",
-				"9,9 Prozent (2010).<br><br>"
+				"9,9 Prozent (2010).<br><br>",
+				"<img style='margin-right: 5px;' width='276px' height='207px' src='./gfx/sights/suedeuropa/skutarisee.jpg' title='Skutarisee' />",
+				"<img width='292px' height='207px' src='./gfx/sights/suedeuropa/rozafa.jpg' title='Burg Rozafa' />"
 			]
 		},
 		{
@@ -106,7 +132,9 @@
 				"Die Tier- und Pflanzenwelt von Bosnien und Herzegowina ist artenreich und vielfältig. Die Flora und Fauna des Landes profitiert von der",
 				"geringen Bevölkerungsdichte und den unbewohnten Landstrichen. Um die 60 Prozent der Fläche von Bosnien und Herzegowina ist bewaldet,",
 				"besonders das Gebirge ist sehr waldreich. Durch die schwere Zugänglichkeit ist die Natur auch wenig bedroht. So konnte der Lebensraum",
-				"vieler seltener Tiere und Pflanzen erhalten werden. Einige Tierarten gibt es nur in Bosnien und Herzegowina.<br><br>"
+				"vieler seltener Tiere und Pflanzen erhalten werden. Einige Tierarten gibt es nur in Bosnien und Herzegowina.<br><br>",
+				"<img style='margin-right: 5px;' width='276px' height='207px' src='./gfx/sights/suedeuropa/stariMost.jpg' title='Stari most' />",
+				"<img width='276px' height='207px' src='./gfx/sights/suedeuropa/bosnianPyramid.jpg' title='Hügel Visočica' />"
 			]
 		},
 		{
@@ -138,7 +166,9 @@
 				"seitdem anderen europäischen Destinationen durch ihre moderaten Preise für Unterkunft und Skipässe ordentlich Konkurrenz.<br><br>",
 				"Die Großstädte Bulgariens haben ihre Ostblock-Vergangenheit abgeschüttelt und präsentieren sich dynamisch und attraktiv mit gepflegten",
 				"Boulevards, vielseitigem Einkaufsvergnügen und lebendigem Nachtleben. Andererseits bewahren viele kleine Städte und Dörfer die typisch",
-				"bulgarische Lebensweise und Gastfreundschaft und sind stolz auf ihre traditionsreiche Folklore.<br><br>"
+				"bulgarische Lebensweise und Gastfreundschaft und sind stolz auf ihre traditionsreiche Folklore.<br><br>",
+				"<img style='margin-right: 5px;' width='276px' height='207px' src='./gfx/sights/suedeuropa/buzludzha.jpg' title='Busludscha-Denkmal' />",
+				"<img width='276px' height='207px' src='./gfx/sights/suedeuropa/rila.jpg' title='Kloster Rila' />"
 			]
 		},
 		{
@@ -173,7 +203,9 @@
 				"historische Städte wie Dubrovnik, Split und Trogir, die zum Weltkulturerbe der UNESCO gehören.<br><br>",
 				"Kroatien ist auch für Abenteuerurlauber stark im Kommen. Die schroffen Bergketten des Nördlichen Velebit Nationalparks sind ideal zum Wandern",
 				"und Klettern und das Cetina-Tal zum Wildwasser-Rafting geeignet. Die Adriaküste bietet beste Voraussetzungen für das Segeln, Tauchen und",
-				"Kajakfahren.<br><br>"	
+				"Kajakfahren.<br><br>",
+				"<img style='margin-right: 5px;' width='276px' height='207px' src='./gfx/sights/suedeuropa/pula.jpg' title='Amphitheater Pula' />",
+				"<img width='276px' height='207px' src='./gfx/sights/suedeuropa/diokletianpalast.jpg' title='Diokletianpalast' />"
 			]
 		},
 		{
@@ -207,7 +239,9 @@
 				"Zypern ist zwar ein kleines Land, es hat aber einen sehr lebhaften, mediterranen Charakter und zieht Besucher mit seinen bedeutungsschweren",
 				"Legenden über die Liebe, seiner epischen Vergangenheit von mehr als 10.000 Jahren und seiner vielfältigen, äußerst leckeren Küche magisch an.",
 				"Wer den Urlaub etwas langsamer angehen möchte, wird sich in den guten Kaffeehäusern von Nicosia wohl fühlen oder ein paar der faszinierenden",
-				"UNESCO-Weltkulturerbestätten erkunden wollen. Wie auch immer man seine Freizeit verbringen möchte, Zypern macht Appetit auf mehr.<br><br>"
+				"UNESCO-Weltkulturerbestätten erkunden wollen. Wie auch immer man seine Freizeit verbringen möchte, Zypern macht Appetit auf mehr.<br><br>",
+				"<img style='margin-right: 5px;' width='284px' height='207px' src='./gfx/sights/suedeuropa/kolossi.jpg' title='Kolossi' />",
+				"<img width='284px' height='207px' src='./gfx/sights/suedeuropa/kyrenia.jpg' title='Festung Kyrenia' />"
 			]
 		},
 		{
@@ -240,7 +274,9 @@
 				"und sind Handlungsorte der griechischen Helden- und Göttersagen, die zu den ältesten Legenden der Menschheitsgeschichte zählen. Vor der Küste",
 				"des Festlandes liegen 1.400 griechische Inseln wie das Party-Mecca Mykonos oder das malerische Santorini, die mit ihren paradiesischen",
 				"Landschaften zum Inselhüpfen einladen. Auf Kafalonia und Amorgos findet man echte Ruhe und Erholung, ideale Wandergebiete über Berge und",
-				"Täler auf Kreta, und erstklassige Tauch- und Segelbedingungen so ziemlich überall.<br><br>"				
+				"Täler auf Kreta, und erstklassige Tauch- und Segelbedingungen so ziemlich überall.<br><br>",
+				"<img style='margin-right: 5px;' width='335px' height='207px' src='./gfx/sights/suedeuropa/parthenon.jpg' title='Parthenon' />",
+				"<img width='310px' height='207px' src='./gfx/sights/suedeuropa/samaria.jpg' title='Samaria-Schlucht' />"
 			]
 		},
 		{
@@ -273,7 +309,9 @@
 				"Das Gebiet des heutigen Italiens war in der Antike die Kernregion des Römischen Reiches mit Rom als Hauptstadt. Die heute italienische",
 				"Toskana war das Kernland der Renaissance. Seit dem Risorgimento besteht der moderne italienische Staat.<br><br>",
 				"Italien hat als Reiseland zurecht absoluten Kultstatus, denn es bietet viele Attraktionen für internationale Touristen – eine traumhafte",
-				"Landschaft, unzählige faszinierende Städte, ein fantastisches Kulturerbe, eine Richtung weisende Modeindustrie – aber es ist und bleibt vor, allem italienisch.<br><br>"
+				"Landschaft, unzählige faszinierende Städte, ein fantastisches Kulturerbe, eine Richtung weisende Modeindustrie – aber es ist und bleibt vor, allem italienisch.<br><br>",
+				"<img style='margin-right: 5px;' width='276px' height='207px' src='./gfx/sights/suedeuropa/petersdom.jpg' title='Petersdom' />",
+				"<img width='332px' height='207px' src='./gfx/sights/suedeuropa/kolosseum.jpg' title='Kolosseum' />"
 			]
 		},
 		{
@@ -308,7 +346,9 @@
 				"Der Kosovo, der sich als Reisedestination noch nicht etabliert hat und sich erst zu einer echten Nation entwickeln muss, ist für",
 				"interessierte Touristen sehr lohnenswert.<br><br>",
 				"Die Bevölkerung des Kosovo besteht zu rund 88 % aus muslimischen Albanern, gefolgt von den Serben, die meist christlich-orthodox sind,",
-				"sowie einer Reihe von kleineren ethnischen Gruppen mit eigener Kultur und Lebensweise.<br><br>"
+				"sowie einer Reihe von kleineren ethnischen Gruppen mit eigener Kultur und Lebensweise.<br><br>",
+				"<img style='margin-right: 5px;' width='276px' height='207px' src='./gfx/sights/suedeuropa/gracanica.jpg' title='Kloster Gračanica' />",
+				"<img width='288px' height='207px' src='./gfx/sights/suedeuropa/novoBrdo.jpg' title='Festung von Novo Brdo' />"
 			]
 		},
 		{
@@ -344,7 +384,9 @@
 				"unterschriebenen Friedensvertrag hat sich die Gesamtlage der Volksminderheiten im Land deutlich verbessert. Mit einer gesellschaftlichen",
 				"Gleichstellung ist jedoch immer noch nicht zu rechnen.<br><br>", 
 				"Einige weltweit bekannte Persönlichkeiten stammten aus Mazedonien. Zu den berühmtesten zählen die albanische Ordensschwester Mutter Teresa,",
-				"die 1979 den Friedensnobelpreis bekam, der mazedonische Handballer Kiril Lazarov und die albanische Sängerin Arjeta Zuta.<br><br>"
+				"die 1979 den Friedensnobelpreis bekam, der mazedonische Handballer Kiril Lazarov und die albanische Sängerin Arjeta Zuta.<br><br>",
+				"<img style='margin-right: 5px;' width='284px' height='207px' src='./gfx/sights/suedeuropa/steinbruecke.jpg' title='Steinbrücke (Skopje)' />",
+				"<img width='284px' height='207px' src='./gfx/sights/suedeuropa/nerezi.jpg' title='Kirche St. Pantaleon (Nerezi)' />"
 			]
 		},
 		{
@@ -378,7 +420,9 @@
 				"Montenegro ist laut World Travel & Tourism Council (WTTC) weltweit seit Jahren unter den drei wachstumsstärksten Reiseländern.<br><br>",
 				"Besucher können sich z.B. an einem der 117 Strände entlang der Adriaküste erholen oder durch die historischen Städte Budva, Kotor und",
 				"Bar spazieren, die Gipfel des Durmitor-Nationalparks besteigen oder beim Wildwasser-Rafting Europas tiefste Schlucht erkunden, im",
-				"letzten unberührten Wald des Kontinents wandern oder im südlichsten Fjord von Europa segeln.<br><br>"
+				"letzten unberührten Wald des Kontinents wandern oder im südlichsten Fjord von Europa segeln.<br><br>",
+				"<img style='margin-right: 5px;' width='371px' height='207px' src='./gfx/sights/suedeuropa/gospa.jpg' title='Gospa od Škrpjela' />",
+				"<img width='201px' height='207px' src='./gfx/sights/suedeuropa/berane.jpg' title='Đurđevi Stupovi (Berane)' />"
 			]
 		},
 		{
@@ -413,7 +457,9 @@
 				"charmanten, gut erhaltenen mittelalterlichen Stadtteilen einen Besuch wert.<br><br>",
 				"Außerhalb der Städte kann man das warme, sonnige Wetter genießen, während man Jahrhunderte alte Weingüter, Bergdörfer mit typischen",
 				"Steinhäusern oder die atemberaubende Südküste erkundet. Die wunderbare Naturkulisse Portugals bietet zudem beste Bedingungen für",
-				"Freizeitaktivitäten wie Wandern, Surfen, Reiten, Hochseeangeln, Kajakfahren, Tauchen, Golfspielen oder Mountainbikefahren.<br><br>"
+				"Freizeitaktivitäten wie Wandern, Surfen, Reiten, Hochseeangeln, Kajakfahren, Tauchen, Golfspielen oder Mountainbikefahren.<br><br>",
+				"<img style='margin-right: 5px;' width='284px' height='207px' src='./gfx/sights/suedeuropa/bridge.jpg' title='Ponte 25 de Abril' />",
+				"<img width='320px' height='207px' src='./gfx/sights/suedeuropa/palacio.jpg' title='Palácio Nacional da Pena' />"
 			]
 		},
 		{
@@ -449,7 +495,9 @@
 				"die verschiedensten Restaurants und Cafés besuchen und abends in ein Nachtleben eintauchen, das in Südosteuropa seinesgleichen sucht.",
 				"Auch andere Städte außerhalb von Belgrad sind einen Besuch wert. Novi Sad ist eine hübsche, lebendige Stadt mit einem eleganten Zentrum",
 				"und einer malerischen Festung mit Blick über die Donau. Im Norden von Serbien liegt Subotica, eine Stadt mit ungarischem Charakter und",
-				"einer Reihe von Sezessionsgebäuden.<br><br>"
+				"einer Reihe von Sezessionsgebäuden.<br><br>",
+				"<img style='margin-right: 5px;' width='271px' height='207px' src='./gfx/sights/suedeuropa/kathedrale.jpg' title='Tempel des Heiligen Sava' />",
+				"<img width='201px' height='207px' src='./gfx/sights/suedeuropa/festung.jpg' title='Festung von Belgrad' />"
 			]
 		},
 		{
@@ -491,8 +539,34 @@
 			"hitshape" : { "x" : "340", "y" : "430", "w" : "110", "h" : "160" },
 			"position": { "x" : "198", "y" : "287" },
 			"country" : "Spanien",
-			"facts": [ ],
-			"description": [ ]
+			"facts": [
+				"<h3>Spanien</h3>",
+				"<ul>",
+				"<li>Einwohner: 46.704.314</li>",
+				"<li>Fläche: 504.645 km²</li>",
+				"<li>Amtssprache: Spanisch</li>",
+				"<li>Hauptstadt: Madrid</li>",
+				"<li>Staatsform: parlamentarische Erbmonarchie</li>",
+				"<li>Staatsoberhaupt: König Juan Carlos I.</li>",
+				"<li>Regierungschef: Regierungspräsident Mariano Rajoy</li>",
+				"<li>Währung: Euro (1 € = 100 ct)</li>",
+				"<li>Nationalfeiertag: 12. Oktober</li>",
+				"</ul>"
+			],
+			"description": [
+				"<b>Spanien</b> (amtlich Königreich Spanien, spanisch Reino de España) ist ein Staat mit einer parlamentarischen Erbmonarchie, der",
+				"größtenteils auf der im Südwesten Europas gelegenen Iberischen Halbinsel liegt. Die Hauptstadt ist Madrid.<br><br>",
+				"Spanien bietet Besuchern eine beeindruckende Kombination aus leckerer Küche, ausgelassenen Fiestas, wegweisender modernder Kunst,",
+				"streng geschützten Naturlandschaften und einer erstaunlichen Vielzahl von ländlichen Übernachtungsmöglichkeiten.<br><br>",
+				"Die historischen Städte Spaniens sind architektonische Kleinode mit ihren romanischen, gotischen und barocken Kirchen, maurischen",
+				"Festungen und Renaissancepalästen. Plätze und Bars beleben alte Straßen und moderne Meisterwerke sorgen hier und da für frischen Wind.<br><br>",
+                "Sonne, Meer und Sangría entlang der Südküste Spaniens gehören weiterhin zum touristischen Standardangebot, aber die Naturschönheit", 
+				"dieses Landes kommt auch anderswo, in sehr vielgestaltigen Gegenden zum Ausdruck. Bergige Nationalparks laden zu wunderschönen alpinen",
+				"Wanderungen ein, und die Nordküste präsentiert sich mit sanft geschwungenen, grünen Hügeln, kleinen Fischerdörfern und versteckten",
+				"Sandbuchten.<br><br>",
+				"Ferien an der Küste und auf den Inseln sind nach wie vor äußerst beliebt, aber viele Besucher zieht es auch ins Landesinnere, wo man z. B.",
+				"von einem restaurierten, rustikalen Bauernhaus aus auf Entdeckungstouren in wundervoll ruhige ländliche Gegenden gehen kann.<br><br>"
+			]
 		},
 		{
 			"id": "14" , 
@@ -500,8 +574,35 @@
 			"hitshape" : { "x" : "1080", "y" : "450", "w" : "110", "h" : "160" },
 			"position": { "x" : "1002", "y" : "272" },
 			"country" : "Türkei",
-			"facts": [ ],
-			"description": [ ]
+			"facts": [
+				"<h3>Türkei</h3>",
+				"<ul>",
+				"<li>Einwohner: 74.724.269</li>",
+				"<li>Fläche: 814.578 km²</li>",
+				"<li>Amtssprache: Türkisch</li>",
+				"<li>Hauptstadt: Ankara</li>",
+				"<li>Staatsform: Parlamentarische Republik</li>",
+				"<li>Staatsoberhaupt: Staatspräsident Abdullah Gül</li>",
+				"<li>Regierungschef: Ministerpräsident Recep Tayyip Erdoğan</li>",
+				"<li>Währung: Türk Lirası (Türkische Lira)</li>",
+				"<li>Nationalfeiertag: 29. Oktober (Feiertag der Republik)</li>",
+				"</ul>"
+			],
+			"description": [
+				"Die <b>Türkei</b> (amtlich Türkiye Cumhuriyeti (T.C.), deutsch Republik Türkei) ist eine demokratische Republik in Südosteuropa",
+				"und Westasien. Der Einheitsstaat wurde im Jahr 1923 gegründet; er wurde nach dem Ersten Weltkrieg der Nachfolgestaat des Osmanischen",
+				"Reiches. Der Staatsgründer Mustafa Kemal Atatürk leitete eine Modernisierung der Türkei durch gesellschaftliche und rechtliche Reformen",
+				"nach dem Vorbild verschiedener europäischer Nationalstaaten ein.<br><br>",
+				"Die Türkei ist ein Land der riesigen, weiten Ebenen, imposanten Bergketten, fruchtbaren Täler und schroffen Küste, der rasant wachsenden Städte",
+				"und verschlafenen Dörfer, der geschäftigen Badeorte und menschenleeren Strände.<br><br>",
+				"Die Türkei hat eine bewegte Geschichte, die überall ihre Spuren hinterlassen hat, und das Land ist reich an historischen Orten und",
+				"archäologischen Ausgrabungsstätten inmitten einer vielgestaltigen, sehenswerten Landschaft.<br><br>",
+				"Istanbul ist der Puls der Türkei und verfügt über zahlreiche Attraktionen, darunter römische Aquädukte, byzantinische Kirchen und",
+				"osmanische Moscheen und Paläste.<br><br>",
+				"Wie auch immer die Vergangenheit der Türkei geartet sein mag, heute ist es ein dynamisches Land, das kulturelle, wirtschaftliche und",
+				"politische Veränderungen willkommen heißt, ohne jedoch seine multikulturelle Geschichte und altehrwürdige Tradition der Gastfreundschaft",
+				"zu vernachlässigen.<br><br>"
+			]
 		}
 	]
 }
