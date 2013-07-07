@@ -60,7 +60,13 @@
 		"gfx/sights/suedeuropa/bridge.jpg",
 		"gfx/sights/suedeuropa/palacio.jpg",
 		"gfx/sights/suedeuropa/kathedrale.jpg",
-		"gfx/sights/suedeuropa/festung.jpg"
+		"gfx/sights/suedeuropa/festung.jpg",
+		"gfx/sights/suedeuropa/bled.jpg",
+		"gfx/sights/suedeuropa/festung.jpg",
+		"gfx/sights/suedeuropa/sagrada.jpg",
+		"gfx/sights/suedeuropa/alhambra.jpg",
+		"gfx/sights/suedeuropa/moschee.jpg",
+		"gfx/sights/suedeuropa/topkapi.jpg"
 	],
 
 	"puzzle" : [
@@ -158,7 +164,7 @@
 				"</ul>"
 			],
 			"description": [
-				"<b>Bulgarien</b>(amtliche Bezeichnung Republik Bulgarien) ist eine Republik in Südosteuropa mit etwa 7,3 Millionen Einwohnern.<br><br>",
+				"<b>Bulgarien</b> (amtliche Bezeichnung Republik Bulgarien) ist eine Republik in Südosteuropa mit etwa 7,3 Millionen Einwohnern.<br><br>",
 				"Bulgarien mit seinen spektakulären Bergen, goldenen Sandstränden und lebhaften Städten hat in den letzten Jahren immer mehr urlaubshungrige",
 				"Touristen angezogen und wenig mit dem Land gemeinsam, das es noch vor zehn Jahren war.<br><br>",
 				"In der Tat hat sich Bulgarien durch einen Bauboom in den letzten Jahren enorm verändert und zahlreiche westeuropäische Investoren mit",
@@ -275,8 +281,8 @@
 				"des Festlandes liegen 1.400 griechische Inseln wie das Party-Mecca Mykonos oder das malerische Santorini, die mit ihren paradiesischen",
 				"Landschaften zum Inselhüpfen einladen. Auf Kafalonia und Amorgos findet man echte Ruhe und Erholung, ideale Wandergebiete über Berge und",
 				"Täler auf Kreta, und erstklassige Tauch- und Segelbedingungen so ziemlich überall.<br><br>",
-				"<img style='margin-right: 5px;' width='335px' height='207px' src='./gfx/sights/suedeuropa/parthenon.jpg' title='Parthenon' />",
-				"<img width='310px' height='207px' src='./gfx/sights/suedeuropa/samaria.jpg' title='Samaria-Schlucht' />"
+				"<img style='margin-right: 5px;' width='310px' height='207px' src='./gfx/sights/suedeuropa/parthenon.jpg' title='Parthenon' />",
+				"<img width='285px' height='207px' src='./gfx/sights/suedeuropa/samaria.jpg' title='Samaria-Schlucht' />"
 			]
 		},
 		{
@@ -300,7 +306,7 @@
 				"</ul>"
 			],
 			"description": [
-				"<b>Italien<b> (amtlich Italienische Republik, ital. Repubblica Italiana, Kurzform Italia) ist eine parlamentarische Republik in Südeuropa.",
+				"<b>Italien</b> (amtlich Italienische Republik, ital. Repubblica Italiana, Kurzform Italia) ist eine parlamentarische Republik in Südeuropa.",
 				"Die Hauptstadt ist Rom. Italien, das zum größten Teil auf der vom Mittelmeer umschlossenen Apenninhalbinsel sowie der Po-Ebene und dem",
 				"südlichen Teil der Alpen liegt, grenzt an Frankreich, die Schweiz, Österreich und Slowenien. Die Republik San Marino sowie der Staat der",
 				"Vatikanstadt sind vollständig vom Staatsgebiet umschlossen. Neben den großen Inseln Sizilien und Sardinien sind mehrere Inselgruppen",
@@ -422,7 +428,7 @@
 				"Bar spazieren, die Gipfel des Durmitor-Nationalparks besteigen oder beim Wildwasser-Rafting Europas tiefste Schlucht erkunden, im",
 				"letzten unberührten Wald des Kontinents wandern oder im südlichsten Fjord von Europa segeln.<br><br>",
 				"<img style='margin-right: 5px;' width='371px' height='207px' src='./gfx/sights/suedeuropa/gospa.jpg' title='Gospa od Škrpjela' />",
-				"<img width='201px' height='207px' src='./gfx/sights/suedeuropa/berane.jpg' title='Đurđevi Stupovi (Berane)' />"
+				"<img width='230px' height='207px' src='./gfx/sights/suedeuropa/berane.jpg' title='Đurđevi Stupovi (Berane)' />"
 			]
 		},
 		{
@@ -497,7 +503,7 @@
 				"und einer malerischen Festung mit Blick über die Donau. Im Norden von Serbien liegt Subotica, eine Stadt mit ungarischem Charakter und",
 				"einer Reihe von Sezessionsgebäuden.<br><br>",
 				"<img style='margin-right: 5px;' width='271px' height='207px' src='./gfx/sights/suedeuropa/kathedrale.jpg' title='Tempel des Heiligen Sava' />",
-				"<img width='201px' height='207px' src='./gfx/sights/suedeuropa/festung.jpg' title='Festung von Belgrad' />"
+				"<img width='300px' height='207px' src='./gfx/sights/suedeuropa/festung.jpg' title='Festung von Belgrad' />"
 			]
 		},
 		{
@@ -530,7 +536,9 @@
 				"einen jugendlichen Charakter verleiht. Durch die Stadt fließt der Fluss Ljubljana, an dessen Ufer zahlreiche Spazierwege, Cafés und",
 				"kleine Geschäfte liegen.<br><br>",
 				"Das malerische, saubere und sichere Slowenien ist eine ideale Reisedestination für Familien und Paare und bietet viele Outdoor-Aktivitäten",
-				"wie Radfahren, Wandern, Gleitschirmfliegen, Wildwasser-Rafting, Höhlenwandern und Bergsteigen.<br><br>"
+				"wie Radfahren, Wandern, Gleitschirmfliegen, Wildwasser-Rafting, Höhlenwandern und Bergsteigen.<br><br>",
+				"<img style='margin-right: 5px;' width='290px' height='207px' src='./gfx/sights/suedeuropa/bled.jpg' title='Burg von Bled' />",
+				"<img width='310px' height='207px' src='./gfx/sights/suedeuropa/brdo.jpg' title='Brdo pri Kranju' />"
 			]
 		},
 		{
@@ -565,7 +573,9 @@
 				"Wanderungen ein, und die Nordküste präsentiert sich mit sanft geschwungenen, grünen Hügeln, kleinen Fischerdörfern und versteckten",
 				"Sandbuchten.<br><br>",
 				"Ferien an der Küste und auf den Inseln sind nach wie vor äußerst beliebt, aber viele Besucher zieht es auch ins Landesinnere, wo man z. B.",
-				"von einem restaurierten, rustikalen Bauernhaus aus auf Entdeckungstouren in wundervoll ruhige ländliche Gegenden gehen kann.<br><br>"
+				"von einem restaurierten, rustikalen Bauernhaus aus auf Entdeckungstouren in wundervoll ruhige ländliche Gegenden gehen kann.<br><br>",
+				"<img style='margin-right: 5px;' width='290px' height='207px' src='./gfx/sights/suedeuropa/sagrada.jpg' title='Sagrada Família' />",
+				"<img width='310px' height='207px' src='./gfx/sights/suedeuropa/alhambra.jpg' title='Alhambra' />"
 			]
 		},
 		{
@@ -601,7 +611,9 @@
 				"osmanische Moscheen und Paläste.<br><br>",
 				"Wie auch immer die Vergangenheit der Türkei geartet sein mag, heute ist es ein dynamisches Land, das kulturelle, wirtschaftliche und",
 				"politische Veränderungen willkommen heißt, ohne jedoch seine multikulturelle Geschichte und altehrwürdige Tradition der Gastfreundschaft",
-				"zu vernachlässigen.<br><br>"
+				"zu vernachlässigen.<br><br>",
+				"<img style='margin-right: 5px;' width='310px' height='207px' src='./gfx/sights/suedeuropa/moschee.jpg' title='Sultan-Ahmed-Moschee' />",
+				"<img width='284px' height='207px' src='./gfx/sights/suedeuropa/topkapi.jpg' title='Topkapı-Palast' />"
 			]
 		}
 	]
