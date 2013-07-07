@@ -341,6 +341,10 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 							dndPart.scaleY = 0.8;
 							dndPart.countryId = target.puzzleId;
 							self.container_dndParts.addChild(dndPart);
+
+							if(self.level.stage == 2){
+								self.container_dndParts.alpha = 0.5;
+							}
 				
 
 							evt.onMouseMove = function(ev){
@@ -352,7 +356,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 							evt.onMouseUp = function(ev){
 								self.app.changeCursor('default');
-							
+								self.container_dndParts.alpha = 1;
   								// Try to find a hitshape under the dndPart
   								var hitShape = self.container_hitshapes.getObjectUnderPoint(ev.stageX,ev.stageY);
   								
@@ -457,7 +461,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
             this.stage.addChild(this.container_bg);
 
              // Hitshapes ( anzeige on //off)
-			if(this.SHOW_HITSHAPES){
+			if(this.SHOW_HITSHAPES || this.level.stage == 2){
 				this.stage.addChild(this.container_hitshapes);
 			}
 			this.stage.addChild(this.container_dndParts);

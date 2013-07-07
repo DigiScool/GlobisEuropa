@@ -27,6 +27,7 @@ define(['jquery','app'], function($,App){
 			});
 
 			$('#button_hide_countryHymne').click(function(){
+				$('audio').each(function(){ this.pause() });
 				$('#bubble_country_hymne').addClass('hide');
 				$('#bubble_game_menue_bg').addClass('hide');
 			});

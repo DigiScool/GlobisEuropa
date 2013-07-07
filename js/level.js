@@ -9,10 +9,10 @@ define(['jquery'],function($){
 			this.procress[0] = 1;	// Westeuropa
 			this.procress[1] = 1;	// Osteuropa
 			this.procress[2] = 1;	// Südeuropa
-			this.procress[3] = 0;	// Nordeuropa
+			this.procress[3] = 1;	// Nordeuropa
 
 			// aktueller Abschnitt
-			this.stage = 1;
+			this.stage = 2;
 
 			// counter für Scripte
 			this.level_played = 0;
@@ -122,6 +122,7 @@ define(['jquery'],function($){
 			console.log("COUNTRY-ID. " + country);
 			if(this.level.puzzle[country]){
 				$('#bubble_game_menue_bg').removeClass('hide');
+				
 				if(this.stage == 1) {
 					var facts = this.level.puzzle[country].facts.join('');	
 					var description = this.level.puzzle[country].description.join(' ');
@@ -129,8 +130,12 @@ define(['jquery'],function($){
 					this.app.setDOMText("#bubble_country_details",description);
 					this.app.addBubble("#bubble_country_info");
 				}
-				if(this.stage == 2){
 
+				else if(this.stage == 2){
+					// Hymne zum stream vorbereiten
+					var source = $('#player');
+					source.attr("src", this.level.puzzle[country].mp3);
+					$('#bubble_country_hymne').children('.country_name').html(this.level.puzzle[country].country);
 					this.app.addBubble("#bubble_country_hymne");
 				}
 			}

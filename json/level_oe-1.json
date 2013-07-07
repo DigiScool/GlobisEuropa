@@ -55,7 +55,7 @@
 			"part": "gfx/little/osteuropa/SLO.png",
 			"hitshape" : { "x" : "565", "y" : "400", "w" : "40"},
 			"position": { "x" : "525", "y" : "387" },
-			"country" : "Ungarn",
+			"country" : "Slowakei",
 			"facts": [],
 			"description": []
 		},

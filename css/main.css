@@ -309,6 +309,13 @@ button#button_hideIntroText{
 	margin-left: 50px;
 }
 
+/* AUDIO-PLAYER *******************/
+
+#player {
+	width: 250px; 
+	display: block;
+}
+
 /* ANIMATIONEN **********************/
 
 .slideIn{

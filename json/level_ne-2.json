@@ -29,65 +29,73 @@
 		{
 			"id": "0", 
 			"part": "gfx/little/nordeuropa/flaggen/DAN.png",
-			"hitshape" : { "x" : "620", "y" : "360", "w" : "40"},
-			"position": { "x" : "590", "y" : "280" },
-			"country" : "Dänemark"
+			"hitshape" : { "x" : "620", "y" : "360", "w" : "10"},
+			"position": { "x" : "580", "y" : "240" },
+			"country" : "Dänemark",
+			"mp3": ""
 			
 		},
 		{
 			"id": "1" , 
 			"part"	 : "gfx/little/nordeuropa/flaggen/EST.png",
-			"hitshape" : { "x" : "890", "y" : "270", "w" : "40"},
-			"position": { "x" : "833", "y" : "258" },
-			"country" : "Estland"
+			"hitshape" : { "x" : "890", "y" : "285", "w" : "10"},
+			"position": { "x" : "850", "y" : "160" },
+			"country" : "Estland",
+			"mp3": ""
 			
 		},
 		{
 			"id": "2",
 			"part"	: "gfx/little/nordeuropa/flaggen/Finland.png",
-			"hitshape" : { "x" : "880", "y" : "150", "w" : "80"},
-			"position": { "x" : "800", "y" : "87" },
-			"country" : "Finland"
+			"hitshape" : { "x" : "880", "y" : "150", "w" : "10"},
+			"position": { "x" : "840", "y" : "35" },
+			"country" : "Finland",
+			"mp3": ""
 			
 		},
 		{
 			"id": "3",
 			"part" : "gfx/little/nordeuropa/flaggen/ISL.png",
-			"hitshape" : { "x" : "330", "y" : "100", "w" : "50"},
-			"position": { "x" : "294", "y" : "0" },
-			"country" : "Island"
+			"hitshape" : { "x" : "340", "y" : "110", "w" : "10"},
+			"position": { "x" : "300", "y" : "-10" },
+			"country" : "Island",
+			"mp3": ""
 			
 		},
 		{
 			"id": "4",
 			"part" : "gfx/little/nordeuropa/flaggen/LAT.png",
-			"hitshape" : { "x" : "890", "y" : "340", "w" : "40"},
-			"position": { "x" : "826", "y" : "301" },
-			"country" : "Lettland"
+			"hitshape" : { "x" : "890", "y" : "330", "w" : "10"},
+			"position": { "x" : "850", "y" : "210" },
+			"country" : "Lettland",
+			"mp3": ""
 			
 		},
 		{
 			"id": "5",
 			"part" : "gfx/little/nordeuropa/flaggen/LIT.png",
-			"hitshape" : { "x" : "880", "y" : "380", "w" : "40"},
-			"position": { "x" : "829", "y" : "345" },
-			"country" : "Litauen"
+			"hitshape" : { "x" : "880", "y" : "380", "w" : "10"},
+			"position": { "x" : "840", "y" : "255" },
+			"country" : "Litauen",
+			"mp3": ""
 			
 		},
 		{
 			"id": "6",
 			"part" : "gfx/little/nordeuropa/flaggen/NOR.png",
-			"hitshape" : { "x" : "680", "y" : "130", "w" : "110"},
+			"hitshape" : { "x" : "600", "y" : "230", "w" : "10"},
 			"position": { "x" : "571", "y" : "117" },
-			"country" : "Norwegen"
+			"country" : "Norwegen",
+			"mp3": ""
 			
 		},
 		{
 			"id": "7",
 			"part" : "gfx/little/nordeuropa/flaggen/SWE.png",
-			"hitshape" : { "x" : "730", "y" : "300", "w" : "90"},
-			"position": { "x" : "682", "y" : "100" },
-			"country" : "Schweden"
+			"hitshape" : { "x" : "730", "y" : "300", "w" : "10"},
+			"position": { "x" : "690", "y" : "185" },
+			"country" : "Schweden",
+			"mp3": ""
 			
 		}
 	]
