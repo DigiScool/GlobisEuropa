@@ -96,14 +96,19 @@ var Globi = Class.extend({
             // Hände
             this.hand_container = new createjs.Container();
 
-            this.handRechts = new createjs.Shape();
-            this.handRechts.graphics.beginFill('#000000').drawCircle(0,0,35);
+            this.handRechts = new createjs.Bitmap('gfx/little/faust_links.png');
+            this.handRechts.scaleX = 0.6;
+            this.handRechts.scaleY = 0.6;
 
-            this.handLinks = new createjs.Shape()
-            this.handLinks.graphics.beginFill('#000000').drawCircle(0,0,35);
 
-            this.handRechts.x = -220;
-            this.handLinks.x = 220;
+            this.handLinks = new createjs.Bitmap('gfx/little/faust_rechts.png');
+            this.handLinks.scaleX = 0.6;
+            this.handLinks.scaleY = 0.6;
+
+
+
+            this.handRechts.x = -300;
+            this.handLinks.x = 160;
 
             this.hand_container.addChild(this.handRechts);
             this.hand_container.addChild(this.handLinks);

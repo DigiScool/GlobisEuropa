@@ -742,18 +742,35 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			image.scaleX = 0.8;
 			image.scaleY = 0.8;
 			this.intro.push(image);
+			
 			image = new createjs.Bitmap("gfx/big/story_2.jpg");
 			image.y = -50;
 			image.scaleX = 0.8;
 			image.scaleY = 0.8;
 			this.intro.push(image);
-			// Bilder erstellen
-			var image = new createjs.Bitmap("gfx/big/story_3.jpg");
+			
+
+			image = new createjs.Bitmap("gfx/big/story_3.jpg");
 			image.y = -50;
 			image.scaleX = 0.8;
 			image.scaleY = 0.8;
 			this.intro.push(image);
+
+		
+			image = new createjs.Bitmap("gfx/big/story_3_zusatz.jpg");
+			image.y = -50;
+			image.scaleX = 0.8;
+			image.scaleY = 0.8;
+			this.intro.push(image);
+			
 			image = new createjs.Bitmap("gfx/big/story_4.jpg");
+			image.y = -50;
+			image.scaleX = 0.8;
+			image.scaleY = 0.8;
+			this.intro.push(image);
+
+
+			image = new createjs.Bitmap("gfx/big/story_5.jpg");
 			image.y = -50;
 			image.scaleX = 0.8;
 			image.scaleY = 0.8;
