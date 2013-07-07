@@ -289,16 +289,28 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			// Puzzle-Teile Bilder für die Seitenleiste laden
 			// eventhandler hinzufügen
 
+			// Variable zum Berechnen der Position im Menü
+			var entryPosition = 50;
 			
 			if(puzzle){
 				for(var i = 0; i < puzzle.length; i++){
 					
 					// menueentry for the puzzlepart
 					var menueEntry = new createjs.Bitmap(puzzle[i].part);
-					menueEntry.y = 50 + 200 * i;
+					menueEntry.y = entryPosition;
 					menueEntry.x = 50;
-					menueEntry.scaleX = 0.5;
-					menueEntry.scaleY = 0.5;
+					
+
+					if(menueEntry.image.width > 500){
+						menueEntry.scaleX = 0.3;
+						menueEntry.scaleY = 0.3;
+					} else {
+						menueEntry.scaleX = 0.5;
+						menueEntry.scaleY = 0.5;
+					}
+
+					// Position des nächsten Menüeintrages
+					entryPosition += (menueEntry.image.height * 0.5) + 50;
 
 					// hitshape for the puzzlepart
 					var g = new createjs.Graphics();
@@ -524,18 +536,15 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 		sortMenue: function(target){
 			var index = this.container_puzzleparts.getChildIndex(target);
-			var pos = target.y;
-			var newPos = 0;
+			var newPos = target.y;
 			this.container_puzzleparts.removeChild(target);
 			for(var i = index ; i < this.container_puzzleparts.getNumChildren(); i++){
-				console.log(pos + newPos*200);
-
-				this.container_puzzleparts.getChildAt(i).y = pos + newPos*200;
-				newPos++;
+				var part = this.container_puzzleparts.getChildAt(i);
+				part.y = newPos;
+				newPos += (part.image.height * 0.5 ) +50;
 			}
 
-			
-
+	
 		},
 
 		enableLandSelection: function(){

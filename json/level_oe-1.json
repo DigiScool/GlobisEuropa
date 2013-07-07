@@ -9,8 +9,7 @@
 	"scrollRight" : "150",
 	"script": [
 		"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt."
-		]
-	},
+	],
 	"count" : "9",
 	"images" : [
 		"gfx/big/osteuropa/Osteuropa-0000.png",

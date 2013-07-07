@@ -6,13 +6,13 @@ define(['jquery'],function($){
 			
 			// Array zum speichern des Fortschrittes
 			this.procress = new Array(4);
-			this.procress[0] = 1;	// Westeuropa
-			this.procress[1] = 1;	// Osteuropa
-			this.procress[2] = 1;	// Südeuropa
-			this.procress[3] = 1;	// Nordeuropa
+			this.procress[0] = 0;	// Westeuropa
+			this.procress[1] = 0;	// Osteuropa
+			this.procress[2] = 0;	// Südeuropa
+			this.procress[3] = 0;	// Nordeuropa
 
 			// aktueller Abschnitt
-			this.stage = 2;
+			this.stage = 1;
 
 			// counter für Scripte
 			this.level_played = 0;
