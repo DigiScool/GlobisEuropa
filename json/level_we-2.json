@@ -6,10 +6,17 @@
 	"bgx" : "250",
 	"bgy" : "-200",
 	"script": [
-		"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt.",
-		"Nun wartet der zweite Teil Europas mit neuen spannenden Ländern auf dich"
+		"Um diese Aufgabe zu schaffen, ziehst du die Fähnchen auf die Kreise in den Ländern. Bleibt das Fähnchen stecken, war deine Lösung richtig und du kannst per Klick auf die Flagge die Hymne des Landes abspielen. Ansonsten versuchst du es einfach mit einem anderen Land oder einem anderen Fähnchen.",
+		"Weiter geht es mit dem zweiten Teil Europas und neuen Flaggen!",
+		"Auf nach Westeuropa! Mal hören, wie die Hymnen hier klingen.",
+		"Das Beste kommt zum Schluss! Westeuropas Flaggen und Hymnen warten auf dich."
+		
 	],
-	"ende1": "Sehr gut gemacht! Westeuropa hat nun schon Länder. Jetzt wird es allerdings ein bisschen schwieriger, denn auch die anderen Teile Europas möchten ihre Länder zurückbekommen.",
+	"ende1": [
+		"Sehr gut gemacht! Westeuropa hat nun schon seine Flaggen zurück. Strenge dich weiter an, denn auch die anderen Teile Europas möchten ihre Flaggen wiedersehen.",
+		"Super! Westeuropa freut sich nun auch über seine Flaggen. Jetzt fehlen nur noch zwei Teile Europas.",
+		"Perfekt! Westeuropa hat nun auch Flaggen. Beende das Spiel mit dem letzten Teil Europas."
+	],
 	"count" : "9 ",
 	"images" : [
 		"gfx/big/westeuropa/WestEuropa_mit_Grenzen.png",

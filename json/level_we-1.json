@@ -6,10 +6,16 @@
 	"bgx" : "250",
 	"bgy" : "-200",
 	"script": [
-		"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt.",
-		"Nun wartet der zweite Teil Europas mit neuen spannenden Ländern auf dich"
+		"Wenn du weißt, wo sich ein Land befindet, ziehe einfach das Puzzle-Teil an die richtige Stelle auf der Karte. Bleibt das Teil auf der Karte hängen, war deine Idee richtig und du kannst per Klick auf das Land mehr erfahren. Sonst versuchst du es einfach noch einmal, dann schaffst du es bestimmt.",
+		"Nun wartet der zweite Teil Europas mit neuen spannenden Ländern auf dich.",
+		"Auf nach Westeuropa! Mal sehen, welche Länder es hier zu entdecken gibt.",
+		"Endspurt! Westeuropas Länder werden dir gefallen!"
 	],
-	"ende1": "Sehr gut gemacht! Westeuropa hat nun schon Länder. Jetzt wird es allerdings ein bisschen schwieriger, denn auch die anderen Teile Europas möchten ihre Länder zurückbekommen.",
+	"ende1": [
+		"Sehr gut gemacht! Westeuropa hat nun schon Länder. Jetzt wird es allerdings ein bisschen schwieriger, denn auch die anderen Teile Europas möchten ihre Länder zurückbekommen.",
+		"Super! Westeuropa hat nun auch Länder. Jetzt fehlen nur noch zwei Teile Europas.",
+		"Perfekt! Westeuropa hat nun auch Länder. Beende dieses Level mit dem letzten Teil Europas."
+	],
 	"count" : "9 ",
 	"images" : [
 		"gfx/big/westeuropa/Westeuropa-0000.png",
