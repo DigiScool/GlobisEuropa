@@ -1,5 +1,5 @@
 {
-	"id":"0",
+	"id":"3",
 	"shape": "we_container",
 	"headline" : "Nordeuropa Level 2",
 	"bg" : "gfx/big/nordeuropa/NordEuropa_mit_Grenzen.png",
@@ -32,7 +32,7 @@
 			"hitshape" : { "x" : "620", "y" : "360", "w" : "10"},
 			"position": { "x" : "580", "y" : "240" },
 			"country" : "Dänemark",
-			"mp3": ""
+			"mp3": "mp3/nordeuropa/Denmark.mp3"
 			
 		},
 		{
@@ -41,7 +41,7 @@
 			"hitshape" : { "x" : "890", "y" : "285", "w" : "10"},
 			"position": { "x" : "850", "y" : "160" },
 			"country" : "Estland",
-			"mp3": ""
+			"mp3": "mp3/nordeuropa/Estonia.mp3"
 			
 		},
 		{
@@ -50,7 +50,7 @@
 			"hitshape" : { "x" : "880", "y" : "150", "w" : "10"},
 			"position": { "x" : "840", "y" : "35" },
 			"country" : "Finland",
-			"mp3": ""
+			"mp3": "mp3/nordeuropa/Finland.mp3"
 			
 		},
 		{
@@ -59,7 +59,7 @@
 			"hitshape" : { "x" : "340", "y" : "110", "w" : "10"},
 			"position": { "x" : "300", "y" : "-10" },
 			"country" : "Island",
-			"mp3": ""
+			"mp3": "mp3/nordeuropa/Iceland.mp3"
 			
 		},
 		{
@@ -68,7 +68,7 @@
 			"hitshape" : { "x" : "890", "y" : "330", "w" : "10"},
 			"position": { "x" : "850", "y" : "210" },
 			"country" : "Lettland",
-			"mp3": ""
+			"mp3": "mp3/nordeuropa/Latvia.mp3"
 			
 		},
 		{
@@ -77,16 +77,16 @@
 			"hitshape" : { "x" : "880", "y" : "380", "w" : "10"},
 			"position": { "x" : "840", "y" : "255" },
 			"country" : "Litauen",
-			"mp3": ""
+			"mp3": "mp3/nordeuropa/Lithuania.mp3"
 			
 		},
 		{
 			"id": "6",
 			"part" : "gfx/little/nordeuropa/flaggen/NOR.png",
 			"hitshape" : { "x" : "600", "y" : "230", "w" : "10"},
-			"position": { "x" : "571", "y" : "117" },
+			"position": { "x" : "565", "y" : "105" },
 			"country" : "Norwegen",
-			"mp3": ""
+			"mp3": "mp3/nordeuropa/Norway.mp3"
 			
 		},
 		{
@@ -95,7 +95,7 @@
 			"hitshape" : { "x" : "730", "y" : "300", "w" : "10"},
 			"position": { "x" : "690", "y" : "185" },
 			"country" : "Schweden",
-			"mp3": ""
+			"mp3": "mp3/nordeuropa/Sweden.mp3"
 			
 		}
 	]

@@ -7,9 +7,9 @@ define(['jquery'],function($){
 			// Array zum speichern des Fortschrittes
 			this.procress = new Array(4);
 			this.procress[0] = 0;	// Westeuropa
-			this.procress[1] = 0;	// Osteuropa
-			this.procress[2] = 0;	// Südeuropa
-			this.procress[3] = 0;	// Nordeuropa
+			this.procress[1] = 1;	// Osteuropa
+			this.procress[2] = 1;	// Südeuropa
+			this.procress[3] = 1;	// Nordeuropa
 
 			// aktueller Abschnitt
 			this.stage = 1;
@@ -150,7 +150,8 @@ define(['jquery'],function($){
 			this.procress[this.level.id]++;
 			this.level_played++;
 
-
+			console.log('Procress: ' + this.procress);
+			console.log('Stage: ' + this.stage);
 			$('#button_home').addClass('hide');
 			this.app.setGameState("levelDone");
 		}

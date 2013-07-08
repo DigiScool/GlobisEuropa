@@ -112,6 +112,7 @@ define(['jquery'],function($){
  						
  						// Zeige Fortschritt auf Gbovi
  						self.engine.showTheProcress(function(){
+ 							
  							var count = 0;
  						
  							for(var i= 0; i < self.level.procress.length; i++){
@@ -121,13 +122,22 @@ define(['jquery'],function($){
 
  							if((count%4) == 0){
  								self.level.stage++;
+ 								console.log('Stage: ' + self.level.stage);
+ 								
+ 								
  								self.engine.startAnimation('globi_menue_popDown',function(){
- 									$('#bubble_selectshape_intro').children('p').html("Prima! Die Länder Europas sind wieder alle auf der Karte zu sehen. Ohne deine Hilfe hätte ich das nie geschafft.");
- 									$('#bubble_selectshape_intro').removeClass('hide');
- 						
- 									// ZUrück_Button des Auswahlmenües
- 									$('#button_zurueck').removeClass('hide');
- 								})
+ 									if( self.level.stage == 2){
+ 										$('#bubble_intro_text').children('p').html("Prima! Die Länder Europas sind wieder alle auf der Karte zu sehen. Ohne deine Hilfe hätte ich das nie geschafft.");
+ 										$('#bubble_intro_text').removeClass('hide');
+
+ 										
+ 									}
+ 									if(self.level.stage == 3){
+ 										$('#headline').html('');
+ 										$('#final').removeClass('hide');
+ 									}
+ 								}); 
+
  							} else {
  								if( self.level.stage == 1) {
  									$('#bubble_selectshape_intro').children('p').html(self.level.level.ende1);	
@@ -371,6 +381,7 @@ define(['jquery'],function($){
 
  		hideInfoText: function(){
  			$('#bubble_intro_text').addClass('hide');
+ 			this.engine.startAnimation("globi_idle");
  			this.engine.enableEvents_Hauptmenue();
  		}
 	});

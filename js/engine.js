@@ -834,60 +834,60 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					schon den Abschnitt fertig haben
 				*/
 				if(this.level.procress[0] == 1){
-						var newContainer = this.globiObjekt.getWestEurope('#68ba5b','#68ba5b');
-						// hole den Index des alten Containers
-						var oldIndex = this.globi.getChildIndex(this.globiObjekt.we_container);
-						// removce den alten container
-						this.globi.removeChild(this.globiObjekt.we_container);
-						// füge den neuen Hinzu
-						this.globi.addChild(newContainer);
-						// switche den neuen Container an die alte Stelle
-						this.globi.setChildIndex(newContainer, oldIndex + 1);
-						// switche die augen wieder nach oben
-						this.globi.setChildIndex(this.globiObjekt.container_augen,0);						
+					
+					var child = this.globiObjekt.getWestEurope('#68ba5b','#68ba5b');
+					this.globi.addChildAt(child,3);
+					// addChildAt schiebt alten Container einen Index-Platz nach oben. 
+					// -> Entfernen des alten
+					this.globi.removeChildAt(4);
+											
+				} 
+				if (this.level.procress[0] == 2){
+					
+					var child = this.globiObjekt.getWestEurope('#76d353','#457c3d');
+					this.globi.addChildAt(child,3);
+					this.globi.removeChildAt(4);					
 				}
 
 				if(this.level.procress[1] == 1){
 						
-						var newContainer = this.globiObjekt.getOstEurope('#68ba5b','#68ba5b');
-						// hole den Index des alten Containers
-						var oldIndex = this.globi.getChildIndex(this.globiObjekt.oe_container);
-						// removce den alten container
-						this.globi.removeChild(this.globiObjekt.oe_container);
-						// füge den neuen Hinzu
-						this.globi.addChild(newContainer);
-						// switche den neuen Container an die alte Stelle
-						this.globi.setChildIndex(newContainer, oldIndex + 1);
-							// switche die augen wieder nach oben
-						this.globi.setChildIndex(this.globiObjekt.container_augen,0);	
+					var child = this.globiObjekt.getOstEurope('#68ba5b','#68ba5b');
+					this.globi.addChildAt(child,2);
+					this.globi.removeChildAt(3);
+				} 
+				 if (this.level.procress[1] == 2){
+					
+					var child = this.globiObjekt.getOstEurope('#76d353','#457c3d');
+					this.globi.addChildAt(child,2);
+					this.globi.removeChildAt(3);
+												
 				}
 
 				if(this.level.procress[2] == 1){
 						
-						var newContainer = this.globiObjekt.getSouthEurope('#68ba5b','#68ba5b');
-						// hole den Index des alten Containers
-						var oldIndex = this.globi.getChildIndex(this.globiObjekt.se_container);
-						// removce den alten container
-						this.globi.removeChild(this.globiObjekt.se_container);
-						// füge den neuen Hinzu
-						this.globi.addChild(newContainer);
-						// switche den neuen Container an die alte Stelle
-						this.globi.setChildIndex(newContainer, oldIndex + 1 );	
+					var child = this.globiObjekt.getSouthEurope('#68ba5b','#68ba5b');
+					this.globi.addChildAt(child,4);
+					this.globi.removeChildAt(5);	
+
+				}
+				if (this.level.procress[2] == 2){
+					
+					var child = this.globiObjekt.getSouthEurope('#76d353','#457c3d');
+					this.globi.addChildAt(child,4);
+					this.globi.removeChildAt(5);						
 				}
 
 				if(this.level.procress[3] == 1){
 						
-						var newContainer = this.globiObjekt.getNorthEurope('#68ba5b','#68ba5b');
-						// hole den Index des alten Containers
-						var oldIndex = this.globi.getChildIndex(this.globiObjekt.ne_container);
-						// removce den alten container
-						this.globi.removeChild(this.globiObjekt.ne_container);
-						// füge den neuen Hinzu
-						this.globi.addChild(newContainer);
-						// switche den neuen Container an die alte Stelle
-						this.globi.setChildIndex(newContainer, oldIndex + 1);
-							// switche die augen wieder nach oben
-						this.globi.setChildIndex(this.globiObjekt.container_augen,0);	
+					var child = this.globiObjekt.getNorthEurope('#68ba5b','#68ba5b');
+					this.globi.addChildAt(child,5);
+					this.globi.removeChildAt(6);
+				}
+				else if (this.level.procress[3] == 2){
+					
+					var child = this.globiObjekt.getNorthEurope('#76d353','#457c3d');
+					this.globi.addChildAt(child,5);
+					this.globi.removeChildAt(6);							
 				}
 
 				// Debugausgabe
