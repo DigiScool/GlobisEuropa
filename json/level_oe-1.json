@@ -28,7 +28,25 @@
 		"gfx/little/osteuropa/ROM.png",
 		"gfx/little/osteuropa/RUS.png",
 		"gfx/little/osteuropa/SLO.png",
-		"gfx/little/osteuropa/UKR.png"
+		"gfx/little/osteuropa/UKR.png",
+		"gfx/sights/osteuropa/bridge.jpg",
+		"gfx/sights/osteuropa/house.jpg",
+		"gfx/sights/osteuropa/castle.jpg",
+		"gfx/sights/osteuropa/wawel.jpg",
+		"gfx/sights/osteuropa/bratislava.jpg",
+		"gfx/sights/osteuropa/rysy.jpg",
+		"gfx/sights/osteuropa/brest.jpg",
+		"gfx/sights/osteuropa/mir.jpg",
+		"gfx/sights/osteuropa/basilius.jpg",
+		"gfx/sights/osteuropa/kreml.jpg",
+		"gfx/sights/osteuropa/pochaev.jpg",
+		"gfx/sights/osteuropa/sofienkathedrale.jpg",
+		"gfx/sights/osteuropa/budapest.jpg",
+		"gfx/sights/osteuropa/kettenbrücke.jpg",
+		"gfx/sights/osteuropa/peles.jpg",
+		"gfx/sights/osteuropa/hunyad.jpg",
+		"gfx/sights/osteuropa/kiszyniow.jpg",
+		"gfx/sights/osteuropa/chisinau.jpg"
 	],
 	"puzzle" : [
 		{
@@ -60,7 +78,9 @@
 				"die Slowakei (252 km) im Osten und Südosten und Österreich (466 km) im Süden. Auf den Gipfeln vom Böhmerwald, Böhmischen Mittelgebirge, den",
 				"Beskiden und dem ersten Ausläufer der Karpaten verläuft die Europäische Wasserscheide.<br><br>",
 				"Die Beckenlandschaften sind sehr fruchtbar. So wird in Böhmen, vor allem im Saazer Becken, Hopfen angebaut (Böhmen ist eines der",
-				"traditionellen Bierbrauerländer), in Mähren wird Wein angebaut.<br><br>"
+				"traditionellen Bierbrauerländer), in Mähren wird Wein angebaut.<br><br>",
+				"<img style='margin-right: 5px;' width='230px' height='207px' src='./gfx/sights/osteuropa/bridge.jpg' title='Karlsbrücke' />",
+				"<img width='315px' height='207px' src='./gfx/sights/osteuropa/house.jpg' title='Tanzendes Haus' />"
 			]
 		},
 		{
@@ -95,7 +115,9 @@
 				"in der Literatur jeweils leicht abweichend abgegrenzt.<br><br>",
 				"Die Küstenlinie verläuft im Norden Polens an der Ostsee. Die Küstenniederungen sind schmal und um das Stettiner und das Frische Haff",
 				"zungenförmig ausgeweitet. Die Landschaften bestehen aus flachen, breiten Tälern und ausgedehnten Grundmoränenplatten. Vor allem sandige,",
-				"lehmhaltige und Moorböden dominieren die Bodenarten.<br><br>"
+				"lehmhaltige und Moorböden dominieren die Bodenarten.<br><br>",
+				"<img style='margin-right: 5px;' width='321px' height='207px' src='./gfx/sights/osteuropa/castle.jpg' title='Marienburg (Ordensburg)' />",
+				"<img width='347px' height='207px' src='./gfx/sights/osteuropa/wawel.jpg' title='Wawel' />"
 			]
 		},
 		{
@@ -132,7 +154,9 @@
 				"Die Mittelgebirge sind großteils bewaldet, hingegen zeigt das Land vor allem in der Tatra ein hochalpines Bild. Nennenswertes Flachland gibt",
 				"es nur im Südwesten (Donautiefland) im Bereich Bratislava und Nitra und im Südosten (Ostslowakisches Tiefland östlich von Košice).<br><br>",
 				"Die größten Flüsse der Slowakei sind die Donau, Waag, March und Gran. Die höchste Erhebung ist die Gerlsdorfer Spitze in der Hohen Tatra mit", 
-				"2655 Meter.<br><br>"
+				"2655 Meter.<br><br>",
+				"<img style='margin-right: 5px;' width='330px' height='207px' src='./gfx/sights/osteuropa/bratislava.jpg' title='Burg Bratislava' />",
+				"<img width='300px' height='207px' src='./gfx/sights/osteuropa/rysy.jpg' title='Rysy' />"
 			]
 		},
 		{
@@ -163,7 +187,9 @@
 				"breiten, naturbelassenen Flüssen durchzogen. Etwa 70 % des Landes entwässern nach Süden zum Prypjat und zum Dnepr, der weiter durch die",
 				"Ukraine ins Schwarze Meer fließt.<br><br>",
 				"Im Süden liegen die Pripjatsümpfe. 30 % des Landes sind bewaldet. Die höchste Erhebung ist die Dsjarschynskaja Hara (345 m) im Weißrussischen",
-				"Höhenrücken, die tiefsten Flussniederungen liegen etwa 50 Meter über dem Meer.<br><br>"
+				"Höhenrücken, die tiefsten Flussniederungen liegen etwa 50 Meter über dem Meer.<br><br>",
+				"<img style='margin-right: 5px;' width='284px' height='207px' src='./gfx/sights/osteuropa/brest.jpg' title='Brester Festung' />",
+				"<img width='319px' height='207px' src='./gfx/sights/osteuropa/mir.jpg' title='Schloss Mir' />"
 			]
 		},
 		{
@@ -199,7 +225,9 @@
 				"(Baikal- und Ladogasee). Bis auf die Tropen sind alle Klimazonen vertreten. Russland umfasst elf Prozent der Weltlandfläche, das entspricht",
 				"in etwa der Fläche Australiens und Europas zusammen. Von Westen nach Osten erstreckt sich Russland auf einer Gesamtlänge von 9000 Kilometern,",
 				"von 19° östlicher bis 169° westlicher Länge über zwei Kontinente. Auf Asien entfallen 75 Prozent der Landfläche, auf Europa 25 Prozent. Von",
-				"Norden nach Süden beträgt die Ausdehnung bis zu 4000 Kilometer, vom 48. bis zum 81. Grad nördlicher Breite.<br><br>"
+				"Norden nach Süden beträgt die Ausdehnung bis zu 4000 Kilometer, vom 48. bis zum 81. Grad nördlicher Breite.<br><br>",
+				"<img style='margin-right: 5px;' width='284px' height='207px' src='./gfx/sights/osteuropa/basilius.jpg' title='Basilius-Kathedrale' />",
+				"<img width='284px' height='207px' src='./gfx/sights/osteuropa/kreml.jpg' title='Moskauer Kreml' />"
 			]
 		},
 		{
@@ -231,7 +259,9 @@
 				"gezählt. Die restlichen 5 % zählen zu Mitteleuropa (die Karpaten und Lemberg) und Südosteuropa (Odessa und die Halbinsel Krim).<br><br>",
 				"Andere Landschaftsräume außerhalb der großen Ebene finden sich lediglich in der südlichen Westukraine, wo das Land Anteil an den Waldkarpaten",
 				"und an der Pannonischen Ebene hat, sowie im äußersten Süden. Der höchste Berg des Landes ist der Howerla in den Ostkarpaten, welcher eine",
-				"Höhe von 2061 Metern erreicht. Die höchste Erhebung der Krim ist der Roman Kosch mit 1545 Metern.<br><br>"
+				"Höhe von 2061 Metern erreicht. Die höchste Erhebung der Krim ist der Roman Kosch mit 1545 Metern.<br><br>",
+				"<img style='margin-right: 5px;' width='320px' height='207px' src='./gfx/sights/osteuropa/pochaev.jpg' title='Heiliges Himmelfahrtskloster' />",
+				"<img width='281px' height='207px' src='./gfx/sights/osteuropa/sofienkathedrale.jpg' title='Sophienkathedrale (Kiew)' />"
 			]
 		},
 		{
@@ -266,7 +296,9 @@
 				"zerschnittene Platten. Durch fruchtbare Lössböden und auf Grund des milden Klimas kann intensiv Landwirtschaft betrieben werden.<br><br>",
 				"Die ungarischen Mittelgebirge verlaufen vom Zemplén-Gebirge im Nordosten bis zum Bakonywald im Westen. Fast alle Mittelgebirge in Ungarn",
 				"tragen in höheren Lagen dichten Laubwald. Die Hänge und Becken sind mit fruchtbaren Böden bedeckt, die Acker-, Obst- und Weinbau ermöglichen.",
-				"Thermalquellen, die an den Rändern der Mittelgebirge auftreten, sind Zeugnisse eines vergangenen und lebhaften Vulkanismus.<br><br>"
+				"Thermalquellen, die an den Rändern der Mittelgebirge auftreten, sind Zeugnisse eines vergangenen und lebhaften Vulkanismus.<br><br>",
+				"<img style='margin-right: 5px;' width='330px' height='207px' src='./gfx/sights/osteuropa/budapest.jpg' title='Burgpalast' />",
+				"<img width='320px' height='207px' src='./gfx/sights/osteuropa/kettenbrücke.jpg' title='Kettenbrücke (Budapest)' />"
 			]
 		},
 		{
@@ -298,7 +330,9 @@
 				"Rumänien liegt in der Übergangszone zwischen Mittel-, Süd- und Osteuropa. Die Staatsgrenzen sind insgesamt 3.150 km lang. Davon entfallen",
 				"1.817 km auf Flüsse, vor allem auf die Donau, die Rumänien nach Süden gegen Bulgarien und nach Südwesten gegenüber Serbien abgrenzt. Die",
 				"rumänische Küstenlinie am Schwarzen Meer ist 225 km lang. Die Grenze zwischen Rumänien und der Ukraine im Norden und Osten wird durch",
-				"Moldawien unterbrochen. Eine weitere Außengrenze besteht im Westen zu Ungarn.<br><br>"
+				"Moldawien unterbrochen. Eine weitere Außengrenze besteht im Westen zu Ungarn.<br><br>",
+				"<img style='margin-right: 5px;' width='299px' height='207px' src='./gfx/sights/osteuropa/peles.jpg' title='Schloss Peleș' />",
+				"<img width='330px' height='207px' src='./gfx/sights/osteuropa/hunyad.jpg' title='Burg Hunedoara' />"
 			]
 		},
 		{
@@ -335,7 +369,9 @@
 				"Transnistrien-Konflikts als Transnistrien abgespalten. Der südlichste Punkt ist Giurgiulești, an dem Moldawien einen etwa 600 Meter langen",
 				"Zugang zur Donau besitzt.<br><br>",
 				"Der Name der Republik Moldau (Moldawien) leitet sich vom Fluss Moldova ab, obwohl das heutige Staatsgebiet nicht mehr von der Moldova berührt",
-				"wird.<br><br>"
+				"wird.<br><br>",
+				"<img style='margin-right: 5px;' width='284px' height='207px' src='./gfx/sights/osteuropa/kiszyniow.jpg' title='Kathedrale der Geburt des Herrn (Chișinău)' />",
+				"<img width='284px' height='207px' src='./gfx/sights/osteuropa/chisinau.jpg' title='Triumphbogen (Chișinău)' />"
 			]
 		}
 	]
