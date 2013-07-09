@@ -736,8 +736,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.stage.clear();
 			this.stage.removeAllChildren();
 			this.stage.removeAllEventListeners();
-			document.removeEventListener("keydown");
-			document.removeEventListener("keydup");
+			document.onkeydown = null;
 			// Säubere die Ticker
 			this.anim = [];
 			this.levelanim = [];
