@@ -122,12 +122,14 @@ define(['jquery'],function($){
 
  							if((count%4) == 0){
  								self.level.stage++;
+ 								self.level.level_played = 0;
  								console.log('Stage: ' + self.level.stage);
  								
  								
  								self.engine.startAnimation('globi_menue_popDown',function(){
  									if( self.level.stage == 2){
  										$('#bubble_intro_text').children('p').html("Prima! Die Länder Europas sind wieder alle auf der Karte zu sehen. Ohne deine Hilfe hätte ich das nie geschafft.");
+ 										$('#bubble_selectshape_intro').children('p').html("Toll, der Fleck auf meinem Bauch sieht nun auch nicht mehr so schlimm aus. Aber wie soll man die vielen Länder Europas nun unterscheiden? Ich bin mir sicher, die Länder hatten Flaggen. Aber welches Land hatte welche Fahne? Oje, ich bin schon wieder völlig hilflos. Aber du kannst mir doch hoffentlich helfen, oder?");
  										$('#bubble_intro_text').removeClass('hide');
 
  										
@@ -139,9 +141,10 @@ define(['jquery'],function($){
  								}); 
 
  							} else {
- 								if( self.level.stage == 1) {
- 									$('#bubble_selectshape_intro').children('p').html(self.level.level.ende1);	
- 								}
+ 								console.log('Stage noch nicht geschafft [Stage: '+self.level.stage+'][Abschnitte gespielt: '+self.level.level_played+']');
+ 								
+ 								$('#bubble_selectshape_intro').children('p').html(self.level.level.ende[self.level.level_played - 1]);	
+ 								
 
  								$('#bubble_selectshape_intro').removeClass('hide');
  						
