@@ -1,6 +1,6 @@
 /*
 *	Spielt Animationen ab. 
-*	FÃ¼gt Objekte der Stage hinzu
+*	Fügt Objekte der Stage hinzu
 *	Arbeitet nur mit der Canvas. Keine CSS-Animationen,  etc.
 */
 
@@ -23,7 +23,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			createjs.Ticker.addListener(this);
 
 		
-			// Speicher fÃ¼r die laufende Animationen
+			// Speicher für die laufende Animationen
 			this.anim = [];
 			this.levelanim = [];
 			this.levelanim_buffer = [];
@@ -35,17 +35,17 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.introShow = false;
 			/////////////////////////
 		
-			// Container fÃ¼r Hauptmenue
+			// Container für Hauptmenue
 			this.hmContainer = new createjs.Container();
 			this.hm_bg = null;
 			this.globiObjekt = new Globi();
 			this.globi = this.globiObjekt.getContainer();
 
 				
-			// Variablen fÃ¼r die Animationen
+			// Variablen für die Animationen
 			this.idle_globi = 1;
 
-			// container fÃ¼r die Ringanimation im Level
+			// container für die Ringanimation im Level
 			this.dropring_container = new createjs.Container();
 
 
@@ -57,20 +57,20 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.level = level;
 			this.app = app;
 
-			this.SHOW_HITSHAPES = false;
+			this.SHOW_HITSHAPES = true;
 		},
 
-		// Callback -Funktion fÃ¼r die Frameloop
+		// Callback -Funktion für die Frameloop
 		// Zeigt die Animation an, die im Array anim gespeichert ist
 		tick: function(){
 			
 			if(this.anim[0]) { 
 				
-				// Rufe Funktion auf und Ã¼bergib Callback
+				// Rufe Funktion auf und übergib Callback
 				this[this.anim[0][0]](this.anim[0][1]) 
 			}
 
-			// Neuer Stack fÃ¼r Animationen
+			// Neuer Stack für Animationen
 
 			for(var i  = 0 ; i < this.levelanim.length; i++){
 				
@@ -170,7 +170,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			
 			var self = this;
 			
-			// Container fÃ¼r das Level
+			// Container für das Level
 			this.container_bg = new createjs.Container();
 			this.container_puzzleparts = new createjs.Container();
 			this.container_hitshapes = new createjs.Container();
@@ -269,7 +269,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 
 			this.container_bg.addChild(lvl_bg);
-			// Seitenleiste fÃ¼r die Puzzle-teile
+			// Seitenleiste für die Puzzle-teile
 			var menue_bg = new createjs.Graphics();
 			menue_bg
 			.beginFill(createjs.Graphics.getRGB(245,242,222))
@@ -286,10 +286,10 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 			
 			///////////////////////////////////// 
-			// Puzzle-Teile Bilder fÃ¼r die Seitenleiste laden
-			// eventhandler hinzufÃ¼gen
+			// Puzzle-Teile Bilder für die Seitenleiste laden
+			// eventhandler hinzufügen
 
-			// Variable zum Berechnen der Position im MenÃ¼
+			// Variable zum Berechnen der Position im Menü
 			var entryPosition = 50;
 			
 			if(puzzle){
@@ -309,7 +309,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						menueEntry.scaleY = 0.5;
 					}
 
-					// Position des nÃ¤chsten MenÃ¼eintrages
+					// Position des nächsten Menüeintrages
 					entryPosition += (menueEntry.image.height * 0.5) + 50;
 
 					// hitshape for the puzzlepart
@@ -398,7 +398,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 										dndPart .x = hitShape.posCorrection.x;
 										dndPart .y = hitShape.posCorrection.y;
 										
-										// GrÃ¼nfilter nur bei Level 1
+										// Grünfilter nur bei Level 1
 										if(self.level.stage == 1){
 											greenFilter = new createjs.ColorFilter(0.5,0.9,0.5,1);
 											dndPart.filters = [
@@ -624,7 +624,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 						self.app.changeCursor('pointer');
 						self.globi.addChild(mouseover_se);
 						self.app.positionBubble("#bubble_selectshape",ev.stageX + 10,ev.stageY);
-						self.app.setDOMText("#bubble_selectshape_txt",'SÃ¼deuropa');
+						self.app.setDOMText("#bubble_selectshape_txt",'Südeuropa');
 						self.app.addBubble("#bubble_selectshape");
 						
 					
@@ -727,18 +727,18 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 		},
 
 
-		// SÃ¤ubere die Pinnwand, wenn nichts animiert / angezeigt
+		// Säubere die Pinnwand, wenn nichts animiert / angezeigt
 		// werden muss
 		// Performance Verbesserung
 		clearStage: function(){
 
-			console.log('SÃ¤ubere die Stage');
+			console.log('Säubere die Stage');
 			this.stage.clear();
 			this.stage.removeAllChildren();
 			this.stage.removeAllEventListeners();
 			document.removeEventListener("keydown");
 			document.removeEventListener("keydup");
-			// SÃ¤ubere die Ticker
+			// Säubere die Ticker
 			this.anim = [];
 			this.levelanim = [];
 			this.levelanim_buffer = [];
@@ -800,7 +800,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			image.scaleY = 0.8;
 			this.intro.push(image);
 
-			// Time holen, um rauszufinden, wann nÃ¤chstes Bild 
+			// Time holen, um rauszufinden, wann nächstes Bild 
 			// gespielt werden soll
 			this.introTime = createjs.Ticker.getTime();
 			this.stage.addChild(this.intro.shift());
@@ -818,7 +818,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 		
 
-		// FÃ¼gt eine Animation der anim-Liste hinzu
+		// Fügt eine Animation der anim-Liste hinzu
 		startAnimation: function(animation,callback){
 			
 			var save = [animation,callback]
@@ -828,7 +828,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			this.anim[0] = save;
 		},
 
-		// LÃ¶scht eine Animation aus der anim-Liste
+		// Löscht eine Animation aus der anim-Liste
 		stopAnimation: function(){
 
 
@@ -841,7 +841,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 			// Auf welcher Stage befinden wir uns ?
 			var stage  = this.level.stage;
 
-			// VerÃ¤ndere die AbschnittsContainer auf Globi
+			// Verändere die AbschnittsContainer auf Globi
 			
 				
 				/* Abschnitt 1
@@ -969,7 +969,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				radius += 20;
 				if(radius > 150){
 
-					// Ring-"Lebensdauer" Ã¼berschritten
+					// Ring-"Lebensdauer" überschritten
 					// entfernen
 					self.remove(ringShape);
 					// nicht wieder in den Update-Stackaufnehmen
@@ -991,7 +991,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 				}
 			};
 
-			// update-funktion hinzufÃ¼gen
+			// update-funktion hinzufügen
 			this.levelanim.push(update);
 		},
 
@@ -1000,7 +1000,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 		},
 		
 		/**************************************/
-		/* Animationen fÃ¼r Globi im HauptmenÃ¼ */
+		/* Animationen für Globi im Hauptmenü */
 
 		globi_idle: function(){
 			this.globi.y += this.idle_globi;
@@ -1083,7 +1083,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 		globi_transition_toLevel: function(callback){
 
-			// Skaliere Globi auf eine bestimmte GrÃ¶ÃŸe
+			// Skaliere Globi auf eine bestimmte Größe
 			if( this.globi.scaleX >= 3.5){
 				
 				// Animation stoppen
@@ -1096,7 +1096,7 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 
 			} else {
 
-				// VergrÃ¶ÃŸere Globi
+				// Vergrößere Globi
 				this.globi.scaleX += 0.2;
 				this.globi.scaleY += 0.2;
 			}

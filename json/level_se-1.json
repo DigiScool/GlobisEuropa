@@ -79,7 +79,7 @@
 		{
 			"id": "0" , 
 			"part": "gfx/little/suedeuropa/ALB.png",
-			"hitshape" : { "x" : "850", "y" : "400", "w" : "40", "h" : "160" },
+			"hitshape" : { "x" : "866", "y" : "425", "w" : "30", "h" : "160" },
 			"position": { "x" : "840", "y" : "370" },
 			"country" : "Albanien",
 			"facts": [
@@ -116,7 +116,7 @@
 		{
 			"id": "1" , 
 			"part": "gfx/little/suedeuropa/BOSHER.png",
-			"hitshape" : { "x" : "780", "y" : "320", "w" : "30", "h" : "160" },
+			"hitshape" : { "x" : "805", "y" : "340", "w" : "30", "h" : "160" },
 			"position": { "x" : "748", "y" : "292" },
 			"country" : "Bosnien und Herzegowina",
 			"facts": [
@@ -152,7 +152,7 @@
 		{
 			"id": "2" , 
 			"part": "gfx/little/suedeuropa/BUL.png",
-			"hitshape" : { "x" : "970", "y" : "350", "w" : "50", "h" : "160" },
+			"hitshape" : { "x" : "990", "y" : "360", "w" : "50", "h" : "160" },
 			"position": { "x" : "905", "y" : "298" },
 			"country" : "Bulgarien",
 			"facts": [
@@ -186,7 +186,7 @@
 		{
 			"id": "3" , 
 			"part": "gfx/little/suedeuropa/CRO.png",
-			"hitshape" : { "x" : "740", "y" : "300", "w" : "30", "h" : "160" },
+			"hitshape" : { "x" : "780", "y" : "320", "w" : "30", "h" : "160" },
 			"position": { "x" : "697", "y" : "254" },
 			"country" : "Kroatien",
 			"facts": [
@@ -223,7 +223,7 @@
 		{
 			"id": "4" , 
 			"part": "gfx/little/suedeuropa/CYP.png",
-			"hitshape" : { "x" : "1185", "y" : "520", "w" : "40", "h" : "160" },
+			"hitshape" : { "x" : "1200", "y" : "520", "w" : "20", "h" : "160" },
 			"position": { "x" : "1165", "y" : "494" },
 			"country" : "Zypern",
 			"facts": [
@@ -259,7 +259,7 @@
 		{
 			"id": "5" , 
 			"part": "gfx/little/suedeuropa/GRE.png",
-			"hitshape" : { "x" : "900", "y" : "470", "w" : "60", "h" : "160" },
+			"hitshape" : { "x" : "966", "y" : "500", "w" : "50", "h" : "160" },
 			"position": { "x" : "863", "y" : "372" },
 			"country" : "Griechenland",
 			"facts": [
@@ -294,7 +294,7 @@
 		{
 			"id": "6" , 
 			"part": "gfx/little/suedeuropa/ITA.png",
-			"hitshape" : { "x" : "620", "y" : "390", "w" : "120", "h" : "10" },
+			"hitshape" : { "x" : "720", "y" : "435", "w" : "70", "h" : "10" },
 			"position": { "x" : "546", "y" : "241" },
 			"country" : "Italien",
 			"facts": [
@@ -329,7 +329,7 @@
 		{
 			"id": "7" , 
 			"part": "gfx/little/suedeuropa/KOS.png",
-			"hitshape" : { "x" : "875", "y" : "360", "w" : "30", "h" : "160" },
+			"hitshape" : { "x" : "880", "y" : "370", "w" : "20", "h" : "160" },
 			"position": { "x" : "854", "y" : "346" },
 			"country" : "Kosovo",
 			"facts": [
@@ -404,7 +404,7 @@
 		{
 			"id": "9" , 
 			"part": "gfx/little/suedeuropa/MON.png",
-			"hitshape" : { "x" : "825", "y" : "360", "w" : "20", "h" : "160" },
+			"hitshape" : { "x" : "840", "y" : "370", "w" : "20", "h" : "160" },
 			"position": { "x" : "813", "y" : "343" },
 			"country" : "Montenegro",
 			"facts": [
@@ -440,7 +440,7 @@
 		{
 			"id": "10" , 
 			"part": "gfx/little/suedeuropa/Portugal.png",
-			"hitshape" : { "x" : "180", "y" : "390", "w" : "60", "h" : "160" },
+			"hitshape" : { "x" : "218", "y" : "420", "w" : "60", "h" : "160" },
 			"position": { "x" : "167", "y" : "329" },
 			"country" : "Portugal",
 			"facts": [
@@ -550,7 +550,7 @@
 		{
 			"id": "13" , 
 			"part": "gfx/little/suedeuropa/Spanien.png",
-			"hitshape" : { "x" : "340", "y" : "430", "w" : "110", "h" : "160" },
+			"hitshape" : { "x" : "370", "y" : "430", "w" : "70", "h" : "160" },
 			"position": { "x" : "198", "y" : "287" },
 			"country" : "Spanien",
 			"facts": [
@@ -587,7 +587,7 @@
 		{
 			"id": "14" , 
 			"part": "gfx/little/suedeuropa/TUR.png",
-			"hitshape" : { "x" : "1080", "y" : "450", "w" : "110", "h" : "160" },
+			"hitshape" : { "x" : "1204", "y" : "388", "w" : "80" },
 			"position": { "x" : "1002", "y" : "272" },
 			"country" : "Türkei",
 			"facts": [
