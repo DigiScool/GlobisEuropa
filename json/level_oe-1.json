@@ -94,7 +94,7 @@
 		{
 			"id": "1" , 
 			"part": "gfx/little/osteuropa/POL.png",
-			"hitshape" : { "x" : "530", "y" : "280", "w" : "70"},
+			"hitshape" : { "x" : "585", "y" : "340", "w" : "60"},
 			"position": { "x" : "461", "y" : "238" },
 			"country" : "Polen",
 			"facts": [
@@ -131,7 +131,7 @@
 		{
 			"id": "2" , 
 			"part": "gfx/little/osteuropa/SLO.png",
-			"hitshape" : { "x" : "565", "y" : "400", "w" : "40"},
+			"hitshape" : { "x" : "595", "y" : "423", "w" : "50"},
 			"position": { "x" : "525", "y" : "387" },
 			"country" : "Slowakei",
 			"facts": [
@@ -168,7 +168,7 @@
 		{
 			"id": "3" , 
 			"part": "gfx/little/osteuropa/BRS.png",
-			"hitshape" : { "x" : "680", "y" : "260", "w" : "70"},
+			"hitshape" : { "x" : "730", "y" : "265", "w" : "70"},
 			"position": { "x" : "636", "y" : "184" },
 			"country" : "Weißrussland",
 			"facts": [
@@ -201,7 +201,7 @@
 		{
 			"id": "4" , 
 			"part": "gfx/little/osteuropa/RUS.png",
-			"hitshape" : { "x" : "900", "y" : "100", "w" : "200"},
+			"hitshape" : { "x" : "950", "y" : "240", "w" : "150"},
 			"position": { "x" : "564", "y" : "-150" },
 			"country" : "Russland",
 			"facts": [
@@ -239,7 +239,7 @@
 		{
 			"id": "5" , 
 			"part": "gfx/little/osteuropa/UKR.png",
-			"hitshape" : { "x" : "820", "y" : "380", "w" : "90"},
+			"hitshape" : { "x" : "840", "y" : "400", "w" : "90"},
 			"position": { "x" : "633", "y" : "267" },
 			"country" : "Ukraine",
 			"facts": [
@@ -273,8 +273,8 @@
 		{
 			"id": "6" , 
 			"part": "gfx/little/osteuropa/HUN.png",
-			"hitshape" : { "x" : "560", "y" : "470", "w" : "50"},
-			"position": { "x" : "514", "y" : "413" },
+			"hitshape" : { "x" : "600", "y" : "470", "w" : "50"},
+			"position": { "x" : "512", "y" : "415" },
 			"country" : "Ungarn",
 			"facts": [
 				"<h3>Ungarn</h3>",
@@ -310,7 +310,7 @@
 		{
 			"id": "7" , 
 			"part": "gfx/little/osteuropa/ROM.png",
-			"hitshape" : { "x" : "700", "y" : "470", "w" : "70"},
+			"hitshape" : { "x" : "730", "y" : "500", "w" : "70"},
 			"position": { "x" : "601", "y" : "408" },
 			"country" : "Rumänien",
 			"facts": [

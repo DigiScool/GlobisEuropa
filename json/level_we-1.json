@@ -112,7 +112,7 @@
 		{
 			"id": "1" , 
 			"part"	 : "gfx/little/westeuropa/FRA.png",
-			"hitshape" : {"x" : "540","y" : "410","w" : "80","h" : "160" },
+			"hitshape" : {"x" : "550","y" : "430","w" : "90","h" : "160" },
 			"position": {"x" : "430","y" : "291"},
 			"country" : "Frankreich",
 			"facts": [

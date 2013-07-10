@@ -197,7 +197,7 @@
 		{
 			"id": "4" , 
 			"part": "gfx/little/nordeuropa/DAN.png",
-			"hitshape" : { "x" : "620", "y" : "360", "w" : "40"},
+			"hitshape" : { "x" : "650", "y" : "370", "w" : "50"},
 			"position": { "x" : "606", "y" : "326" },
 			"country" : "Dänemark",
 			"facts": [
@@ -269,7 +269,7 @@
 		{
 			"id": "6" , 
 			"part": "gfx/little/nordeuropa/NOR.png",
-			"hitshape" : { "x" : "680", "y" : "130", "w" : "110"},
+			"hitshape" : { "x" : "750", "y" : "180", "w" : "60"},
 			"position": { "x" : "571", "y" : "17" },
 			"country" : "Norwegen",
 			"facts": [
@@ -305,7 +305,7 @@
 		{
 			"id": "7" , 
 			"part": "gfx/little/nordeuropa/SWE.png",
-			"hitshape" : { "x" : "730", "y" : "300", "w" : "105"},
+			"hitshape" : { "x" : "760", "y" : "280", "w" : "65"},
 			"position": { "x" : "662", "y" : "58" },
 			"country" : "Schweden",
 			"facts": [
