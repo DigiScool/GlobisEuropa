@@ -847,6 +847,15 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					gehe die Elemente durch und schaue welche 
 					schon den Abschnitt fertig haben
 				*/
+				if(this.level.procress[0] == 0){
+
+					var child = this.globiObjekt.getWestEurope('#ffffff','#eeeeee');
+					this.globi.addChildAt(child,3);
+					// addChildAt schiebt alten Container einen Index-Platz nach oben. 
+					// -> Entfernen des alten
+					this.globi.removeChildAt(4);
+											
+				}
 				if(this.level.procress[0] == 1){
 					
 					var child = this.globiObjekt.getWestEurope('#68ba5b','#68ba5b');
@@ -863,6 +872,12 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					this.globi.removeChildAt(4);					
 				}
 
+				if(this.level.procress[1] == 0){
+						
+					var child = this.globiObjekt.getOstEurope('#ffffff','#eeeeee');
+					this.globi.addChildAt(child,2);
+					this.globi.removeChildAt(3);
+				} 
 				if(this.level.procress[1] == 1){
 						
 					var child = this.globiObjekt.getOstEurope('#68ba5b','#68ba5b');
@@ -876,7 +891,13 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					this.globi.removeChildAt(3);
 												
 				}
+				if(this.level.procress[2] == 0){
+						
+					var child = this.globiObjekt.getSouthEurope('#ffffff','#eeeeee');
+					this.globi.addChildAt(child,4);
+					this.globi.removeChildAt(5);	
 
+				}
 				if(this.level.procress[2] == 1){
 						
 					var child = this.globiObjekt.getSouthEurope('#68ba5b','#68ba5b');
@@ -889,6 +910,12 @@ define(['globi','lib/filters/BoxBlurFilter','lib/filters/ColorFilter'],function(
 					var child = this.globiObjekt.getSouthEurope('#76d353','#457c3d');
 					this.globi.addChildAt(child,4);
 					this.globi.removeChildAt(5);						
+				}
+				if(this.level.procress[3] == 0){
+						
+					var child = this.globiObjekt.getNorthEurope('#ffffff','#eeeeee');
+					this.globi.addChildAt(child,5);
+					this.globi.removeChildAt(6);
 				}
 
 				if(this.level.procress[3] == 1){

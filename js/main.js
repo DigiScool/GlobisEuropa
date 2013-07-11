@@ -70,6 +70,14 @@ define(['jquery','app'], function($,App){
 				app.hideInfoText();
 			});
 
+			$('#button_praesi_lvl1').click(function(){
+				app.showLevelOne();
+			});
+
+			$('#button_praesi_lvl2').click(function(){
+				app.showLevelTwo();
+			});
+
 
 			console.log('Application erstellt');
 

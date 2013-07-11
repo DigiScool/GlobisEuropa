@@ -24,7 +24,7 @@ div#container {
 	margin: 30px auto;
 }
 
-div#headBar,#footBar{
+div#headBar,#footBar, #praesi{
 	position: relative;
 	width: 100%;
 	height:60px; 

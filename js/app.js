@@ -327,6 +327,14 @@ define(['jquery'],function($){
  				this.engine.stopAnimation('globi_idle');
  				this.engine.startAnimation('globi_menue_popUp');
  			
+ 				
+ 				if(this.level.stage == 1){
+ 					$('#bubble_selectshape_intro').children('p').html("Europa ist aber ganz sch&ouml;n gro&szlig;. Damit dir die Aufgabe nicht zu schwierig wird,unterteile ich sie in drei Teile. Du beginnst mit den L&auml;ndern Nord- und Westeuropas, danach versuchst du die Umrisse S&uuml;deuropas richtig zu platzieren. Und zum Abschluss machst du das Gleiche mit den L&auml;ndern aus Osteuropa.");
+ 				} 
+
+ 				if(this.level.stage == 2){
+ 					$('#bubble_selectshape_intro').children('p').html("Toll, der Fleck auf meinem Bauch sieht nun auch nicht mehr so schlimm aus. Aber wie soll man die vielen Länder Europas nun unterscheiden? Ich bin mir sicher, die Länder hatten Flaggen. Aber welches Land hatte welche Fahne? Oje, ich bin schon wieder völlig hilflos. Aber du kannst mir doch hoffentlich helfen, oder?");
+ 				}
  				$('#bubble_selectshape_intro').removeClass('hide');
  				//$('#bubble_menue_newgame').addClass('slideIn');
  				//$('#bubble_menue_newgame').removeClass('slideOut');
@@ -386,6 +394,26 @@ define(['jquery'],function($){
  			$('#bubble_intro_text').addClass('hide');
  			this.engine.startAnimation("globi_idle");
  			this.engine.enableEvents_Hauptmenue();
+ 		},
+
+ 		showLevelTwo: function(){
+ 			this.level.procress[0] = 1;
+ 			this.level.procress[1] = 1;
+ 			this.level.procress[2] = 1;
+ 			this.level.procress[3] = 1;
+ 			this.level.stage = 2;
+ 			this.level.level_played = 0;
+ 			this.engine.showTheProcress();
+ 		},
+
+ 		showLevelOne: function(){
+ 			this.level.procress[0] = 0;
+ 			this.level.procress[1] = 0;
+ 			this.level.procress[2] = 0;
+ 			this.level.procress[3] = 0;
+ 			this.level.stage = 1;
+ 			this.level.level_played = 0;
+ 			this.engine.showTheProcress();
  		}
 	});
 

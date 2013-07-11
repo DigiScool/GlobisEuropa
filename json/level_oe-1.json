@@ -131,7 +131,7 @@
 		{
 			"id": "2" , 
 			"part": "gfx/little/osteuropa/SLO.png",
-			"hitshape" : { "x" : "595", "y" : "423", "w" : "50"},
+			"hitshape" : { "x" : "560", "y" : "420", "w" : "40"},
 			"position": { "x" : "525", "y" : "387" },
 			"country" : "Slowakei",
 			"facts": [
